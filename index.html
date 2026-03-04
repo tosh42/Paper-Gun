@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Paper Gun — Paul Tosh</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{--gold:#b8973a;--gold-l:#d4b05a;--ink:#0d0b08;--parchment:#f0e8d8;--ash:#2a2520;}
+body{background:var(--ink);color:var(--parchment);font-family:Georgia,serif;font-size:17px;line-height:1.7;overflow-x:hidden;}
+.fade{opacity:0;transform:translateY(20px);transition:opacity .8s ease,transform .8s ease;}
+.fade.in{opacity:1;transform:none;}
+.rule{max-width:500px;margin:0 auto;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:.3;}
+.sl{font-size:.7rem;letter-spacing:.4em;text-transform:uppercase;color:var(--gold);opacity:.7;margin-bottom:1.5rem;}
+.center{text-align:center;}
+section{max-width:860px;margin:0 auto;padding:5rem 2rem;}
+h2{font-family:Georgia,serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:700;color:var(--parchment);margin-bottom:1.2rem;line-height:1.15;}
+h2 em{color:var(--gold-l);}
+p.body{opacity:.8;font-size:1.05rem;line-height:1.85;margin-bottom:1.4rem;font-weight:300;}
+
+/* HERO */
+#hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:4rem 2rem;background:radial-gradient(ellipse at 50% 60%,#1e1508,#0d0b08);position:relative;}
+#hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);}
+#hero .eyebrow{font-size:.72rem;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);opacity:.85;margin-bottom:2.5rem;}
+#hero h1{font-size:clamp(4rem,13vw,9rem);font-weight:900;line-height:.88;color:var(--parchment);margin-bottom:.4em;}
+#hero h1 em{font-style:italic;color:var(--gold-l);}
+#hero .sub{font-style:italic;font-size:clamp(1.1rem,2.5vw,1.6rem);opacity:.75;margin-bottom:3rem;}
+#hero .tag{display:inline-block;border:1px solid var(--gold);color:var(--gold);font-size:.76rem;letter-spacing:.25em;text-transform:uppercase;padding:.6em 1.6em;}
+
+/* QUOTE BLOCK */
+.pullquote{font-style:italic;font-size:clamp(1.15rem,2.2vw,1.55rem);line-height:1.65;opacity:.9;border-left:2px solid var(--gold);padding-left:2rem;margin-bottom:2rem;}
+
+/* VIDEO */
+.video-wrap{border:1px solid rgba(184,151,58,.3);background:#000;overflow:hidden;}
+.video-wrap iframe{display:block;width:100%;aspect-ratio:16/9;border:0;}
+
+/* POSTER */
+#poster-section{max-width:860px;margin:0 auto;padding:4rem 2rem;text-align:center;}
+#poster-section svg{width:100%;max-width:460px;margin:0 auto;display:block;box-shadow:0 16px 80px rgba(0,0,0,.85);}
+
+/* SETLIST */
+.setlist-group{margin:2rem 0;}
+.setlist-group .group-title{font-size:.75rem;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);opacity:.7;margin-bottom:.75rem;padding-bottom:.5rem;border-bottom:1px solid rgba(184,151,58,.2);}
+.setlist-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));border:1px solid rgba(184,151,58,.15);border-bottom:none;}
+.setlist-item{padding:.85rem 1.2rem;border-bottom:1px solid rgba(184,151,58,.1);border-right:1px solid rgba(184,151,58,.08);font-size:.95rem;opacity:.78;display:flex;align-items:center;gap:.6rem;}
+.setlist-item.italic{font-style:italic;opacity:.62;}
+.setlist-item::before{content:'◆';color:var(--gold);opacity:.3;font-size:.45rem;flex-shrink:0;}
+
+/* TESTIMONIALS */
+#testimonials{background:radial-gradient(ellipse at center,#1a1508,#0d0b08);border-top:1px solid rgba(184,151,58,.12);border-bottom:1px solid rgba(184,151,58,.12);padding:5rem 2rem;}
+#testimonials .inner{max-width:760px;margin:0 auto;}
+.tc{margin-bottom:2.5rem;padding-bottom:2.5rem;border-bottom:1px solid rgba(184,151,58,.1);}
+.tc:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none;}
+.tc blockquote{font-style:italic;font-size:1.05rem;line-height:1.65;color:var(--parchment);opacity:.92;margin-bottom:.9rem;}
+.tc.featured blockquote{font-size:1.3rem;color:var(--gold-l);}
+.tc cite{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);opacity:.6;font-style:normal;display:block;line-height:1.9;}
+.tc cite a{color:var(--gold);opacity:.75;text-decoration:none;border-bottom:1px solid rgba(184,151,58,.35);}
+.audience-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin-top:1.5rem;}
+.aq{font-style:italic;font-size:.98rem;opacity:.78;color:var(--parchment);padding:.9rem 1.2rem;border:1px solid rgba(184,151,58,.12);background:rgba(184,151,58,.03);line-height:1.55;}
+
+/* FOR WHOM */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:3rem;}
+.col-title{font-size:1.2rem;font-style:italic;color:var(--gold-l);margin-bottom:1rem;padding-bottom:.75rem;border-bottom:1px solid rgba(184,151,58,.22);}
+.col-list{list-style:none;}
+.col-list li{padding:.5rem 0;border-bottom:1px solid rgba(240,232,216,.05);font-size:.95rem;opacity:.72;font-weight:300;display:flex;gap:.75rem;}
+.col-list li::before{content:'—';color:var(--gold);opacity:.5;flex-shrink:0;}
+
+/* PRICE */
+.price-box{background:linear-gradient(135deg,#1a1508,#0d0b08);border:1px solid var(--gold);padding:3.5rem 3rem;text-align:center;position:relative;}
+.price-box .corner-tl{position:absolute;top:12px;left:12px;width:40px;height:40px;border-top:1px solid var(--gold);border-left:1px solid var(--gold);opacity:.4;}
+.price-box .corner-br{position:absolute;bottom:12px;right:12px;width:40px;height:40px;border-bottom:1px solid var(--gold);border-right:1px solid var(--gold);opacity:.4;}
+.price-num{font-size:clamp(3rem,9vw,5.5rem);font-weight:900;color:var(--gold-l);line-height:1;display:block;}
+
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:70px 1fr;gap:2rem;align-items:start;}
+.about-P{font-size:6rem;font-weight:900;color:var(--gold);opacity:.1;line-height:.85;}
+.sitp-link{display:flex;align-items:center;gap:2rem;background:var(--ash);border:1px solid rgba(184,151,58,.18);padding:2.5rem;margin-top:3rem;text-decoration:none;}
+.sitp-thumb{width:80px;height:110px;background:rgba(184,151,58,.07);border:1px solid rgba(184,151,58,.18);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:.56rem;letter-spacing:.18em;color:var(--gold);opacity:.5;text-transform:uppercase;text-align:center;}
+.sitp-link h3{font-size:1.2rem;color:var(--parchment);margin-bottom:.4rem;}
+.sitp-link p{font-size:.9rem;opacity:.7;margin-bottom:.6rem;font-weight:300;}
+.sitp-link span{font-size:.7rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);opacity:.65;}
+
+/* CTA */
+#cta{text-align:center;padding:6rem 2rem;background:radial-gradient(ellipse at 50% 0%,#1e1508,#0d0b08);border-top:1px solid rgba(184,151,58,.12);}
+.btn-gold{display:inline-block;background:var(--gold);color:var(--ink);font-family:Georgia,serif;font-size:.95rem;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;padding:1em 2.5em;margin:.5rem;}
+.btn-outline{display:inline-block;border:1px solid var(--gold);color:var(--gold);font-family:Georgia,serif;font-size:.95rem;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;padding:1em 2.5em;margin:.5rem;}
+footer{text-align:center;padding:2rem;font-size:.7rem;letter-spacing:.2em;opacity:.22;border-top:1px solid rgba(240,232,216,.06);}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div id="hero">
+  <p class="eyebrow">Paul Tosh presents &nbsp;◆&nbsp; A Premium Solo Show &nbsp;◆&nbsp; tosh42.com</p>
+  <h1>Paper<br/><em>Gun</em></h1>
+  <p class="sub">How to Kill the Narcissist</p>
+  <span class="tag">Intimate &nbsp;·&nbsp; Artistic &nbsp;·&nbsp; For Sophisticated Audiences</span>
+</div>
+
+<!-- THE WORK -->
+<section class="fade">
+  <p class="sl">The Work</p>
+  <p class="pullquote">Therapeutic, dramatic performance art — a lyrical journey or monologue &amp; melody: looping piano and song.</p>
+  <p class="body">This work is personal and cathartic — but in delivery becomes universal. The perspective broadens. I find myself more careful for the audience's sake than I ever am for my own. I still want to be honest, and inspire — but because of the privilege of doing so this way, getting to explore ideas in a way that makes a connection, you come to know and inspire yourself better, and more gently. It is an alchemy that feels like it comes from above.</p>
+</section>
+
+<div class="rule"></div>
+
+<!-- INTRO VIDEO -->
+<section class="fade" style="padding:3.5rem 2rem;">
+  <p class="sl">See It For Yourself</p>
+  <h2>An <em>Introduction</em></h2>
+  <p class="body">A short preview of the show — the tone, the presence, the dramatic arc in miniature.</p>
+  <div class="video-wrap">
+    <iframe src="https://www.youtube.com/embed/7iYVvcLx3ZM" title="Paper Gun Intro" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</section>
+
+<div class="rule"></div>
+
+<!-- POSTER -->
+<div id="poster-section" class="fade">
+  <p class="sl center">Show Poster</p>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 920">
+    <defs>
+      <radialGradient id="pbg" cx="50%" cy="50%" r="70%"><stop offset="0%" stop-color="#1e1508"/><stop offset="100%" stop-color="#0d0b08"/></radialGradient>
+      <radialGradient id="pglow" cx="50%" cy="45%" r="55%"><stop offset="0%" stop-color="#b8973a" stop-opacity="0.14"/><stop offset="100%" stop-color="#b8973a" stop-opacity="0"/></radialGradient>
+      <filter id="pblur"><feGaussianBlur stdDeviation="22"/></filter>
+    </defs>
+    <rect width="600" height="920" fill="url(#pbg)"/>
+    <ellipse cx="300" cy="400" rx="300" ry="240" fill="url(#pglow)" filter="url(#pblur)"/>
+    <rect x="18" y="18" width="564" height="884" fill="none" stroke="#b8973a" stroke-width="0.8" stroke-opacity="0.45"/>
+    <rect x="28" y="28" width="544" height="864" fill="none" stroke="#b8973a" stroke-width="0.4" stroke-opacity="0.18"/>
+    <line x1="18" y1="18" x2="72" y2="18" stroke="#b8973a" stroke-width="1.5" stroke-opacity="0.7"/>
+    <line x1="18" y1="18" x2="18" y2="72" stroke="#b8973a" stroke-width="1.5" stroke-opacity="0.7"/>
+    <line x1="582" y1="18" x2="528" y2="18" stroke="#b8973a" stroke-width="1.5" stroke-opacity="0.7"/>
+    <line x1="582" y1="18" x2="582" y2="72" stroke="#b8973a" stroke-width="1.5" stroke-opacity="0.7"/>
+    <line x1="18" y1="902" x2="72" y2="902" stroke="#b8973a" stroke-width="1.5" stroke-opacity="0.7"/>
+    <line x1="18" y1="902" x2="18" y2="848" stroke="#b8973a" stroke-width="1.5" stroke-opacity="0.7"/>
+    <line x1="582" y1="902" x2="528" y2="902" stroke="#b8973a" stroke-width="1.5" stroke-opacity="0.7"/>
+    <line x1="582" y1="902" x2="582" y2="848" stroke="#b8973a" stroke-width="1.5" stroke-opacity="0.7"/>
+    <text x="300" y="88" text-anchor="middle" font-family="Georgia,serif" font-size="11" fill="#b8973a" opacity="0.75" letter-spacing="5">PAUL TOSH PRESENTS</text>
+    <line x1="155" y1="100" x2="445" y2="100" stroke="#b8973a" stroke-width="0.5" stroke-opacity="0.3"/>
+    <text x="300" y="115" text-anchor="middle" font-family="Georgia,serif" font-size="9" fill="#b8973a" opacity="0.4" letter-spacing="3">A SOLO SHOW</text>
+    <text x="300" y="315" text-anchor="middle" font-family="Georgia,serif" font-size="126" font-weight="900" fill="#f0e8d8" opacity="0.95" letter-spacing="-2">PAPER</text>
+    <text x="300" y="435" text-anchor="middle" font-family="Georgia,serif" font-size="126" font-weight="900" font-style="italic" fill="#d4b05a" opacity="0.95" letter-spacing="-2">Gun</text>
+    <line x1="80" y1="462" x2="262" y2="462" stroke="#b8973a" stroke-width="0.7" stroke-opacity="0.5"/>
+    <text x="300" y="467" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#b8973a" opacity="0.6">◆</text>
+    <line x1="338" y1="462" x2="520" y2="462" stroke="#b8973a" stroke-width="0.7" stroke-opacity="0.5"/>
+    <text x="300" y="502" text-anchor="middle" font-family="Georgia,serif" font-style="italic" font-size="22" fill="#f0e8d8" opacity="0.72">How to Kill the Narcissist</text>
+    <text x="300" y="535" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#b8973a" opacity="0.5" letter-spacing="3">INTIMATE · ARTISTIC · ORIGINAL</text>
+    <line x1="100" y1="555" x2="500" y2="555" stroke="#b8973a" stroke-width="0.4" stroke-opacity="0.18"/>
+    <text x="300" y="583" text-anchor="middle" font-family="Georgia,serif" font-style="italic" font-size="12.5" fill="#f0e8d8" opacity="0.55">Original Song Cycle · Shakespeare · Stories from the Road</text>
+    <text x="300" y="603" text-anchor="middle" font-family="Georgia,serif" font-style="italic" font-size="12.5" fill="#f0e8d8" opacity="0.55">Words of Wisdom from the Gemara · Song Is The Play</text>
+    <line x1="100" y1="623" x2="500" y2="623" stroke="#b8973a" stroke-width="0.4" stroke-opacity="0.18"/>
+    <text x="300" y="642" text-anchor="middle" font-family="Georgia,serif" font-style="italic" font-size="9.5" fill="#f0e8d8" opacity="0.58">"Made me feel like pre-WWII era of the arts in society!"</text>
+    <text x="300" y="656" text-anchor="middle" font-family="Georgia,serif" font-style="italic" font-size="9.5" fill="#f0e8d8" opacity="0.54">"I can't believe the level of artistry you're bringing"</text>
+    <text x="300" y="670" text-anchor="middle" font-family="Georgia,serif" font-style="italic" font-size="9.5" fill="#f0e8d8" opacity="0.54">"Really good solid organic original material"</text>
+    <text x="300" y="684" text-anchor="middle" font-family="Georgia,serif" font-style="italic" font-size="9.5" fill="#f0e8d8" opacity="0.54">"His lyrics are poetic wonders. His piano playing is just exceptional."</text>
+    <text x="300" y="698" text-anchor="middle" font-family="Georgia,serif" font-style="italic" font-size="9.5" fill="#f0e8d8" opacity="0.54">"I especially like the substantive intellectual meaning"</text>
+    <text x="300" y="712" text-anchor="middle" font-family="Georgia,serif" font-style="italic" font-size="9.5" fill="#f0e8d8" opacity="0.54">"The songs are timeless — an album like Sgt. Pepper"</text>
+    <line x1="100" y1="726" x2="500" y2="726" stroke="#b8973a" stroke-width="0.4" stroke-opacity="0.18"/>
+    <text x="300" y="746" text-anchor="middle" font-family="Georgia,serif" font-size="9.5" fill="#b8973a" opacity="0.5" letter-spacing="3">PRESENTED AT</text>
+    <rect x="70" y="756" width="460" height="40" fill="none" stroke="#b8973a" stroke-width="0.6" stroke-opacity="0.28" rx="1"/>
+    <text x="300" y="782" text-anchor="middle" font-family="Georgia,serif" font-size="18" fill="#f0e8d8" opacity="0.38" font-style="italic">[ Venue Name ]</text>
+    <text x="300" y="816" text-anchor="middle" font-family="Georgia,serif" font-size="9.5" fill="#b8973a" opacity="0.5" letter-spacing="3">DATE &amp; TIME</text>
+    <rect x="130" y="826" width="340" height="34" fill="none" stroke="#b8973a" stroke-width="0.6" stroke-opacity="0.25" rx="1"/>
+    <text x="300" y="848" text-anchor="middle" font-family="Georgia,serif" font-size="15" fill="#f0e8d8" opacity="0.38" font-style="italic">[ Day · Date · Time ]</text>
+    <line x1="160" y1="866" x2="440" y2="866" stroke="#b8973a" stroke-width="0.4" stroke-opacity="0.2"/>
+    <text x="300" y="888" text-anchor="middle" font-family="Georgia,serif" font-size="10.5" fill="#b8973a" opacity="0.4" letter-spacing="1.5"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="f89a97979391969f8bb888998d948c978b90d69b9795">[email&#160;protected]</a> · paultosh.com</text>
+  </svg>
+</div>
+
+<div class="rule"></div>
+
+<!-- PROGRAMME -->
+<section class="fade">
+  <p class="sl">What You Will Hear</p>
+  <h2>The <em>Programme</em></h2>
+  <p class="body">Each performance weaves together original composition, literary adaptation, dramatic storytelling, words of wisdom, and communal song into a single unbroken arc. Nothing is incidental. Every choice serves the theme.</p>
+  <div class="setlist-group">
+    <p class="group-title">Original Song Cycle — The Paper Gun Operetta</p>
+    <div class="setlist-grid">
+      <div class="setlist-item">Beautiful Sunshine</div><div class="setlist-item">The Visitors</div><div class="setlist-item">An Artist</div><div class="setlist-item">Paper Gun</div><div class="setlist-item">From a Watcher's Point of View</div><div class="setlist-item">Try a Little Amnesty</div><div class="setlist-item">This Is Mine</div><div class="setlist-item">You and Your Own</div><div class="setlist-item">From a Living Grave</div><div class="setlist-item">Forgiving</div><div class="setlist-item">Pressures</div><div class="setlist-item">Answer Us</div>
+    </div>
+  </div>
+  <div class="setlist-group">
+    <p class="group-title">Words of Wisdom — Allegorical Allusions from the Gemara</p>
+    <div class="setlist-grid">
+      <div class="setlist-item">The North / South Life Hack</div><div class="setlist-item">Sorry – Thank You – I Agree – Above the Line</div><div class="setlist-item">Find It – Hear It – Be It – Give It</div>
+    </div>
+  </div>
+  <div class="setlist-group">
+    <p class="group-title">Stories from the Road</p>
+    <div class="setlist-grid">
+      <div class="setlist-item italic">The Lie</div><div class="setlist-item italic">The Gamble</div><div class="setlist-item italic">The Truth</div>
+    </div>
+  </div>
+  <div class="setlist-group">
+    <p class="group-title">Songs from Song Is The Play</p>
+    <div class="setlist-grid">
+      <div class="setlist-item italic">Bob Dylan</div><div class="setlist-item italic">Billy Joel</div><div class="setlist-item italic">The Beatles</div><div class="setlist-item italic">Frank Sinatra</div><div class="setlist-item italic">Pavarotti</div><div class="setlist-item italic">Dorothy Parker</div><div class="setlist-item italic">Carole King</div><div class="setlist-item italic">The Eagles</div><div class="setlist-item italic">Oasis</div><div class="setlist-item italic">Paul Robeson</div><div class="setlist-item italic">Neil Diamond</div><div class="setlist-item italic">Regina Spektor</div>
+    </div>
+  </div>
+</section>
+
+<div class="rule"></div>
+
+<!-- PLAYLIST -->
+<section class="fade" style="padding:3.5rem 2rem;">
+  <p class="sl">Full Performances</p>
+  <h2>Watch the <em>Playlist</em></h2>
+  <p class="body">Complete songs from the Paper Gun repertoire — each one its own small drama.</p>
+  <div class="video-wrap">
+    <iframe src="https://www.youtube.com/embed/videoseries?list=PL3IO7naSYa2xCAuH5qqi0BmEkbfvKxnLj" title="Paper Gun Playlist" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</section>
+
+<div class="rule"></div>
+
+<!-- TESTIMONIALS -->
+<div id="testimonials" class="fade">
+  <div class="inner">
+    <p class="sl center" style="margin-bottom:3rem;">What People Say</p>
+    <div class="tc featured"><blockquote>"I especially like the substantive intellectual meaning that you weave into your music. You remind me of the inspiring Shlomo Carlebach ע״ש."</blockquote><cite>Rabbi Daniel Lapin — <a href="https://www.RabbiDanielLapin.com" target="_blank">RabbiDanielLapin.com</a></cite></div>
+    <div class="tc"><blockquote>"It's Beatles, it's U2, it's Bob Dylan, Lenny Kravitz and Billy Joel, it's jazz — you write this style and that style — you have obviously been influenced by all the songs you have been playing through the years. The world would welcome something like this now with open arms. The songs are timeless. It's an album like Sgt. Pepper."</blockquote><cite>Orna Wellman — Drama and English teacher, Canada — <a href="https://instagram.com/ornawellman" target="_blank">instagram.com/ornawellman</a></cite></div>
+    <div class="tc"><blockquote>"Really good solid organic original material — it has to be experienced live. They're not simple in terms of structure nor in terms of emotional content."</blockquote><cite>Miguel Cavazos — Session drummer, LA</cite></div>
+    <div class="tc"><blockquote>"I can't believe the level of artistry you're bringing to the people in these residential homes. I bet they'd never seen anything like it before."</blockquote><cite>Joe Tepperman — Author &amp; theater writer</cite></div>
+    <div class="tc"><blockquote>"Light, serious, fun. Paul's songs are alive — you have to live with them. Paul also sets the standard when it comes to camaraderie and healthy artistic sharing."</blockquote><cite>Mesoud Benasuly — Session bass player, New York City</cite></div>
+    <div class="tc"><blockquote>"I think I've listened to that song a hundred times — but that might be the first time I've actually heard it."</blockquote><cite>Video testimonial — audience member</cite></div>
+    <div class="tc"><blockquote>"Last night made me feel like the pre-WWII era of the arts in society! Loved it."</blockquote><cite>Libby Fox (hostess) — Charleston home concert — <a href="https://www.swampfoxdockandmarine.com/" target="_blank">swampfoxdockandmarine.com</a></cite></div>
+    <div class="tc"><blockquote>"A poetic call to presence — reminding us that the pursuit itself is the purpose, and that love, more than anything, is the foundation of it all. So much fun to watch Paul's creative brain at work… a true pleasure."</blockquote><cite>Amy Kirshtein — at Libby &amp; Daniel's home concert</cite></div>
+    <div class="tc"><blockquote>"This is as different a performance as anything I've seen in the Listening Room Network. It's really more performance art than musical performance — as much poetry as it is music. His piano playing is just exceptional."</blockquote><cite>Listening Room Network — Audition Review, August 2025</cite></div>
+    <p class="sl" style="margin-top:2rem;">From the audience —</p>
+    <div class="audience-grid">
+      <div class="aq">"When people don't get up, you know we don't want to leave."</div>
+      <div class="aq">"You made me cry several times. I wasn't planning to."</div>
+      <div class="aq">"Even as the performance ended and we instinctively returned to lighthearted conversation, the depth of what we had experienced lingered within each of us, waiting to be unpacked in solitude. Unforgettable."</div>
+      <div class="aq">"You love what you're doing, and that love comes out to all of us."</div>
+      <div class="aq">"You are amongst those that keep the world alive."</div>
+      <div class="aq">"I like to get into your mode though. Because I haven't heard music like this before. And you're free — you know some people stick to things, but you're very fluid."</div>
+    </div>
+  </div>
+</div>
+
+<div class="rule"></div>
+
+<!-- FOR WHOM -->
+<section class="fade">
+  <p class="sl">For Whom &amp; Where</p>
+  <h2>The Right Room <em>Matters</em></h2>
+  <p class="body">This is not background music. It is not a dinner show. It is a performance that asks something of its audience — and gives a great deal more in return.</p>
+  <div class="two-col">
+    <div>
+      <p class="col-title">The Audience</p>
+      <ul class="col-list">
+        <li>Those with cultural depth and patience for emotional arc</li>
+        <li>Appreciators of literary and dramatic work over production spectacle</li>
+        <li>The genuinely musically literate</li>
+        <li>Those who are emotionally present and not irony-armoured</li>
+        <li>People who value presence and authenticity over celebrity</li>
+      </ul>
+    </div>
+    <div>
+      <p class="col-title">The Venues</p>
+      <ul class="col-list">
+        <li>Small theatres (50–150 seats)</li>
+        <li>Art galleries and literary events</li>
+        <li>Thoughtful fundraisers</li>
+        <li>Private salon performances</li>
+        <li>College and university arts programmes</li>
+        <li>Retreats and supper clubs</li>
+        <li>Hotel special engagements</li>
+        <li>Cruise special shows</li>
+        <li>Piano shops and showrooms</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<div class="rule"></div>
+
+<!-- PRICE -->
+<section class="fade" style="padding:2rem 2rem;">
+  <div class="price-box">
+    <div class="corner-tl"></div>
+    <div class="corner-br"></div>
+    <p class="sl">Investment</p>
+    <span class="price-num">$2,500</span>
+    <span style="font-style:italic;font-size:1rem;opacity:.6;margin-top:.5rem;display:block;">Discounts available — circumstances considered.</span>
+    <p style="margin-top:1.5rem;font-size:.8rem;letter-spacing:.2em;opacity:.5;text-transform:uppercase;">All-inclusive · Travel · Accommodation · Sound</p>
+    <p style="margin-top:1.5rem;font-size:.95rem;opacity:.65;font-style:italic;font-weight:300;">Paul travels in a custom self-contained performance camper, making him available for venues across the entire United States and Canada — with no hotel riders, no staging requirements, and no hidden costs.</p>
+  </div>
+</section>
+
+<div class="rule"></div>
+
+<!-- ABOUT -->
+<section class="fade">
+  <p class="sl">About the Performer</p>
+  <h2>Paul Tosh</h2>
+  <div class="about-grid">
+    <div class="about-P">P</div>
+    <div>
+      <p class="body">Born in Scotland. Formed in Europe. Seasoned across a decade of performances for senior communities on the American East Coast. Paul Tosh is a therapeutic musical performer whose work refuses the easy distinction between entertainment and art.</p>
+      <p class="body">His signature approach — <em>Song Is The Play</em> — treats every performance as a piece of theatre: looping piano, dramatic song, and the kind of presence that makes a familiar melody feel heard for the first time. <em>Paper Gun</em> is his most personal and fully realised work to date: a show about damage, clarity, and the quiet violence of the truth.</p>
+    </div>
+  </div>
+  <a href="https://www.paultosh.com" target="_blank" class="sitp-link">
+    <div class="sitp-thumb">SITP<br/>Poster</div>
+    <div>
+      <h3>Song Is The Play</h3>
+      <p>Paul's celebrated concert show — Billy Joel, The Beatles, Bob Dylan, Sinatra, Neil Diamond, and originals, performed as theatrical prose with looping piano.</p>
+      <span>paultosh.com →</span>
+    </div>
+  </a>
+</section>
+
+<div class="rule"></div>
+
+<!-- CTA -->
+<div id="cta" class="fade">
+  <p class="sl" style="margin-bottom:1.5rem;">Book the Show</p>
+  <h2>Bring <em>Paper Gun</em><br/>to Your Room</h2>
+  <p class="body" style="max-width:520px;margin:0 auto 2.5rem;">To discuss availability, venue fit, or pricing, reach out directly. Paul responds personally to every enquiry.</p>
+  <a href="/cdn-cgi/l/email-protection#12707d7d797b7c7561526273677e667d617a3c717d7f" class="btn-gold">Make an Enquiry</a>
+  <a href="https://www.paultosh.com" target="_blank" class="btn-outline">Visit paultosh.com</a>
+</div>
+
+<footer>© Paul Tosh · Paper Gun · tosh42.com · All rights reserved</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+const fades = document.querySelectorAll('.fade');
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); obs.unobserve(e.target); }});
+}, {threshold: 0.08});
+fades.forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
