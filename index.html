@@ -85,13 +85,29 @@ p.body{opacity:.8;font-size:1.05rem;line-height:1.85;margin-bottom:1.4rem;font-w
 .btn-gold{display:inline-block;background:var(--gold);color:var(--ink);font-family:Georgia,serif;font-size:.95rem;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;padding:1em 2.5em;margin:.5rem;}
 .btn-outline{display:inline-block;border:1px solid var(--gold);color:var(--gold);font-family:Georgia,serif;font-size:.95rem;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;padding:1em 2.5em;margin:.5rem;}
 footer{text-align:center;padding:2rem;font-size:.7rem;letter-spacing:.2em;opacity:.22;border-top:1px solid rgba(240,232,216,.06);}
+
+/* MOBILE ONLY */
+@media (max-width: 600px) {
+  /* Hide bullet separators in hero eyebrow, stack as lines */
+  #hero .eyebrow .sep{display:none;}
+  #hero .eyebrow .seg{display:block;margin-bottom:.3rem;}
+  /* Collapse audience grid to single column */
+  .audience-grid{grid-template-columns:1fr;}
+  /* Stack two-col for whom */
+  .two-col{grid-template-columns:1fr;}
+  /* Force line break before 'One' in Twenty-Five Songs heading */
+  .reckoning-break{display:block;}
+}
+@media (min-width: 601px) {
+  .reckoning-break{display:inline;}
+}
 </style>
 </head>
 <body>
 
 <!-- HERO -->
 <div id="hero">
-  <p class="eyebrow">Paul Tosh presents &nbsp;◆&nbsp; A Premium Solo Show &nbsp;◆&nbsp; tosh42.com</p>
+  <p class="eyebrow"><span class="seg">Paul Tosh presents</span><span class="sep"> &nbsp;◆&nbsp; </span><span class="seg">A Premium Solo Show</span><span class="sep"> &nbsp;◆&nbsp; </span><span class="seg">tosh42.com</span></p>
   <h1>Paper<br/><em>Gun</em></h1>
   <p class="sub">This is mine, but you can have it.</p>
   <span class="tag">A man. A piano. A reckoning.</span>
@@ -101,10 +117,9 @@ footer{text-align:center;padding:2rem;font-size:.7rem;letter-spacing:.2em;opacit
 <!-- THE WORK -->
 <section class="fade">
   <p class="sl">The Work</p>
-  <p class="pullquote">Paper Gun is an original song cycle that begins in warmth and ends in freedom — and takes no prisoners on the way. A man. A piano. A reckoning.</p>
+  <p class="pullquote">Paper Gun is an original song cycle that begins in warmth and ends in freedom — and takes no prisoners on the way.</p>
   <p class="body">This work is personal and cathartic — but in delivery the perspective broadens. I find myself more careful for the audience's sake than I am for my own. I still want to be honest, and inspire — but it is the privilege of doing so, getting to explore ideas in a way that makes a connection, that you come to know yourself better. It is an alchemy that feels like it comes from above.</p>
   <p class="body">Developed and honed in piano bars in London and Switzerland, and 55+ communities across the United States — every song tested, as seen in the video playlist below.</p>
-  <p class="body" style="margin-top:1.2rem;font-style:italic;opacity:.8;">These songs were written across two decades. They are true.</p>
 </section>
 
 <div class="rule"></div>
@@ -134,7 +149,7 @@ footer{text-align:center;padding:2rem;font-size:.7rem;letter-spacing:.2em;opacit
 <!-- PROGRAMME -->
 <section class="fade" id="programme" style="padding:3rem 2rem;max-width:860px;margin:0 auto;">
   <p style="font-size:.7rem;letter-spacing:.4em;text-transform:uppercase;color:#b8973a;opacity:.7;text-align:center;margin-bottom:.6rem;">The Programme</p>
-  <h2 style="font-family:Georgia,serif;font-size:clamp(1.6rem,3.5vw,2.4rem);font-weight:700;color:#f0e8d8;text-align:center;margin-bottom:.4rem;line-height:1.2;">Twenty-Five Songs. <em style="color:#d4b05a;">One Reckoning.</em></h2>
+  <h2 style="font-family:Georgia,serif;font-size:clamp(1.6rem,3.5vw,2.4rem);font-weight:700;color:#f0e8d8;text-align:center;margin-bottom:.4rem;line-height:1.2;">Twenty-Five Songs. <span class="reckoning-break"></span><em style="color:#d4b05a;">One Reckoning.</em></h2>
   <p style="font-family:Georgia,serif;font-size:1rem;color:#f0e8d8;opacity:.65;text-align:center;max-width:600px;margin:0 auto 1.5rem;line-height:1.75;">The protagonist contains extremes. <em>"I know in this song the bully is me, but the bully is feeling free."</em> He's not the innocent party observing. He's someone who recognises the negative pull in himself, fights it, and emerges. That's the whole arc.</p>
   <p style="font-family:Georgia,serif;font-size:.95rem;font-style:italic;color:#f0e8d8;opacity:.5;text-align:center;margin-bottom:2.5rem;">Click any song to read a line.</p>
 
@@ -343,7 +358,7 @@ footer{text-align:center;padding:2rem;font-size:.7rem;letter-spacing:.2em;opacit
         <li>Those with cultural depth and patience for emotional arc</li>
         <li>Appreciators of literary and dramatic work over production spectacle</li>
         <li>The genuinely musically literate</li>
-        <li>Those who are emotionally present and not irony-armoured</li>
+        <li>Those who come ready to be moved</li>
         <li>People who value presence and authenticity over celebrity</li>
       </ul>
     </div>
@@ -377,7 +392,6 @@ footer{text-align:center;padding:2rem;font-size:.7rem;letter-spacing:.2em;opacit
     <div class="corner-br"></div>
     <p class="sl">Investment</p>
     <span class="price-num">$2,500</span>
-    <span style="font-style:italic;font-size:1rem;opacity:.6;margin-top:.5rem;display:block;">Discounts available — circumstances considered.</span>
     <p style="margin-top:1.5rem;font-size:.8rem;letter-spacing:.2em;opacity:.5;text-transform:uppercase;">All-inclusive · Travel · Accommodation · Sound</p>
     <p style="margin-top:1.5rem;font-size:.95rem;opacity:.65;font-style:italic;font-weight:300;">Paul travels in a custom self-contained performance camper, making him available for venues across the entire United States and Canada — with no hotel riders, no staging requirements, and no hidden costs.</p>
   </div>
