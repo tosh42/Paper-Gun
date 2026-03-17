@@ -921,8 +921,8 @@ footer a { color: var(--gold); text-decoration: none; }
 
 /* ── SCROLL REVEAL ── */
 .reveal {
-  opacity: 0;
-  transform: translateY(24px);
+  opacity: 1;
+  transform: translateY(0);
   transition: opacity 0.7s ease, transform 0.7s ease;
 }
 
@@ -1337,12 +1337,7 @@ footer a { color: var(--gold); text-decoration: none; }
 
         <blockquote class="about-pull">
           "Entertainment for seniors is a noble mission, for which you are perfectly suited. They are deserving of the same quality of entertainment that the rest of us can access. Long may you continue."
-          <cite>Kate Tough · Author, GoFundMe campaign</cite>
-        </blockquote>
-
-        <p>
-          Paul also performs <em>Backstage With The Tribe</em> for Jewish audiences —
-          a show that weaves the hidden family histories and prophetic roots of the great songwriters
+          <cite>Kate Tough · roots of the great songwriters
           into the performance of their music. Available standalone or incorporated into either main show.
         </p>
 
@@ -1397,7 +1392,7 @@ footer a { color: var(--gold); text-decoration: none; }
   <p>© 2026 Paul Tosh &nbsp;·&nbsp; <a href="mailto:bookings@paultosh.com">bookings@paultosh.com</a> &nbsp;·&nbsp; <a href="http://www.tosh42.com">tosh42.com</a> (Paper Gun Operetta)</p>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 // Nav scroll effect
 const nav = document.getElementById('nav');
 window.addEventListener('scroll', () => {
@@ -1406,4 +1401,32 @@ window.addEventListener('scroll', () => {
 
 // Hamburger
 const hamburger = document.getElementById('hamburger');
-const navLinks = do
+const navLinks = document.getElementById('navLinks');
+hamburger.addEventListener('click', () => {
+  navLinks.classList.toggle('open');
+});
+
+// Close nav on link click
+navLinks.querySelectorAll('a').forEach(a => {
+  a.addEventListener('click', () => navLinks.classList.remove('open'));
+});
+
+// Scroll reveal
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+reveals.forEach(el => {
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(24px)';
+  observer.observe(el);
+});
+</script>
+</body>
+</html>
