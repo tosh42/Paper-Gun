@@ -961,6 +961,7 @@ footer a { color: var(--gold); text-decoration: none; }
   nav { padding: 1rem 1.2rem; }
   .hero-ctas { flex-direction: column; align-items: center; }
   .shows-note { padding: 1.5rem; }
+  #looping .loop-cards { grid-template-columns: 1fr !important; }
 }
 </style>
 </head>
@@ -974,6 +975,7 @@ footer a { color: var(--gold); text-decoration: none; }
     <li><a href="#venues">Venues</a></li>
     <li><a href="#testimonials">Testimonials</a></li>
     <li><a href="#video">Video</a></li>
+    <li><a href="#looping">Looping</a></li>
     <li><a href="#about">About</a></li>
     <li><a href="mailto:bookings@paultosh.com" class="nav-book">Book a Show</a></li>
   </ul>
@@ -1264,6 +1266,43 @@ footer a { color: var(--gold); text-decoration: none; }
 
     <div style="text-align:center;margin-top:2rem;" class="reveal">
       <a href="https://www.youtube.com/@paultoshner" target="_blank" class="btn-outline">Full YouTube Channel →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── LIVE LOOPING ── -->
+<section id="looping" style="background:var(--ink);color:var(--cream);padding:5rem 2rem;">
+  <div class="section-inner">
+    <p class="section-label" style="color:var(--gold-light);">The Technique</p>
+    <h2 class="section-title" style="color:var(--cream);">Live <em>looping</em></h2>
+    <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(1.05rem,2.2vw,1.35rem);font-weight:300;color:rgba(245,240,232,0.65);max-width:620px;line-height:1.65;margin-bottom:2.5rem;">
+      One man. One piano. A full orchestral sound — built live, in real time, in front of you. No backing tracks. No band. Every layer you hear is created and looped on the spot.
+    </p>
+    <div style="border:1px solid rgba(201,168,76,0.25);background:#000;overflow:hidden;margin-bottom:1.5rem;">
+      <iframe
+        style="display:block;width:100%;aspect-ratio:16/9;border:0;"
+        src="https://www.youtube.com/embed/-okEF0Mir1E"
+        title="Paul Tosh — Live Looping"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+    </div>
+    <div class="loop-cards" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:1.5rem;margin-top:2rem;">
+      <div style="border:1px solid rgba(201,168,76,0.15);padding:1.5rem;background:rgba(255,255,255,0.02);">
+        <p style="font-family:'DM Mono',monospace;font-size:0.6rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);margin-bottom:0.6rem;">The Method</p>
+        <p style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:600;color:var(--cream);margin-bottom:0.5rem;">Ed Sheeran's Technique</p>
+        <p style="font-size:0.85rem;color:rgba(245,240,232,0.55);line-height:1.7;">Microphones placed inside the acoustic grand piano, capturing individual strings — the same live looping technique Ed Sheeran uses at stadium scale, adapted for the intimacy of solo performance.</p>
+      </div>
+      <div style="border:1px solid rgba(201,168,76,0.15);padding:1.5rem;background:rgba(255,255,255,0.02);">
+        <p style="font-family:'DM Mono',monospace;font-size:0.6rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);margin-bottom:0.6rem;">The Result</p>
+        <p style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:600;color:var(--cream);margin-bottom:0.5rem;">No Band Required</p>
+        <p style="font-size:0.85rem;color:rgba(245,240,232,0.55);line-height:1.7;">Bass lines, harmony vocals, rhythm, and melody — all layered live. Every performance is unrepeatable. The audience watches the music being built from nothing, which is itself part of the theatre.</p>
+      </div>
+      <div style="border:1px solid rgba(201,168,76,0.15);padding:1.5rem;background:rgba(255,255,255,0.02);">
+        <p style="font-family:'DM Mono',monospace;font-size:0.6rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);margin-bottom:0.6rem;">The Setup</p>
+        <p style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:600;color:var(--cream);margin-bottom:0.5rem;">Fully Self-Sufficient</p>
+        <p style="font-size:0.85rem;color:rgba(245,240,232,0.55);line-height:1.7;">Paul arrives with a complete technical rig. No piano at your venue? A full keyboard and looping setup travels with him. No sound engineer needed. He sets up, performs, and leaves the room intact.</p>
+      </div>
     </div>
   </div>
 </section>
