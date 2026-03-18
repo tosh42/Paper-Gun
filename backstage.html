@@ -525,6 +525,7 @@ footer a { color: rgba(201,168,76,0.5); text-decoration: none; }
   .tc.featured { grid-column: 1; }
   .practical-grid { grid-template-columns: 1fr; }
   #hero h1 { font-size: clamp(2.2rem, 10vw, 4rem); }
+  .poster-grid { grid-template-columns: 1fr !important; }
 }
 </style>
 </head>
@@ -538,7 +539,7 @@ footer a { color: rgba(201,168,76,0.5); text-decoration: none; }
 
 <!-- HERO -->
 <section id="hero">
-  <span class="bsdi">BS&quot;D</span>
+  <span class="bsdi" style="text-align:right;display:block;padding-right:0.5rem;">BS&quot;D</span>
   <p class="hero-eyebrow">Paul Tosh · Scottish-born · Baal Teshuva · Pianist & Looping Artist</p>
   <h1>Backstage With<br><em>The Tribe</em></h1>
   <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(1rem,2.2vw,1.3rem);color:rgba(245,240,232,0.5);margin-top:0.5rem;margin-bottom:1.5rem;letter-spacing:0.05em;">(The Jewish Scotsman)</p>
@@ -841,19 +842,43 @@ footer a { color: rgba(201,168,76,0.5); text-decoration: none; }
 <!-- POSTER SECTION -->
 <section style="background:var(--parchment);padding:5rem 2rem;text-align:center;">
   <div class="section-inner" style="text-align:center;">
-    <p class="section-label" style="justify-content:center;">Programme Poster</p>
+    <p class="section-label" style="justify-content:center;">Programme Posters</p>
     <h2 class="section-title" style="text-align:center;">Share with your <em>community</em></h2>
-    <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.05rem;color:var(--warm-grey);max-width:500px;margin:0 auto 2.5rem;line-height:1.65;">Print-ready poster — pass it on to your programme committee, post it in your shul, or attach it to a booking email.</p>
-    <div style="max-width:420px;margin:0 auto 2rem;box-shadow:0 16px 70px rgba(26,20,16,0.2);border:1px solid var(--border);">
-      <img src="./backstage-poster.jpg"
-           alt="Backstage With The Tribe — Paul Tosh Programme Poster"
-           style="display:block;width:100%;">
+    <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.05rem;color:var(--warm-grey);max-width:500px;margin:0 auto 2.5rem;line-height:1.65;">Print-ready posters — pass them on to your programme committee, post in your shul, or attach to a booking email.</p>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;max-width:860px;margin:0 auto 2.5rem;align-items:start;">
+
+      <!-- Poster 1 — Backstage With The Tribe -->
+      <div>
+        <p style="font-family:'DM Mono',monospace;font-size:0.6rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;">Backstage With The Tribe</p>
+        <div style="box-shadow:0 16px 70px rgba(26,20,16,0.2);border:1px solid var(--border);margin-bottom:1rem;">
+          <img src="./backstage-poster.jpg"
+               alt="Backstage With The Tribe — Paul Tosh Programme Poster"
+               style="display:block;width:100%;">
+        </div>
+        <a href="./backstage-poster.jpg" download="Backstage-With-The-Tribe-Paul-Tosh.jpg"
+           style="display:inline-block;background:var(--gold);color:var(--ink);font-family:'DM Mono',monospace;font-size:0.65rem;letter-spacing:0.22em;text-transform:uppercase;text-decoration:none;padding:0.75em 1.8em;"
+           onmouseover="this.style.background='#e8c97a'" onmouseout="this.style.background='#c9a84c'">
+          ↓ Download
+        </a>
+      </div>
+
+      <!-- Poster 2 — The Jewish Scotsman -->
+      <div>
+        <p style="font-family:'DM Mono',monospace;font-size:0.6rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;">The Jewish Scotsman</p>
+        <div style="box-shadow:0 16px 70px rgba(26,20,16,0.2);border:1px solid var(--border);margin-bottom:1rem;">
+          <img src="./Poster_J_Scot.jpg"
+               alt="The Jewish Scotsman — Paul Tosh Programme Poster"
+               style="display:block;width:100%;">
+        </div>
+        <a href="./Poster_J_Scot.jpg" download="The-Jewish-Scotsman-Paul-Tosh.jpg"
+           style="display:inline-block;background:var(--gold);color:var(--ink);font-family:'DM Mono',monospace;font-size:0.65rem;letter-spacing:0.22em;text-transform:uppercase;text-decoration:none;padding:0.75em 1.8em;"
+           onmouseover="this.style.background='#e8c97a'" onmouseout="this.style.background='#c9a84c'">
+          ↓ Download
+        </a>
+      </div>
+
     </div>
-    <a href="./backstage-poster.jpg" download="Backstage-With-The-Tribe-Paul-Tosh.jpg"
-       style="display:inline-block;background:var(--gold);color:var(--ink);font-family:'DM Mono',monospace;font-size:0.68rem;letter-spacing:0.22em;text-transform:uppercase;text-decoration:none;padding:0.85em 2.2em;transition:background 0.2s;"
-       onmouseover="this.style.background='#e8c97a'" onmouseout="this.style.background='#c9a84c'">
-      ↓ Download Poster
-    </a>
   </div>
 </section>
 
