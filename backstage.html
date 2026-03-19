@@ -518,7 +518,7 @@ footer a { color: rgba(201,168,76,0.5); text-decoration: none; }
 
 /* ── RESPONSIVE ── */
 @media (max-width: 700px) {
-  nav { padding: 0.9rem 1.2rem; }
+  nav { padding: 0.9rem 1.2rem; position: relative; top: auto; }
   .formats-grid { grid-template-columns: 1fr; }
   .programme-parts { grid-template-columns: 1fr; }
   .tc-grid { grid-template-columns: 1fr; }
@@ -532,7 +532,7 @@ footer a { color: rgba(201,168,76,0.5); text-decoration: none; }
 <body>
 
 <!-- TOP CTA BAR -->
-<div style="background:rgba(18,16,14,.97);border-bottom:1px solid rgba(201,168,76,.2);display:flex;align-items:center;justify-content:center;gap:2rem;padding:.8rem 2rem;flex-wrap:wrap;position:sticky;top:0;z-index:200;">
+<div style="background:rgba(18,16,14,.97);border-bottom:1px solid rgba(201,168,76,.2);display:flex;align-items:center;justify-content:center;gap:2rem;padding:.8rem 2rem;flex-wrap:wrap;">
   <p style="font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(245,240,232,.4);margin:0;">Jewish cultural concert · Shuls · JCCs · Pesach</p>
   <a href="mailto:bookings@tosh42.com" style="display:inline-block;background:#c9a84c;color:#1a1410;font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;text-decoration:none;padding:.55em 1.6em;white-space:nowrap;">◆ Book Now</a>
 </div>
@@ -540,7 +540,6 @@ footer a { color: rgba(201,168,76,0.5); text-decoration: none; }
 <!-- NAV -->
 <nav>
   <a href="./paultosh.html" class="nav-logo">Paul Tosh <span>← Main Site</span></a>
-  <a href="mailto:bookings@tosh42.com" class="nav-book">Book a Show</a>
 </nav>
 
 <!-- HERO -->
