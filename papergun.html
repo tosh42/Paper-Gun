@@ -91,6 +91,8 @@ footer{text-align:center;padding:2rem;font-size:.7rem;letter-spacing:.2em;opacit
   /* Hide bullet separators in hero eyebrow, stack as lines */
   #hero .eyebrow .sep{display:none;}
   #hero .eyebrow .seg{display:block;margin-bottom:.3rem;}
+  /* Remove top padding on hero so image sits flush */
+  #hero{padding-top:0 !important;}
   /* Collapse audience grid to single column */
   .audience-grid{grid-template-columns:1fr;}
   /* Stack two small videos on mobile */
@@ -99,6 +101,8 @@ footer{text-align:center;padding:2rem;font-size:.7rem;letter-spacing:.2em;opacit
   .two-col{grid-template-columns:1fr;}
   /* Force line break before 'One' in Twenty-Five Songs heading */
   .reckoning-break{display:block;}
+  /* Stack testimonial videos vertically on mobile */
+  .testimonial-videos{grid-template-columns:1fr !important;}
 }
 @media (min-width: 601px) {
   .reckoning-break{display:inline;}
@@ -162,8 +166,8 @@ footer{text-align:center;padding:2rem;font-size:.7rem;letter-spacing:.2em;opacit
   <div style="position:relative;max-width:860px;margin:1.5rem auto 0;display:inline-block;width:100%;">
 
     <!-- Vignette + image -->
-    <div style="position:relative;overflow:hidden;line-height:0;">
-      <img src="papergun_img_1.jpg" alt="Paper Gun — Paul Tosh" style="width:100%;display:block;"/>
+    <div style="position:relative;overflow:hidden;line-height:0;max-width:100%;">
+      <img src="papergun_img_1.jpg" alt="Paper Gun — Paul Tosh" style="width:100%;display:block;height:auto;"/>
       <!-- vignette edges -->
       <div style="position:absolute;inset:0;box-shadow:inset 0 0 80px 40px rgba(13,11,8,.85);pointer-events:none;"></div>
       <!-- bottom fade -->
@@ -534,7 +538,7 @@ footer{text-align:center;padding:2rem;font-size:.7rem;letter-spacing:.2em;opacit
   <div style="max-width:860px;margin:0 auto;">
     <p style="font-size:.7rem;letter-spacing:.4em;text-transform:uppercase;color:#b8973a;opacity:.7;margin-bottom:1.5rem;text-align:center;">Video Testimonials</p>
     <h2 style="font-family:Georgia,serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:700;color:#f0e8d8;margin-bottom:1.2rem;line-height:1.15;">Hear It From the <em style="color:#d4b05a;">Audience</em></h2>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:2rem;">
+    <div class="testimonial-videos" style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:2rem;">
       <div style="border:1px solid rgba(184,151,58,.3);background:#000;overflow:hidden;">
         <iframe src="https://www.youtube.com/embed/VIAjD_Uu1yk" title="Video Testimonial 1" style="display:block;width:100%;aspect-ratio:16/9;border:0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
