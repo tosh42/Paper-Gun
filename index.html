@@ -55,9 +55,11 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
 .backstage-btn{display:inline-block;border:1px solid rgba(184,151,58,.3);color:var(--gold);opacity:.75;font-family:'DM Mono',monospace;font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;padding:.55em 1.5em;text-decoration:none;transition:border-color .2s,opacity .2s,background .2s;}
 .backstage-btn:hover{border-color:var(--gold);opacity:1;background:rgba(184,151,58,.08);}
 
-#bottom-cta{background:rgba(13,11,8,.97);border-top:1px solid var(--border);display:flex;align-items:center;justify-content:center;gap:2rem;padding:1.4rem 2rem;flex-shrink:0;flex-wrap:wrap;}
-#bottom-cta p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1rem;color:var(--cream);opacity:.7;}
-#bottom-cta .cta-btn{font-size:.75rem;padding:.65em 2em;letter-spacing:.25em;}
+#bottom-cta{background:rgba(13,11,8,.98);border-top:1px solid var(--border);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.2rem;padding:3.5rem 2rem;flex-shrink:0;text-align:center;}
+#bottom-cta .cta-label{font-family:'DM Mono',monospace;font-size:.6rem;letter-spacing:.4em;text-transform:uppercase;color:var(--gold);opacity:.6;}
+#bottom-cta h3{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:clamp(1.4rem,3vw,2rem);color:var(--cream);line-height:1.4;}
+#bottom-cta p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.95rem;color:var(--cream);opacity:.5;max-width:480px;}
+#bottom-cta .cta-btn{font-size:.78rem;padding:.8em 2.6em;letter-spacing:.28em;margin-top:.4rem;}
 
 @media(max-width:680px){
   .split{grid-template-columns:1fr;}
@@ -120,7 +122,7 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
 
 <div id="bottom-cta">
   <p>To discuss availability, venue fit, or pricing — Paul responds personally to every enquiry.</p>
-  <a href="mailto:paul@paultosh.com" class="cta-btn">Book Paul →</a>
+  <a href="mailto:paul@paultosh.com" class="cta-btn">Book Now →</a>
 </div>
 
 </body>
