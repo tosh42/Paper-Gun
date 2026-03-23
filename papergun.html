@@ -91,8 +91,9 @@ footer{text-align:center;padding:2rem;font-size:.7rem;letter-spacing:.2em;opacit
   /* Hide bullet separators in hero eyebrow, stack as lines */
   #hero .eyebrow .sep{display:none;}
   #hero .eyebrow .seg{display:block;margin-bottom:.3rem;}
-  /* Remove top padding on hero so image sits flush */
-  #hero{padding-top:0 !important;}
+  /* Remove top padding on hero and min-height so image isn't clipped */
+  #hero{padding-top:0 !important;padding-left:0 !important;padding-right:0 !important;min-height:unset !important;}
+  #hero .eyebrow{padding:1rem 1rem 0;}
   /* Collapse audience grid to single column */
   .audience-grid{grid-template-columns:1fr;}
   /* Stack two small videos on mobile */
@@ -157,7 +158,7 @@ footer{text-align:center;padding:2rem;font-size:.7rem;letter-spacing:.2em;opacit
 
 
 <!-- HERO -->
-<div id="hero" style="background:var(--ink);padding:3rem 2rem 0;text-align:center;">
+<div id="hero" style="background:var(--ink);text-align:center;">
 
   <!-- Above image -->
   <p class="eyebrow"><span class="seg">Paul Tosh presents</span><span class="sep"> &nbsp;◆&nbsp; </span><span class="seg">A Premium Solo Show</span><span class="sep"> &nbsp;◆&nbsp; </span><span class="seg">tosh42.com</span></p>
