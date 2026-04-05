@@ -1261,9 +1261,9 @@ footer a { color: var(--gold); text-decoration: none; }
     </div>
 
     <!-- Playlist embed -->
-    <div class="video-main reveal">
+    <div class="video-main reveal" style="padding-bottom:0;height:480px;">
       <iframe
-        src="https://www.youtube.com/embed/videoseries?list=PL3IO7naSYa2xVowbBuXqud0C4opxj-Oi-"
+        src="https://www.youtube.com/embed/gFnlA_G3wc4?list=PL3IO7naSYa2xVowbBuXqud0C4opxj-Oi-"
         title="Paul Tosh — Full Playlist"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen>
@@ -1411,7 +1411,7 @@ footer a { color: var(--gold); text-decoration: none; }
   <p>© 2026 Paul Tosh &nbsp;·&nbsp; <a href="mailto:bookings@tosh42.com">bookings@tosh42.com</a> &nbsp;·&nbsp; <a href="./papergun.html">Paper Gun Operetta</a></p>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 // Nav scroll effect
 const nav = document.getElementById('nav');
 window.addEventListener('scroll', () => {
@@ -1433,16 +1433,7 @@ navLinks.querySelectorAll('a').forEach(a => {
 // Scroll reveal
 const reveals = document.querySelectorAll('.reveal');
 const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-      observer.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.05, rootMargin: '0px 0px -20px 0px' });
-
-reveals.forEach(el => observer.observe(el));
-</script>
+  entries.forEach(ent
 <a href="./index.html" title="Home — tosh42.com" style="position:fixed;bottom:1.2rem;right:1.2rem;z-index:9999;opacity:.88;transition:opacity .2s;display:block;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=.88">
   <span style="width:54px;height:54px;border-radius:50%;background:#0d0b08;border:1px solid rgba(184,151,58,.4);display:flex;align-items:center;justify-content:center;overflow:hidden;box-shadow:0 6px 24px rgba(0,0,0,.8);">
     <img src="logo_gold_smlr.jpg" alt="tosh42.com" style="width:38px;height:38px;object-fit:contain;display:block;"/>
