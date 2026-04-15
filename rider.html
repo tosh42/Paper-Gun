@@ -18,9 +18,14 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
 .page-header{text-align:center;padding:3.5rem 2rem 2rem;border-bottom:1px solid var(--border);}
 .page-header .back{font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);opacity:.7;text-decoration:none;display:inline-block;margin-bottom:1.5rem;transition:opacity .2s;}
 .page-header .back:hover{opacity:1;}
-.page-header img{width:52px;height:52px;object-fit:contain;border-radius:4px;display:block;margin:0 auto .9rem;}
+.page-header img.logo{width:52px;height:52px;object-fit:contain;border-radius:4px;display:block;margin:0 auto .9rem;}
 .page-header h1{font-family:'Cinzel',serif;font-size:clamp(.8rem,1.5vw,.95rem);letter-spacing:.5em;color:var(--gold);text-transform:uppercase;margin-bottom:.4rem;}
 .page-header h2{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:clamp(1.6rem,3vw,2.2rem);color:var(--cream);opacity:.85;}
+
+/* ── PHOTO GALLERY ── */
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:3px;width:100%;}
+.gallery img{width:100%;aspect-ratio:16/10;object-fit:cover;display:block;filter:brightness(.8);transition:filter .3s;}
+.gallery img:hover{filter:brightness(1);}
 
 .content{max-width:720px;margin:0 auto;padding:3rem 2rem 5rem;}
 
@@ -34,9 +39,11 @@ p:last-child{margin-bottom:0;}
 a{color:var(--gold);opacity:.85;text-decoration:none;border-bottom:1px solid rgba(184,151,58,.3);transition:opacity .2s,border-color .2s;}
 a:hover{opacity:1;border-color:var(--gold);}
 
-.video-link{display:inline-flex;align-items:center;gap:.5em;font-family:'DM Mono',monospace;font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(184,151,58,.4);padding:.5em 1.2em;text-decoration:none;border-bottom:none;transition:background .2s,border-color .2s;margin:.4rem 0;}
-.video-link:hover{background:rgba(184,151,58,.08);border-color:var(--gold);}
-.video-link::before{content:'▶';font-size:.6em;}
+/* ── EMBEDDED VIDEOS ── */
+.video-row{display:flex;gap:10px;flex-wrap:wrap;margin:.8rem 0 .4rem;}
+.video-embed{flex:0 0 auto;}
+.video-embed iframe{display:block;border:0;border-radius:2px;}
+.video-caption{font-family:'DM Mono',monospace;font-size:.52rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);opacity:.5;margin-top:.35rem;text-align:center;}
 
 ol{list-style:none;counter-reset:steps;margin:1rem 0 1.5rem;}
 ol li{counter-increment:steps;display:flex;gap:1rem;margin-bottom:.85rem;font-size:1.05rem;line-height:1.7;opacity:.8;}
@@ -62,6 +69,9 @@ ol li::before{content:counter(steps);font-family:'DM Mono',monospace;font-size:.
   .content{padding:2rem 1.5rem 4rem;}
   .breakdown{grid-template-columns:1fr;}
   .page-header{padding:2.5rem 1.5rem 1.5rem;}
+  .gallery{grid-template-columns:repeat(2,1fr);}
+  .video-row{gap:8px;}
+  .video-embed iframe{width:160px;height:90px;}
 }
 </style>
 </head>
@@ -73,20 +83,34 @@ ol li::before{content:counter(steps);font-family:'DM Mono',monospace;font-size:.
 
 <div class="page-header">
   <a href="./index.html" class="back">← Back to Shows</a>
-  <img src="logo_gold_smlr.jpg" alt="Tosh42"/>
+  <img src="logo_gold_smlr.jpg" alt="Tosh42" class="logo"/>
   <h1>Paul Tosh</h1>
   <h2>Technical Rider</h2>
+</div>
+
+<!-- PHOTO GALLERY -->
+<div class="gallery">
+  <img src="rig_1.jpg" alt="Rig setup at venue"/>
+  <img src="rig_2.jpg" alt="Piano on stage"/>
+  <img src="rig_3.jpg" alt="Stage setup"/>
+  <img src="rig_4.jpg" alt="Performance venue"/>
 </div>
 
 <div class="content">
 
   <!-- PRO SOUND -->
   <div class="section">
+    <img src="XR18_image.jpg" alt="XR18 iPad mixer screen" style="width:100%;max-width:480px;display:block;border-radius:3px;margin-bottom:1.4rem;filter:brightness(.85);"/>
     <p class="section-label">Audio</p>
     <h3 class="section-title">Pro Sound · iPad XR18 Mixer</h3>
     <p>Paul runs his own front-of-house mix via an XR18 digital mixer controlled from an iPad. This integrates with any existing PA or broadcast system.</p>
-    <a href="https://youtu.be/gypN57ojYnU" class="video-link" target="_blank">5 Min Sound Check — watch video</a>
     <p class="note">For any front of house engineer or TV transmission system.</p>
+    <div class="video-row">
+      <div class="video-embed">
+        <iframe width="200" height="113" src="https://www.youtube.com/embed/gypN57ojYnU" title="5 Min Sound Check" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <p class="video-caption">5 Min Sound Check</p>
+      </div>
+    </div>
   </div>
 
   <!-- SAVING SCENES -->
@@ -115,13 +139,12 @@ ol li::before{content:counter(steps);font-family:'DM Mono',monospace;font-size:.
 
   <div class="divider"></div>
 
-  <!-- ESSENTIAL REQUIREMENTS -->
+  <!-- ESSENTIAL — SETUP TIME -->
   <div class="section">
     <span class="essential-tag">Essential</span>
     <h3 class="section-title">Setup Time</h3>
     <p>A minimum of one hour setup time is required — an hour and a half is strongly preferred, especially for a first visit to a venue.</p>
-    <p>Other people being present during setup is absolutely fine.</p>
-    <p>Once everything is in place, the sound check itself takes five minutes maximum for that room.</p>
+    <p>Other people being present during setup is absolutely fine. Once everything is in place, the sound check itself takes five minutes maximum for that room.</p>
 
     <div class="breakdown">
       <div class="breakdown-item"><span>Rig setup</span><span>20 min</span></div>
@@ -130,16 +153,24 @@ ol li::before{content:counter(steps);font-family:'DM Mono',monospace;font-size:.
       <div class="breakdown-item"><span>Buffer</span><span>30 min</span></div>
     </div>
 
-    <a href="https://www.youtube.com/watch?v=r4clobaR-Gs" class="video-link" target="_blank">Time buffer — watch video</a><br/>
-    <a href="https://youtu.be/4RkbSGMLlJI" class="video-link" target="_blank">Full equipment tour — watch video</a>
+    <div class="video-row">
+      <div class="video-embed">
+        <iframe width="200" height="113" src="https://www.youtube.com/embed/r4clobaR-Gs" title="Time Buffer" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <p class="video-caption">Time Buffer</p>
+      </div>
+      <div class="video-embed">
+        <iframe width="200" height="113" src="https://www.youtube.com/embed/4RkbSGMLlJI" title="Full Equipment Tour" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <p class="video-caption">Full Equipment Tour</p>
+      </div>
+    </div>
   </div>
 
-  <!-- PIANO POSITIONING -->
+  <!-- ESSENTIAL — PIANO -->
   <div class="section">
     <span class="essential-tag">Essential</span>
     <h3 class="section-title">Piano Positioning</h3>
-    <p>The right-hand side of the piano — the curved side — should face towards the audience. Please refer to the photos for reference.</p>
-    <p>To protect the instrument, soft black Velcro is applied to the piano to secure performance equipment and prevent sliding or marking. It removes cleanly without leaving a trace and is virtually invisible during the show. You are welcome to leave it in place if further performances are anticipated.</p>
+    <p>The right-hand side of the piano — the curved side — should face towards the audience. Please refer to the photos above for reference.</p>
+    <p>To protect the instrument, soft black Velcro is applied to secure performance equipment and prevent sliding or marking. It removes cleanly without leaving a trace and is virtually invisible during the show. You are welcome to leave it in place if further performances are anticipated.</p>
   </div>
 
   <div class="divider"></div>
@@ -151,10 +182,19 @@ ol li::before{content:counter(steps);font-family:'DM Mono',monospace;font-size:.
     <p>Doors open to the performance area at least thirty minutes before showtime.</p>
     <p>Show duration of one hour, with allowance for a thirty-minute run-on.</p>
     <p>A piano that is in tune with all notes working — appreciated but not a requirement.</p>
-    <a href="https://youtu.be/1d6wbzriBqg" class="video-link" target="_blank">Piano notes — watch video</a>
     <p style="margin-top:1rem;">If any area of the room has no line of sight to the performance area, closing it off during the show is appreciated where possible.</p>
     <p>One public room available nearby.</p>
-    <a href="https://youtu.be/wUhzQEjWb9c" class="video-link" target="_blank">Public room — watch video</a>
+
+    <div class="video-row">
+      <div class="video-embed">
+        <iframe width="200" height="113" src="https://www.youtube.com/embed/1d6wbzriBqg" title="Piano Notes" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <p class="video-caption">Piano Notes</p>
+      </div>
+      <div class="video-embed">
+        <iframe width="200" height="113" src="https://www.youtube.com/embed/wUhzQEjWb9c" title="Public Room" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <p class="video-caption">Public Room</p>
+      </div>
+    </div>
   </div>
 
   <div class="divider"></div>
