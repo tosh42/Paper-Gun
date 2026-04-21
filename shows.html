@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Recent Shows — tosh42</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ── Design tokens ─────────────────────────────────────────────── */
+    :root {
+      --ink:      #1a1612;
+      --cream:    #f5f0e8;
+      --cream-mid:#ede7d9;
+      --gold:     #b8924a;
+      --gold-dim: #8a6a30;
+      --rule:     rgba(184,146,74,0.35);
+      --text:     #2e2720;
+      --muted:    #7a6e62;
+
+      --font-display: 'Cinzel', serif;
+      --font-body:    'Cormorant Garamond', serif;
+      --font-mono:    'DM Mono', monospace;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--cream);
+      color: var(--text);
+      font-family: var(--font-body);
+      font-size: 1.125rem;
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    /* ── Nav (matches existing site) ───────────────────────────────── */
+    nav {
+      background: var(--ink);
+      border-bottom: 1px solid var(--rule);
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-brand {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      letter-spacing: 0.18em;
+      color: var(--gold);
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-family: var(--font-display);
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--cream-mid);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active { color: var(--gold); }
+
+    /* ── Page header ────────────────────────────────────────────────── */
+    .page-header {
+      text-align: center;
+      padding: 5rem 2rem 3rem;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .page-header .eyebrow {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+
+    .page-header h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      color: var(--ink);
+      margin-bottom: 1.25rem;
+    }
+
+    .page-header p {
+      font-size: 1.2rem;
+      font-style: italic;
+      color: var(--muted);
+      max-width: 48ch;
+      margin: 0 auto;
+    }
+
+    /* ── Featured / most recent show ───────────────────────────────── */
+    .featured {
+      max-width: 900px;
+      margin: 4rem auto;
+      padding: 0 2rem;
+    }
+
+    .featured-label {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .featured-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--rule);
+    }
+
+    .video-wrapper {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border: 1px solid var(--rule);
+      background: var(--ink);
+    }
+
+    .video-wrapper iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      border: none;
+    }
+
+    /* Placeholder for when no iframe yet */
+    .video-placeholder {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      color: var(--muted);
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+    }
+
+    .video-placeholder svg {
+      opacity: 0.3;
+    }
+
+    .featured-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-top: 1.25rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--rule);
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .featured-venue {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      letter-spacing: 0.06em;
+      color: var(--ink);
+    }
+
+    .featured-date {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+    }
+
+    .featured-note {
+      margin-top: 0.75rem;
+      font-style: italic;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    /* ── Show log ────────────────────────────────────────────────────── */
+    .show-log {
+      max-width: 900px;
+      margin: 4rem auto 6rem;
+      padding: 0 2rem;
+    }
+
+    .section-label {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--rule);
+    }
+
+    .show-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 2rem;
+    }
+
+    .show-card {
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.2s;
+    }
+
+    .show-card:hover { transform: translateY(-3px); }
+
+    .thumb-wrap {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      background: var(--ink);
+      border: 1px solid var(--rule);
+      margin-bottom: 0.9rem;
+    }
+
+    .thumb-wrap img {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      opacity: 0.85;
+      transition: opacity 0.25s;
+    }
+
+    .show-card:hover .thumb-wrap img { opacity: 1; }
+
+    /* Placeholder thumb */
+    .thumb-placeholder {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--muted);
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.15em;
+      opacity: 0.4;
+    }
+
+    .play-badge {
+      position: absolute;
+      bottom: 0.6rem;
+      right: 0.6rem;
+      background: var(--gold);
+      color: var(--ink);
+      font-family: var(--font-mono);
+      font-size: 0.55rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 0.25rem 0.5rem;
+    }
+
+    .show-card-venue {
+      font-family: var(--font-display);
+      font-size: 0.9rem;
+      letter-spacing: 0.06em;
+      color: var(--ink);
+      margin-bottom: 0.25rem;
+    }
+
+    .show-card-date {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.12em;
+      color: var(--gold-dim);
+      margin-bottom: 0.4rem;
+    }
+
+    .show-card-note {
+      font-style: italic;
+      font-size: 0.95rem;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    /* ── Footer ─────────────────────────────────────────────────────── */
+    footer {
+      background: var(--ink);
+      border-top: 1px solid var(--rule);
+      padding: 2.5rem 2rem;
+      text-align: center;
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.18em;
+      color: var(--muted);
+      text-transform: uppercase;
+    }
+
+    footer a {
+      color: var(--gold);
+      text-decoration: none;
+    }
+
+    footer a:hover { text-decoration: underline; }
+
+    /* ── Mobile ─────────────────────────────────────────────────────── */
+    @media (max-width: 640px) {
+      nav { padding: 0 1rem; }
+      .nav-links { gap: 1.2rem; }
+      .nav-links a { font-size: 0.6rem; }
+      .page-header { padding: 3rem 1.25rem 2rem; }
+      .featured, .show-log { padding: 0 1.25rem; }
+      .featured { margin: 2.5rem auto; }
+      .show-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ── Nav ─────────────────────────────────────────────────────── -->
+  <nav>
+    <a class="nav-brand" href="index.html">tosh42</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="shows.html" class="active">Shows</a></li>
+      <li><a href="papergun.html">Paper Gun</a></li>
+      <li><a href="backstage.html">Backstage</a></li>
+      <li><a href="rider.html">Tech Rider</a></li>
+    </ul>
+  </nav>
+
+  <!-- ── Page header ─────────────────────────────────────────────── -->
+  <header class="page-header">
+    <p class="eyebrow">Live Performance</p>
+    <h1>Recent Shows</h1>
+    <p>Every week, a different room. Ten minutes of what happened.</p>
+  </header>
+
+  <!-- ── Most recent show (featured) ────────────────────────────── -->
+  <section class="featured">
+    <div class="featured-label">Most Recent</div>
+
+    <div class="video-wrapper">
+      <!--
+        SWAP IN YOUR YOUTUBE EMBED:
+        Replace this placeholder with:
+        <iframe src="https://www.youtube.com/embed/VIDEO_ID"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+      -->
+      <div class="video-placeholder">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+          <polygon points="5 3 19 12 5 21 5 3"/>
+        </svg>
+        <span>Paste YouTube embed here</span>
+      </div>
+    </div>
+
+    <div class="featured-meta">
+      <span class="featured-venue">The Venue Name — City, State</span>
+      <span class="featured-date">Month DD, YYYY</span>
+    </div>
+    <p class="featured-note">One sentence about this show — what happened, what made it distinct.</p>
+  </section>
+
+  <!-- ── Show log ────────────────────────────────────────────────── -->
+  <section class="show-log">
+    <div class="section-label">All Shows</div>
+
+    <div class="show-grid">
+
+      <!-- Card template — duplicate and fill in for each show -->
+
+      <!-- SHOW 1 -->
+      <a class="show-card" href="https://youtube.com/watch?v=PLACEHOLDER" target="_blank" rel="noopener">
+        <div class="thumb-wrap">
+          <!--
+            OPTION A — YouTube thumbnail (auto-generated, no upload needed):
+            <img src="https://img.youtube.com/vi/VIDEO_ID/mqdefault.jpg" alt="Show at Venue Name" />
+
+            OPTION B — Your own photo:
+            <img src="img/shows/show-2025-04.jpg" alt="Show at Venue Name" />
+          -->
+          <div class="thumb-placeholder">thumbnail</div>
+          <span class="play-badge">▶ Highlight</span>
+        </div>
+        <div class="show-card-venue">Venue Name — City, State</div>
+        <div class="show-card-date">Month DD, YYYY</div>
+        <p class="show-card-note">One line about this show.</p>
+      </a>
+
+      <!-- SHOW 2 -->
+      <a class="show-card" href="https://youtube.com/watch?v=PLACEHOLDER" target="_blank" rel="noopener">
+        <div class="thumb-wrap">
+          <div class="thumb-placeholder">thumbnail</div>
+          <span class="play-badge">▶ Highlight</span>
+        </div>
+        <div class="show-card-venue">Venue Name — City, State</div>
+        <div class="show-card-date">Month DD, YYYY</div>
+        <p class="show-card-note">One line about this show.</p>
+      </a>
+
+      <!-- SHOW 3 -->
+      <a class="show-card" href="https://youtube.com/watch?v=PLACEHOLDER" target="_blank" rel="noopener">
+        <div class="thumb-wrap">
+          <div class="thumb-placeholder">thumbnail</div>
+          <span class="play-badge">▶ Highlight</span>
+        </div>
+        <div class="show-card-venue">Venue Name — City, State</div>
+        <div class="show-card-date">Month DD, YYYY</div>
+        <p class="show-card-note">One line about this show.</p>
+      </a>
+
+      <!-- SHOW 4 -->
+      <a class="show-card" href="https://youtube.com/watch?v=PLACEHOLDER" target="_blank" rel="noopener">
+        <div class="thumb-wrap">
+          <div class="thumb-placeholder">thumbnail</div>
+          <span class="play-badge">▶ Highlight</span>
+        </div>
+        <div class="show-card-venue">Venue Name — City, State</div>
+        <div class="show-card-date">Month DD, YYYY</div>
+        <p class="show-card-note">One line about this show.</p>
+      </a>
+
+      <!-- SHOW 5 -->
+      <a class="show-card" href="https://youtube.com/watch?v=PLACEHOLDER" target="_blank" rel="noopener">
+        <div class="thumb-wrap">
+          <div class="thumb-placeholder">thumbnail</div>
+          <span class="play-badge">▶ Highlight</span>
+        </div>
+        <div class="show-card-venue">Venue Name — City, State</div>
+        <div class="show-card-date">Month DD, YYYY</div>
+        <p class="show-card-note">One line about this show.</p>
+      </a>
+
+      <!-- SHOW 6 -->
+      <a class="show-card" href="https://youtube.com/watch?v=PLACEHOLDER" target="_blank" rel="noopener">
+        <div class="thumb-wrap">
+          <div class="thumb-placeholder">thumbnail</div>
+          <span class="play-badge">▶ Highlight</span>
+        </div>
+        <div class="show-card-venue">Venue Name — City, State</div>
+        <div class="show-card-date">Month DD, YYYY</div>
+        <p class="show-card-note">One line about this show.</p>
+      </a>
+
+    </div><!-- /.show-grid -->
+  </section>
+
+  <!-- ── Footer ──────────────────────────────────────────────────── -->
+  <footer>
+    <p>
+      <a href="index.html">tosh42.com</a>
+      &nbsp;·&nbsp;
+      Booking: <a href="mailto:bookings@tosh42.com">bookings@tosh42.com</a>
+    </p>
+  </footer>
+
+</body>
+</html>
