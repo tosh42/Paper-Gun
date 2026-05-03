@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Testimonials — Paul Tosh</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --ink:#0d0b08;
+  --cream:#f5f0e8;
+  --gold:#b8973a;
+  --gold-l:#d4b05a;
+  --ash:#2a2520;
+  --border:rgba(184,151,58,.18);
+  --border-m:rgba(184,151,58,.12);
+}
+html,body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',Georgia,serif;overflow-x:hidden;}
+
+a{color:var(--gold);text-decoration:none;}
+a:hover{color:var(--gold-l);}
+
+/* ── TOP BAR ── */
+#top-bar{
+  background:rgba(13,11,8,.97);
+  border-bottom:1px solid var(--border);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:.75rem 2rem;
+  position:sticky;top:0;z-index:100;
+}
+#top-bar a.back{font-family:'DM Mono',monospace;font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:var(--cream);opacity:.45;transition:opacity .2s;}
+#top-bar a.back:hover{opacity:1;color:var(--gold);}
+#top-bar a.book{background:var(--gold);color:var(--ink);font-family:'DM Mono',monospace;font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;padding:.5em 1.5em;transition:background .2s;}
+#top-bar a.book:hover{background:var(--gold-l);}
+
+/* ── HERO ── */
+#hero{
+  text-align:center;
+  padding:5rem 2rem 3.5rem;
+  border-bottom:1px solid var(--border);
+}
+#hero .eyebrow{font-family:'DM Mono',monospace;font-size:.6rem;letter-spacing:.4em;text-transform:uppercase;color:var(--gold);opacity:.6;margin-bottom:1.5rem;}
+#hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(3rem,8vw,6rem);font-weight:300;line-height:.95;color:var(--cream);margin-bottom:.5rem;}
+#hero h1 em{font-style:italic;color:var(--gold-l);}
+#hero .note{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(.95rem,1.6vw,1.1rem);color:var(--cream);opacity:.5;max-width:520px;margin:1.2rem auto 0;line-height:1.75;}
+
+/* ── SECTION WRAPPER ── */
+.wrap{max-width:900px;margin:0 auto;padding:4rem 2rem;}
+.rule{max-width:600px;margin:0 auto;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:.25;}
+
+/* ── SECTION LABELS ── */
+.sec-label{font-family:'DM Mono',monospace;font-size:.58rem;letter-spacing:.38em;text-transform:uppercase;color:var(--gold);opacity:.6;margin-bottom:1rem;}
+.sec-title{font-family:'Cormorant Garamond',serif;font-size:clamp(1.6rem,3.5vw,2.4rem);font-weight:300;color:var(--cream);line-height:1.1;margin-bottom:2.5rem;}
+.sec-title em{font-style:italic;color:var(--gold-l);}
+
+/* ── VIDEO ── */
+.video-wrap{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;background:#000;border:1px solid var(--border);}
+.video-wrap iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none;}
+.video-caption{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.88rem;color:var(--cream);opacity:.4;text-align:center;margin-top:.8rem;margin-bottom:2.5rem;}
+
+/* ── QUOTES OF NOTE ── */
+#quotes-of-note{background:var(--ash);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+.quotes-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;}
+.quote-cell{padding:2.2rem 2rem;border-right:1px solid var(--border-m);border-bottom:1px solid var(--border-m);}
+.quote-cell:nth-child(3n){border-right:none;}
+.quote-cell:nth-last-child(-n+3){border-bottom:none;}
+.quote-cell blockquote{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(.95rem,1.4vw,1.08rem);color:var(--cream);opacity:.88;line-height:1.7;margin-bottom:.9rem;}
+.quote-cell cite{font-family:'DM Mono',monospace;font-size:.56rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);opacity:.65;font-style:normal;display:block;line-height:1.7;}
+
+/* ── SHOW TESTIMONIALS ── */
+.show-block{margin-bottom:3rem;}
+.show-block-label{display:flex;align-items:center;gap:1.2rem;margin-bottom:1.8rem;}
+.show-block-label::before,.show-block-label::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,var(--gold),transparent);}
+.show-block-label::after{background:linear-gradient(90deg,transparent,var(--gold));}
+.show-block-label span{font-family:'DM Mono',monospace;font-size:.56rem;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);opacity:.7;white-space:nowrap;}
+
+/* Horizontal scrolling row */
+.quotes-row{display:flex;gap:1.2rem;overflow-x:auto;padding-bottom:1rem;scrollbar-width:thin;scrollbar-color:rgba(184,151,58,.3) transparent;}
+.quotes-row::-webkit-scrollbar{height:3px;}
+.quotes-row::-webkit-scrollbar-track{background:transparent;}
+.quotes-row::-webkit-scrollbar-thumb{background:rgba(184,151,58,.3);border-radius:2px;}
+
+.quote-card{flex-shrink:0;width:260px;padding:1.6rem 1.5rem;border:1px solid var(--border-m);background:rgba(255,255,255,.025);}
+.quote-card blockquote{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1rem;color:var(--cream);opacity:.85;line-height:1.7;margin-bottom:.8rem;}
+.quote-card cite{font-family:'DM Mono',monospace;font-size:.54rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);opacity:.55;font-style:normal;display:block;}
+
+/* ── PAPER GUN QUOTES — vertical stacked ── */
+.quotes-stack{display:flex;flex-direction:column;gap:0;}
+.quote-stack-item{padding:1.6rem 0;border-bottom:1px solid var(--border-m);display:grid;grid-template-columns:3rem 1fr;gap:1rem;align-items:start;}
+.quote-stack-item:last-child{border-bottom:none;}
+.stack-glyph{font-family:'Cormorant Garamond',serif;font-size:2.5rem;color:var(--gold);opacity:.15;line-height:1;padding-top:.1rem;}
+.stack-body blockquote{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.05rem;color:var(--cream);opacity:.88;line-height:1.7;margin-bottom:.5rem;}
+.stack-body cite{font-family:'DM Mono',monospace;font-size:.55rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);opacity:.55;font-style:normal;}
+
+/* ── BOTTOM CTA ── */
+#bottom-cta{border-top:1px solid var(--border);padding:3.5rem 2rem;text-align:center;display:flex;flex-direction:column;align-items:center;gap:1rem;}
+#bottom-cta .cta-label{font-family:'DM Mono',monospace;font-size:.6rem;letter-spacing:.38em;text-transform:uppercase;color:var(--gold);opacity:.55;}
+#bottom-cta h3{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:clamp(1.3rem,3vw,1.9rem);color:var(--cream);line-height:1.4;}
+#bottom-cta a.book-btn{background:var(--gold);color:var(--ink);font-family:'DM Mono',monospace;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;padding:.8em 2.4em;margin-top:.4rem;transition:background .2s;}
+#bottom-cta a.book-btn:hover{background:var(--gold-l);}
+#bottom-cta a.rider{font-family:'DM Mono',monospace;font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);opacity:.45;border-bottom:1px solid rgba(184,151,58,.2);padding-bottom:.1rem;transition:opacity .2s;}
+#bottom-cta a.rider:hover{opacity:.85;}
+
+@media(max-width:680px){
+  .quotes-grid{grid-template-columns:1fr;}
+  .quote-cell{border-right:none;border-bottom:1px solid var(--border-m);}
+  .quote-cell:last-child{border-bottom:none;}
+  #top-bar{flex-wrap:wrap;gap:.6rem;justify-content:center;}
+  .quote-card{width:230px;}
+}
+@media(max-width:480px){
+  .quotes-grid{grid-template-columns:1fr;}
+  .wrap{padding:3rem 1.2rem;}
+}
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div id="top-bar">
+  <a href="./index.html" class="back">← Paul Tosh</a>
+  <a href="/cdn-cgi/l/email-protection#8ceee3e3e7e5e2ebffccf8e3ffe4b8bea2efe3e1" class="book">◆ Book Now</a>
+</div>
+
+<!-- HERO -->
+<div id="hero">
+  <p class="eyebrow">Paul Tosh · What People Say</p>
+  <h1>Testi<em>monials</em></h1>
+  <p class="note">From venues, critics, fellow artists, and audiences — across two decades and two shows.</p>
+</div>
+
+<!-- ═══════════ VIDEO I ═══════════ -->
+<div class="wrap">
+  <p class="sec-label">Video</p>
+  <h2 class="sec-title">Hear it from the <em>audience</em></h2>
+
+  <div class="video-wrap">
+    <iframe src="https://www.youtube.com/embed/HPZ5r_L_7nE"
+      title="Paul Tosh — Testimonials I"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen></iframe>
+  </div>
+  <p class="video-caption">As seen on the landing page</p>
+
+  <div class="video-wrap">
+    <iframe src="https://www.youtube.com/embed/YJKWmvl4cks"
+      title="Paul Tosh — More Testimonials"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen></iframe>
+  </div>
+</div>
+
+<div class="rule"></div>
+
+<!-- ═══════════ QUOTES OF NOTE ═══════════ -->
+<section id="quotes-of-note">
+  <div class="wrap" style="padding-bottom:0;">
+    <p class="sec-label">Quotes of Note</p>
+    <h2 class="sec-title">In their own <em>words</em></h2>
+  </div>
+  <div class="quotes-grid">
+
+    <div class="quote-cell">
+      <blockquote>"With an unbeatable repertoire of classics and originals, Paul is the very embodiment of the term crooner. Knows his way round the ivories better than most."</blockquote>
+      <cite>Alex Clare<br>Island Records artist</cite>
+    </div>
+
+    <div class="quote-cell">
+      <blockquote>"You sound great."</blockquote>
+      <cite>Crystal Taliefero<br>The Billy Joel Band</cite>
+    </div>
+
+    <div class="quote-cell">
+      <blockquote>"Check this guy out — it's a kiddush Hashem."</blockquote>
+      <cite>Ben Shapiro<br>The Daily Wire</cite>
+    </div>
+
+    <div class="quote-cell">
+      <blockquote>"Enjoy a double shot of spontaneous musicality and humour — neat!"</blockquote>
+      <cite>Avraham Rosenblum<br>The Diaspora Yeshiva Band</cite>
+    </div>
+
+    <div class="quote-cell">
+      <blockquote>"Bar sales are way up whenever Paul plays. A real presence with a quality style."</blockquote>
+      <cite>Andrew Hollett<br>GM, Corus Hotel Hyde Park</cite>
+    </div>
+
+    <div class="quote-cell">
+      <blockquote>"Paul is a master songwriter, tying up lyrics and music together to create a unique and spiritual bond. His performance is filled with love and joy and fun."</blockquote>
+      <cite>Art Lisker<br>Executive Director, Lisker Music Foundation</cite>
+    </div>
+
+  </div>
+</section>
+
+<div class="rule"></div>
+
+<!-- ═══════════ SONG IS THE PLAY TESTIMONIALS ═══════════ -->
+<div class="wrap">
+
+  <div class="show-block">
+    <div class="show-block-label"><span>The Song Is The Play</span></div>
+
+    <div class="quotes-row">
+
+      <div class="quote-card">
+        <blockquote>"I think I've listened to that song a hundred times — but that might be the first time I've actually heard it."</blockquote>
+        <cite>Corus Hotel, London</cite>
+      </div>
+
+      <div class="quote-card">
+        <blockquote>"You took all the songs that I know — I know all the words. And you just changed them into something so beautiful."</blockquote>
+        <cite>Tudor Heights, Maryland</cite>
+      </div>
+
+      <div class="quote-card">
+        <blockquote>"The spoken word stuff sounds a little bit like Bob Dylan and David Bowie combined."</blockquote>
+        <cite>Fox Music Store, Charleston</cite>
+      </div>
+
+      <div class="quote-card">
+        <blockquote>"Your voice was the commanding thing — the piano just follows you. Normally people follow the piano, they play and sing."</blockquote>
+        <cite>Brightview, Maryland</cite>
+      </div>
+
+    </div>
+  </div>
+
+<!-- ═══════════ PAPER GUN TESTIMONIALS ═══════════ -->
+  <div class="show-block" style="margin-top:3rem;">
+    <div class="show-block-label"><span>Paper Gun</span></div>
+
+    <div class="quotes-stack">
+
+      <div class="quote-stack-item">
+        <div class="stack-glyph">"</div>
+        <div class="stack-body">
+          <blockquote>"Last night made me feel like the pre-WWII era of the arts in society! Loved it."</blockquote>
+          <cite>Fox Family Home, Charleston</cite>
+        </div>
+      </div>
+
+      <div class="quote-stack-item">
+        <div class="stack-glyph">"</div>
+        <div class="stack-body">
+          <blockquote>"You're an artist in your own right."</blockquote>
+          <cite>The Bristal, New York</cite>
+        </div>
+      </div>
+
+      <div class="quote-stack-item">
+        <div class="stack-glyph">"</div>
+        <div class="stack-body">
+          <blockquote>"The way you just blended everything — you were very intriguing, because it was more of a show, you know."</blockquote>
+          <cite>Devonshire, Florida</cite>
+        </div>
+      </div>
+
+      <div class="quote-stack-item">
+        <div class="stack-glyph">"</div>
+        <div class="stack-body">
+          <blockquote>"This was the most wonderful music moment in my life."</blockquote>
+          <cite>Harmony, Savannah</cite>
+        </div>
+      </div>
+
+      <div class="quote-stack-item">
+        <div class="stack-glyph">"</div>
+        <div class="stack-body">
+          <blockquote>"There's singers and performers — and you're a performer, an entertainer."</blockquote>
+          <cite>Paul's Run, Philadelphia</cite>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<!-- ═══════════ BOTTOM CTA ═══════════ -->
+<div id="bottom-cta">
+  <p class="cta-label">Bookings &amp; Enquiries</p>
+  <h3>Bring Paul Tosh to your venue</h3>
+  <a href="/cdn-cgi/l/email-protection#8ceee3e3e7e5e2ebffccf8e3ffe4b8bea2efe3e1" class="book-btn">◆ Book Now</a>
+  <a href="./rider.html" class="rider">Technical Rider →</a>
+</div>
+
+<a href="https://tosh42.com" title="Home — tosh42.com" style="position:fixed;bottom:1.2rem;right:1.2rem;z-index:2147483647;background:#0d0b08;border:1px solid rgba(184,151,58,.5);border-radius:50%;width:54px;height:54px;display:flex;align-items:center;justify-content:center;text-decoration:none;opacity:.88;transition:opacity .2s;font-family:monospace;font-size:.42rem;letter-spacing:.08em;text-transform:uppercase;color:#b8973a;text-align:center;line-height:1.3;box-shadow:0 2px 12px rgba(0,0,0,.7);" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity='.88'">tosh<br>42</a>
+
+</body>
+</html>
