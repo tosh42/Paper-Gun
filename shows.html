@@ -349,7 +349,8 @@
       .page-header { padding: 3rem 1.25rem 2rem; }
       .featured, .show-log { padding: 0 1.25rem; }
       .featured { margin: 2.5rem auto; }
-      .show-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .show-grid { grid-template-columns: 1fr !important; gap: 2.5rem; }
+      .show-log div[style*="inline-grid"] { width: 100% !important; }
     }
   </style>
 </head>
@@ -414,6 +415,57 @@
     <p style="font-family:var(--font-mono);font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-top:3rem;opacity:.55;">More shows added as they happen ·  <a href="https://www.youtube.com/@ToshForTwo" target="_blank" style="color:var(--gold);text-decoration:none;">Subscribe on YouTube →</a></p>
   </section>
 
+
+  <!-- ── Gig Highlights ─────────────────────────────────────────── -->
+  <section class="show-log" style="margin-top:0;">
+    <div class="section-label">Various Show Highlights Etc.</div>
+
+    <div style="display:inline-grid;grid-template-columns:1fr 1fr;gap:6px;width:50%;">
+
+      <!-- Paper Gun row -->
+      <div>
+        <div style="font-family:var(--font-mono);font-size:.52rem;letter-spacing:.15em;text-transform:uppercase;color:var(--gold-dim);margin-bottom:4px;opacity:.7;">Paper Gun · 1</div>
+        <div class="video-wrapper" style="border:1px solid var(--rule);">
+          <iframe src="https://www.youtube.com/embed/i8_vqb79R4M"
+            title="Paper Gun — Part 1"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+        </div>
+      </div>
+
+      <div>
+        <div style="font-family:var(--font-mono);font-size:.52rem;letter-spacing:.15em;text-transform:uppercase;color:var(--gold-dim);margin-bottom:4px;opacity:.7;">Paper Gun · 2</div>
+        <div class="video-wrapper" style="border:1px solid var(--rule);">
+          <iframe src="https://www.youtube.com/embed/R9JMT5O8eFA"
+            title="Paper Gun — Part 2"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+        </div>
+      </div>
+
+      <!-- Song Is The Play row -->
+      <div style="margin-top:.6rem;">
+        <div style="font-family:var(--font-mono);font-size:.52rem;letter-spacing:.15em;text-transform:uppercase;color:var(--gold-dim);margin-bottom:4px;opacity:.7;">The Song Is The Play · 1</div>
+        <div class="video-wrapper" style="border:1px solid var(--rule);">
+          <iframe src="https://www.youtube.com/embed/IRY8uiK_Vuc"
+            title="The Song Is The Play — Part 1"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+        </div>
+      </div>
+
+      <div style="margin-top:.6rem;">
+        <div style="font-family:var(--font-mono);font-size:.52rem;letter-spacing:.15em;text-transform:uppercase;color:var(--gold-dim);margin-bottom:4px;opacity:.7;">The Song Is The Play · 2</div>
+        <div class="video-wrapper" style="border:1px solid var(--rule);">
+          <iframe src="https://www.youtube.com/embed/r47bXPy_p8g"
+            title="The Song Is The Play — Part 2"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+        </div>
+      </div>
+
+    </div>
+  </section>
   <!-- ── Footer ──────────────────────────────────────────────────── -->
   <footer>
     <p>
