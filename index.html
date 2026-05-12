@@ -194,21 +194,22 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
 .photo-strip img{
   flex:1;
   min-width:0;
-  height:280px;
-  object-fit:cover;
-  object-position:center top;
+  height:320px;
+  object-fit:contain;
+  object-position:center bottom;
+  background:var(--ink);
   display:block;
-  filter:brightness(.72) sepia(.15);
+  filter:brightness(.82) sepia(.12);
   transition:filter .4s;
 }
-.photo-strip img:hover{filter:brightness(.88) sepia(.05);}
-.photo-strip.duo img{height:320px;}
-.photo-strip.trio img{height:260px;}
+.photo-strip img:hover{filter:brightness(.95) sepia(.04);}
+.photo-strip.duo img{height:360px;}
+.photo-strip.trio img{height:300px;}
 
 @media(max-width:680px){
-  .photo-strip img{height:180px;}
-  .photo-strip.duo img{height:200px;}
-  .photo-strip.trio img{height:160px;}
+  .photo-strip img{height:220px;}
+  .photo-strip.duo img{height:240px;}
+  .photo-strip.trio img{height:200px;}
 }
 </style>
 </head>
@@ -263,7 +264,7 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
 <!-- PHOTO STRIP 1 -->
 <div class="photo-strip duo">
   <img src="AJimagecream.png" alt="Paul Tosh at the piano"/>
-  <img src="image008_edited_sepia.png" alt="Paul Tosh performing"/>
+  <img src="image008_editedsepia.png" alt="Paul Tosh performing"/>
 </div>
 
 
@@ -323,7 +324,7 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
 <!-- PHOTO STRIP 2 -->
 <div class="photo-strip trio">
   <img src="ufunnycopy.png" alt="Paul Tosh at white piano"/>
-  <img src="fish_shot_edited.png" alt="Paul Tosh in cowboy hat"/>
+  <img src="fishshot_edited.png" alt="Paul Tosh in cowboy hat"/>
   <img src="M4_edited.png" alt="Paul Tosh singing on stage"/>
 </div>
 
