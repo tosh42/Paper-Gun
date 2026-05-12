@@ -53,7 +53,7 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
 .panel-sitp{padding-top:4rem;}
 .panel-pg{border-right:1px solid rgba(184,151,58,.15);}
 
-.panel-inner{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;text-align:center;max-width:380px;}
+.panel-inner{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;text-align:center;max-width:380px;justify-content:flex-start;}
 .panel-label{font-family:'DM Mono',monospace;font-size:.6rem;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);opacity:.7;margin-bottom:1.2rem;}
 .panel-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.8rem,6vw,5rem);font-weight:300;line-height:.95;color:var(--cream);margin-bottom:.3em;}
 .panel-title em{font-style:italic;color:var(--gold-l);}
@@ -210,6 +210,7 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
   .photo-strip img{height:220px;}
   .photo-strip.duo img{height:240px;}
   .photo-strip.trio img{height:200px;}
+  #strip-3-left{height:175px;}
 }
 
 /* Mobile sepia splits */
@@ -318,7 +319,7 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
 
 
 
-        <a href="./sitp.html" class="panel-btn" style="margin-top:2.4rem;">Enter →</a>
+        <a href="./sitp.html" class="panel-btn" style="margin-top:8rem;">Enter →</a>
 
         <div class="t-for-two">
           <p class="t-for-two-label">◇ T for Two</p>
@@ -376,7 +377,7 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
 
 <!-- PHOTO STRIP 3 -->
 <div class="photo-strip trio">
-  <img src="DeccutimgTomW.png" alt="Paul Tosh at the Pramberger"/>
+  <img src="DeccutimgTomW.png" alt="Paul Tosh at the Pramberger" id="strip-3-left"/>
   <img src="kilt.png" alt="Paul Tosh in kilt"/>
   <img src="Savan6_edited.png" alt="Paul Tosh"/>
 </div>
