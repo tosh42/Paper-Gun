@@ -211,6 +211,14 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
   .photo-strip.duo img{height:240px;}
   .photo-strip.trio img{height:200px;}
 }
+
+/* Mobile sepia splits */
+.mobile-sepia{display:none;}
+@media(max-width:680px){
+  #strip-presplit{display:none;}
+  .mobile-sepia{display:block;width:100%;background:var(--ink);}
+  .mobile-sepia img{width:100%;height:220px;object-fit:contain;object-position:center bottom;background:var(--ink);display:block;filter:brightness(.82) sepia(.12);}
+}
 </style>
 </head>
 <body>
@@ -262,9 +270,10 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
 </div>
 
 <!-- PHOTO STRIP 1 -->
-<div class="photo-strip duo">
-  <img src="AJimagecream.png" alt="Paul Tosh at the piano"/>
-  <img src="image008_editedsepia.png" alt="Paul Tosh performing"/>
+<div class="photo-strip trio" id="strip-presplit">
+  <img src="AJimagecream.png" id="sepia-keys" alt="Paul Tosh at the piano"/>
+  <img src="image008_editedsepia.png" alt="Paul Tosh performing" id="sepia-arms"/>
+  <img src="p4.jpg" alt="Paul Tosh at the piano"/>
 </div>
 
 
@@ -272,6 +281,7 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
 <div class="split">
 
   <!-- PAPER GUN -->
+<div class="mobile-sepia"><img src="AJimagecream.png" alt="Paul Tosh at the piano"/></div>
   <div class="panel panel-pg">
     <div class="panel-bg"></div>
     <div class="panel-inner">
@@ -296,6 +306,7 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
   </div>
 
   <!-- THE SONG IS THE PLAY -->
+<div class="mobile-sepia"><img src="image008_editedsepia.png" alt="Paul Tosh performing"/></div>
   <div class="panel panel-sitp" style="cursor:default;">
     <div class="panel-bg"></div>
     <div class="sitp-wrapper">
@@ -323,9 +334,9 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
 
 <!-- PHOTO STRIP 2 -->
 <div class="photo-strip trio">
-  <img src="ufunnycopy.png" alt="Paul Tosh at white piano"/>
   <img src="fishshot_edited.png" alt="Paul Tosh in cowboy hat"/>
   <img src="M4_edited.png" alt="Paul Tosh singing on stage"/>
+  <img src="ufunnycopy.png" alt="Paul Tosh at white piano"/>
 </div>
 
 
@@ -365,9 +376,14 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
 
 <!-- PHOTO STRIP 3 -->
 <div class="photo-strip trio">
-  <img src="DeccutimgTomW.png" alt="Paul Tosh at the Pramberger"/>
+  <img src="DeccutimgTomW.png" alt="Paul Tosh at the Pramberger" style="height:200px;align-self:flex-end;"/>
   <img src="kilt.png" alt="Paul Tosh in kilt"/>
   <img src="Savan6_edited.png" alt="Paul Tosh"/>
+</div>
+
+<!-- CYBERTRUCK -->
+<div style="width:100%;background:var(--ink);padding:2.5rem 2rem;border-top:1px solid var(--border);display:flex;justify-content:center;">
+  <img src="WhiteTrk.jpg" alt="CyberPhoenix — Tosh42 Live Piano Entertainment" style="max-width:860px;width:100%;display:block;opacity:.88;filter:brightness(.9);"/>
 </div>
 
 
