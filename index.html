@@ -377,7 +377,14 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
   <div class="taster-block">
     <p class="extra-video-label">◇ A Taster</p>
     <p class="taster-desc">The 1-minute variety playlist — covers and originals</p>
-    <a href="https://www.youtube.com/playlist?list=PLSnxgBWzoUrtwN_TZfc6gu8gzaQsP53iP" target="_blank" rel="noopener" class="taster-btn">Watch the Playlist →</a>
+    <div style="position:relative;width:100%;max-width:640px;aspect-ratio:16/9;margin:1rem auto 0;border:1px solid var(--border);overflow:hidden;">
+      <iframe style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
+        src="https://www.youtube.com/embed/videoseries?list=PLSnxgBWzoUrtwN_TZfc6gu8gzaQsP53iP"
+        title="A Taster — Covers and Originals"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
+    </div>
+    <a href="https://www.youtube.com/playlist?list=PLSnxgBWzoUrtwN_TZfc6gu8gzaQsP53iP" target="_blank" rel="noopener" style="font-family:'DM Mono',monospace;font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);opacity:.55;text-decoration:none;margin-top:.8rem;display:inline-block;border-bottom:1px solid rgba(184,151,58,.25);padding-bottom:.1rem;">Open full playlist on YouTube →</a>
   </div>
 
 </div>
