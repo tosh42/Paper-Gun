@@ -276,6 +276,22 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
       <iframe src="https://www.youtube.com/embed/bV0yRjYodvI" title="Paul Tosh" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
   </div>
+
+  <!-- POSTERS UNDER VIDEOS -->
+  <div style="display:flex;gap:1.2rem;width:100%;max-width:900px;margin-top:1.6rem;align-items:flex-start;justify-content:center;flex-wrap:wrap;">
+    <div style="flex:1;min-width:220px;max-width:440px;text-align:center;">
+      <img src="PGtophalfposter.jpg" alt="Paper Gun Poster" style="width:100%;display:block;box-shadow:0 4px 30px rgba(0,0,0,.6);cursor:zoom-in;opacity:.92;" onclick="document.getElementById('pg-lightbox').style.display='flex';"/>
+      <div id="pg-lightbox" onclick="this.style.display='none';" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:9999;align-items:center;justify-content:center;cursor:zoom-out;">
+        <img src="PGtophalfposter.jpg" alt="Paper Gun Poster" style="max-width:95vw;max-height:95vh;object-fit:contain;box-shadow:0 8px 60px rgba(0,0,0,.8);"/>
+      </div>
+    </div>
+    <div style="flex:1;min-width:220px;max-width:440px;text-align:center;">
+      <img src="VibratoJune14.jpg" alt="The Song Is The Play — Vibrato Grill Jazz" style="width:100%;display:block;box-shadow:0 4px 30px rgba(0,0,0,.6);cursor:zoom-in;opacity:.92;" onclick="document.getElementById('vibrato-lightbox').style.display='flex';"/>
+      <div id="vibrato-lightbox" onclick="this.style.display='none';" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:9999;align-items:center;justify-content:center;cursor:zoom-out;">
+        <img src="VibratoJune14.jpg" alt="The Song Is The Play Poster" style="max-width:95vw;max-height:95vh;object-fit:contain;box-shadow:0 8px 60px rgba(0,0,0,.8);"/>
+      </div>
+    </div>
+  </div>
   <div id="poster-intro">
     <p>Where the theme demands it, I supplement the cover material with chosen original songs (and vice versa) — songs that illuminate the same terrain from a different angle. The theatrical handling of cover songs is among my core performing strengths, honed across years of The Song Is The Play. The two bodies of work inform each other. This means there will always be an element of surprise in the running order — the show breathes differently each time. It is a show with both cultural relevance and performance depth.</p>
   </div>
@@ -312,12 +328,6 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
       </div>
 
       <p style="font-family:'DM Mono',monospace;font-size:.55rem;letter-spacing:.2em;color:var(--gold);opacity:.5;margin-top:1.4rem;text-transform:uppercase;">From $2,400</p>
-      <img src="PGtophalfposter.jpg" alt="Paper Gun" style="width:100%;max-width:340px;margin-top:1.6rem;display:block;box-shadow:0 4px 30px rgba(0,0,0,.5);opacity:.92;cursor:zoom-in;" onclick="document.getElementById('pg-lightbox').style.display='flex';"/>
-
-      <!-- LIGHTBOX -->
-      <div id="pg-lightbox" onclick="this.style.display='none';" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:9999;align-items:center;justify-content:center;cursor:zoom-out;">
-        <img src="PGtophalfposter.jpg" alt="Paper Gun Poster" style="max-width:95vw;max-height:95vh;object-fit:contain;box-shadow:0 8px 60px rgba(0,0,0,.8);"/>
-      </div>
     </div>
   </div>
 
@@ -342,7 +352,6 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
         </div>
 
         <p style="font-family:'DM Mono',monospace;font-size:.55rem;letter-spacing:.2em;color:var(--gold);opacity:.5;margin-top:1.4rem;text-transform:uppercase;">From $1,200</p>
-        <img src="VibratoJune14.jpg" alt="The Song Is The Play — Vibrato Grill Jazz" style="width:100%;max-width:340px;margin-top:1.6rem;display:block;box-shadow:0 4px 30px rgba(0,0,0,.5);opacity:.92;"/>
       </div>
     </div>
   </div>
