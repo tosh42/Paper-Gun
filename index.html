@@ -267,7 +267,7 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
 
 <!-- POSTER + INTRO TEXT -->
 <div id="poster-section">
-  <p style="font-family:'DM Mono',monospace;font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;color:var(--cream);opacity:.65;text-align:center;margin-bottom:1.2rem;">Two shows · One performer · Available across the US &amp; Canada</p>
+  <p style="font-family:'DM Mono',monospace;font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;color:var(--cream);opacity:.65;text-align:center;margin-bottom:1.2rem;">Two shows · One pair of boots · Available across the US &amp; Canada</p>
   <div class="video-duo">
     <div class="vid-wrap vid-b">
       <iframe src="https://www.youtube.com/embed/wnR5_6QIcpA" title="Paul Tosh — Paper Gun" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -300,7 +300,6 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
       <h2 class="panel-title">Paper<br/><em>Gun</em></h2>
       <p class="panel-sub">This is mine, but you can have it.</p>
       <p class="panel-desc">We have as much right to our truth as anyone has to their behavior.</p>
-      <p class="panel-desc" style="margin-top:.6rem;font-style:italic;opacity:.8;">"... this is mine but you can have it"</p>
       <p class="panel-desc" style="margin-top:.8rem;">A therapeutic show of songs about a particular kind of relationship a lot of people recognize from their lives. One man plays both sides of himself; the wound and the witness.</p>
 
       <p class="panel-desc" style="margin-top:.8rem;font-style:italic;opacity:.7;">"A three act paper theme tied to the shadow and sacrifice, a journey from disillusionment to authenticity"</p>
@@ -309,11 +308,16 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
       <div class="deep-dive" style="margin-top:1.4rem;">
         <p class="deep-dive-label">Or go straight to a Deep Dive</p>
         <p>To get an idea of the arc of each of the three acts — three playlists of all the live and rehearsal pieces in context, the whole script, author's notes, a glossary and more.</p>
-        <a href="./papergun-full.html" class="panel-btn" style="margin-top:.8rem;display:inline-block;">See: Act I &nbsp;·&nbsp; II &nbsp;·&nbsp; III →</a>
+        <a href="./papergun-full.html" class="panel-btn" style="margin-top:.8rem;display:inline-block;font-size:.8rem;letter-spacing:.28em;padding:.85em 2.4em;border-width:2px;font-weight:600;color:var(--gold-l);border-color:var(--gold-l);">See: Act I &nbsp;·&nbsp; II &nbsp;·&nbsp; III →</a>
       </div>
 
       <p style="font-family:'DM Mono',monospace;font-size:.55rem;letter-spacing:.2em;color:var(--gold);opacity:.5;margin-top:1.4rem;text-transform:uppercase;">From $11,400</p>
-      <img src="PGtophalfposter.jpg" alt="Paper Gun" style="width:100%;max-width:340px;margin-top:1.6rem;display:block;box-shadow:0 4px 30px rgba(0,0,0,.5);opacity:.92;"/>
+      <img src="PGtophalfposter.jpg" alt="Paper Gun" style="width:100%;max-width:340px;margin-top:1.6rem;display:block;box-shadow:0 4px 30px rgba(0,0,0,.5);opacity:.92;cursor:zoom-in;" onclick="document.getElementById('pg-lightbox').style.display='flex';"/>
+
+      <!-- LIGHTBOX -->
+      <div id="pg-lightbox" onclick="this.style.display='none';" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:9999;align-items:center;justify-content:center;cursor:zoom-out;">
+        <img src="PGtophalfposter.jpg" alt="Paper Gun Poster" style="max-width:95vw;max-height:95vh;object-fit:contain;box-shadow:0 8px 60px rgba(0,0,0,.8);"/>
+      </div>
     </div>
   </div>
 
@@ -334,7 +338,7 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
 
         <div class="t-for-two">
           <p class="t-for-two-label">◇ T for Two</p>
-          <p>My recommendation for a first time is a combo show by way of introduction to some of the Paper Gun content — though I am very happy to do either.</p>
+          <p>My recommendation for a first time is a combo show by way of introduction to some of the Paper Gun content — though I'm happy to do either.</p>
         </div>
 
         <p style="font-family:'DM Mono',monospace;font-size:.55rem;letter-spacing:.2em;color:var(--gold);opacity:.5;margin-top:1.4rem;text-transform:uppercase;">From $1,200</p>
@@ -346,9 +350,8 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
 </div>
 
 <!-- PHOTO STRIP 2 -->
-<div class="photo-strip trio">
+<div class="photo-strip duo">
   <img src="fishshot_edited.png" alt="Paul Tosh in cowboy hat"/>
-  <img src="M4_edited.png" alt="Paul Tosh singing on stage"/>
   <img src="ufunnycopy.png" alt="Paul Tosh at white piano"/>
 </div>
 
@@ -395,9 +398,8 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
 </div>
 
 <!-- PHOTO STRIP 3 -->
-<div class="photo-strip trio" style="align-items:flex-end;">
-  <img src="DeccutimgTomW.png" alt="Paul Tosh at the Pramberger" id="strip-3-left" style="align-self:flex-end;"/>
-  <img src="kilt.png" alt="Paul Tosh in kilt"/>
+<div class="photo-strip duo" style="align-items:flex-end;">
+  <img src="kiltflip.png" alt="Paul Tosh kilt flip" style="align-self:flex-end;"/>
   <img src="Savan6_edited.png" alt="Paul Tosh"/>
 </div>
 
