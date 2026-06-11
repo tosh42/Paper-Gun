@@ -235,6 +235,105 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
   .video-duo .vid-wrap.vid-b{order:-1;}
   .video-duo .vid-wrap{aspect-ratio:16/9;}
 }
+
+/* ── SONG OF THE WEEK ── */
+#sotw {
+  background: linear-gradient(160deg, #161009 0%, #0d0b08 55%, #191208 100%);
+  border-bottom: 1px solid rgba(184,151,58,.3);
+  padding: 3rem 2rem 3.4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+#sotw::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    -50deg,
+    rgba(184,151,58,.016) 0,
+    rgba(184,151,58,.016) 1px,
+    transparent 1px,
+    transparent 68px
+  );
+  pointer-events: none;
+}
+.sotw-kicker {
+  display: flex;
+  align-items: center;
+  gap: .9rem;
+  margin-bottom: .75rem;
+  position: relative;
+}
+.sotw-kicker-line {
+  width: 36px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(184,151,58,.55));
+}
+.sotw-kicker-line.right {
+  background: linear-gradient(90deg, rgba(184,151,58,.55), transparent);
+}
+.sotw-kicker-text {
+  font-family: 'DM Mono', monospace;
+  font-size: .57rem;
+  letter-spacing: .46em;
+  text-transform: uppercase;
+  color: var(--gold);
+  opacity: .82;
+  white-space: nowrap;
+}
+.sotw-song-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-weight: 300;
+  font-size: clamp(1.25rem, 2.8vw, 2rem);
+  color: var(--cream);
+  opacity: .92;
+  text-align: center;
+  letter-spacing: .03em;
+  line-height: 1.25;
+  margin-bottom: 1.9rem;
+  position: relative;
+}
+.sotw-video-frame {
+  width: 100%;
+  max-width: 660px;
+  aspect-ratio: 16/9;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(184,151,58,.22);
+  box-shadow: 0 14px 70px rgba(0,0,0,.72), 0 0 0 1px rgba(184,151,58,.06);
+}
+.sotw-video-frame iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+.sotw-yt-link {
+  margin-top: 1.1rem;
+  font-family: 'DM Mono', monospace;
+  font-size: .54rem;
+  letter-spacing: .26em;
+  text-transform: uppercase;
+  color: var(--gold);
+  opacity: .42;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(184,151,58,.2);
+  padding-bottom: .1rem;
+  transition: opacity .2s;
+  position: relative;
+}
+.sotw-yt-link:hover { opacity: .88; }
+@media(max-width:680px){
+  #sotw { padding: 2.2rem 1.2rem 2.6rem; }
+  .sotw-video-frame { max-width: 100%; }
+  .sotw-song-title { font-size: clamp(1.1rem,5.5vw,1.45rem); margin-bottom: 1.4rem; }
+}
 </style>
 </head>
 <body>
@@ -255,6 +354,25 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
   <div class="nav-sep"></div>
   <a href="mailto:bookings@tosh42.com" class="nav-book">◆ Book</a>
 </nav>
+
+<!-- ── SONG OF THE WEEK ── -->
+<section id="sotw">
+  <div class="sotw-kicker">
+    <span class="sotw-kicker-line"></span>
+    <span class="sotw-kicker-text">Song of the Week</span>
+    <span class="sotw-kicker-line right"></span>
+  </div>
+  <p class="sotw-song-title">This Is Mine (from the operetta <em>Paper Gun</em>)</p>
+  <div class="sotw-video-frame">
+    <iframe
+      src="https://www.youtube.com/embed/XoYoB6VzWC0"
+      title="Song of the Week — Paul Tosh"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen>
+    </iframe>
+  </div>
+  <a class="sotw-yt-link" href="https://youtu.be/XoYoB6VzWC0" target="_blank" rel="noopener">Watch on YouTube →</a>
+</section>
 
 <!-- HERO -->
 <div class="hero">
