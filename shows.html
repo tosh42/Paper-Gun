@@ -235,19 +235,17 @@
 
     .show-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-      gap: 2rem;
+      grid-template-columns: repeat(auto-fill, minmax(480px, 1fr));
+      gap: 2.5rem;
     }
 
     .show-card {
       display: flex;
       flex-direction: column;
-      text-decoration: none;
       color: inherit;
-      transition: transform 0.2s;
     }
 
-    .show-card:hover { transform: translateY(-3px); }
+    .show-card:hover { transform: none; }
 
     .thumb-wrap {
       position: relative;
@@ -257,6 +255,13 @@
       background: var(--ink);
       border: 1px solid var(--rule);
       margin-bottom: 0.9rem;
+    }
+
+    .thumb-wrap iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      border: 0;
     }
 
     .thumb-wrap img {
@@ -382,51 +387,46 @@
     <div class="show-grid">
 
       <!-- Sholom Park -->
-      <a class="show-card" href="https://www.youtube.com/watch?v=eo3cRI4-Yaw" target="_blank" rel="noopener">
+      <div class="show-card">
         <div class="thumb-wrap">
-          <img src="https://img.youtube.com/vi/eo3cRI4-Yaw/mqdefault.jpg" alt="Sholom Park" />
-          <span class="play-badge">▶ Highlight</span>
+          <iframe src="https://www.youtube.com/embed/eo3cRI4-Yaw" title="Sholom Park" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
         <div class="show-card-venue">Sholom Park</div>
-      </a>
+      </div>
 
       <!-- St Andrews Colorado -->
-      <a class="show-card" href="https://www.youtube.com/watch?v=vvTEvikP-G8" target="_blank" rel="noopener">
+      <div class="show-card">
         <div class="thumb-wrap">
-          <img src="https://img.youtube.com/vi/vvTEvikP-G8/mqdefault.jpg" alt="St Andrews Colorado" />
-          <span class="play-badge">▶ Highlight</span>
+          <iframe src="https://www.youtube.com/embed/vvTEvikP-G8" title="St Andrews Colorado" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
         <div class="show-card-venue">St Andrews — Colorado</div>
-      </a>
+      </div>
 
       <!-- Temple Saini -->
-      <a class="show-card" href="https://www.youtube.com/watch?v=21SI-HTRtRo" target="_blank" rel="noopener">
+      <div class="show-card">
         <div class="thumb-wrap">
-          <img src="https://img.youtube.com/vi/21SI-HTRtRo/mqdefault.jpg" alt="Temple Saini" />
-          <span class="play-badge">▶ Highlight</span>
+          <iframe src="https://www.youtube.com/embed/21SI-HTRtRo" title="Temple Saini" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
         <div class="show-card-venue">Temple Saini</div>
-      </a>
+      </div>
 
       <!-- The JCC -->
-      <a class="show-card" href="https://www.youtube.com/watch?v=eCeiJI6ne1c" target="_blank" rel="noopener">
+      <div class="show-card">
         <div class="thumb-wrap">
-          <img src="https://img.youtube.com/vi/eCeiJI6ne1c/mqdefault.jpg" alt="The JCC" />
-          <span class="play-badge">▶ Highlight</span>
+          <iframe src="https://www.youtube.com/embed/eCeiJI6ne1c" title="The JCC" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
         <div class="show-card-venue">The JCC</div>
-      </a>
+      </div>
 
       <!-- Paul's Run — Philadelphia -->
-      <a class="show-card" href="https://www.youtube.com/watch?v=hgwWHjNboEk" target="_blank" rel="noopener">
+      <div class="show-card">
         <div class="thumb-wrap">
-          <img src="https://img.youtube.com/vi/hgwWHjNboEk/mqdefault.jpg" alt="Paul's Run — Philadelphia" />
-          <span class="play-badge">▶ Highlight</span>
+          <iframe src="https://www.youtube.com/embed/hgwWHjNboEk" title="Paul's Run — Philadelphia" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
         <div class="show-card-venue">Paul's Run — Philadelphia, PA</div>
         <div class="show-card-date">May 2026</div>
         <p class="show-card-note">"Lucky girl" — the 102-year-old in the front row.</p>
-      </a>
+      </div>
 
     </div><!-- /.show-grid -->
 
