@@ -34,9 +34,9 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
 .hero-tag-break{display:inline;}
 
 /* ── POSTER SECTION ── */
-#poster-section{display:flex;flex-direction:column;align-items:center;padding:3rem 2rem 0;background:var(--ink);border-bottom:1px solid var(--border);}
+#poster-section{display:flex;flex-direction:column;align-items:center;padding:3rem 2rem 3rem;background:var(--ink);border-bottom:1px solid var(--border);}
 #poster-section img{max-width:560px;width:100%;display:block;box-shadow:0 4px 40px rgba(0,0,0,.6);}
-#poster-intro{max-width:680px;width:100%;margin:2.4rem auto 2.8rem;text-align:center;}
+#poster-intro{max-width:680px;width:100%;margin:2.4rem auto 2.8rem;text-align:center;display:flex;flex-direction:column;gap:1rem;}
 #poster-intro p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(1rem,1.6vw,1.15rem);color:var(--cream);opacity:.72;line-height:1.85;letter-spacing:.02em;}
 
 /* ── SPLIT PANELS ── */
@@ -334,6 +334,18 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
   .sotw-video-frame { max-width: 100%; }
   .sotw-song-title { font-size: clamp(1.1rem,5.5vw,1.45rem); margin-bottom: 1.4rem; }
 }
+
+/* ── MOBILE: inline-padded sections and miscellaneous ── */
+@media(max-width:680px){
+  #one-show-bar        { padding: .9rem 1.2rem; }
+  #text-after-video    { padding: 2rem 1.2rem; }
+  #poster-section      { padding: 2rem 1.2rem 2rem; }
+  #taster-block        { padding: 2rem 1.2rem; }
+  #album-announcement  { padding: 2.5rem 1.2rem; }
+  #poster-poster-row   { gap: 1.2rem; }
+  #album-announcement .album-release { font-size: .68rem; letter-spacing: .2em; }
+  .photo-strip.duo img { object-fit: cover; }
+}
 </style>
 </head>
 <body>
@@ -368,7 +380,7 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
 </div>
 
 <!-- TWO SHOWS LINE -->
-<div style="background:var(--ink);border-bottom:1px solid var(--border);padding:.9rem 2rem;text-align:center;">
+<div id="one-show-bar" style="background:var(--ink);border-bottom:1px solid var(--border);padding:.9rem 2rem;text-align:center;">
   <p style="font-family:'DM Mono',monospace;font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;color:var(--cream);opacity:.65;margin:0;">One show · One pair of boots · Available across the US &amp; Canada</p>
 </div>
 
@@ -393,9 +405,9 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
 </section>
 
 <!-- IMAGE + TEXT AFTER VIDEO OF THE WEEK -->
-<div style="background:var(--ink);border-top:1px solid var(--border);display:flex;flex-direction:column;align-items:center;padding:3rem 2rem;">
+<div id="text-after-video" style="background:var(--ink);border-top:1px solid var(--border);display:flex;flex-direction:column;align-items:center;padding:3rem 2rem;">
   <img src="VidstillPG.jpg" alt="Paper Gun — video still" style="width:100%;max-width:660px;display:block;box-shadow:0 4px 30px rgba(0,0,0,.6);opacity:.92;"/>
-  <div id="poster-intro" style="max-width:660px;width:100%;">
+  <div id="poster-intro" style="max-width:660px;width:100%;display:flex;flex-direction:column;gap:1rem;">
     <p>I have written an operetta / a musical called "Paper Gun", and if I can speak for us all, our goal in life is to travel from some form of disillusionment to some form of authenticity that we can call our own - and I noticed that thread across my songs. We all have to go through that journey at some point in our lives otherwise we're just going through the motions.</p>
     <p>I've been introducing these songs of pain and love and reconciliation from my operetta (some of which you can see in the playlist "Live in the Making" below) in churches, synagogues, community centers, and senior facilities – but am now booking a tour solely of my operetta. However where the theme demands it, I supplement the original material with chosen cover songs by Bob Dylan, Frank Sinatra, Neil Diamond &amp; Billy Joel — songs that illuminate the same terrain from a different angle. The theatrical handling of these artists has been my core performing strength, honed across years of The Song Is The Play. This means there will always be an element of surprise — the show breathes differently each time, with relevance and depth.</p>
   </div>
@@ -417,7 +429,7 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
   </div>
 
   <!-- POSTERS -->
-  <div style="display:flex;gap:2.8rem;width:100%;max-width:1340px;margin-top:1.6rem;align-items:flex-start;justify-content:center;flex-wrap:wrap;">
+  <div id="poster-poster-row" style="display:flex;gap:2.8rem;width:100%;max-width:1340px;margin-top:1.6rem;align-items:flex-start;justify-content:center;flex-wrap:wrap;">
     <div style="flex:1;min-width:200px;max-width:420px;text-align:center;">
       <img src="PTposterJun24.jpg" alt="LH Poster" style="width:100%;display:block;box-shadow:0 4px 30px rgba(0,0,0,.6);cursor:zoom-in;opacity:.92;" onclick="document.getElementById('lh-lightbox').style.display='flex';"/>
       <div id="lh-lightbox" onclick="this.style.display='none';" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:9999;align-items:center;justify-content:center;cursor:zoom-out;">
@@ -434,7 +446,7 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
 </div>
 
 <!-- TASTER PLAYLIST -->
-<div style="display:flex;flex-direction:column;align-items:center;text-align:center;padding:3rem 2rem;background:var(--ink);border-top:1px solid var(--border);">
+<div id="taster-block" style="display:flex;flex-direction:column;align-items:center;text-align:center;padding:3rem 2rem;background:var(--ink);border-top:1px solid var(--border);">
     <p class="extra-video-label">◇ A Taster</p>
     <p class="taster-desc">Paper Gun — Live in the Making</p>
     <div style="width:100%;max-width:900px;aspect-ratio:16/9;margin:1rem auto 0;border:1px solid rgba(184,151,58,.22);box-shadow:0 14px 70px rgba(0,0,0,.72);overflow:hidden;">
@@ -574,12 +586,12 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
 
 
 <!-- ALBUM ANNOUNCEMENT -->
-<div style="background:var(--ink);border-top:1px solid var(--border);border-bottom:1px solid var(--border);display:flex;flex-direction:column;align-items:center;padding:4rem 2rem;text-align:center;">
+<div id="album-announcement" style="background:var(--ink);border-top:1px solid var(--border);border-bottom:1px solid var(--border);display:flex;flex-direction:column;align-items:center;padding:4rem 2rem;text-align:center;">
   <p style="font-family:'DM Mono',monospace;font-size:.58rem;letter-spacing:.42em;text-transform:uppercase;color:var(--gold);opacity:.65;margin-bottom:1.6rem;">◆ New Release</p>
   <img src="CDJune2026.jpg" alt="Paul Tosh Live in Colorado June 2026" style="max-width:320px;width:100%;display:block;box-shadow:0 12px 60px rgba(0,0,0,.75);border:1px solid rgba(184,151,58,.2);margin:0 auto 2rem;"/>
-  <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(1.1rem,2.2vw,1.45rem);color:var(--cream);opacity:.88;line-height:1.55;margin-bottom:.5rem;">Album</p>
-  <p style="font-family:'Cormorant Garamond',serif;font-size:clamp(1rem,2vw,1.25rem);color:var(--cream);opacity:.72;line-height:1.6;margin-bottom:.4rem;">Paul Tosh Live in Colorado — June 2026</p>
-  <p style="font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);opacity:.7;margin-top:.6rem;">Release Date — July 4th &nbsp;·&nbsp; All Streaming Platforms</p>
+  <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(1.1rem,2.2vw,1.45rem);color:var(--cream);opacity:.88;line-height:1.55;margin-bottom:1rem;">Album</p>
+  <p style="font-family:'Cormorant Garamond',serif;font-size:clamp(1rem,2vw,1.25rem);color:var(--cream);opacity:.72;line-height:1.6;margin-bottom:1rem;">Paul Tosh Live in Colorado — June 2026</p>
+  <p class="album-release" style="font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);opacity:.7;">Release Date — July 4th &nbsp;·&nbsp; All Streaming Platforms</p>
 </div>
 
 <!-- BOOKINGS & ENQUIRIES -->
@@ -590,8 +602,8 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
   <p style="font-size:.85rem;opacity:.4;max-width:400px;">Paul works across a wide range of venues and budgets. Please get in touch to discuss.</p>
   <a href="mailto:bookings@tosh42.com" class="cta-btn">◆ Book Now</a>
   <!-- CYBERTRUCK -->
-  <p style="font-family:'DM Mono',monospace;font-size:.65rem;letter-spacing:.38em;text-transform:uppercase;color:var(--gold);opacity:.65;margin-top:.4rem;">Modern Day Nomadic Troubadour</p>
-  <img src="trukcut3.png" alt="CyberPhoenix — Tosh42 Live Piano Entertainment" style="max-width:430px;width:50%;display:block;opacity:.88;filter:brightness(.9);margin-top:.4rem;"/>
+  <p style="font-family:'DM Mono',monospace;font-size:.65rem;letter-spacing:.38em;text-transform:uppercase;color:var(--gold);opacity:.65;margin-top:1.4rem;">Modern Day Nomadic Troubadour</p>
+  <img src="trukcut3.png" alt="CyberPhoenix — Tosh42 Live Piano Entertainment" style="max-width:430px;width:50%;display:block;opacity:.88;filter:brightness(.9);margin-top:.9rem;"/>
   <!-- SPONSORSHIP CREDIT -->
   <div style="display:flex;flex-direction:column;align-items:center;margin-top:1.2rem;margin-bottom:.2rem;gap:.45rem;">
     <p style="font-family:'DM Mono',monospace;font-size:.55rem;letter-spacing:.28em;text-transform:uppercase;color:var(--cream);opacity:.35;">With thanks to</p>
