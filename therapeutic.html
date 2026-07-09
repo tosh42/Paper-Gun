@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Paper Gun — Performance Care Frame · For Therapeutic Interest · Paul Tosh</title>
+<meta name="description" content="How each performance of the operetta Paper Gun is framed, held, and closed — for presenters, clinicians, and group facilitators working with survivors of narcissistic abuse."/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0d0b08;--cream:#f5f0e8;--gold:#b8973a;--gold-l:#d4b05a;--border:rgba(184,151,58,.2);}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',Georgia,serif;overflow-x:hidden;min-height:100vh;}
+
+/* ── SITE NAV ── */
+#site-nav{background:rgba(13,11,8,.98);border-bottom:1px solid rgba(184,151,58,.12);display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:0;padding:0 1rem;position:sticky;top:0;z-index:200;}
+#site-nav a{font-family:'DM Mono',monospace;font-size:.58rem;letter-spacing:.22em;text-transform:uppercase;color:var(--cream);opacity:.45;text-decoration:none;padding:.75rem 1.1rem;display:inline-block;white-space:nowrap;transition:opacity .2s,color .2s;border-bottom:2px solid transparent;}
+#site-nav a:hover{opacity:1;color:var(--gold);border-bottom-color:rgba(184,151,58,.35);}
+#site-nav a.nav-active{opacity:.9;color:var(--gold);border-bottom-color:rgba(184,151,58,.5);}
+#site-nav a.nav-book{background:var(--gold);color:var(--ink);opacity:1;margin-left:.6rem;padding:.55rem 1.2rem;border-bottom:2px solid transparent;}
+#site-nav a.nav-book:hover{background:var(--gold-l);}
+#site-nav .nav-sep{width:1px;height:14px;background:rgba(184,151,58,.15);flex-shrink:0;align-self:center;}
+@media(max-width:680px){
+  #site-nav{justify-content:flex-start;overflow-x:auto;flex-wrap:nowrap;padding:0 .5rem;}
+  #site-nav a{font-size:.52rem;padding:.7rem .7rem;letter-spacing:.16em;}
+  #site-nav a.nav-book{margin-left:.3rem;}
+  #site-nav .nav-sep{display:none;}
+}
+
+/* ── HERO ── */
+#cf-hero{text-align:center;padding:5rem 2rem 3.4rem;border-bottom:1px solid var(--border);}
+.cf-kicker{font-family:'DM Mono',monospace;font-size:.6rem;letter-spacing:.5em;text-transform:uppercase;color:var(--gold);opacity:.85;margin-bottom:1.2rem;}
+#cf-hero h1{font-family:'Cinzel',serif;font-weight:400;font-size:clamp(1.9rem,5vw,3.2rem);letter-spacing:.08em;color:var(--cream);line-height:1.2;margin-bottom:.9rem;}
+#cf-hero h1 em{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--gold-l);}
+.cf-sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(1.05rem,2vw,1.3rem);color:var(--cream);opacity:.65;max-width:640px;margin:0 auto;line-height:1.7;}
+
+/* ── EPIGRAPH ── */
+#cf-epigraph{max-width:760px;margin:0 auto;padding:3.6rem 2rem 3rem;text-align:center;}
+.cf-epi-title{font-family:'DM Mono',monospace;font-size:clamp(.85rem,2vw,1.05rem);letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:2rem;line-height:1.9;}
+#cf-epigraph p.epi{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(1.08rem,1.9vw,1.3rem);color:var(--cream);opacity:.78;line-height:1.9;margin-bottom:1.4rem;letter-spacing:.02em;}
+.cf-takeaway{margin-top:2.4rem;border:1px solid rgba(184,151,58,.3);background:rgba(184,151,58,.05);padding:1.8rem 2rem;}
+.cf-takeaway .tk-label{font-family:'DM Mono',monospace;font-size:.58rem;letter-spacing:.42em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;}
+.cf-takeaway p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(1.1rem,2vw,1.35rem);color:var(--gold-l);line-height:1.8;}
+
+.cf-rule{max-width:500px;margin:0 auto;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:.3;}
+
+/* ── BODY SECTIONS ── */
+.cf-section{max-width:760px;margin:0 auto;padding:3.4rem 2rem;}
+.cf-section-kicker{font-family:'DM Mono',monospace;font-size:.58rem;letter-spacing:.42em;text-transform:uppercase;color:var(--gold);opacity:.8;margin-bottom:.7rem;}
+.cf-section h2{font-family:'Cormorant Garamond',serif;font-weight:300;font-style:italic;font-size:clamp(1.5rem,3vw,2.1rem);color:var(--cream);line-height:1.3;margin-bottom:1.4rem;}
+.cf-section p.body{font-size:clamp(1.02rem,1.8vw,1.18rem);line-height:1.9;color:var(--cream);opacity:.78;letter-spacing:.02em;margin-bottom:1.1rem;}
+.cf-section p.body em{color:var(--gold-l);}
+
+/* item blocks */
+.cf-item{border-left:2px solid rgba(184,151,58,.4);padding:.2rem 0 .2rem 1.4rem;margin-bottom:1.7rem;}
+.cf-item:last-child{margin-bottom:0;}
+.cf-item .it-title{font-family:'DM Mono',monospace;font-size:.68rem;letter-spacing:.26em;text-transform:uppercase;color:var(--gold);margin-bottom:.45rem;}
+.cf-item p{font-size:clamp(1rem,1.8vw,1.14rem);line-height:1.85;color:var(--cream);opacity:.75;letter-spacing:.02em;}
+
+/* responsibilities */
+.cf-resp{display:flex;flex-wrap:wrap;gap:1.6rem;margin-top:1.8rem;}
+.cf-resp-col{flex:1 1 300px;border:1px solid var(--border);padding:1.8rem 1.7rem;background:rgba(184,151,58,.03);}
+.cf-resp-col .rc-title{font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;}
+.cf-resp-col p{font-size:clamp(1rem,1.8vw,1.12rem);line-height:1.9;color:var(--cream);opacity:.78;letter-spacing:.02em;}
+.cf-resp-col a{color:var(--gold-l);text-decoration:none;border-bottom:1px solid rgba(184,151,58,.35);padding-bottom:.05rem;}
+
+/* closing line */
+#cf-close{max-width:680px;margin:0 auto;padding:3rem 2rem 3.6rem;text-align:center;}
+#cf-close p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(1.05rem,1.9vw,1.28rem);color:var(--cream);opacity:.68;line-height:1.95;letter-spacing:.02em;}
+#cf-close p em{color:var(--gold-l);font-style:italic;}
+
+/* ── CTA ── */
+#cf-cta{text-align:center;padding:3.4rem 2rem 4.4rem;border-top:1px solid var(--border);}
+#cf-cta h3{font-family:'Cormorant Garamond',serif;font-weight:300;font-style:italic;font-size:clamp(1.4rem,3vw,2rem);color:var(--cream);margin-bottom:.8rem;}
+#cf-cta p{font-size:clamp(1rem,1.8vw,1.15rem);color:var(--cream);opacity:.65;line-height:1.8;max-width:560px;margin:0 auto 1.8rem;}
+.cf-btn-row{display:flex;flex-wrap:wrap;gap:1rem;justify-content:center;align-items:center;}
+.cf-btn{display:inline-block;font-family:'DM Mono',monospace;font-size:.78rem;letter-spacing:.24em;text-transform:uppercase;text-decoration:none;padding:.9em 2.2em;transition:background .2s,color .2s,transform .2s;}
+.cf-btn:hover{transform:translateY(-2px);}
+.cf-btn-primary{background:var(--gold);color:var(--ink);border:2px solid var(--gold);box-shadow:0 8px 34px rgba(184,151,58,.22);}
+.cf-btn-primary:hover{background:var(--gold-l);border-color:var(--gold-l);}
+.cf-btn-outline{border:1px solid var(--gold);color:var(--gold);}
+.cf-btn-outline:hover{background:var(--gold);color:var(--ink);}
+
+footer{text-align:center;padding:2rem;border-top:1px solid rgba(184,151,58,.1);}
+footer p{font-family:'DM Mono',monospace;font-size:.55rem;letter-spacing:.28em;text-transform:uppercase;color:var(--cream);opacity:.3;}
+</style>
+</head>
+<body>
+
+<nav id="site-nav">
+  <a href="./index.html">Home</a>
+  <div class="nav-sep"></div>
+  <a href="./papergun.html">Paper Gun</a>
+  <div class="nav-sep"></div>
+  <a href="./therapeutic.html" class="nav-active">Therapeutic</a>
+  <div class="nav-sep"></div>
+  <a href="./sitp.html">The Song Is The Play</a>
+  <div class="nav-sep"></div>
+  <a href="./testimonials.html">Testimonials</a>
+  <div class="nav-sep"></div>
+  <a href="./rider.html">Tech Rider</a>
+  <div class="nav-sep"></div>
+  <a href="mailto:bookings@tosh42.com" class="nav-book">◆ Book</a>
+</nav>
+
+<!-- ── HERO ── -->
+<section id="cf-hero">
+  <p class="cf-kicker">Paper Gun · For Therapeutic Interest</p>
+  <h1>Performance <em>Care Frame</em></h1>
+  <p class="cf-sub">For presenters, clinicians, and group facilitators<br/>Paul Tosh &nbsp;·&nbsp; tosh42.com &nbsp;·&nbsp; bookings@tosh42.com</p>
+</section>
+
+<!-- ── EPIGRAPH ── -->
+<section id="cf-epigraph">
+  <p class="cf-epi-title">"… This Is Mine — But You Can Have It"</p>
+  <p class="epi">The songs draw on things I know closely, making them into something people can sit with — that's been work.</p>
+  <p class="epi">It's about what you do with what you are given: lemons to lemonade / BS to fertilizer.</p>
+  <p class="epi">It's about survival rather than grievance. We have as much right to our truth as anyone has to their behavior — but the songs don't name, they don't accuse. They witness, they transform; into something that can heal, something redemptive.</p>
+  <div class="cf-takeaway">
+    <p class="tk-label">Take Away</p>
+    <p>The operetta embodies a process to help lead a narcissistic-trauma survivor out of the self-punishing that they are left with. There is no circumstance where you cannot find the pleasure in taking responsibility for your own life.</p>
+  </div>
+</section>
+
+<div class="cf-rule"></div>
+
+<!-- ── WHAT THIS IS ── -->
+<section class="cf-section">
+  <p class="cf-section-kicker">What This Page Is</p>
+  <h2>A professionally held <em>container</em></h2>
+  <p class="body"><em>Paper Gun</em> is an original one-man operetta in three acts about the inner dynamic between the empathic and the narcissistic — material that many audience members, particularly survivors of narcissistic abuse, will recognize from the inside. That recognition is the show's therapeutic power, and it deserves a professionally held container. This page describes how each performance is framed, held, and closed, so that a clinician or presenter can book it with confidence.</p>
+</section>
+
+<div class="cf-rule"></div>
+
+<!-- ── BEFORE ── -->
+<section class="cf-section">
+  <p class="cf-section-kicker">01 · Before the Performance</p>
+  <h2>Audiences do best when they <em>choose this material knowingly</em></h2>
+
+  <div class="cf-item">
+    <p class="it-title">Advance Framing</p>
+    <p>Your promotional copy can state plainly what the show explores; suggested content-note language is provided with the booking pack.</p>
+  </div>
+  <div class="cf-item">
+    <p class="it-title">Clinical Partner</p>
+    <p>For survivor-focused audiences, a licensed clinician known to the group is present in the room — typically the facilitator who convened the audience. Their role and seating are agreed in advance.</p>
+  </div>
+  <div class="cf-item">
+    <p class="it-title">Pre-Show Word</p>
+    <p>The evening opens with a brief spoken frame: what the piece is, permission to step out and return at any time without explanation, and where the quiet space is.</p>
+  </div>
+</section>
+
+<div class="cf-rule"></div>
+
+<!-- ── DURING ── -->
+<section class="cf-section">
+  <p class="cf-section-kicker">02 · During the Performance</p>
+  <h2>The structure itself <em>is the safety</em></h2>
+
+  <div class="cf-item">
+    <p class="it-title">No Participation Required</p>
+    <p>No audience participation is ever required. The audience is never singled out, addressed individually, or asked to disclose anything.</p>
+  </div>
+  <div class="cf-item">
+    <p class="it-title">A Deliberate Arc</p>
+    <p>The three-act arc moves deliberately from entanglement toward clarity and release — the evening does not end inside the wound.</p>
+  </div>
+  <div class="cf-item">
+    <p class="it-title">Exits Stay Open</p>
+    <p>House lights are kept at a level that allows discreet movement; the host keeps sight of the room.</p>
+  </div>
+</section>
+
+<div class="cf-rule"></div>
+
+<!-- ── AFTER ── -->
+<section class="cf-section">
+  <p class="cf-section-kicker">03 · After the Performance</p>
+  <h2>The evening ends <em>grounded</em></h2>
+
+  <div class="cf-item">
+    <p class="it-title">Facilitated Talkback — Optional, Recommended</p>
+    <p>A 20–30 minute conversation co-held by Paul and the clinical partner — reflective rather than confessional, with the facilitator guiding depth.</p>
+  </div>
+  <div class="cf-item">
+    <p class="it-title">Grounded Close</p>
+    <p>The evening ends with a musical decompression piece and a spoken close — not on the show's most intense material.</p>
+  </div>
+  <div class="cf-item">
+    <p class="it-title">Resource Sheet</p>
+    <p>Every attendee can take a one-page sheet listing the host organization's own follow-up options plus national support lines — prepared with the presenter so it reflects your community's actual resources.</p>
+  </div>
+</section>
+
+<div class="cf-rule"></div>
+
+<!-- ── RESPONSIBILITIES ── -->
+<section class="cf-section">
+  <p class="cf-section-kicker">Division of Responsibilities</p>
+  <h2>Two hands on <em>the container</em></h2>
+  <div class="cf-resp">
+    <div class="cf-resp-col">
+      <p class="rc-title">◆ Paul Provides</p>
+      <p>The performance, the pre-show frame, the talkback format, and full technical self-sufficiency (<a href="./rider.html">rider available here</a>).</p>
+    </div>
+    <div class="cf-resp-col">
+      <p class="rc-title">◇ The Presenter Provides</p>
+      <p>The room, the piano, the audience, the clinical partner (for survivor-focused events), a quiet adjacent space, and local resource details for the sheet.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── CLOSING LINE ── -->
+<section id="cf-close">
+  <p><em>This frame was developed across two decades of therapeutic performance in senior communities, congregations, and community settings. It is adjusted with each presenter — the container belongs to the room.</em></p>
+</section>
+
+<!-- ── CTA ── -->
+<section id="cf-cta">
+  <h3>Discuss a therapeutic booking</h3>
+  <p>Paul responds personally to every enquiry — availability, audience fit, the clinical partnership, and how the frame adapts to your setting.</p>
+  <div class="cf-btn-row">
+    <a href="mailto:bookings@tosh42.com" class="cf-btn cf-btn-primary">◆ Contact Paul</a>
+    <a href="./papergun.html" class="cf-btn cf-btn-outline">About Paper Gun →</a>
+  </div>
+</section>
+
+<footer>
+  <p>Paul Tosh · tosh42.com · 904-860-2362</p>
+</footer>
+
+</body>
+</html>
