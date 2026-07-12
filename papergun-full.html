@@ -38,6 +38,19 @@ a:hover{color:var(--gold-l);}
 /* VIDEO */
 .video-wrap{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;margin-bottom:3rem;background:#000;border:1px solid var(--border);}
 .video-wrap iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none;}
+/* ── VISIBLE PLAYLIST TRACKLIST ── */
+.vj-tracklist{width:100%;margin:-1.6rem 0 2.6rem;border:1px solid rgba(184,151,58,.22);background:rgba(184,151,58,.03);max-height:440px;overflow-y:auto;scrollbar-width:thin;scrollbar-color:rgba(184,151,58,.4) transparent;}
+.vj-tracklist-head{position:sticky;top:0;z-index:2;background:#14100a;border-bottom:1px solid rgba(184,151,58,.25);padding:.55rem .8rem;font-family:'DM Mono',monospace;font-size:.55rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);opacity:.85;}
+.vj-track{display:flex;align-items:center;gap:.8rem;padding:.55rem .8rem;cursor:pointer;border-bottom:1px solid rgba(184,151,58,.1);transition:background .2s;}
+.vj-track:last-child{border-bottom:none;}
+.vj-track:hover{background:rgba(184,151,58,.08);}
+.vj-track.playing{background:rgba(184,151,58,.13);}
+.vj-track img{width:86px;aspect-ratio:16/9;object-fit:cover;flex-shrink:0;display:block;border:1px solid rgba(184,151,58,.2);}
+.vj-track-num{font-family:'DM Mono',monospace;font-size:.55rem;letter-spacing:.15em;color:var(--gold);opacity:.6;flex-shrink:0;width:1.6em;text-align:right;}
+.vj-track-title{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.98rem;color:var(--parchment);opacity:.8;line-height:1.35;overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;}
+.vj-track.playing .vj-track-title{color:var(--gold-l);opacity:1;}
+.vj-tracklist-note{font-family:'DM Mono',monospace;font-size:.55rem;letter-spacing:.2em;text-transform:uppercase;color:var(--parchment);opacity:.35;padding:.8rem;text-align:center;}
+@media(max-width:680px){.vj-tracklist{max-height:340px;}}
 .video-placeholder{position:absolute;top:0;left:0;width:100%;height:100%;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:1rem;background:rgba(13,11,8,.9);}
 .video-placeholder p{font-family:'DM Mono',monospace;font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);opacity:.5;}
 
@@ -90,7 +103,7 @@ details[open] .song-arrow{transform:rotate(90deg);}
   <p class="eyebrow">Paul Tosh · Paper Gun · Full Run-Through</p>
   <h1>Paper<br/><em>Gun</em></h1>
   <p class="note">
-    The full arc of the work — all three acts in reverse — can be seen here from part live part rehearsal runs. A 10min clips introduction live to the public and full live performances of more individual pieces can be seen on the <a href="https://tosh42.com/papergun.html">main Paper Gun page</a>.
+    The full arc of the work can be seen here: part live part rehearsal run. An introduction and more full live performances can be seen on the <a href="https://tosh42.com/papergun.html">main Paper Gun page</a>.
   </p>
   <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.05rem;color:var(--gold);opacity:.9;margin-top:.8rem;">The arc of all three acts is what&#x2019;s important to travel.</p>
 </div>
@@ -104,7 +117,10 @@ details[open] .song-arrow{transform:rotate(90deg);}
   </div>
 
   <div class="video-wrap">
-    <iframe src="https://www.youtube.com/embed/videoseries?list=PLSnxgBWzoUrtF7xD8i5niqGFDxNjtvNin" title="Paper Gun — Act Three · Live & Rehearsal Playlist" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <div id="actPlayer3"></div>
+  </div>
+  <div id="actTracklist3" class="vj-tracklist">
+    <p class="vj-tracklist-note">Loading playlist…</p>
   </div>
   <p style="text-align:center;margin:-1.8rem 0 2.5rem;"><a href="https://www.youtube.com/playlist?list=PLSnxgBWzoUrtF7xD8i5niqGFDxNjtvNin" target="_blank" style="display:block;text-align:center;margin:-1.5rem 0 2.5rem;font-family:'DM Mono',monospace;font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);opacity:.55;text-decoration:none;border-bottom:1px solid rgba(184,151,58,.2);display:inline-block;padding-bottom:.1rem;">Open Act III playlist on YouTube →</a></p>
 
@@ -601,7 +617,10 @@ And I wake up in the morning, all I see is You
   </div>
 
   <div class="video-wrap">
-    <iframe src="https://www.youtube.com/embed/videoseries?list=PLSnxgBWzoUrvxDHYm9c9wQdxatlsBtIAq" title="Paper Gun — Act Two · Live & Rehearsal Playlist" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <div id="actPlayer2"></div>
+  </div>
+  <div id="actTracklist2" class="vj-tracklist">
+    <p class="vj-tracklist-note">Loading playlist…</p>
   </div>
   <p style="text-align:center;margin:-1.8rem 0 2.5rem;"><a href="https://www.youtube.com/playlist?list=PLSnxgBWzoUrvxDHYm9c9wQdxatlsBtIAq" target="_blank" style="display:block;text-align:center;margin:-1.5rem 0 2.5rem;font-family:'DM Mono',monospace;font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);opacity:.55;text-decoration:none;border-bottom:1px solid rgba(184,151,58,.2);display:inline-block;padding-bottom:.1rem;">Open Act II playlist on YouTube →</a></p>
 
@@ -1188,7 +1207,10 @@ and to say: I agree with you.
   </div>
 
   <div class="video-wrap">
-    <iframe src="https://www.youtube.com/embed/videoseries?list=PLSnxgBWzoUrumnaPurYWt2iuHs1M3KazU" title="Paper Gun — Act One · Live & Rehearsal Playlist" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <div id="actPlayer1"></div>
+  </div>
+  <div id="actTracklist1" class="vj-tracklist">
+    <p class="vj-tracklist-note">Loading playlist…</p>
   </div>
   <p style="text-align:center;margin:-1.8rem 0 2.5rem;"><a href="https://www.youtube.com/playlist?list=PLSnxgBWzoUrumnaPurYWt2iuHs1M3KazU" target="_blank" style="display:block;text-align:center;margin:-1.5rem 0 2.5rem;font-family:'DM Mono',monospace;font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);opacity:.55;text-decoration:none;border-bottom:1px solid rgba(184,151,58,.2);display:inline-block;padding-bottom:.1rem;">Open Act I playlist on YouTube →</a></p>
 
@@ -1808,12 +1830,11 @@ is not to allow fear to turn into hate</div>
 
       <div class="glossary-term"><p class="term">Vilify to satisfy</p><p>A phrase used in Trauma Response and Paper Crown: the punitive defence mechanism of making the other person the villain in order to avoid accountability. If you are bad, I cannot be wrong. If I cannot be wrong, I cannot apologise. If I cannot apologise, I remain in control.</p></div>
       <div class="glossary-term"><p class="term">Paper crown</p><p>The image at the turning point of Act Two: the false security of needing to be in control. The crown is paper because it has no real authority — it is a performance of sovereignty maintained by the refusal to be vulnerable.</p></div>
-      <div class="glossary-term"><p class="term">Ice-cream tears</p><p>The image in Truthful Love: getting all bent out of shape without taking balanced stock of the rarity and beauty of a truthful love. Not to condone mistreatment (it's a matter of degree in context) but to not throw out the baby with the bath water — grief can be bitter and sweet simultaneously. The honest compound, held together without resolution.</p></div>
+      <div class="glossary-term"><p class="term">Ice-cream tears</p><p>The image in Truthful Love: getting all bent out of shape without taking balanced stock of the rarity and beauty of a truthful love. Not to condone mistreatment (it's a matter of degree in context) but to not throw out the baby with the bath water — grief can be bitter and sweet simultaneously. The honest compound, held together without resolution. The burden of love is on the receiver, and to what extent that can allow for non-apology-driven forgiving — truth can be shared between two people to the degree of the one least capable of love.</p></div>
       <div class="glossary-term"><p class="term">The post-performance vulnerability window</p><p>Not a term used in the piece itself, but a concept relevant to understanding it: the period after performance when emotional defences are lowered and judgment may be impaired. The piece's ending — 'stay vigilant' — speaks to this — represented by the immediate re-appearance briefly on the screen in the video of the shadow back in the painting.</p></div>
     </div>
   </details>
 
-  <div class="note-body" style="max-width:640px;margin:0 auto;padding:1.5rem 0;border-top:1px solid rgba(184,151,58,.1);"><p style="font-family:'DM Mono',monospace;font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:#b8973a;opacity:.6;margin-bottom:.6rem;">Forgiving</p><p>There is something to be said about encouraging a discussion about how the burden of love is on the receiver, and to what extent that can allow for non apology driven forgiving.</p></div>
   <p style="font-family:'DM Mono',monospace;font-size:.55rem;letter-spacing:.25em;text-transform:uppercase;color:#b8973a;opacity:.35;text-align:center;padding:2rem 0 1rem;">tosh42.com &nbsp;·&nbsp; <a href="mailto:bookings@tosh42.com" style="color:#b8973a;opacity:.6;text-decoration:none;">bookings@tosh42.com</a></p>
 
 </div>
@@ -1862,5 +1883,80 @@ is not to allow fear to turn into hate</div>
 </div>
 
 <a href="https://tosh42.com" title="Home — tosh42.com" style="position:fixed;bottom:1.2rem;right:1.2rem;z-index:2147483647;background:#0d0b08;border:1px solid rgba(184,151,58,.5);border-radius:50%;width:54px;height:54px;display:flex;align-items:center;justify-content:center;text-decoration:none;opacity:.88;transition:opacity .2s;font-family:monospace;font-size:.42rem;letter-spacing:.08em;text-transform:uppercase;color:#b8973a;text-align:center;line-height:1.3;box-shadow:0 2px 12px rgba(0,0,0,.7);" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity='.88'">tosh<br>42</a>
+<script>
+(function(){
+  var LISTS = [
+    {id:'PLSnxgBWzoUrtF7xD8i5niqGFDxNjtvNin', player:'actPlayer3', tracklist:'actTracklist3', label:'Act III', built:false},
+    {id:'PLSnxgBWzoUrvxDHYm9c9wQdxatlsBtIAq', player:'actPlayer2', tracklist:'actTracklist2', label:'Act II', built:false},
+    {id:'PLSnxgBWzoUrumnaPurYWt2iuHs1M3KazU', player:'actPlayer1', tracklist:'actTracklist1', label:'Act I', built:false}
+  ];
+  var players = {};
+  var tag = document.createElement('script');
+  tag.src = 'https://www.youtube.com/iframe_api';
+  document.head.appendChild(tag);
+
+  window.onYouTubeIframeAPIReady = function(){
+    LISTS.forEach(function(cfg){
+      players[cfg.player] = new YT.Player(cfg.player, {
+        width:'100%', height:'100%',
+        playerVars:{ listType:'playlist', list:cfg.id, rel:0 },
+        events:{
+          onReady:function(){ buildList(cfg, 0); },
+          onStateChange:function(){ highlight(cfg); }
+        }
+      });
+    });
+  };
+
+  function buildList(cfg, tries){
+    var p = players[cfg.player];
+    var ids = p && p.getPlaylist ? p.getPlaylist() : null;
+    if(!ids || !ids.length){
+      if(tries < 20){ setTimeout(function(){ buildList(cfg, tries+1); }, 600); }
+      else{
+        document.getElementById(cfg.tracklist).innerHTML =
+          '<p class="vj-tracklist-note">Playlist could not be loaded — open it on YouTube below.</p>';
+      }
+      return;
+    }
+    if(cfg.built) return;
+    cfg.built = true;
+    var wrap = document.getElementById(cfg.tracklist);
+    wrap.innerHTML = '';
+    var head = document.createElement('p');
+    head.className = 'vj-tracklist-head';
+    head.textContent = ids.length + ' Tracks · ' + cfg.label + ' · Scroll & Tap to Play';
+    wrap.appendChild(head);
+    ids.forEach(function(id, i){
+      var row = document.createElement('div');
+      row.className = 'vj-track';
+      row.setAttribute('data-index', i);
+      row.innerHTML =
+        '<span class="vj-track-num">' + (i+1) + '</span>' +
+        '<img loading="lazy" src="https://i.ytimg.com/vi/' + id + '/mqdefault.jpg" alt=""/>' +
+        '<span class="vj-track-title" id="' + cfg.tracklist + 'TT' + i + '">Track ' + (i+1) + '</span>';
+      row.addEventListener('click', function(){
+        players[cfg.player].playVideoAt(i);
+        document.getElementById(cfg.player).scrollIntoView({behavior:'smooth', block:'center'});
+      });
+      wrap.appendChild(row);
+      fetch('https://noembed.com/embed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3D' + id)
+        .then(function(r){ return r.json(); })
+        .then(function(d){ if(d && d.title){ document.getElementById(cfg.tracklist + 'TT' + i).textContent = d.title; } })
+        .catch(function(){});
+    });
+    highlight(cfg);
+  }
+
+  function highlight(cfg){
+    var p = players[cfg.player];
+    if(!p || !p.getPlaylistIndex) return;
+    var idx = p.getPlaylistIndex();
+    document.querySelectorAll('#' + cfg.tracklist + ' .vj-track').forEach(function(r){
+      r.classList.toggle('playing', parseInt(r.getAttribute('data-index'),10) === idx);
+    });
+  }
+})();
+</script>
 </body>
 </html>
