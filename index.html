@@ -1,906 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>Paul Tosh — Shows</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
-<style>
-*{margin:0;padding:0;box-sizing:border-box;}
-:root{--ink:#0d0b08;--cream:#f5f0e8;--gold:#b8973a;--gold-l:#d4b05a;--border:rgba(184,151,58,.2);}
-html,body{}
-body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',Georgia,serif;overflow-x:hidden;min-height:100vh;display:flex;flex-direction:column;height:auto;}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tosh42 — Coming Soon</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-.cta-btn{display:inline-block;background:var(--gold);color:var(--ink);font-family:'DM Mono',monospace;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;text-decoration:none;padding:.5em 1.6em;flex-shrink:0;transition:background .2s;}
-.cta-btn:hover{background:var(--gold-l);}
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #1a1a1a;
+            color: #e8e8e8;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
 
-#top-info{background:rgba(13,11,8,.97);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:center;padding:.75rem 2rem;flex-shrink:0;}
-#top-info p{font-family:'DM Mono',monospace;font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;color:var(--cream);opacity:.65;text-align:center;}
+        .hero {
+            width: 100%;
+            height: 60vh;
+            background-image: url('Herorepl1.png');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
 
-/* ── HERO ── */
-.hero{position:relative;width:100%;height:420px;overflow:hidden;flex-shrink:0;}
-.hero-img{width:100%;height:100%;object-fit:cover;object-position:center 28%;display:block;}
-.hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,#0d0b08 0%,rgba(13,11,8,.52) 45%,rgba(13,11,8,.18) 100%);}
-.hero-content{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding:2.8rem 2rem;text-align:center;}
-.hero-logo{position:absolute;top:1.2rem;left:1.4rem;width:30px;height:30px;object-fit:contain;border-radius:4px;display:block;opacity:.92;}
-.hero-tagline{position:absolute;top:1.2rem;left:1.4rem;display:flex;flex-direction:column;justify-content:flex-start;padding-top:34px;}
-.hero-tagline p{font-family:'DM Mono',monospace;font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:var(--cream);opacity:.55;line-height:1.8;text-align:left;}
-.hero-aside{position:absolute;top:1.2rem;right:1.4rem;}
-.hero-aside p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.05rem;color:var(--cream);opacity:.78;line-height:1.6;letter-spacing:.04em;max-width:220px;text-align:right;}
-.hero-name{font-family:'Cinzel',serif;font-size:clamp(.8rem,1.4vw,.95rem);letter-spacing:.52em;color:var(--gold);opacity:.92;text-transform:uppercase;margin-bottom:.35rem;}
-.hero-tag{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(.95rem,1.5vw,1.05rem);color:var(--cream);opacity:.6;letter-spacing:.1em;}
-.hero-tag-break{display:inline;}
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.3);
+        }
 
-/* ── POSTER SECTION ── */
-#poster-section{display:flex;flex-direction:column;align-items:center;padding:3rem 2rem 3rem;background:var(--ink);border-bottom:1px solid var(--border);}
-#poster-section img{max-width:560px;width:100%;display:block;box-shadow:0 4px 40px rgba(0,0,0,.6);}
-#poster-intro{max-width:680px;width:100%;margin:2.4rem auto 2.8rem;text-align:center;display:flex;flex-direction:column;gap:1rem;}
-#poster-intro p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(1rem,1.6vw,1.15rem);color:var(--cream);opacity:.72;line-height:1.85;letter-spacing:.02em;}
+        .content {
+            flex: 1;
+            padding: 4rem 2rem;
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 2rem;
+        }
 
-/* ── SPLIT PANELS ── */
-.split{display:grid;grid-template-columns:1fr 1fr;flex:1;min-height:0;}
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 300;
+            letter-spacing: 0.05em;
+            margin-bottom: 1rem;
+        }
 
-.panel{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:3rem 2.5rem;text-decoration:none;color:var(--cream);overflow:hidden;min-height:60vh;}
-.panel::after{content:'';position:absolute;inset:0;background:rgba(13,11,8,.55);transition:background .4s;z-index:1;}
-.panel:hover::after{background:rgba(13,11,8,.35);}
-.panel-bg{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .6s ease;z-index:0;}
-.panel:hover .panel-bg{transform:scale(1.03);}
+        .under-construction {
+            font-size: 1.1rem;
+            color: #b0b0b0;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
 
-.panel-pg .panel-bg{background-image:radial-gradient(ellipse at 40% 60%,#2a1a08 0%,#0d0b08 70%),repeating-linear-gradient(135deg,rgba(184,151,58,.03) 0,rgba(184,151,58,.03) 1px,transparent 1px,transparent 50px);}
-.panel-sitp .panel-bg{background-image:radial-gradient(ellipse at 60% 40%,#1a1208 0%,#080604 70%),repeating-linear-gradient(45deg,rgba(184,151,58,.03) 0,rgba(184,151,58,.03) 1px,transparent 1px,transparent 50px);}
-.panel-sitp{padding-top:4rem;}
-.panel-pg{border-right:1px solid rgba(184,151,58,.15);}
+        .video-container {
+            width: 100%;
+            max-width: 600px;
+            margin: 2rem auto;
+            aspect-ratio: 16 / 9;
+        }
 
-.panel-inner{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;text-align:center;max-width:380px;justify-content:flex-start;}
-.panel-label{font-family:'DM Mono',monospace;font-size:.6rem;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);opacity:.7;margin-bottom:1.2rem;}
-.panel-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.8rem,6vw,5rem);font-weight:300;line-height:.95;color:var(--cream);margin-bottom:.3em;}
-.panel-title em{font-style:italic;color:var(--gold-l);}
-.panel-sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(.9rem,1.5vw,1.1rem);color:var(--cream);opacity:.55;margin-bottom:1.8rem;line-height:1.5;max-width:300px;}
-.panel-desc{font-size:clamp(.8rem,1.2vw,.95rem);color:var(--cream);opacity:.6;line-height:1.7;margin-bottom:2rem;max-width:300px;font-weight:300;}
-.panel-btn{display:inline-block;border:1px solid var(--gold);color:var(--gold);font-family:'DM Mono',monospace;font-size:.65rem;letter-spacing:.25em;text-transform:uppercase;padding:.7em 2em;transition:background .2s,color .2s;text-decoration:none;}
-.panel-btn:hover{background:var(--gold);color:var(--ink);}
+        .video-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
 
-.panel-quote{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(.82rem,1.2vw,.95rem);color:var(--cream);opacity:.6;line-height:1.6;margin-bottom:1.2rem;max-width:300px;}
+        .contact-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: #8b0000;
+            color: #f5f5f5;
+            text-decoration: none;
+            font-size: 1rem;
+            letter-spacing: 0.05em;
+            transition: background 0.3s ease;
+            margin: 1rem auto;
+            border: none;
+            cursor: pointer;
+        }
 
-.panel-video-wrap{margin:1.2rem 0;width:100%;max-width:340px;aspect-ratio:16/9;overflow:hidden;}
-.panel-video-wrap iframe{width:100%;height:100%;border:0;display:block;}
+        .contact-button:hover {
+            background: #a00000;
+        }
 
-.deep-dive{margin-top:1.4rem;padding:1.2rem 1.4rem;border:1px solid rgba(184,151,58,.2);max-width:340px;width:100%;text-align:left;}
-.deep-dive-label{font-family:'DM Mono',monospace;font-size:.55rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);opacity:.7;margin-bottom:.5rem;}
-.deep-dive p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.88rem;color:var(--cream);opacity:.55;line-height:1.6;margin-bottom:.6rem;}
-.deep-dive a{font-family:'DM Mono',monospace;font-size:.55rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);opacity:.8;text-decoration:none;border-bottom:1px solid rgba(184,151,58,.3);padding-bottom:.1rem;}
-.deep-dive a:hover{opacity:1;}
+        .tagline {
+            font-size: 0.95rem;
+            color: #999;
+            margin-top: 1rem;
+            font-style: italic;
+        }
 
-.sitp-wrapper{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;width:100%;}
-.panel-inner-link{display:flex;flex-direction:column;align-items:center;text-align:center;max-width:380px;text-decoration:none;color:inherit;}
+        @media (max-width: 768px) {
+            .hero {
+                height: 50vh;
+            }
 
-.t-for-two{margin-top:1.6rem;padding:1.2rem 1.4rem;border:1px solid rgba(184,151,58,.2);max-width:340px;width:100%;text-align:center;}
-.t-for-two-label{font-family:'DM Mono',monospace;font-size:.55rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);opacity:.8;margin-bottom:.5rem;}
-.t-for-two p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.9rem;color:var(--cream);opacity:.6;line-height:1.6;margin-bottom:.8rem;}
+            h1 {
+                font-size: 1.8rem;
+            }
 
-/* ── BETWEEN PANELS AND BOOKINGS ── */
-#extra-videos{background:var(--ink);border-top:1px solid var(--border);padding:4rem 2rem;display:flex;flex-direction:column;align-items:center;gap:3.5rem;}
-.extra-video-block{display:flex;flex-direction:column;align-items:center;text-align:center;max-width:640px;width:100%;}
-.extra-video-label{font-family:'DM Mono',monospace;font-size:.6rem;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);opacity:.7;margin-bottom:.6rem;}
-.extra-video-title{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(1.1rem,2vw,1.4rem);color:var(--cream);opacity:.85;margin-bottom:.3rem;line-height:1.4;}
-.extra-video-desc{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.9rem;color:var(--cream);opacity:.5;margin-bottom:1.2rem;line-height:1.6;max-width:500px;}
-.extra-video-wrap{width:100%;max-width:560px;aspect-ratio:16/9;overflow:hidden;margin-bottom:1rem;}
-.extra-video-wrap iframe{width:100%;height:100%;border:0;display:block;}
-.extra-video-btn{display:inline-block;border:1px solid rgba(184,151,58,.5);color:var(--gold);font-family:'DM Mono',monospace;font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;padding:.6em 1.8em;text-decoration:none;transition:background .2s,color .2s;}
-.extra-video-btn:hover{background:var(--gold);color:var(--ink);}
-
-.taster-block{display:flex;flex-direction:column;align-items:center;text-align:center;max-width:640px;width:100%;}
-.taster-desc{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(1rem,1.6vw,1.15rem);color:var(--cream);opacity:.65;margin-bottom:1.2rem;line-height:1.7;}
-.taster-btn{display:inline-block;background:var(--gold);color:var(--ink);font-family:'DM Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;padding:.65em 2em;text-decoration:none;transition:background .2s;}
-.taster-btn:hover{background:var(--gold-l);}
-
-.section-divider{width:60px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:.35;margin:0 auto;}
-
-/* ── BOTTOM CTA ── */
-#bottom-cta{background:rgba(13,11,8,.98);border-top:1px solid var(--border);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.2rem;padding:4rem 2rem 3.5rem;flex-shrink:0;text-align:center;overflow:visible;}
-#bottom-cta .cta-label{font-family:'DM Mono',monospace;font-size:.6rem;letter-spacing:.4em;text-transform:uppercase;color:var(--gold);opacity:.6;}
-#bottom-cta h3{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:clamp(1.4rem,3vw,2rem);color:var(--cream);line-height:1.4;}
-#bottom-cta p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.95rem;color:var(--cream);opacity:.5;max-width:480px;}
-#bottom-cta .cta-btn{font-size:.78rem;padding:.8em 2.6em;letter-spacing:.28em;margin-top:.4rem;}
-
-.yt-subscribe{display:flex;flex-direction:column;align-items:center;margin-top:.8rem;gap:.5rem;}
-.yt-subscribe p{font-family:'DM Mono',monospace;font-size:.6rem;letter-spacing:.25em;text-transform:uppercase;color:var(--cream);opacity:.4;}
-.yt-subscribe a{display:inline-flex;align-items:center;gap:.5em;background:#c00;color:#fff;font-family:'DM Mono',monospace;font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;padding:.55em 1.6em;text-decoration:none;transition:background .2s;}
-.yt-subscribe a:hover{background:#e00;}
-.yt-subscribe a svg{width:16px;height:16px;fill:#fff;flex-shrink:0;}
-
-@media(min-width:681px){
-  .hero{height:560px;}
-}
-@media(max-width:680px){
-  .split{grid-template-columns:1fr;}
-  .panel-pg{border-right:none;border-bottom:1px solid rgba(184,151,58,.15);}
-  .panel{min-height:50vh;padding:3rem 1.5rem;}
-  .panel-sitp{min-height:auto;padding-bottom:3rem;overflow:visible;}
-  .hero{height:320px;}
-  .hero-tagline{top:1.2rem;left:1.4rem;padding-top:90px;}
-  .hero-tag-break{display:block;}
-  .hero-aside{top:33%;right:.4rem;bottom:auto;transform:translateY(-50%);}
-  .hero-aside p{font-size:.9rem;}
-  #bottom-cta{display:flex;padding:2.5rem 1.5rem;}
-  #bottom-cta h3{font-size:clamp(1.2rem,5vw,1.6rem);}
-  #bottom-cta p:not(.cta-label){font-size:.85rem;opacity:.5;}
-  #poster-section img{max-width:100%;}
-  .deep-dive,.t-for-two{max-width:100%;}
-  .extra-video-wrap{max-width:100%;}
-}
-
-/* ── BLEND INTRO ── */
-#blend-intro{background:var(--ink);border-bottom:1px solid var(--border);display:flex;flex-direction:column;align-items:center;text-align:center;padding:3.2rem 2rem 2.8rem;}
-.blend-eyebrow{font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.5em;text-transform:uppercase;color:var(--gold);opacity:.85;margin-bottom:1.1rem;}
-.blend-headline{font-family:'Cormorant Garamond',serif;font-weight:300;font-style:italic;font-size:clamp(1.7rem,3.6vw,2.6rem);color:var(--cream);line-height:1.25;margin-bottom:1.5rem;max-width:720px;}
-.blend-body{font-family:'Cormorant Garamond',serif;font-size:clamp(1rem,1.7vw,1.18rem);color:var(--cream);opacity:.75;line-height:1.85;max-width:680px;letter-spacing:.02em;}
-.blend-body em{color:var(--gold-l);font-style:italic;}
-.blend-settings{margin-top:.9rem;opacity:.58;font-style:italic;}
-
-/* ── BIG SHOW BUTTONS ── */
-.vj-buttons{display:flex;gap:1.6rem;justify-content:center;align-items:stretch;flex-wrap:wrap;margin-top:2.4rem;width:100%;}
-.vj-btn{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.4rem;text-decoration:none;font-family:'DM Mono',monospace;text-transform:uppercase;text-align:center;transition:background .2s,color .2s,border-color .2s,transform .2s;}
-.vj-btn span{font-family:'Cormorant Garamond',serif;font-style:italic;text-transform:none;letter-spacing:.05em;font-size:.98rem;opacity:.8;}
-.vj-btn:hover{transform:translateY(-2px);}
-.vj-btn-primary{background:var(--gold);color:var(--ink);font-size:1.05rem;letter-spacing:.26em;padding:1.15em 2.8em;border:2px solid var(--gold);box-shadow:0 8px 34px rgba(184,151,58,.22);}
-.vj-btn-primary:hover{background:var(--gold-l);border-color:var(--gold-l);}
-.vj-btn-secondary{border:1px solid var(--gold);color:var(--gold);font-size:.82rem;letter-spacing:.24em;padding:1em 2.2em;}
-.vj-btn-secondary:hover{background:var(--gold);color:var(--ink);}
-
-/* ── GUIDED VIDEO JOURNEY ── */
-#video-journey{background:var(--ink);display:flex;flex-direction:column;align-items:center;padding:3rem 2rem 4rem;border-bottom:1px solid var(--border);}
-.vj-kicker{display:flex;align-items:center;gap:.9rem;margin-bottom:2.4rem;}
-.vj-kicker-text{font-family:'DM Mono',monospace;font-size:.58rem;letter-spacing:.42em;text-transform:uppercase;color:var(--gold);opacity:.8;white-space:nowrap;text-align:center;}
-.vj-kicker-line{width:36px;height:1px;background:linear-gradient(90deg,transparent,rgba(184,151,58,.55));}
-.vj-kicker-line.right{background:linear-gradient(90deg,rgba(184,151,58,.55),transparent);}
-.vj-step{width:100%;max-width:900px;display:flex;flex-direction:column;}
-.vj-step.vj-left{align-items:flex-start;}
-.vj-step.vj-right{align-items:flex-end;}
-.vj-card{width:100%;max-width:560px;display:flex;flex-direction:column;}
-.vj-num{font-family:'DM Mono',monospace;font-size:.6rem;letter-spacing:.42em;color:var(--gold);opacity:.75;margin-bottom:.45rem;}
-.vj-title{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(1.15rem,2vw,1.45rem);color:var(--cream);opacity:.92;margin-bottom:.85rem;line-height:1.35;}
-.vj-frame{width:100%;aspect-ratio:16/9;overflow:hidden;border:1px solid rgba(184,151,58,.28);box-shadow:0 12px 55px rgba(0,0,0,.68);}
-.vj-frame iframe{width:100%;height:100%;border:0;display:block;}
-.vj-plist-link{font-family:'DM Mono',monospace;font-size:.56rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);opacity:.6;text-decoration:none;margin-top:.7rem;border-bottom:1px solid rgba(184,151,58,.25);padding-bottom:.1rem;align-self:flex-start;transition:opacity .2s;}
-.vj-plist-link:hover{opacity:1;}
-/* Visible playlist tracklist */
-.vj-tracklist{width:100%;margin-top:.9rem;border:1px solid rgba(184,151,58,.22);background:rgba(184,151,58,.03);max-height:440px;overflow-y:auto;scrollbar-width:thin;scrollbar-color:rgba(184,151,58,.4) transparent;}
-.vj-tracklist-head{position:sticky;top:0;z-index:2;background:#14100a;border-bottom:1px solid rgba(184,151,58,.25);padding:.55rem .8rem;font-family:'DM Mono',monospace;font-size:.55rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);opacity:.85;}
-@media(max-width:680px){.vj-tracklist{max-height:340px;}}
-.vj-track{display:flex;align-items:center;gap:.8rem;padding:.55rem .8rem;cursor:pointer;border-bottom:1px solid rgba(184,151,58,.1);transition:background .2s;}
-.vj-track:last-child{border-bottom:none;}
-.vj-track:hover{background:rgba(184,151,58,.08);}
-.vj-track.playing{background:rgba(184,151,58,.13);}
-.vj-track img{width:86px;aspect-ratio:16/9;object-fit:cover;flex-shrink:0;display:block;border:1px solid rgba(184,151,58,.2);}
-.vj-track-num{font-family:'DM Mono',monospace;font-size:.55rem;letter-spacing:.15em;color:var(--gold);opacity:.6;flex-shrink:0;width:1.4em;text-align:right;}
-.vj-track-title{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.95rem;color:var(--cream);opacity:.8;line-height:1.35;overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;}
-.vj-track.playing .vj-track-title{color:var(--gold-l);opacity:1;}
-.vj-tracklist-note{font-family:'DM Mono',monospace;font-size:.55rem;letter-spacing:.2em;text-transform:uppercase;color:var(--cream);opacity:.35;padding:.8rem;text-align:center;}
-.vj-connector{width:100%;max-width:900px;}
-.vj-connector svg{display:block;width:100%;height:auto;overflow:visible;}
-.vj-line{fill:none;stroke:var(--gold);stroke-width:1.6;stroke-dasharray:7 9;stroke-linecap:round;opacity:.7;animation:vjdash 20s linear infinite;}
-@keyframes vjdash{to{stroke-dashoffset:-480;}}
-.vj-path-label{font-family:'DM Mono',monospace;font-size:13px;letter-spacing:.3em;text-transform:uppercase;fill:var(--gold);opacity:.88;}
-.vj-mobile-label{display:none;}
-@media(max-width:680px){
-  #blend-intro{padding:2.4rem 1.2rem 2.2rem;}
-  .vj-buttons{gap:1rem;}
-  .vj-btn-primary{font-size:.9rem;padding:1.05em 2.2em;width:100%;max-width:340px;}
-  .vj-btn-secondary{font-size:.74rem;width:100%;max-width:340px;}
-  #video-journey{padding:2.4rem 1.2rem 3rem;}
-  .vj-step .vj-card{max-width:100%;}
-  .vj-connector svg{display:none;}
-  .vj-mobile-label{display:flex;flex-direction:column;align-items:center;gap:.45rem;font-family:'DM Mono',monospace;font-size:.58rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);opacity:.82;padding:1.5rem 0;text-align:center;}
-  .vj-mobile-label::before{content:'';width:1px;height:26px;background:linear-gradient(to bottom,transparent,var(--gold));opacity:.6;}
-}
-
-/* ── SITE NAV ── */
-#site-nav{
-  background:rgba(13,11,8,.98);
-  border-bottom:1px solid rgba(184,151,58,.12);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  flex-wrap:wrap;
-  gap:0;
-  padding:0 1rem;
-  position:sticky;
-  top:0;
-  z-index:200;
-}
-#site-nav a{
-  font-family:'DM Mono',monospace;
-  font-size:.58rem;
-  letter-spacing:.22em;
-  text-transform:uppercase;
-  color:var(--cream);
-  opacity:.45;
-  text-decoration:none;
-  padding:.75rem 1.1rem;
-  display:inline-block;
-  white-space:nowrap;
-  transition:opacity .2s,color .2s;
-  border-bottom:2px solid transparent;
-}
-#site-nav a:hover{opacity:1;color:var(--gold);border-bottom-color:rgba(184,151,58,.35);}
-#site-nav a.nav-book{
-  background:var(--gold);
-  color:var(--ink);
-  opacity:1;
-  margin-left:.6rem;
-  padding:.55rem 1.2rem;
-  border-bottom:2px solid transparent;
-}
-#site-nav a.nav-book:hover{background:var(--gold-l);}
-#site-nav .nav-sep{
-  width:1px;
-  height:14px;
-  background:rgba(184,151,58,.15);
-  flex-shrink:0;
-  align-self:center;
-}
-@media(max-width:680px){
-  #site-nav{justify-content:flex-start;overflow-x:auto;flex-wrap:nowrap;padding:0 .5rem;}
-  #site-nav a{font-size:.52rem;padding:.7rem .7rem;letter-spacing:.16em;}
-  #site-nav a.nav-book{margin-left:.3rem;}
-  #site-nav .nav-sep{display:none;}
-}
-
-/* ── PHOTO STRIPS ── */
-.photo-strip{
-  width:100%;
-  display:flex;
-  gap:0;
-  overflow:hidden;
-  flex-shrink:0;
-  border-top:1px solid var(--border);
-  border-bottom:1px solid var(--border);
-}
-.photo-strip img{
-  flex:1;
-  min-width:0;
-  height:320px;
-  object-fit:contain;
-  object-position:center bottom;
-  background:var(--ink);
-  display:block;
-  filter:brightness(.82) sepia(.12);
-  transition:filter .4s;
-}
-.photo-strip img:hover{filter:brightness(.95) sepia(.04);}
-.photo-strip.duo img{height:360px;}
-.photo-strip.trio img{height:300px;}
-
-@media(max-width:680px){
-  .photo-strip img{height:220px;}
-  .photo-strip.duo img{height:240px;}
-  .photo-strip.trio img{height:200px;}
-  #strip-3-left{height:155px;align-self:flex-end;}
-  .panel-sitp .panel-btn{margin-top:.8rem !important;}
-}
-
-/* Mobile sepia splits */
-.mobile-sepia{display:none;}
-@media(max-width:680px){
-  #strip-presplit{display:none;}
-  .mobile-sepia{display:block;width:100%;background:var(--ink);}
-  .mobile-sepia img{width:100%;height:220px;object-fit:contain;object-position:center bottom;background:var(--ink);display:block;filter:brightness(.82) sepia(.12);}
-}
-
-/* ── TWO VIDEO ROW ── */
-.video-duo{display:flex;gap:2.8rem;width:100%;max-width:900px;margin-top:2rem;}
-.video-duo .vid-wrap{flex:1;position:relative;aspect-ratio:16/9;overflow:hidden;border:1px solid var(--border);}
-.video-duo .vid-wrap iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0;}
-/* Mobile: stack in reverse order (wnR5_6QIcpA first) */
-@media(max-width:680px){
-  .video-duo{flex-direction:column;}
-  .video-duo .vid-wrap.vid-b{order:-1;}
-  .video-duo .vid-wrap{aspect-ratio:16/9;}
-}
-
-/* ── SONG OF THE WEEK ── */
-#sotw {
-  background: linear-gradient(160deg, #161009 0%, #0d0b08 55%, #191208 100%);
-  border-bottom: 1px solid rgba(184,151,58,.3);
-  padding: 3rem 2rem 3.4rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
-  overflow: hidden;
-}
-#sotw::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: repeating-linear-gradient(
-    -50deg,
-    rgba(184,151,58,.016) 0,
-    rgba(184,151,58,.016) 1px,
-    transparent 1px,
-    transparent 68px
-  );
-  pointer-events: none;
-}
-.sotw-kicker {
-  display: flex;
-  align-items: center;
-  gap: .9rem;
-  margin-bottom: .75rem;
-  position: relative;
-}
-.sotw-kicker-line {
-  width: 36px;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(184,151,58,.55));
-}
-.sotw-kicker-line.right {
-  background: linear-gradient(90deg, rgba(184,151,58,.55), transparent);
-}
-.sotw-kicker-text {
-  font-family: 'DM Mono', monospace;
-  font-size: .57rem;
-  letter-spacing: .46em;
-  text-transform: uppercase;
-  color: var(--gold);
-  opacity: .82;
-  white-space: nowrap;
-}
-.sotw-song-title {
-  font-family: 'Cormorant Garamond', serif;
-  font-style: italic;
-  font-weight: 300;
-  font-size: clamp(1.25rem, 2.8vw, 2rem);
-  color: var(--cream);
-  opacity: .92;
-  text-align: center;
-  letter-spacing: .03em;
-  line-height: 1.25;
-  margin-bottom: 1.9rem;
-  position: relative;
-}
-.sotw-video-frame {
-  width: 100%;
-  max-width: 660px;
-  aspect-ratio: 16/9;
-  position: relative;
-  overflow: hidden;
-  border: 1px solid rgba(184,151,58,.22);
-  box-shadow: 0 14px 70px rgba(0,0,0,.72), 0 0 0 1px rgba(184,151,58,.06);
-}
-.sotw-video-frame iframe {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  border: 0;
-  display: block;
-}
-.sotw-yt-link {
-  margin-top: 1.1rem;
-  font-family: 'DM Mono', monospace;
-  font-size: .54rem;
-  letter-spacing: .26em;
-  text-transform: uppercase;
-  color: var(--gold);
-  opacity: .42;
-  text-decoration: none;
-  border-bottom: 1px solid rgba(184,151,58,.2);
-  padding-bottom: .1rem;
-  transition: opacity .2s;
-  position: relative;
-}
-.sotw-yt-link:hover { opacity: .88; }
-@media(max-width:680px){
-  #sotw { padding: 2.2rem 1.2rem 2.6rem; }
-  .sotw-video-frame { max-width: 100%; }
-  .sotw-song-title { font-size: clamp(1.1rem,5.5vw,1.45rem); margin-bottom: 1.4rem; }
-}
-
-/* ── MOBILE: inline-padded sections and miscellaneous ── */
-@media(max-width:680px){
-  #one-show-bar        { padding: .9rem 1.2rem; }
-  #text-after-video    { padding: 2rem 1.2rem; }
-  #poster-section      { padding: 2rem 1.2rem 2rem; }
-  #taster-block        { padding: 2rem 1.2rem; }
-  #album-announcement  { padding: 2.5rem 1.2rem; }
-  #poster-poster-row   { gap: 1.2rem; }
-  #album-announcement .album-release { font-size: .68rem; letter-spacing: .2em; }
-  .photo-strip.duo img { object-fit: cover; }
-}
-</style>
+            .content {
+                padding: 2rem 1rem;
+            }
+        }
+    </style>
 </head>
 <body>
-
-<!-- SITE NAV -->
-<nav id="site-nav">
-  <a href="./papergun.html">Paper Gun</a>
-  <div class="nav-sep"></div>
-  <a href="./papergun-full.html">Deep Dive</a>
-  <div class="nav-sep"></div>
-  <a href="./therapeutic.html">Therapeutic</a>
-  <div class="nav-sep"></div>
-  <a href="./sitp.html">The Song Is The Play</a>
-  <div class="nav-sep"></div>
-  <a href="./testimonials.html">Testimonials</a>
-  <div class="nav-sep"></div>
-  <a href="./shows.html">Recent Shows</a>
-  <div class="nav-sep"></div>
-  <a href="./rider.html">Tech Rider</a>
-  <div class="nav-sep"></div>
-  <a href="mailto:bookings@tosh42.com" class="nav-book">◆ Book</a>
-</nav>
-
-<!-- HERO -->
-<div class="hero">
-  <img class="hero-img" src="Herorepl1.png" alt="Paul Tosh"/>
-  <div class="hero-overlay"></div>
-  <div class="hero-content">
-    <img src="logo_gold_smlr.jpg" alt="Tosh42" class="hero-logo"/>
-    <div class="hero-tagline"><p>Singer / Pianist<br/>Looping Artist<br/>Songwriter<br/><span style="font-family:'DM Mono',monospace;font-size:.72rem;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);opacity:.85;">Modern Day</span><br/><span style="font-family:'DM Mono',monospace;font-size:.72rem;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);opacity:.85;">Nomadic Troubadour</span></p></div>
-    <p class="hero-name">Paul Tosh</p>
-    <p class="hero-tag">Unhurried, a little outlaw,<span class="hero-tag-break"> completely self-possessed.</span></p>
-  </div>
-</div>
-
-<!-- TWO SHOWS LINE -->
-<div id="one-show-bar" style="background:var(--ink);border-bottom:1px solid var(--border);padding:.9rem 2rem;text-align:center;">
-  <p style="font-family:'DM Mono',monospace;font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;color:var(--cream);opacity:.65;margin:0;">One show · One pair of boots · Available across the US &amp; Canada</p>
-</div>
-
-<!-- ── EVERY SHOW IS A BLEND ── -->
-<section id="blend-intro">
-  <p class="blend-eyebrow">Every Show Is A Blend</p>
-  <h2 class="blend-headline">Original Theatre Meets the Songs You Love</h2>
-  <p class="blend-body" style="margin-bottom:1.2rem;">Interactive intimate piano vocalist, performing:</p>
-  <ul style="font-family:'Cormorant Garamond',serif;font-size:clamp(1rem,1.7vw,1.18rem);color:var(--cream);opacity:.75;line-height:1.85;max-width:680px;letter-spacing:.02em;list-style:none;padding:0;">
-    <li style="margin-bottom:.6rem;">• The Beatles, Bob Dylan, Billy Joel &amp; Neil Diamond as theatre</li>
-    <li style="margin-bottom:.6rem;">• Sinatra</li>
-    <li style="margin-bottom:.6rem;">• PLUS songs from his Original therapeutic operetta "Paper Gun"</li>
-    <li>• all with live looping (Ed Sheeran style)</li>
-  </ul>
-  <p class="blend-body" style="margin-top:1.6rem;"><em>Paper Gun</em>, a niche unconventional product; a therapeutic theatrical performance — an original one-man operetta — woven together with <em>The Song Is The Play</em>: classic and curated songs performed as theatre - plus a few stories from the road.</p>
-
-  <div class="vj-buttons">
-    <a href="./papergun.html" class="vj-btn vj-btn-primary">◆ Paper Gun<span>The Original Operetta</span></a>
-    <a href="./sitp.html" class="vj-btn vj-btn-secondary">The Song Is The Play<span>Theatrical Concert</span></a>
-    <a href="./therapeutic.html" class="vj-btn vj-btn-secondary" style="border-width:2px;box-shadow:0 6px 28px rgba(184,151,58,.15);">For Therapeutic Interest<span>Performance Care Frame</span></a>
-  </div>
-
-  <p class="blend-body" style="margin-top:1.8rem;font-style:italic;opacity:.6;font-size:clamp(.92rem,1.6vw,1.05rem);max-width:620px;">An honest word: <em>Paper Gun</em> goes deeper than most entertainment — framed, held, and closed with care. And if this isn't the year for it, <em>The Song Is The Play</em> is the same voice, all warmth. <a href="./papergun.html#honest-word" style="color:var(--gold-l);text-decoration:none;border-bottom:1px solid rgba(184,151,58,.35);">Read my word before you book →</a></p>
-</section>
-
-<!-- ── GUIDED VIDEO JOURNEY ── -->
-<section id="video-journey">
-  <div class="vj-kicker">
-    <span class="vj-kicker-line"></span>
-    <span class="vj-kicker-text">Follow the Story · Six Short Videos</span>
-    <span class="vj-kicker-line right"></span>
-  </div>
-
-  <!-- 01 -->
-  <div class="vj-step vj-left">
-    <div class="vj-card">
-      <p class="vj-num">01</p>
-      <p class="vj-title">A 3-Minute Introduction to the Show</p>
-      <div class="vj-frame">
-        <iframe src="https://www.youtube.com/embed/yRW2X8nYylk" title="A 3-Minute Introduction — Paul Tosh" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      </div>
-    </div>
-  </div>
-
-  <div class="vj-connector" aria-hidden="true">
-    <svg viewBox="0 0 900 150" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
-      <defs><marker id="vjA1" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#b8973a"/></marker></defs>
-      <path id="vjP1" class="vj-line" d="M 280,10 C 280,105 620,45 620,140" marker-end="url(#vjA1)"/>
-      <text class="vj-path-label" dy="-9"><textPath href="#vjP1" startOffset="50%" text-anchor="middle">next · just the operetta</textPath></text>
-    </svg>
-    <p class="vj-mobile-label">next · just the operetta</p>
-  </div>
-
-  <!-- 02 -->
-  <div class="vj-step vj-right">
-    <div class="vj-card">
-      <p class="vj-num">02</p>
-      <p class="vj-title">Just the Operetta</p>
-      <div class="vj-frame">
-        <iframe src="https://www.youtube.com/embed/tsjQKKsBtR8" title="Just the Operetta — Paper Gun" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      </div>
-    </div>
-  </div>
-
-  <div class="vj-connector" aria-hidden="true">
-    <svg viewBox="0 0 900 150" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
-      <defs><marker id="vjA2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#b8973a"/></marker></defs>
-      <path id="vjP2" class="vj-line" d="M 620,10 C 620,105 280,45 280,140" marker-end="url(#vjA2)"/>
-      <path id="vjT2" d="M 280,140 C 280,45 620,105 620,10" fill="none" stroke="none"/>
-      <text class="vj-path-label" dy="-9"><textPath href="#vjT2" startOffset="50%" text-anchor="middle">next · always a blend</textPath></text>
-    </svg>
-    <p class="vj-mobile-label">next · always a blend</p>
-  </div>
-
-  <!-- 03 -->
-  <div class="vj-step vj-left">
-    <div class="vj-card">
-      <p class="vj-num">03</p>
-      <p class="vj-title">Always a Blend</p>
-      <div class="vj-frame">
-        <iframe src="https://www.youtube.com/embed/4o-W2Mxjh7o" title="Always a Blend — Paul Tosh" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      </div>
-    </div>
-  </div>
-
-  <div class="vj-connector" aria-hidden="true">
-    <svg viewBox="0 0 900 150" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
-      <defs><marker id="vjA3" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#b8973a"/></marker></defs>
-      <path id="vjP3" class="vj-line" d="M 280,10 C 280,105 620,45 620,140" marker-end="url(#vjA3)"/>
-      <text class="vj-path-label" dy="-9"><textPath href="#vjP3" startOffset="50%" text-anchor="middle">next · the full song playlist</textPath></text>
-    </svg>
-    <p class="vj-mobile-label">next · the full song playlist</p>
-  </div>
-
-  <!-- 04 -->
-  <div class="vj-step vj-right">
-    <div class="vj-card">
-      <p class="vj-num">04</p>
-      <p class="vj-title">The Full Song Playlist</p>
-      <div class="vj-frame">
-        <div id="vjPlayer"></div>
-      </div>
-      <div id="vjTracklist" class="vj-tracklist">
-        <p class="vj-tracklist-note">Loading playlist…</p>
-      </div>
-      <a class="vj-plist-link" href="https://youtube.com/playlist?list=PLSfTdqc211gk&si=LtTO2iyk3ZKs2yaO" target="_blank" rel="noopener">Open full playlist on YouTube →</a>
-    </div>
-  </div>
-
-  <script>
-  (function(){
-    var VJ_PLAYLIST_ID = 'PLSfTdqc211gk'; /* ← replace with full playlist ID if needed */
-    var vjPlayer = null, vjBuilt = false, vjTries = 0;
-
-    var tag = document.createElement('script');
-    tag.src = 'https://www.youtube.com/iframe_api';
-    document.head.appendChild(tag);
-
-    window.onYouTubeIframeAPIReady = function(){
-      vjPlayer = new YT.Player('vjPlayer', {
-        width: '100%', height: '100%',
-        playerVars: { listType: 'playlist', list: VJ_PLAYLIST_ID, rel: 0 },
-        events: {
-          onReady: function(){ vjBuildList(); },
-          onStateChange: function(){ vjHighlight(); }
-        }
-      });
-    };
-
-    function vjBuildList(){
-      var ids = vjPlayer && vjPlayer.getPlaylist ? vjPlayer.getPlaylist() : null;
-      if(!ids || !ids.length){
-        vjTries++;
-        if(vjTries < 20){ setTimeout(vjBuildList, 600); }
-        else{
-          document.getElementById('vjTracklist').innerHTML =
-            '<p class="vj-tracklist-note">Playlist could not be loaded — open it on YouTube below.</p>';
-        }
-        return;
-      }
-      if(vjBuilt) return;
-      vjBuilt = true;
-      var wrap = document.getElementById('vjTracklist');
-      wrap.innerHTML = '';
-      var head = document.createElement('p');
-      head.className = 'vj-tracklist-head';
-      head.textContent = ids.length + ' Tracks · Scroll & Tap to Play';
-      wrap.appendChild(head);
-      ids.forEach(function(id, i){
-        var row = document.createElement('div');
-        row.className = 'vj-track';
-        row.setAttribute('data-index', i);
-        row.innerHTML =
-          '<span class="vj-track-num">' + (i+1) + '</span>' +
-          '<img loading="lazy" src="https://i.ytimg.com/vi/' + id + '/mqdefault.jpg" alt=""/>' +
-          '<span class="vj-track-title" id="vjTT' + i + '">Track ' + (i+1) + '</span>';
-        row.addEventListener('click', function(){
-          vjPlayer.playVideoAt(i);
-          document.getElementById('vjPlayer').scrollIntoView({behavior:'smooth', block:'center'});
-        });
-        wrap.appendChild(row);
-        /* fetch title (graceful fallback to Track N if blocked) */
-        fetch('https://noembed.com/embed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3D' + id)
-          .then(function(r){ return r.json(); })
-          .then(function(d){ if(d && d.title){ document.getElementById('vjTT' + i).textContent = d.title; } })
-          .catch(function(){});
-      });
-      vjHighlight();
-    }
-
-    function vjHighlight(){
-      if(!vjPlayer || !vjPlayer.getPlaylistIndex) return;
-      var idx = vjPlayer.getPlaylistIndex();
-      var rows = document.querySelectorAll('.vj-track');
-      rows.forEach(function(r){
-        r.classList.toggle('playing', parseInt(r.getAttribute('data-index'),10) === idx);
-      });
-    }
-  })();
-  </script>
-
-  <div class="vj-connector" aria-hidden="true">
-    <svg viewBox="0 0 900 150" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
-      <defs><marker id="vjA4" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#b8973a"/></marker></defs>
-      <path id="vjP4" class="vj-line" d="M 620,10 C 620,105 280,45 280,140" marker-end="url(#vjA4)"/>
-      <path id="vjT4" d="M 280,140 C 280,45 620,105 620,10" fill="none" stroke="none"/>
-      <text class="vj-path-label" dy="-9"><textPath href="#vjT4" startOffset="50%" text-anchor="middle">next · about the operetta</textPath></text>
-    </svg>
-    <p class="vj-mobile-label">next · about the operetta</p>
-  </div>
-
-  <!-- 05 -->
-  <div class="vj-step vj-left">
-    <div class="vj-card">
-      <p class="vj-num">05</p>
-      <p class="vj-title">About the Operetta</p>
-      <div class="vj-frame">
-        <iframe src="https://www.youtube.com/embed/Piz1uhQkwZc" title="About the Operetta — Paul Tosh" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      </div>
-    </div>
-  </div>
-
-  <div class="vj-connector" aria-hidden="true">
-    <svg viewBox="0 0 900 150" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
-      <defs><marker id="vjA5" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#b8973a"/></marker></defs>
-      <path id="vjP5" class="vj-line" d="M 280,10 C 280,105 620,45 620,140" marker-end="url(#vjA5)"/>
-      <text class="vj-path-label" dy="-9"><textPath href="#vjP5" startOffset="50%" text-anchor="middle">next · who wrote that?</textPath></text>
-    </svg>
-    <p class="vj-mobile-label">next · who wrote that?</p>
-  </div>
-
-  <!-- 06 -->
-  <div class="vj-step vj-right">
-    <div class="vj-card">
-      <p class="vj-num">06</p>
-      <p class="vj-title">&ldquo;Who Wrote That?&rdquo;</p>
-      <div class="vj-frame">
-        <iframe src="https://www.youtube.com/embed/efW0Z58-XKk" title='Paper Gun — "Who Wrote That"' allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- IMAGE + TEXT AFTER VIDEO OF THE WEEK -->
-<div id="text-after-video" style="background:var(--ink);border-top:1px solid var(--border);display:flex;flex-direction:column;align-items:center;padding:3rem 2rem;">
-  <img src="VidstillPG.jpg" alt="Paper Gun — video still" style="width:100%;max-width:660px;display:block;box-shadow:0 4px 30px rgba(0,0,0,.6);opacity:.92;"/>
-  <div id="poster-intro" style="max-width:660px;width:100%;display:flex;flex-direction:column;gap:1rem;">
-    <p>If I can speak for us all, our goal in life is to travel from some form of disillusionment to some form of authenticity that we can call our own. I noticed that thread across my songs. We all have to go through that journey at some point  otherwise we're just going through the motions.</p>
-    <p>I've been introducing these songs of pain and love and reconciliation from my operetta (see in the playlist "Live in the Making" on the Paper Gun page) in churches, synagogues, community centers, and senior facilities – I am now touring my operetta blended show; where the theme demands it, I supplement the original material with chosen cover songs by Bob Dylan, Frank Sinatra, Neil Diamond &amp; Billy Joel — songs that illuminate the same terrain from a different angle. The theatrical handling  has been my core performing strength, honed across years of The Song Is The Play. This means there will always be an un-known element — the show breathes differently each time, always with relevance and depth and a few surprises.</p>
-  </div>
-</div>
-
-<!-- PG VIDEOS -->
-<div id="poster-section">
-  <!-- POSTERS -->
-  <div id="poster-poster-row" style="display:flex;gap:2.8rem;width:100%;max-width:1340px;margin-top:1.6rem;align-items:flex-start;justify-content:center;flex-wrap:wrap;">
-    <div style="flex:1;min-width:200px;max-width:310px;text-align:center;">
-      <img src="PTposterJun24.jpg" alt="LH Poster" style="width:100%;display:block;box-shadow:0 4px 30px rgba(0,0,0,.6);cursor:zoom-in;opacity:.92;" onclick="document.getElementById('lh-lightbox').style.display='flex';"/>
-      <div id="lh-lightbox" onclick="this.style.display='none';" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:9999;align-items:center;justify-content:center;cursor:zoom-out;">
-        <img src="PTposterJun24.jpg" alt="LH Poster" style="max-width:95vw;max-height:95vh;object-fit:contain;box-shadow:0 8px 60px rgba(0,0,0,.8);"/>
-      </div>
-    </div>
-    <div style="flex:1;min-width:200px;max-width:310px;text-align:center;">
-      <img src="papergun_poster_1.jpg" alt="Paper Gun Poster" style="width:100%;display:block;box-shadow:0 4px 30px rgba(0,0,0,.6);cursor:zoom-in;opacity:.92;" onclick="document.getElementById('pg-lightbox').style.display='flex';"/>
-      <div id="pg-lightbox" onclick="this.style.display='none';" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:9999;align-items:center;justify-content:center;cursor:zoom-out;">
-        <img src="papergun_poster_1.jpg" alt="Paper Gun Poster" style="max-width:95vw;max-height:95vh;object-fit:contain;box-shadow:0 8px 60px rgba(0,0,0,.8);"/>
-      </div>
-    </div>
-    <div style="flex:1;min-width:200px;max-width:310px;text-align:center;">
-      <img src="PTposterAug.jpg" alt="Paper Gun August Poster" style="width:100%;display:block;box-shadow:0 4px 30px rgba(0,0,0,.6);cursor:zoom-in;opacity:.92;" onclick="document.getElementById('pt-aug-lightbox').style.display='flex';"/>
-      <div id="pt-aug-lightbox" onclick="this.style.display='none';" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:9999;align-items:center;justify-content:center;cursor:zoom-out;">
-        <img src="PTposterAug.jpg" alt="Paper Gun August Poster" style="max-width:95vw;max-height:95vh;object-fit:contain;box-shadow:0 8px 60px rgba(0,0,0,.8);"/>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- POSTER PAIR -->
-<div id="taster-block" style="display:flex;flex-direction:column;align-items:center;text-align:center;padding:3rem 2rem;background:var(--ink);border-top:1px solid var(--border);">
-    <div style="display:flex;flex-wrap:wrap;justify-content:center;align-items:flex-start;gap:2rem;width:100%;max-width:1160px;">
-      <!-- PGPT poster -->
-      <div style="flex:1 1 400px;max-width:560px;text-align:center;">
-        <img src="PGPTposterJul92.jpg" alt="Paul Tosh — Paper Gun Poster" style="width:100%;display:block;box-shadow:0 4px 30px rgba(0,0,0,.6);cursor:zoom-in;opacity:.92;" onclick="document.getElementById('pgpt-lightbox').style.display='flex';"/>
-        <div id="pgpt-lightbox" onclick="this.style.display='none';" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:9999;align-items:center;justify-content:center;cursor:zoom-out;">
-          <img src="PGPTposterJul92.jpg" alt="Paul Tosh — Paper Gun Poster" style="max-width:95vw;max-height:95vh;object-fit:contain;box-shadow:0 8px 60px rgba(0,0,0,.8);"/>
-        </div>
-      </div>
-      <!-- Vibrato poster -->
-      <div style="flex:1 1 400px;max-width:560px;text-align:center;">
-        <img src="VibratoJune14.jpg" alt="The Song Is The Play — Vibrato Grill Jazz" style="width:100%;display:block;box-shadow:0 4px 30px rgba(0,0,0,.6);cursor:zoom-in;opacity:.92;" onclick="document.getElementById('vibrato-lightbox').style.display='flex';"/>
-        <div id="vibrato-lightbox" onclick="this.style.display='none';" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:9999;align-items:center;justify-content:center;cursor:zoom-out;">
-          <img src="VibratoJune14.jpg" alt="The Song Is The Play Poster" style="max-width:95vw;max-height:95vh;object-fit:contain;box-shadow:0 8px 60px rgba(0,0,0,.8);"/>
-        </div>
-      </div>
-    </div>
-</div>
-
-<!-- PHOTO STRIP 1 -->
-<div class="photo-strip trio" id="strip-presplit">
-  <img src="image008_editedsepia.png" alt="Paul Tosh performing" id="sepia-arms"/>
-  <img src="AJimagecream.png" id="sepia-keys" alt="Paul Tosh at the piano"/>
-</div>
-
-
-<!-- SPLIT PANELS -->
-<div class="split">
-
-  <!-- PAPER GUN -->
-<div class="mobile-sepia"><img src="AJimagecream.png" alt="Paul Tosh at the piano"/></div>
-  <div class="panel panel-pg">
-    <div class="panel-bg"></div>
-    <div class="panel-inner">
-      <p class="panel-label">Show I · Original Operetta</p>
-      <h2 class="panel-title">Paper<br/><em>Gun</em></h2>
-      <p class="panel-desc" style="margin-bottom:0;">A niche unconventional product; Therapeutic theatrical performance to help people — it's punchy, strong, lands at the heart.</p>
-      <p class="panel-desc" style="margin-bottom:0;margin-top:.6rem;">We have as much right to our truth as anyone has to their behavior.</p>
-      <p class="panel-sub" style="margin-top:.2rem;margin-bottom:1.8rem;">This is mine, but you can have it.</p>
-      <p class="panel-desc" style="margin-top:.8rem;">A therapeutic show of songs about a particular kind of relationship a lot of people recognize. One man plays both sides of himself. A three act paper theme tied to the shadow and sacrifice, a journey from disillusionment to authenticity.</p>
-      <a href="./papergun.html" class="panel-btn" style="margin-top:.8rem;">Enter →</a>
-
-      <div class="deep-dive" style="margin-top:1.4rem;">
-        <p class="deep-dive-label">Or go straight to a Deep Dive</p>
-        <p>To get an idea of the arc of each of the three acts — three playlists of all the live and rehearsal pieces in context, the whole script, author's notes, a glossary and more.</p>
-        <a href="./papergun-full.html" class="panel-btn" style="margin-top:.8rem;display:inline-block;font-size:.8rem;letter-spacing:.28em;padding:.85em 2.4em;border-width:2px;font-weight:600;color:var(--gold-l);border-color:var(--gold-l);">See All Three Acts →</a>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- THE SONG IS THE PLAY -->
-<div class="mobile-sepia"><img src="image008_editedsepia.png" alt="Paul Tosh performing"/></div>
-  <div class="panel panel-sitp" style="cursor:default;">
-    <div class="panel-bg"></div>
-    <div class="sitp-wrapper">
-      <div class="panel-inner" style="text-decoration:none;">
-        <p class="panel-label">Show II · Theatrical Concert</p>
-        <h2 class="panel-title">The Song<br/><em>Is The Play</em></h2>
-        <p class="panel-sub">Where iconic songs become living theatre.</p>
-        <p class="panel-desc">Billy Joel. The Beatles. Bob Dylan. Sinatra. Neil Diamond. Pavarotti — each song acted out as a scene, then orchestrated with live looping piano.</p>
-        <a href="./sitp.html" class="panel-btn" style="margin-top:1.4rem;">Enter →</a>
-
-        <div style="margin-top:1.6rem;text-align:center;">
-          <img src="PTAyeletposter.jpg" alt="Paper Gun Ayelet Poster" style="width:100%;max-width:280px;display:block;box-shadow:0 4px 30px rgba(0,0,0,.6);cursor:zoom-in;opacity:.92;margin-bottom:1.2rem;" onclick="document.getElementById('pt-ayelet-lightbox-sitp').style.display='flex';"/>
-          <div id="pt-ayelet-lightbox-sitp" onclick="this.style.display='none';" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:9999;align-items:center;justify-content:center;cursor:zoom-out;">
-            <img src="PTAyeletposter.jpg" alt="Paper Gun Ayelet Poster" style="max-width:95vw;max-height:95vh;object-fit:contain;box-shadow:0 8px 60px rgba(0,0,0,.8);"/>
-          </div>
+    <div class="hero"></div>
+    
+    <div class="content">
+        <div>
+            <h1>We're Rebuilding</h1>
+            <p class="under-construction">
+                tosh42.com is getting a fresh look. In the meantime, enjoy the old clips video.
+            </p>
         </div>
 
-        <div style="margin-top:1.4rem;padding:1rem 0;border-top:1px solid rgba(184,151,58,.2);border-bottom:1px solid rgba(184,151,58,.2);">
-          <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.9rem;color:var(--cream);opacity:.75;line-height:1.7;margin:0;">
-            • The Song is the Play – Starting at $395.<br/>
-            • Paper Gun – Starting at $995.
-          </p>
+        <div class="video-container">
+            <iframe 
+                src="https://www.youtube-nocookie.com/embed/yRW2X8nYylk" 
+                title="Preview" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+            </iframe>
         </div>
 
-        <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.85rem;color:var(--cream);opacity:.65;line-height:1.6;margin-top:1.2rem;">Please be in touch regards travel, audience, production requirements, and the budget.</p>
-
-      </div>
+        <div>
+            <p class="tagline">Questions? Get in touch.</p>
+            <a href="mailto:bookings@tosh42.com" class="contact-button">Contact</a>
+        </div>
     </div>
-  </div>
-
-</div>
-
-<!-- PHOTO STRIP 2 -->
-<div style="display:flex;align-items:stretch;gap:0;width:100%;">
-  <div style="flex:1;overflow:hidden;">
-    <img src="fishshot_edited.png" alt="Paul Tosh in cowboy hat" style="width:100%;height:100%;object-fit:cover;display:block;filter:brightness(.82) sepia(.12);"/>
-  </div>
-  <div style="flex:1.4;background:var(--ink);border-left:1px solid var(--border);border-right:1px solid var(--border);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:1.5rem;">
-    <div class="sotw-kicker" style="width:100%;">
-      <span class="sotw-kicker-line"></span>
-      <span class="sotw-kicker-text">Video of the Week</span>
-      <span class="sotw-kicker-line right"></span>
-    </div>
-    <div style="width:100%;aspect-ratio:16/9;overflow:hidden;border:1px solid rgba(184,151,58,.22);box-shadow:0 8px 40px rgba(0,0,0,.7);margin-top:.8rem;">
-      <iframe style="width:100%;height:100%;border:0;display:block;"
-        src="https://www.youtube.com/embed/KoR1_EZ-hcI"
-        title="Video of the Week — This Is Mine"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen></iframe>
-    </div>
-    <a class="sotw-yt-link" href="https://youtu.be/KoR1_EZ-hcI" target="_blank" rel="noopener" style="margin-top:.7rem;">Watch on YouTube →</a>
-  </div>
-  <div style="flex:1;overflow:hidden;">
-    <img src="ufunnycopy.png" alt="Paul Tosh at white piano" style="width:100%;height:100%;object-fit:cover;display:block;filter:brightness(.82) sepia(.12);"/>
-  </div>
-</div>
-
-
-<!-- EXTRA VIDEOS: TESTIMONIAL · LOOPING · TASTER -->
-<div id="extra-videos">
-
-  <!-- TESTIMONIAL -->
-  <div class="extra-video-block">
-    <p class="extra-video-label">◆ Testimonial Video</p>
-    <div class="extra-video-wrap">
-      <iframe src="https://www.youtube.com/embed/gSxd8FBrwNU" title="Testimonials" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </div>
-    <a href="./testimonials.html" class="extra-video-btn">Click for More Testimonials →</a>
-  </div>
-
-  <div class="section-divider"></div>
-
-  <!-- LIVE LOOPING -->
-  <div class="extra-video-block">
-    <p class="extra-video-label">🎭 Live Looping</p>
-    <p class="extra-video-title">Rhythms and harmonies recorded and stacked live</p>
-    <div class="extra-video-wrap">
-      <iframe src="https://www.youtube.com/embed/F4eL_tgpWzU" title="Live Looping" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </div>
-  </div>
-
-
-</div>
-
-<!-- PHOTO STRIP 3 -->
-<div class="photo-strip duo" style="align-items:flex-end;">
-  <img src="kiltflip.png" alt="Paul Tosh kilt flip" style="align-self:flex-end;"/>
-  <img src="Savan6_edited.png" alt="Paul Tosh"/>
-</div>
-
-
-<!-- ALBUM ANNOUNCEMENT -->
-<div id="album-announcement" style="background:var(--ink);border-top:1px solid var(--border);border-bottom:1px solid var(--border);display:flex;flex-direction:column;align-items:center;padding:4rem 2rem;text-align:center;">
-  <p style="font-family:'DM Mono',monospace;font-size:.58rem;letter-spacing:.42em;text-transform:uppercase;color:var(--gold);opacity:.65;margin-bottom:1.6rem;">◆ New Release</p>
-  <img src="CDJune2026.jpg" alt="Paul Tosh Live in Colorado June 2026" style="max-width:320px;width:100%;display:block;box-shadow:0 12px 60px rgba(0,0,0,.75);border:1px solid rgba(184,151,58,.2);margin:0 auto 2rem;"/>
-  <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(1.1rem,2.2vw,1.45rem);color:var(--cream);opacity:.88;line-height:1.55;margin-bottom:1rem;">Album</p>
-  <p style="font-family:'Cormorant Garamond',serif;font-size:clamp(1rem,2vw,1.25rem);color:var(--cream);opacity:.72;line-height:1.6;margin-bottom:1rem;">Paul Tosh Live in Colorado — June 2026</p>
-  <p class="album-release" style="font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);opacity:.7;">Release Date — July 4th &nbsp;·&nbsp; All Streaming Platforms</p>
-
-  <!-- COMING SOON: THE MASKED POLICEMAN -->
-  <div class="section-divider" style="margin:3rem auto 2.6rem;"></div>
-  <p style="font-family:'DM Mono',monospace;font-size:.58rem;letter-spacing:.42em;text-transform:uppercase;color:var(--gold);opacity:.65;margin-bottom:1.6rem;">◇ Coming Soon</p>
-  <img src="Maskedpoliceman2.png" alt="The Masked Policeman — Paul Tosh" style="max-width:320px;width:100%;display:block;box-shadow:0 12px 60px rgba(0,0,0,.75);border:1px solid rgba(184,151,58,.2);margin:0 auto 2rem;"/>
-  <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(1.1rem,2.2vw,1.45rem);color:var(--cream);opacity:.88;line-height:1.55;margin-bottom:1rem;">Album</p>
-  <p style="font-family:'Cormorant Garamond',serif;font-size:clamp(1rem,2vw,1.25rem);color:var(--cream);opacity:.72;line-height:1.6;">The Masked Policeman</p>
-</div>
-
-<!-- BOOKINGS & ENQUIRIES -->
-<div id="bottom-cta">
-  <p class="cta-label">Bookings &amp; Enquiries</p>
-  <h3>Bring Paul Tosh to your venue</h3>
-  <p>To discuss availability, venue fit, or pricing — Paul responds personally to every enquiry.</p>
-  <p style="font-size:.85rem;opacity:.4;max-width:400px;">Paul works across a wide range of venues and budgets. Please get in touch to discuss.</p>
-  <a href="mailto:bookings@tosh42.com" class="cta-btn">◆ Book Now</a>
-  <!-- CYBERTRUCK -->
-  <p style="font-family:'DM Mono',monospace;font-size:.65rem;letter-spacing:.38em;text-transform:uppercase;color:var(--gold);opacity:.65;margin-top:1.4rem;">Modern Day Nomadic Troubadour</p>
-  <img src="trukcut3.png" alt="CyberPhoenix — Tosh42 Live Piano Entertainment" style="max-width:430px;width:50%;display:block;opacity:.88;filter:brightness(.9);margin-top:.9rem;"/>
-  <!-- SPONSORSHIP CREDIT -->
-  <div style="display:flex;flex-direction:column;align-items:center;margin-top:1.2rem;margin-bottom:.2rem;gap:.45rem;">
-    <p style="font-family:'DM Mono',monospace;font-size:.55rem;letter-spacing:.28em;text-transform:uppercase;color:var(--cream);opacity:.35;">With thanks to</p>
-    <a href="https://mancavedetail.com" target="_blank" rel="noopener" style="display:flex;flex-direction:column;align-items:center;gap:.4rem;text-decoration:none;">
-      <img src="MCClogo.png.webp" alt="Man Cave Colorado" style="height:48px;width:auto;opacity:.75;filter:brightness(1.1);transition:opacity .2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='.75'"/>
-    </a>
-    <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.88rem;color:var(--cream);opacity:.4;line-height:1.7;text-align:center;max-width:300px;">Ryan Walker — <a href="https://mancavedetail.com" target="_blank" rel="noopener" style="color:var(--cream);opacity:.85;text-decoration:none;border-bottom:1px solid rgba(245,240,232,.25);padding-bottom:.1rem;">Man Cave Colorado</a><br/>truck art sponsorship<br/><em>"Epic motivational music"</em></p>
-  </div>
-  <a href="./rider.html" style="font-family:'DM Mono',monospace;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;text-decoration:none;padding:.5em 1.6em;border:1px solid var(--gold);color:var(--gold);margin-top:.6rem;transition:background .2s,color .2s;" onmouseover="this.style.background='var(--gold)';this.style.color='var(--ink)';" onmouseout="this.style.background='transparent';this.style.color='var(--gold)';">⬡ Technical Rider →</a>
-  <a href="./shows.html" style="font-family:'DM Mono',monospace;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;text-decoration:none;padding:.5em 1.6em;border:1px solid var(--gold);color:var(--gold);margin-top:.2rem;transition:background .2s,color .2s;" onmouseover="this.style.background='var(--gold)';this.style.color='var(--ink)';" onmouseout="this.style.background='transparent';this.style.color='var(--gold)';">◇ Recent Shows</a>
-
-  <!-- YOUTUBE SUBSCRIBE -->
-  <div class="yt-subscribe">
-    <p>Subscribe on YouTube</p>
-    <a href="https://www.youtube.com/@ToshForTwo" target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.5 6.19a3.02 3.02 0 0 0-2.12-2.14C19.54 3.5 12 3.5 12 3.5s-7.54 0-9.38.55A3.02 3.02 0 0 0 .5 6.19C0 8.04 0 12 0 12s0 3.96.5 5.81a3.02 3.02 0 0 0 2.12 2.14C4.46 20.5 12 20.5 12 20.5s7.54 0 9.38-.55a3.02 3.02 0 0 0 2.12-2.14C24 15.96 24 12 24 12s0-3.96-.5-5.81zM9.75 15.5v-7l6.5 3.5-6.5 3.5z"/></svg>
-      Subscribe at @ToshForTwo
-    </a>
-    <p style="margin-top:.8rem;">Follow on TikTok</p>
-    <a href="https://www.tiktok.com/@toshfortwo" target="_blank" rel="noopener" style="background:#000;border:1px solid #444;" onmouseover="this.style.background='#1a1a1a';" onmouseout="this.style.background='#000';">
-      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64c.298 0 .595.047.88.14V9.4a6.33 6.33 0 0 0-1-.08A6.34 6.34 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.04-.1z"/></svg>
-      Follow @toshfortwo
-    </a>
-  </div>
-</div>
-
 </body>
 </html>
