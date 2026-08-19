@@ -22,11 +22,15 @@
 
         .hero {
             width: 100%;
-            height: 60vh;
+            height: 100vh;
             background-image: url('Herorepl1.png');
             background-size: cover;
             background-position: center;
             position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
 
         .hero::after {
@@ -36,18 +40,20 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(0, 0, 0, 0.3);
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 1;
         }
 
         .content {
-            flex: 1;
-            padding: 4rem 2rem;
+            position: relative;
+            z-index: 2;
+            padding: 2rem;
             max-width: 700px;
-            margin: 0 auto;
             text-align: center;
             display: flex;
             flex-direction: column;
             justify-content: center;
+            align-items: center;
             gap: 2rem;
         }
 
@@ -104,43 +110,43 @@
         }
 
         @media (max-width: 768px) {
-            .hero {
-                height: 50vh;
-            }
-
             h1 {
                 font-size: 1.8rem;
             }
 
             .content {
-                padding: 2rem 1rem;
+                padding: 1.5rem;
+            }
+
+            .video-container {
+                max-width: 100%;
             }
         }
     </style>
 </head>
 <body>
-    <div class="hero"></div>
-    
-    <div class="content">
-        <div>
-            <h1>We're Rebuilding</h1>
-            <p class="under-construction">
-                tosh42.com is getting a fresh look. In the meantime, enjoy the old clips video.
-            </p>
-        </div>
+    <div class="hero">
+        <div class="content">
+            <div>
+                <h1>We're Rebuilding</h1>
+                <p class="under-construction">
+                    tosh42.com is getting a fresh look. In the meantime, enjoy the old clips video.
+                </p>
+            </div>
 
-        <div class="video-container">
-            <iframe 
-                src="https://www.youtube-nocookie.com/embed/yRW2X8nYylk" 
-                title="Preview" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                allowfullscreen>
-            </iframe>
-        </div>
+            <div class="video-container">
+                <iframe 
+                    src="https://www.youtube-nocookie.com/embed/yRW2X8nYylk" 
+                    title="Preview" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+            </div>
 
-        <div>
-            <p class="tagline">Questions? Get in touch.</p>
-            <a href="mailto:bookings@tosh42.com" class="contact-button">Contact</a>
+            <div>
+                <p class="tagline">Questions? Get in touch.</p>
+                <a href="mailto:bookings@tosh42.com" class="contact-button">Contact</a>
+            </div>
         </div>
     </div>
 </body>
