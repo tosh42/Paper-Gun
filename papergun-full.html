@@ -7,7 +7,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
-:root{--ink:#0d0b08;--cream:#f5f0e8;--parchment:#ede6d8;--gold:#b8973a;--gold-l:#d4b05a;--ash:#2a2520;--border:rgba(184,151,58,.18);}
+:root{--ink:#121010;--cream:#eae3d3;--parchment:#e6dfd1;--gold:#9c8a6a;--gold-l:#b5a37e;--ash:#211d19;--red:#a3271d;--red-l:#c0392b;--border:rgba(156,138,106,.18);}
 body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',Georgia,serif;font-size:17px;line-height:1.75;overflow-x:hidden;}
 a{color:var(--gold);text-decoration:none;}
 a:hover{color:var(--gold-l);}
@@ -39,13 +39,13 @@ a:hover{color:var(--gold-l);}
 .video-wrap{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;margin-bottom:3rem;background:#000;border:1px solid var(--border);}
 .video-wrap iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none;}
 /* ── VISIBLE PLAYLIST TRACKLIST ── */
-.vj-tracklist{width:100%;margin:-1.6rem 0 2.6rem;border:1px solid rgba(184,151,58,.22);background:rgba(184,151,58,.03);max-height:440px;overflow-y:auto;scrollbar-width:thin;scrollbar-color:rgba(184,151,58,.4) transparent;}
-.vj-tracklist-head{position:sticky;top:0;z-index:2;background:#14100a;border-bottom:1px solid rgba(184,151,58,.25);padding:.55rem .8rem;font-family:'DM Mono',monospace;font-size:.55rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);opacity:.85;}
-.vj-track{display:flex;align-items:center;gap:.8rem;padding:.55rem .8rem;cursor:pointer;border-bottom:1px solid rgba(184,151,58,.1);transition:background .2s;}
+.vj-tracklist{width:100%;margin:-1.6rem 0 2.6rem;border:1px solid rgba(156,138,106,.22);background:rgba(156,138,106,.03);max-height:440px;overflow-y:auto;scrollbar-width:thin;scrollbar-color:rgba(156,138,106,.4) transparent;}
+.vj-tracklist-head{position:sticky;top:0;z-index:2;background:#14100a;border-bottom:1px solid rgba(156,138,106,.25);padding:.55rem .8rem;font-family:'DM Mono',monospace;font-size:.55rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);opacity:.85;}
+.vj-track{display:flex;align-items:center;gap:.8rem;padding:.55rem .8rem;cursor:pointer;border-bottom:1px solid rgba(156,138,106,.1);transition:background .2s;}
 .vj-track:last-child{border-bottom:none;}
-.vj-track:hover{background:rgba(184,151,58,.08);}
-.vj-track.playing{background:rgba(184,151,58,.13);}
-.vj-track img{width:86px;aspect-ratio:16/9;object-fit:cover;flex-shrink:0;display:block;border:1px solid rgba(184,151,58,.2);}
+.vj-track:hover{background:rgba(156,138,106,.08);}
+.vj-track.playing{background:rgba(156,138,106,.13);}
+.vj-track img{width:86px;aspect-ratio:16/9;object-fit:cover;flex-shrink:0;display:block;border:1px solid rgba(156,138,106,.2);}
 .vj-track-num{font-family:'DM Mono',monospace;font-size:.55rem;letter-spacing:.15em;color:var(--gold);opacity:.6;flex-shrink:0;width:1.6em;text-align:right;}
 .vj-track-title{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.98rem;color:var(--parchment);opacity:.8;line-height:1.35;overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;}
 .vj-track.playing .vj-track-title{color:var(--gold-l);opacity:1;}
@@ -56,7 +56,7 @@ a:hover{color:var(--gold-l);}
 
 /* SONGS */
 .songs-intro{font-family:'DM Mono',monospace;font-size:.58rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);opacity:.5;text-align:center;margin-bottom:1.5rem;}
-.song-item{border-bottom:1px solid rgba(184,151,58,.1);}
+.song-item{border-bottom:1px solid rgba(156,138,106,.1);}
 .song-item summary{list-style:none;cursor:pointer;display:flex;align-items:baseline;gap:.8rem;padding:.7rem 0;font-family:'Cormorant Garamond',serif;}
 .song-item summary::-webkit-details-marker{display:none;}
 .song-item summary:hover .song-title{color:var(--gold-l);}
@@ -68,9 +68,9 @@ a:hover{color:var(--gold-l);}
 details[open] .song-arrow{transform:rotate(90deg);}
 
 /* LYRICS */
-.song-lyrics{padding:1.2rem 0 1.8rem 2.4rem;font-size:.95rem;line-height:1.9;color:var(--cream);opacity:.72;white-space:pre-wrap;font-family:'Cormorant Garamond',serif;font-style:italic;max-width:600px;border-left:1px solid rgba(184,151,58,.15);margin-left:.2rem;}
+.song-lyrics{padding:1.2rem 0 1.8rem 2.4rem;font-size:.95rem;line-height:1.9;color:var(--cream);opacity:.72;white-space:pre-wrap;font-family:'Cormorant Garamond',serif;font-style:italic;max-width:600px;border-left:1px solid rgba(156,138,106,.15);margin-left:.2rem;}
 .song-lyrics .stage-dir{font-style:normal;font-family:'DM Mono',monospace;font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);opacity:.5;display:block;margin:.4rem 0;}
-.song-lyrics .stage-dir.role-e{color:#d4b05a;opacity:.85;font-weight:600;letter-spacing:.25em;}
+.song-lyrics .stage-dir.role-e{color:#b5a37e;opacity:.85;font-weight:600;letter-spacing:.25em;}
 .song-lyrics .stage-dir.role-n{color:#8ab4d4;opacity:.85;font-weight:600;letter-spacing:.25em;}
 .song-lyrics .stage-dir.role-en{color:#c8a8d8;opacity:.85;font-weight:600;letter-spacing:.25em;}
 
@@ -94,6 +94,8 @@ details[open] .song-arrow{transform:rotate(90deg);}
 </head>
 <body>
 
+<p style="font-family:'DM Mono',monospace;font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:#9c8a6a;opacity:.65;text-align:center;padding:1.1rem 2rem 0;">A shorter introduction and more live performances — on the <a href="./papergun.html" style="color:#b5a37e;">main Paper Gun page</a> &nbsp;·&nbsp; The full arc of the work is here — and the arc is what's important to travel</p>
+
 <div id="top-bar">
   <a href="./papergun.html">← Paper Gun</a>
   <a href="mailto:bookings@tosh42.com" class="book-btn">◆ Book Now</a>
@@ -107,7 +109,7 @@ details[open] .song-arrow{transform:rotate(90deg);}
   </p>
   <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.05rem;color:var(--gold);opacity:.9;margin-top:.8rem;">The arc of all three acts is what&#x2019;s important to travel.</p>
 
-  <div style="max-width:620px;margin:2.6rem auto 0;padding:1.8rem 2rem;border:1px solid rgba(184,151,58,.28);background:rgba(184,151,58,.04);text-align:center;">
+  <div style="max-width:620px;margin:2.6rem auto 0;padding:1.8rem 2rem;border:1px solid rgba(156,138,106,.28);background:rgba(156,138,106,.04);text-align:center;">
     <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(1.05rem,1.9vw,1.25rem);color:var(--cream);opacity:.85;line-height:1.9;letter-spacing:.02em;">&ldquo;You can't bring it to the front,<br/>if you bring it to the front then it can be said,<br/>if it could be said it could be broken.<br/>You could not say to me<br/>because you could not listen generously&rdquo;</p>
     <p style="font-family:'DM Mono',monospace;font-size:.58rem;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);opacity:.7;margin-top:1rem;">— Paper Gun</p>
     <p style="font-family:'Cormorant Garamond',serif;font-size:clamp(.98rem,1.7vw,1.12rem);color:var(--cream);opacity:.68;line-height:1.85;letter-spacing:.02em;margin-top:1.4rem;text-align:left;">Survivors sit in rooms where the unsayable has been kept off the front for years, and a man at a piano brings it to the front for them, says it in melody where it's survivable, and they feel something break that they'd been guarding. These three clauses are practically the dramaturgical statement of <em style="color:var(--gold-l);">Paper Gun</em>.</p>
@@ -128,7 +130,7 @@ details[open] .song-arrow{transform:rotate(90deg);}
   <div id="actTracklist3" class="vj-tracklist">
     <p class="vj-tracklist-note">Loading playlist…</p>
   </div>
-  <p style="text-align:center;margin:-1.8rem 0 2.5rem;"><a href="https://www.youtube.com/playlist?list=PLSnxgBWzoUrtF7xD8i5niqGFDxNjtvNin" target="_blank" style="display:block;text-align:center;margin:-1.5rem 0 2.5rem;font-family:'DM Mono',monospace;font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);opacity:.55;text-decoration:none;border-bottom:1px solid rgba(184,151,58,.2);display:inline-block;padding-bottom:.1rem;">Open Act III playlist on YouTube →</a></p>
+  <p style="text-align:center;margin:-1.8rem 0 2.5rem;"><a href="https://www.youtube.com/playlist?list=PLSnxgBWzoUrtF7xD8i5niqGFDxNjtvNin" target="_blank" style="display:block;text-align:center;margin:-1.5rem 0 2.5rem;font-family:'DM Mono',monospace;font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);opacity:.55;text-decoration:none;border-bottom:1px solid rgba(156,138,106,.2);display:inline-block;padding-bottom:.1rem;">Open Act III playlist on YouTube →</a></p>
 
   <p class="songs-intro">Click a song · See the text</p>
 
@@ -627,7 +629,7 @@ Mr Hay “that’s the way it is, you have in life what you give away”
   <div id="actTracklist2" class="vj-tracklist">
     <p class="vj-tracklist-note">Loading playlist…</p>
   </div>
-  <p style="text-align:center;margin:-1.8rem 0 2.5rem;"><a href="https://www.youtube.com/playlist?list=PLSnxgBWzoUrvxDHYm9c9wQdxatlsBtIAq" target="_blank" style="display:block;text-align:center;margin:-1.5rem 0 2.5rem;font-family:'DM Mono',monospace;font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);opacity:.55;text-decoration:none;border-bottom:1px solid rgba(184,151,58,.2);display:inline-block;padding-bottom:.1rem;">Open Act II playlist on YouTube →</a></p>
+  <p style="text-align:center;margin:-1.8rem 0 2.5rem;"><a href="https://www.youtube.com/playlist?list=PLSnxgBWzoUrvxDHYm9c9wQdxatlsBtIAq" target="_blank" style="display:block;text-align:center;margin:-1.5rem 0 2.5rem;font-family:'DM Mono',monospace;font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);opacity:.55;text-decoration:none;border-bottom:1px solid rgba(156,138,106,.2);display:inline-block;padding-bottom:.1rem;">Open Act II playlist on YouTube →</a></p>
 
   <p class="songs-intro">Click a song · See the text</p>
 
@@ -1206,7 +1208,7 @@ and to say: I agree with you.</div>
   <div id="actTracklist1" class="vj-tracklist">
     <p class="vj-tracklist-note">Loading playlist…</p>
   </div>
-  <p style="text-align:center;margin:-1.8rem 0 2.5rem;"><a href="https://www.youtube.com/playlist?list=PLSnxgBWzoUrumnaPurYWt2iuHs1M3KazU" target="_blank" style="display:block;text-align:center;margin:-1.5rem 0 2.5rem;font-family:'DM Mono',monospace;font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);opacity:.55;text-decoration:none;border-bottom:1px solid rgba(184,151,58,.2);display:inline-block;padding-bottom:.1rem;">Open Act I playlist on YouTube →</a></p>
+  <p style="text-align:center;margin:-1.8rem 0 2.5rem;"><a href="https://www.youtube.com/playlist?list=PLSnxgBWzoUrumnaPurYWt2iuHs1M3KazU" target="_blank" style="display:block;text-align:center;margin:-1.5rem 0 2.5rem;font-family:'DM Mono',monospace;font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);opacity:.55;text-decoration:none;border-bottom:1px solid rgba(156,138,106,.2);display:inline-block;padding-bottom:.1rem;">Open Act I playlist on YouTube →</a></p>
 
   <p class="songs-intro">Click a song · See the text</p>
 
@@ -1635,65 +1637,65 @@ is not to allow fear to turn into hate</div>
 
 
 <!-- CREDITS -->
-<div style="max-width:600px;margin:0 auto;padding:3rem 2rem 2rem;text-align:center;border-top:1px solid rgba(184,151,58,.12);">
-  <p style="font-family:'DM Mono',monospace;font-size:.55rem;letter-spacing:.35em;text-transform:uppercase;color:#b8973a;opacity:.5;margin-bottom:2rem;">Credits</p>
+<div style="max-width:600px;margin:0 auto;padding:3rem 2rem 2rem;text-align:center;border-top:1px solid rgba(156,138,106,.12);">
+  <p style="font-family:'DM Mono',monospace;font-size:.55rem;letter-spacing:.35em;text-transform:uppercase;color:#9c8a6a;opacity:.5;margin-bottom:2rem;">Credits</p>
 
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem 2rem;margin-bottom:2rem;">
     <div>
-      <p style="font-family:'DM Mono',monospace;font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:#b8973a;opacity:.5;margin-bottom:.3rem;">Piano &amp; Vocals</p>
-      <p style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:#f5f0e8;opacity:.8;">Paul Tosh</p>
+      <p style="font-family:'DM Mono',monospace;font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:#9c8a6a;opacity:.5;margin-bottom:.3rem;">Piano &amp; Vocals</p>
+      <p style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:#eae3d3;opacity:.8;">Paul Tosh</p>
     </div>
     <div>
-      <p style="font-family:'DM Mono',monospace;font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:#b8973a;opacity:.5;margin-bottom:.3rem;">Narrator</p>
-      <p style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:#f5f0e8;opacity:.8;">Mesoud Benasully</p>
+      <p style="font-family:'DM Mono',monospace;font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:#9c8a6a;opacity:.5;margin-bottom:.3rem;">Narrator</p>
+      <p style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:#eae3d3;opacity:.8;">Mesoud Benasully</p>
     </div>
   </div>
 
   <div style="margin-bottom:2rem;">
-    <p style="font-family:'DM Mono',monospace;font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:#b8973a;opacity:.5;margin-bottom:.3rem;">Executive Producer</p>
-    <p style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:#f5f0e8;opacity:.8;">Rabbi Eli Gestetner <span style="font-size:.75rem;color:#888;opacity:.7;font-style:italic;"> — The Signpost</span></p>
+    <p style="font-family:'DM Mono',monospace;font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:#9c8a6a;opacity:.5;margin-bottom:.3rem;">Executive Producer</p>
+    <p style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:#eae3d3;opacity:.8;">Rabbi Eli Gestetner <span style="font-size:.75rem;color:#888;opacity:.7;font-style:italic;"> — The Signpost</span></p>
   </div>
 
-  <div style="border-top:1px solid rgba(184,151,58,.1);padding-top:1.5rem;display:flex;flex-direction:column;gap:.6rem;">
-    <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.85rem;color:#f5f0e8;opacity:.35;">With thanks to Claude AI for incredible organising help and web design.</p>
-    <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.85rem;color:#f5f0e8;opacity:.35;">With ultimate thanks to Hashem.</p>
+  <div style="border-top:1px solid rgba(156,138,106,.1);padding-top:1.5rem;display:flex;flex-direction:column;gap:.6rem;">
+    <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.85rem;color:#eae3d3;opacity:.35;">With thanks to Claude AI for incredible organising help and web design.</p>
+    <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.85rem;color:#eae3d3;opacity:.35;">With ultimate thanks to Hashem.</p>
   </div>
 </div>
 
 <!-- NOTES SECTION -->
-<div id="notes-section" style="max-width:760px;margin:0 auto;padding:4rem 2rem 2rem;border-top:1px solid rgba(184,151,58,.12);">
+<div id="notes-section" style="max-width:760px;margin:0 auto;padding:4rem 2rem 2rem;border-top:1px solid rgba(156,138,106,.12);">
 
   <div style="text-align:center;margin-bottom:3rem;">
-    <h2 style="font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:clamp(1.6rem,3vw,2.2rem);color:#f5f0e8;margin-bottom:.5rem;">Author's Context for P A P E R G U N</h2>
-    <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.95rem;color:#f5f0e8;opacity:.65;margin-top:.4rem;">Context for P A P E R G U N</p>
-    <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.9rem;color:#f5f0e8;opacity:.52;margin-top:.8rem;max-width:600px;margin-left:auto;margin-right:auto;line-height:1.7;">A dramaturgical companion to the song cycle for performance preparation and audience understanding. They are offered here as context, not instruction. The audience is always right.</p>
-    <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.9rem;color:#f5f0e8;opacity:.52;margin-top:1.2rem;max-width:600px;margin-left:auto;margin-right:auto;line-height:1.7;">The arc of all three acts is what&#x2019;s important to travel.</p>
-    <p style="font-family:'DM Mono',monospace;font-size:.55rem;letter-spacing:.25em;text-transform:uppercase;color:#b8973a;opacity:.35;margin-top:1.8rem;">tosh42.com</p>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:clamp(1.6rem,3vw,2.2rem);color:#eae3d3;margin-bottom:.5rem;">Author's Context for P A P E R G U N</h2>
+    <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.95rem;color:#eae3d3;opacity:.65;margin-top:.4rem;">Context for P A P E R G U N</p>
+    <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.9rem;color:#eae3d3;opacity:.52;margin-top:.8rem;max-width:600px;margin-left:auto;margin-right:auto;line-height:1.7;">A dramaturgical companion to the song cycle for performance preparation and audience understanding. They are offered here as context, not instruction. The audience is always right.</p>
+    <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.9rem;color:#eae3d3;opacity:.52;margin-top:1.2rem;max-width:600px;margin-left:auto;margin-right:auto;line-height:1.7;">The arc of all three acts is what&#x2019;s important to travel.</p>
+    <p style="font-family:'DM Mono',monospace;font-size:.55rem;letter-spacing:.25em;text-transform:uppercase;color:#9c8a6a;opacity:.35;margin-top:1.8rem;">tosh42.com</p>
   </div>
 
   <style>
-    .note-item{border-bottom:1px solid rgba(184,151,58,.1);margin-bottom:0;}
+    .note-item{border-bottom:1px solid rgba(156,138,106,.1);margin-bottom:0;}
     .note-item summary{list-style:none;cursor:pointer;display:flex;align-items:baseline;gap:1rem;padding:.9rem 0;font-family:'Cormorant Garamond',serif;}
     .note-item summary::-webkit-details-marker{display:none;}
-    .note-item summary:hover .note-title{color:#d4b05a;}
-    .note-num{font-family:'DM Mono',monospace;font-size:.6rem;letter-spacing:.2em;color:#b8973a;opacity:.5;flex-shrink:0;}
-    .note-title{font-size:1.05rem;color:#f5f0e8;opacity:.85;flex:1;transition:color .2s;}
-    .note-arrow{font-family:'DM Mono',monospace;font-size:.7rem;color:#b8973a;opacity:.4;transition:transform .2s;flex-shrink:0;}
+    .note-item summary:hover .note-title{color:#b5a37e;}
+    .note-num{font-family:'DM Mono',monospace;font-size:.6rem;letter-spacing:.2em;color:#9c8a6a;opacity:.5;flex-shrink:0;}
+    .note-title{font-size:1.05rem;color:#eae3d3;opacity:.85;flex:1;transition:color .2s;}
+    .note-arrow{font-family:'DM Mono',monospace;font-size:.7rem;color:#9c8a6a;opacity:.4;transition:transform .2s;flex-shrink:0;}
     details[open] .note-arrow{transform:rotate(90deg);}
-    .note-body{padding:1.2rem 0 2rem 1.8rem;font-family:'Cormorant Garamond',serif;font-size:.97rem;line-height:1.9;color:#f5f0e8;opacity:.72;border-left:1px solid rgba(184,151,58,.15);margin-left:.2rem;max-width:640px;}
+    .note-body{padding:1.2rem 0 2rem 1.8rem;font-family:'Cormorant Garamond',serif;font-size:.97rem;line-height:1.9;color:#eae3d3;opacity:.72;border-left:1px solid rgba(156,138,106,.15);margin-left:.2rem;max-width:640px;}
     .note-body p{margin-bottom:1.2rem;}
     .note-body p:last-child{margin-bottom:0;}
-    .note-body h3{font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:#b8973a;opacity:.7;margin:1.6rem 0 .6rem;}
-    .note-body .role-e{color:#d4b05a;}
+    .note-body h3{font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:#9c8a6a;opacity:.7;margin:1.6rem 0 .6rem;}
+    .note-body .role-e{color:#b5a37e;}
     .note-body .role-n{color:#8ab4d4;}
     .note-body .role-en{color:#c8a8d8;}
     .note-body em{font-style:italic;opacity:.85;}
-    .note-body .song-attr{border-bottom:1px solid rgba(184,151,58,.08);padding-bottom:1rem;margin-bottom:1rem;}
+    .note-body .song-attr{border-bottom:1px solid rgba(156,138,106,.08);padding-bottom:1rem;margin-bottom:1rem;}
     .note-body .song-attr:last-child{border-bottom:none;}
-    .note-body .song-attr-title{font-family:'DM Mono',monospace;font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:#b8973a;opacity:.6;margin-bottom:.4rem;}
-    .glossary-term{border-bottom:1px solid rgba(184,151,58,.08);padding-bottom:.9rem;margin-bottom:.9rem;}
+    .note-body .song-attr-title{font-family:'DM Mono',monospace;font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:#9c8a6a;opacity:.6;margin-bottom:.4rem;}
+    .glossary-term{border-bottom:1px solid rgba(156,138,106,.08);padding-bottom:.9rem;margin-bottom:.9rem;}
     .glossary-term:last-child{border-bottom:none;}
-    .glossary-term .term{font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:600;color:#d4b05a;margin-bottom:.25rem;}
+    .glossary-term .term{font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:600;color:#b5a37e;margin-bottom:.25rem;}
   </style>
 
   <details class="note-item">
@@ -1864,7 +1866,7 @@ is not to allow fear to turn into hate</div>
     <summary><span class="note-num">—</span><span class="note-title">Glossary</span><span class="note-arrow">›</span></summary>
     <div class="note-body">
 
-      <p style="font-family:'DM Mono',monospace;font-size:.58rem;letter-spacing:.2em;color:#b8973a;opacity:.5;margin-bottom:1.2rem;">Dramatic / Structural Terms</p>
+      <p style="font-family:'DM Mono',monospace;font-size:.58rem;letter-spacing:.2em;color:#9c8a6a;opacity:.5;margin-bottom:1.2rem;">Dramatic / Structural Terms</p>
 
       <div class="glossary-term"><p class="term">Shadow (Jungian)</p><p>The psychological term for the repressed or unconscious aspects of a personality — the parts of the self that have been denied, projected outward, or embodied in a difficult relationship. In Paper Gun, the shadow is both the internal voice (N) and the external figure (the lover/Jacques) who seems to carry it.</p></div>
 
@@ -1880,7 +1882,7 @@ is not to allow fear to turn into hate</div>
 
       <div class="glossary-term"><p class="term">The painting (Turner / Venetian)</p><p>The image of the Venetian oil painting in Act Two's soliloquy: when the protagonist speaks his truth, the other person disappears from the scene — the painter steps out of the painting. What remains is beauty, and solitude, and the choice of what to do with both.</p></div>
 
-      <p style="font-family:'DM Mono',monospace;font-size:.58rem;letter-spacing:.2em;color:#b8973a;opacity:.5;margin:1.6rem 0 1.2rem;">Musical / Performance Terms</p>
+      <p style="font-family:'DM Mono',monospace;font-size:.58rem;letter-spacing:.2em;color:#9c8a6a;opacity:.5;margin:1.6rem 0 1.2rem;">Musical / Performance Terms</p>
 
       <div class="glossary-term"><p class="term">Live looping</p><p>The performance technique at the centre of Paper Gun: the performer records layers of piano in real time, building a full musical texture from a single instrument. Dramatically, looping enacts the piece's central theme — the past playing beneath the present, the same phrase returning in new context.</p></div>
 
@@ -1892,19 +1894,7 @@ is not to allow fear to turn into hate</div>
 
       <div class="glossary-term"><p class="term">N (spoken/accented voice)</p><p>The shadow's exterior voice — performed, controlled, deflecting. Speech permits more management than song. N speaks because N is always, to some degree, performing.</p></div>
 
-      <p style="font-family:'DM Mono',monospace;font-size:.58rem;letter-spacing:.2em;color:#b8973a;opacity:.5;margin:1.6rem 0 1.2rem;">Halachic / Talmudic Terms</p>
-
-      <div class="glossary-term"><p class="term">Shechita / Kabbalah / Holachah / Zrikah</p><p>The four stages of a valid sacrifice: the slaughter (cutting to reach the blood / the truth), the receiving of the blood in a vessel, the carrying of the blood to the altar, and the throwing/application of the blood on the altar. The Act Three Gemara maps these onto the four acts of honest emotional transmission.</p></div>
-
-      <div class="glossary-term"><p class="term">Tikkun</p><p>Hebrew: repair, correction, restoration. In Kabbalistic thought, each soul has a specific tikkun — a repair it was sent into the world to make. Paper Heart uses the word as its final image: not resolution, but the ongoing work of repair, offered as a gift.</p></div>
-
-      <div class="glossary-term"><p class="term">Moshiach</p><p>The Messiah. In Forgiving: "what's too/to long for Moshiach!?" — the answer is in the question; "to?" is answered by "too!" - an acknowledgement that what it means to long for things to get better, is to feel the question: why is it taking too long to repair.</p></div>
-
-      <div class="glossary-term"><p class="term">HaKadosh Baruch Hu</p><p>Hebrew: The Holy One, Blessed Be He. One of the traditional appellations for G-d in Jewish prayer and study. Its appearance in Faith alongside the Italian operatic 'Vincerò' (I shall win) is a deliberate collision of registers — Talmud and Puccini, the same reaching.</p></div>
-
-      <div class="glossary-term"><p class="term">G-d (written with a dash)</p><p>The traditional Jewish practice of not writing the divine name in full in a context where the text might be discarded or treated carelessly. Its use in this document follows the author's practice throughout the piece.</p></div>
-
-      <p style="font-family:'DM Mono',monospace;font-size:.58rem;letter-spacing:.2em;color:#b8973a;opacity:.5;margin:1.6rem 0 1.2rem;">Relational / Psychological Terms</p>
+      <p style="font-family:'DM Mono',monospace;font-size:.58rem;letter-spacing:.2em;color:#9c8a6a;opacity:.5;margin:1.6rem 0 1.2rem;">Relational / Psychological Terms</p>
 
       <div class="glossary-term"><p class="term">Vilify to satisfy</p><p>A phrase used in Trauma Response and Paper Crown: the punitive defense mechanism of making the other person the villain in order to avoid accountability. If you are bad, I cannot be wrong. If I cannot be wrong, I cannot apologize. If I cannot apologize, I remain in control.</p></div>
 
@@ -1916,43 +1906,43 @@ is not to allow fear to turn into hate</div>
     </div>
   </details>
 
-  <p style="font-family:'DM Mono',monospace;font-size:.55rem;letter-spacing:.25em;text-transform:uppercase;color:#b8973a;opacity:.35;text-align:center;padding:2rem 0 1rem;">tosh42.com &nbsp;·&nbsp; <a href="mailto:bookings@tosh42.com" style="color:#b8973a;opacity:.6;text-decoration:none;">bookings@tosh42.com</a></p>
+  <p style="font-family:'DM Mono',monospace;font-size:.55rem;letter-spacing:.25em;text-transform:uppercase;color:#9c8a6a;opacity:.35;text-align:center;padding:2rem 0 1rem;">tosh42.com &nbsp;·&nbsp; <a href="mailto:bookings@tosh42.com" style="color:#9c8a6a;opacity:.6;text-decoration:none;">bookings@tosh42.com</a></p>
 
 
-<div style="max-width:600px;margin:0 auto;padding:2rem 2rem 3rem;border-top:1px solid rgba(184,151,58,.08);">
-  <p style="font-family:'DM Mono',monospace;font-size:.55rem;letter-spacing:.35em;text-transform:uppercase;color:#b8973a;opacity:.5;margin-bottom:1.5rem;text-align:center;">References Made To</p>
+<div style="max-width:600px;margin:0 auto;padding:2rem 2rem 3rem;border-top:1px solid rgba(156,138,106,.08);">
+  <p style="font-family:'DM Mono',monospace;font-size:.55rem;letter-spacing:.35em;text-transform:uppercase;color:#9c8a6a;opacity:.5;margin-bottom:1.5rem;text-align:center;">References Made To</p>
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem 2.5rem;">
     <div>
-      <p style="font-family:'Cormorant Garamond',serif;font-size:1rem;font-style:italic;color:#f5f0e8;opacity:.8;">Both Sides</p>
-      <p style="font-family:'DM Mono',monospace;font-size:.55rem;letter-spacing:.15em;color:#b8973a;opacity:.5;">Joni Mitchell — in "The Visitor"</p>
+      <p style="font-family:'Cormorant Garamond',serif;font-size:1rem;font-style:italic;color:#eae3d3;opacity:.8;">Both Sides</p>
+      <p style="font-family:'DM Mono',monospace;font-size:.55rem;letter-spacing:.15em;color:#9c8a6a;opacity:.5;">Joni Mitchell — in "The Visitor"</p>
     </div>
     <div>
-      <p style="font-family:'Cormorant Garamond',serif;font-size:1rem;font-style:italic;color:#f5f0e8;opacity:.8;">Not While I'm Around</p>
-      <p style="font-family:'DM Mono',monospace;font-size:.55rem;letter-spacing:.15em;color:#b8973a;opacity:.5;">Jamie Cullum</p>
+      <p style="font-family:'Cormorant Garamond',serif;font-size:1rem;font-style:italic;color:#eae3d3;opacity:.8;">Not While I'm Around</p>
+      <p style="font-family:'DM Mono',monospace;font-size:.55rem;letter-spacing:.15em;color:#9c8a6a;opacity:.5;">Jamie Cullum</p>
     </div>
     <div>
-      <p style="font-family:'Cormorant Garamond',serif;font-size:1rem;font-style:italic;color:#f5f0e8;opacity:.8;">Mother Glasgow</p>
-      <p style="font-family:'DM Mono',monospace;font-size:.55rem;letter-spacing:.15em;color:#b8973a;opacity:.5;">Hue and Cry</p>
+      <p style="font-family:'Cormorant Garamond',serif;font-size:1rem;font-style:italic;color:#eae3d3;opacity:.8;">Mother Glasgow</p>
+      <p style="font-family:'DM Mono',monospace;font-size:.55rem;letter-spacing:.15em;color:#9c8a6a;opacity:.5;">Hue and Cry</p>
     </div>
     <div>
-      <p style="font-family:'Cormorant Garamond',serif;font-size:1rem;font-style:italic;color:#f5f0e8;opacity:.8;">Stars</p>
-      <p style="font-family:'DM Mono',monospace;font-size:.55rem;letter-spacing:.15em;color:#b8973a;opacity:.5;">Nina Simone — in "An Artist"</p>
+      <p style="font-family:'Cormorant Garamond',serif;font-size:1rem;font-style:italic;color:#eae3d3;opacity:.8;">Stars</p>
+      <p style="font-family:'DM Mono',monospace;font-size:.55rem;letter-spacing:.15em;color:#9c8a6a;opacity:.5;">Nina Simone — in "An Artist"</p>
     </div>
     <div>
-      <p style="font-family:'Cormorant Garamond',serif;font-size:1rem;font-style:italic;color:#f5f0e8;opacity:.8;">Everybody Has a Dream</p>
-      <p style="font-family:'DM Mono',monospace;font-size:.55rem;letter-spacing:.15em;color:#b8973a;opacity:.5;">Billy Joel — in "This Is Mine"</p>
+      <p style="font-family:'Cormorant Garamond',serif;font-size:1rem;font-style:italic;color:#eae3d3;opacity:.8;">Everybody Has a Dream</p>
+      <p style="font-family:'DM Mono',monospace;font-size:.55rem;letter-spacing:.15em;color:#9c8a6a;opacity:.5;">Billy Joel — in "This Is Mine"</p>
     </div>
     <div>
-      <p style="font-family:'Cormorant Garamond',serif;font-size:1rem;font-style:italic;color:#f5f0e8;opacity:.8;">My Life</p>
-      <p style="font-family:'DM Mono',monospace;font-size:.55rem;letter-spacing:.15em;color:#b8973a;opacity:.5;">Billy Joel — in "Amnesty"</p>
+      <p style="font-family:'Cormorant Garamond',serif;font-size:1rem;font-style:italic;color:#eae3d3;opacity:.8;">My Life</p>
+      <p style="font-family:'DM Mono',monospace;font-size:.55rem;letter-spacing:.15em;color:#9c8a6a;opacity:.5;">Billy Joel — in "Amnesty"</p>
     </div>
     <div>
-      <p style="font-family:'Cormorant Garamond',serif;font-size:1rem;font-style:italic;color:#f5f0e8;opacity:.8;">Love Song</p>
-      <p style="font-family:'DM Mono',monospace;font-size:.55rem;letter-spacing:.15em;color:#b8973a;opacity:.5;">Elton John — in "Paper Heart"</p>
+      <p style="font-family:'Cormorant Garamond',serif;font-size:1rem;font-style:italic;color:#eae3d3;opacity:.8;">Love Song</p>
+      <p style="font-family:'DM Mono',monospace;font-size:.55rem;letter-spacing:.15em;color:#9c8a6a;opacity:.5;">Elton John — in "Paper Heart"</p>
     </div>
     <div>
-      <p style="font-family:'Cormorant Garamond',serif;font-size:1rem;font-style:italic;color:#f5f0e8;opacity:.8;">James Brown Drum Beat</p>
-      <p style="font-family:'DM Mono',monospace;font-size:.55rem;letter-spacing:.15em;color:#b8973a;opacity:.5;">in "You Make Me Rock N Roll"</p>
+      <p style="font-family:'Cormorant Garamond',serif;font-size:1rem;font-style:italic;color:#eae3d3;opacity:.8;">James Brown Drum Beat</p>
+      <p style="font-family:'DM Mono',monospace;font-size:.55rem;letter-spacing:.15em;color:#9c8a6a;opacity:.5;">in "You Make Me Rock N Roll"</p>
     </div>
   </div>
 </div>
@@ -1962,7 +1952,7 @@ is not to allow fear to turn into hate</div>
   <a href="mailto:bookings@tosh42.com" class="btn">◆ Book Now</a>
 </div>
 
-<a href="https://tosh42.com" title="Home — tosh42.com" style="position:fixed;bottom:1.2rem;right:1.2rem;z-index:2147483647;background:#0d0b08;border:1px solid rgba(184,151,58,.5);border-radius:50%;width:54px;height:54px;display:flex;align-items:center;justify-content:center;text-decoration:none;opacity:.88;transition:opacity .2s;font-family:monospace;font-size:.42rem;letter-spacing:.08em;text-transform:uppercase;color:#b8973a;text-align:center;line-height:1.3;box-shadow:0 2px 12px rgba(0,0,0,.7);" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity='.88'">tosh<br>42</a>
+<a href="./index.html" title="Home — tosh42.com" style="position:fixed;bottom:1.2rem;right:1.2rem;z-index:2147483647;background:#121010;border:1px solid rgba(156,138,106,.5);border-radius:50%;width:54px;height:54px;display:flex;align-items:center;justify-content:center;text-decoration:none;opacity:.88;transition:opacity .2s;font-family:monospace;font-size:.42rem;letter-spacing:.08em;text-transform:uppercase;color:#9c8a6a;text-align:center;line-height:1.3;box-shadow:0 2px 12px rgba(0,0,0,.7);" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity='.88'">tosh<br>42</a>
 <script>
 (function(){
   var LISTS = [
