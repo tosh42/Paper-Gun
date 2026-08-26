@@ -447,13 +447,14 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
 .vj-step.vj-right .vj-row{flex-direction:row-reverse;}
 .vj-side{flex:1 1 0;display:flex;justify-content:center;align-items:center;min-width:0;}
 .vj-side img{max-width:300px;width:100%;height:auto;filter:sepia(.25) contrast(1.02);opacity:.92;}
+.vj-side.vj-top{align-self:flex-start;margin-top:5.5rem;}
 .vj-photo.align-left{justify-content:flex-start;padding-left:60px;}
 .vj-photo.align-right{justify-content:flex-end;padding-right:60px;}
 .vj-photo.posters-pair{gap:1.2rem;align-items:flex-start;}
 .vj-photo.posters-pair a{flex:0 1 270px;display:block;transition:transform .15s;}
 .vj-photo.posters-pair a:hover{transform:translateY(-3px);}
 .vj-photo.posters-pair img{width:100%;max-width:270px;filter:none;opacity:1;border:1px solid rgba(156,138,106,.3);}
-@media(max-width:680px){.vj-photo.align-left,.vj-photo.align-right{justify-content:center;padding-left:2rem;padding-right:2rem;}.vj-photo.small img{max-width:82vw;}.vj-row{flex-direction:column!important;gap:1.2rem;}.vj-side img{max-width:70vw;}}
+@media(max-width:680px){.vj-photo.align-left,.vj-photo.align-right{justify-content:center;padding-left:2rem;padding-right:2rem;}.vj-photo.small img{max-width:82vw;}.vj-row{flex-direction:column!important;gap:1.2rem;}.vj-side img{max-width:70vw;}.vj-side.vj-top{align-self:center;margin-top:0;}}
 
 /* LINKS TO MORE big buttons */
 .more-btn{display:inline-block;background:var(--red);color:var(--cream);font-family:'DM Mono',monospace;font-size:.8rem;letter-spacing:.24em;text-transform:uppercase;padding:.95em 2.2em;margin:.4rem .35rem 0;transition:background .2s,transform .15s;border:none;}
@@ -636,7 +637,7 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
         <a class="more-btn ghost" href="./papergun-full.html">The Deep Dive — Acts I · II · III</a>
       </div>
     </div>
-    <div class="vj-side"><img src="image008_editedsepia.png" alt="Paul Tosh at the piano — sepia"/></div>
+    <div class="vj-side vj-top"><img src="image008_editedsepia.png" alt="Paul Tosh at the piano — sepia"/></div>
     </div>
   </div>
 
