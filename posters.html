@@ -54,6 +54,13 @@ footer p{font-family:'DM Mono',monospace;font-size:.54rem;letter-spacing:.26em;t
 .poster-card img{width:100%;height:auto;display:block;}
 .poster-card span{display:block;font-family:'DM Mono',monospace;font-size:.56rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);opacity:.7;margin-top:.7rem;text-align:center;line-height:1.6;}
 
+
+/* ── POSTER LIGHTBOX ── */
+#lightbox{position:fixed;inset:0;background:rgba(10,9,8,.96);display:none;align-items:center;justify-content:center;z-index:99999;padding:1.5rem;cursor:zoom-out;}
+#lightbox.open{display:flex;}
+#lightbox img{max-width:94vw;max-height:92vh;width:auto;height:auto;box-shadow:0 30px 120px rgba(0,0,0,.9);border:1px solid rgba(156,138,106,.35);}
+#lightbox .lb-close{position:fixed;top:1rem;right:1.4rem;font-family:'DM Mono',monospace;font-size:1.4rem;color:#eae3d3;opacity:.7;cursor:pointer;background:none;border:none;line-height:1;}
+#lightbox .lb-close:hover{opacity:1;}
 </style>
 </head>
 <body>
@@ -96,60 +103,60 @@ footer p{font-family:'DM Mono',monospace;font-size:.54rem;letter-spacing:.26em;t
 <div class="page-hero">
   <p class="kicker">On the Road</p>
   <h1>The <em>Posters</em></h1>
-  <p class="sub">Tap any poster to open it full size.</p>
+  <p class="sub">Tap any poster to enlarge it.</p>
 </div>
 
 <div class="wrap">
   <div class="poster-grid">
-    <a class="poster-card" href="PGshadowhero.jpg" target="_blank" rel="noopener">
+    <a class="poster-card" href="PGshadowhero.jpg" data-lightbox>
       <img src="PGshadowhero.jpg" alt="Paper Gun — A Show About Shadow Work (landscape)" loading="lazy"/>
       <span>Paper Gun — A Show About Shadow Work (landscape)</span>
     </a>
-    <a class="poster-card" href="PGshadowbirds3col.jpg" target="_blank" rel="noopener">
+    <a class="poster-card" href="PGshadowbirds3col.jpg" data-lightbox>
       <img src="PGshadowbirds3col.jpg" alt="Paper Gun — Shadow &amp; Birds" loading="lazy"/>
       <span>Paper Gun — Shadow &amp; Birds</span>
     </a>
-    <a class="poster-card" href="papergun_poster_1.jpg" target="_blank" rel="noopener">
+    <a class="poster-card" href="papergun_poster_1.jpg" data-lightbox>
       <img src="papergun_poster_1.jpg" alt="Paper Gun — At the Keys" loading="lazy"/>
       <span>Paper Gun — At the Keys</span>
     </a>
-    <a class="poster-card" href="papergun_img_2.jpg" target="_blank" rel="noopener">
+    <a class="poster-card" href="papergun_img_2.jpg" data-lightbox>
       <img src="papergun_img_2.jpg" alt="Paper Gun — Presents" loading="lazy"/>
       <span>Paper Gun — Presents</span>
     </a>
-    <a class="poster-card" href="VidstillPG.jpg" target="_blank" rel="noopener">
+    <a class="poster-card" href="VidstillPG.jpg" data-lightbox>
       <img src="VidstillPG.jpg" alt="Paper Gun — Title Card" loading="lazy"/>
       <span>Paper Gun — Title Card</span>
     </a>
-    <a class="poster-card" href="PGSITPposter.jpg" target="_blank" rel="noopener">
+    <a class="poster-card" href="PGSITPposter.jpg" data-lightbox>
       <img src="PGSITPposter.jpg" alt="Two Shows — Paper Gun &amp; The Song Is The Play" loading="lazy"/>
       <span>Two Shows — Paper Gun &amp; The Song Is The Play</span>
     </a>
-    <a class="poster-card" href="LHposter.png" target="_blank" rel="noopener">
+    <a class="poster-card" href="LHposter.png" data-lightbox>
       <img src="LHposter.png" alt="Paul Tosh — Unhurried, a Little Outlaw" loading="lazy"/>
       <span>Paul Tosh — Unhurried, a Little Outlaw</span>
     </a>
-    <a class="poster-card" href="PTposterJun24old.jpg" target="_blank" rel="noopener">
+    <a class="poster-card" href="PTposterJun24old.jpg" data-lightbox>
       <img src="PTposterJun24old.jpg" alt="Paul Tosh — Western" loading="lazy"/>
       <span>Paul Tosh — Western</span>
     </a>
-    <a class="poster-card" href="PTposterAug.jpg" target="_blank" rel="noopener">
+    <a class="poster-card" href="PTposterAug.jpg" data-lightbox>
       <img src="PTposterAug.jpg" alt="Paul Tosh — Illustrated" loading="lazy"/>
       <span>Paul Tosh — Illustrated</span>
     </a>
-    <a class="poster-card" href="PTAyeletposter.jpg" target="_blank" rel="noopener">
+    <a class="poster-card" href="PTAyeletposter.jpg" data-lightbox>
       <img src="PTAyeletposter.jpg" alt="Paul Tosh — Evening Garden" loading="lazy"/>
       <span>Paul Tosh — Evening Garden</span>
     </a>
-    <a class="poster-card" href="VibratoJune14.jpg" target="_blank" rel="noopener">
+    <a class="poster-card" href="VibratoJune14.jpg" data-lightbox>
       <img src="VibratoJune14.jpg" alt="The Song Is The Play — Vibrato Grill Jazz, LA" loading="lazy"/>
       <span>The Song Is The Play — Vibrato Grill Jazz, LA</span>
     </a>
-    <a class="poster-card" href="JCCJune102.jpg" target="_blank" rel="noopener">
+    <a class="poster-card" href="JCCJune102.jpg" data-lightbox>
       <img src="JCCJune102.jpg" alt="The Song Is The Play — The JCC, Denver" loading="lazy"/>
       <span>The Song Is The Play — The JCC, Denver</span>
     </a>
-    <a class="poster-card" href="CDJune2026.jpg" target="_blank" rel="noopener">
+    <a class="poster-card" href="CDJune2026.jpg" data-lightbox>
       <img src="CDJune2026.jpg" alt="Modern Day Nomadic Troubadour — Colorado 2026" loading="lazy"/>
       <span>Modern Day Nomadic Troubadour — Colorado 2026</span>
     </a>
@@ -177,6 +184,27 @@ document.querySelectorAll('.nav-drop > button').forEach(function(btn){
   });
 });
 document.addEventListener('click', function(){ document.querySelectorAll('.nav-drop.open').forEach(function(o){o.classList.remove('open');}); });
+</script>
+
+<div id="lightbox" aria-hidden="true">
+  <button class="lb-close" aria-label="Close">&times;</button>
+  <img src="" alt="Poster enlarged"/>
+</div>
+<script>
+(function(){
+  var lb = document.getElementById('lightbox');
+  var lbImg = lb.querySelector('img');
+  document.querySelectorAll('a[data-lightbox]').forEach(function(a){
+    a.addEventListener('click', function(e){
+      e.preventDefault();
+      lbImg.src = a.getAttribute('href');
+      lb.classList.add('open');
+    });
+  });
+  function closeLB(){ lb.classList.remove('open'); lbImg.src=''; }
+  lb.addEventListener('click', closeLB);
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeLB(); });
+})();
 </script>
 </body>
 </html>

@@ -443,13 +443,17 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
 .vj-photo{display:flex;justify-content:center;padding:1rem 2rem;width:100%;max-width:900px;margin:0 auto;}
 .vj-photo img{max-width:600px;width:100%;height:auto;filter:sepia(.25) contrast(1.02);opacity:.92;}
 .vj-photo.small img{max-width:330px;}
+.vj-row{display:flex;width:100%;gap:2rem;align-items:center;}
+.vj-step.vj-right .vj-row{flex-direction:row-reverse;}
+.vj-side{flex:1 1 0;display:flex;justify-content:center;align-items:center;min-width:0;}
+.vj-side img{max-width:300px;width:100%;height:auto;filter:sepia(.25) contrast(1.02);opacity:.92;}
 .vj-photo.align-left{justify-content:flex-start;padding-left:60px;}
 .vj-photo.align-right{justify-content:flex-end;padding-right:60px;}
 .vj-photo.posters-pair{gap:1.2rem;align-items:flex-start;}
 .vj-photo.posters-pair a{flex:0 1 270px;display:block;transition:transform .15s;}
 .vj-photo.posters-pair a:hover{transform:translateY(-3px);}
 .vj-photo.posters-pair img{width:100%;max-width:270px;filter:none;opacity:1;border:1px solid rgba(156,138,106,.3);}
-@media(max-width:680px){.vj-photo.align-left,.vj-photo.align-right{justify-content:center;padding-left:2rem;padding-right:2rem;}.vj-photo.small img{max-width:82vw;}}
+@media(max-width:680px){.vj-photo.align-left,.vj-photo.align-right{justify-content:center;padding-left:2rem;padding-right:2rem;}.vj-photo.small img{max-width:82vw;}.vj-row{flex-direction:column!important;gap:1.2rem;}.vj-side img{max-width:70vw;}}
 
 /* LINKS TO MORE big buttons */
 .more-btn{display:inline-block;background:var(--red);color:var(--cream);font-family:'DM Mono',monospace;font-size:.8rem;letter-spacing:.24em;text-transform:uppercase;padding:.95em 2.2em;margin:.4rem .35rem 0;transition:background .2s,transform .15s;border:none;}
@@ -490,6 +494,13 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
 .mb-roles span{display:inline-block;opacity:.6;letter-spacing:.14em;text-transform:none;font-size:.58rem;}
 
 .presenter-line{font-family:'DM Mono',monospace;font-size:.68rem;letter-spacing:.3em;text-transform:uppercase;color:var(--red-l);margin-bottom:.4rem;}
+
+/* ── POSTER LIGHTBOX ── */
+#lightbox{position:fixed;inset:0;background:rgba(10,9,8,.96);display:none;align-items:center;justify-content:center;z-index:99999;padding:1.5rem;cursor:zoom-out;}
+#lightbox.open{display:flex;}
+#lightbox img{max-width:94vw;max-height:92vh;width:auto;height:auto;box-shadow:0 30px 120px rgba(0,0,0,.9);border:1px solid rgba(156,138,106,.35);}
+#lightbox .lb-close{position:fixed;top:1rem;right:1.4rem;font-family:'DM Mono',monospace;font-size:1.4rem;color:#eae3d3;opacity:.7;cursor:pointer;background:none;border:none;line-height:1;}
+#lightbox .lb-close:hover{opacity:1;}
 </style>
 </head>
 <body>
@@ -583,6 +594,7 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
 
   <!-- 01 TESTIMONIALS -->
   <div class="vj-step vj-left">
+    <div class="vj-row">
     <div class="vj-card">
       <p class="vj-num">01</p>
       <p class="vj-title">Testimonials</p>
@@ -592,9 +604,10 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
       <p class="vj-desc">I am overjoyed at the reactions I get, and thank G-d for that in the deepest way — here are some of them.</p>
       <div class="vj-btnrow"><a class="more-btn" href="./testimonials.html">More Testimonials →</a></div>
     </div>
+    <div class="vj-side"><img src="Savan6_edited.png" alt="Paul Tosh singing at the piano"/></div>
+    </div>
   </div>
 
-  <div class="vj-photo small align-left"><img src="Savan6_edited.png" alt="Paul Tosh singing at the piano"/></div>
 
   <div class="vj-connector" aria-hidden="true">
     <svg viewBox="0 0 900 150" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
@@ -607,6 +620,7 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
 
   <!-- 02 PAPER GUN -->
   <div class="vj-step vj-right">
+    <div class="vj-row">
     <div class="vj-card">
       <p class="vj-num">02</p>
       <p class="vj-title">Paper Gun — <em>a show about shadow work</em></p>
@@ -622,9 +636,10 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
         <a class="more-btn ghost" href="./papergun-full.html">The Deep Dive — Acts I · II · III</a>
       </div>
     </div>
+    <div class="vj-side"><img src="image008_editedsepia.png" alt="Paul Tosh at the piano — sepia"/></div>
+    </div>
   </div>
 
-  <div class="vj-photo small align-right"><img src="image008_editedsepia.png" alt="Paul Tosh at the piano — sepia"/></div>
 
   <div class="vj-connector" aria-hidden="true">
     <svg viewBox="0 0 900 150" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
@@ -649,8 +664,8 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
   </div>
 
   <div class="vj-photo align-left posters-pair">
-    <a href="JCCJune102.jpg" target="_blank" rel="noopener"><img src="JCCJune102.jpg" alt="The Song Is The Play — poster (tap to expand)"/></a>
-    <a href="PGSITPposter.jpg" target="_blank" rel="noopener"><img src="PGSITPposter.jpg" alt="Two Shows — poster (tap to expand)"/></a>
+    <a href="JCCJune102.jpg" data-lightbox><img src="JCCJune102.jpg" alt="The Song Is The Play — poster (tap to expand)"/></a>
+    <a href="PGSITPposter.jpg" data-lightbox><img src="PGSITPposter.jpg" alt="Two Shows — poster (tap to expand)"/></a>
   </div>
 
   <div class="vj-connector" aria-hidden="true">
@@ -664,6 +679,7 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
 
   <!-- 04 FUNNIES -->
   <div class="vj-step vj-right">
+    <div class="vj-row">
     <div class="vj-card">
       <p class="vj-num">04</p>
       <p class="vj-title">Funnies</p>
@@ -672,9 +688,10 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
       </div>
       <p class="vj-desc">Can't tell a joke to save my life — but funny stuff always happens.</p>
     </div>
+    <div class="vj-side"><img src="ufunnycopy.png" alt="Paul Tosh — a look back from the piano"/></div>
+    </div>
   </div>
 
-  <div class="vj-photo small align-right"><img src="ufunnycopy.png" alt="Paul Tosh — a look back from the piano"/></div>
 
   <div class="vj-connector" aria-hidden="true">
     <svg viewBox="0 0 900 150" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
@@ -687,6 +704,7 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
 
   <!-- 05 WISDOM OF THE WEEK -->
   <div class="vj-step vj-left">
+    <div class="vj-row">
     <div class="vj-card">
       <p class="vj-num">05</p>
       <p class="vj-title">Wisdom from the Show</p>
@@ -694,9 +712,10 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
         <iframe src="https://www.youtube.com/embed/CCpX8vz2CR8" title="Wisdom from the Show — Paul Tosh" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
     </div>
+    <div class="vj-side"><img src="AJimagecream.png" alt="Paul Tosh — at the microphone"/></div>
+    </div>
   </div>
 
-  <div class="vj-photo small align-left"><img src="AJimagecream.png" alt="Paul Tosh — at the microphone"/></div>
 
   <div class="vj-connector" aria-hidden="true">
     <svg viewBox="0 0 900 150" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
@@ -709,6 +728,7 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
 
   <!-- 06 COVERS -->
   <div class="vj-step vj-right">
+    <div class="vj-row">
     <div class="vj-card">
       <p class="vj-num">06</p>
       <p class="vj-title">Covers</p>
@@ -717,9 +737,10 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
       </div>
       <p class="vj-desc">'70s, Billy Joel, Bob Dylan, Sinatra, Neil Diamond, opera, Scottish traditional.</p>
     </div>
+    <div class="vj-side"><img src="fishshot_edited.png" alt="Paul Tosh at the white piano"/></div>
+    </div>
   </div>
 
-  <div class="vj-photo small align-right"><img src="fishshot_edited.png" alt="Paul Tosh at the white piano"/></div>
 
   <div class="vj-connector" aria-hidden="true">
     <svg viewBox="0 0 900 150" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
@@ -881,5 +902,26 @@ function plFail(block){
 }
 </script>
 
+
+<div id="lightbox" aria-hidden="true">
+  <button class="lb-close" aria-label="Close">&times;</button>
+  <img src="" alt="Poster enlarged"/>
+</div>
+<script>
+(function(){
+  var lb = document.getElementById('lightbox');
+  var lbImg = lb.querySelector('img');
+  document.querySelectorAll('a[data-lightbox]').forEach(function(a){
+    a.addEventListener('click', function(e){
+      e.preventDefault();
+      lbImg.src = a.getAttribute('href');
+      lb.classList.add('open');
+    });
+  });
+  function closeLB(){ lb.classList.remove('open'); lbImg.src=''; }
+  lb.addEventListener('click', closeLB);
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeLB(); });
+})();
+</script>
 </body>
 </html>
