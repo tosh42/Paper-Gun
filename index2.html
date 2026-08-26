@@ -440,9 +440,16 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
 .dv-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:none;}
 
 /* Transition images between journey steps */
-.vj-photo{display:flex;justify-content:center;padding:1rem 2rem;}
-.vj-photo img{max-width:300px;width:60%;height:auto;filter:sepia(.25) contrast(1.02);opacity:.92;}
-.vj-photo.small img{max-width:220px;}
+.vj-photo{display:flex;justify-content:center;padding:1rem 2rem;width:100%;max-width:900px;margin:0 auto;}
+.vj-photo img{max-width:600px;width:100%;height:auto;filter:sepia(.25) contrast(1.02);opacity:.92;}
+.vj-photo.small img{max-width:440px;}
+.vj-photo.align-left{justify-content:flex-start;padding-left:60px;}
+.vj-photo.align-right{justify-content:flex-end;padding-right:60px;}
+.vj-photo.posters-pair{gap:1.2rem;align-items:flex-start;}
+.vj-photo.posters-pair a{flex:0 1 270px;display:block;transition:transform .15s;}
+.vj-photo.posters-pair a:hover{transform:translateY(-3px);}
+.vj-photo.posters-pair img{width:100%;max-width:270px;filter:none;opacity:1;border:1px solid rgba(156,138,106,.3);}
+@media(max-width:680px){.vj-photo.align-left,.vj-photo.align-right{justify-content:center;padding-left:2rem;padding-right:2rem;}.vj-photo.small img{max-width:82vw;}}
 
 /* LINKS TO MORE big buttons */
 .more-btn{display:inline-block;background:var(--red);color:var(--cream);font-family:'DM Mono',monospace;font-size:.8rem;letter-spacing:.24em;text-transform:uppercase;padding:.95em 2.2em;margin:.4rem .35rem 0;transition:background .2s,transform .15s;border:none;}
@@ -456,7 +463,8 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
 
 /* Five playlists section */
 #playlists-5{background:var(--ink);border-top:1px solid var(--border);padding:4rem 2rem;display:flex;flex-direction:column;align-items:center;}
-.pl-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem;width:100%;max-width:1240px;margin-top:2.2rem;}
+.pl-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:2rem;width:100%;max-width:1240px;margin-top:2.2rem;}
+.pl-grid .pl-block{flex:1 1 300px;max-width:380px;}
 .pl-block{border:1px solid var(--border);background:rgba(255,255,255,.02);padding:1.2rem;}
 .pl-title{font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold-l);margin-bottom:.9rem;text-align:center;}
 .pl-frame{position:relative;padding-bottom:56.25%;height:0;background:#000;border:1px solid var(--border);}
@@ -558,7 +566,7 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
     </div>
   </div>
 
-  <p class="blend-body" style="margin-top:2rem;max-width:660px;">I just want you to see an idea of the range I offer — so these introduction videos are in the main categories of what my shows have been like up till now (full show demos on <a href="./shows.html" style="color:var(--gold-l);border-bottom:1px solid rgba(156,138,106,.35);">Recent Shows</a>). But what I am doing now is a show still with the other stuff here and there — I have seen the most profound and meaningful use for my original work, which now comprises a three-act operetta: <em>Paper Gun</em>.</p>
+  <p class="blend-body" style="margin-top:2rem;max-width:660px;">I just want you to see an idea of the range I offer — so these below introduction videos are in the main categories of what my show has been like up till now (full show demos on <a href="./shows.html" style="color:var(--gold-l);border-bottom:1px solid rgba(156,138,106,.35);">Recent Shows</a>). But what I am doing now is a show still with the other stuff here and there — I have seen the most profound and meaningful use for my original work, which now comprises a three-act operetta: <em>Paper Gun</em>.</p>
 </section>
 
 <!-- ── GUIDED VIDEO JOURNEY · SEVEN DOORS ── -->
@@ -582,6 +590,8 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
     </div>
   </div>
 
+  <div class="vj-photo small align-left"><img src="Savan6_edited.png" alt="Paul Tosh singing at the piano"/></div>
+
   <div class="vj-connector" aria-hidden="true">
     <svg viewBox="0 0 900 150" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
       <defs><marker id="vjA1" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#9c8a6a"/></marker></defs>
@@ -600,8 +610,8 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
         <iframe src="https://www.youtube.com/embed/XXpbKkUshL0" title="Paper Gun — Paul Tosh" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
       <p class="vj-desc"><em>It's about survival over grievance.</em> An original operetta — one man plays both sides of himself. A three-act paper theme tied to the shadow and sacrifice: a journey from disillusionment to authenticity. A niche, unconventional, therapeutic, theatrical one-man show.</p>
-      <p class="vj-desc"><span class="aq">An honest word: Paper Gun goes deeper than most entertainment — framed, held, and closed with care.</span></p>
-      <p class="vj-desc">I've been introducing these songs of pain and love and reconciliation from my operetta in churches, synagogues, community centers, and senior facilities — I am now touring my one-man operetta; where the theme demands it, I supplement the original material with chosen cover songs by Bob Dylan, Frank Sinatra, Neil Diamond &amp; Billy Joel — songs that illuminate the same terrain from a different angle. The theatrical handling has been my core performing approach, honed across years of <em>The Song Is The Play</em>. There will always be an unknown element — the show breathes differently each time, always with relevance, always with a few surprises.</p>
+      <p class="vj-desc"><span class="aq">An honest word: Paper Gun goes deeper than most entertainment — framed, held, and closed with care — see the therapeutic link below.</span></p>
+      <p class="vj-desc">I've been introducing these songs of pain and love and reconciliation from my operetta in churches, synagogues, community centers, and senior facilities — I am now touring my one-man operetta; where the theme demands it, I supplement the original material with chosen cover songs by Bob Dylan, Frank Sinatra, Neil Diamond &amp; Billy Joel — songs that illuminate the same terrain from a different angle. The theatrical handling has been my core performing approach, honed across years of <a href="./sitp.html" style="color:var(--gold-l);border-bottom:1px solid rgba(156,138,106,.4);text-decoration:none;font-style:italic;">The Song Is The Play</a>. There will always be an unknown element — the show breathes differently each time, with relevance, and with a few surprises.</p>
       <div class="vj-btnrow">
         <a class="more-btn" href="./papergun.html">Paper Gun — The Show →</a>
         <a class="more-btn ghost" href="./therapeutic.html">Therapeutic — For Presenters &amp; Clinicians</a>
@@ -610,12 +620,12 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
     </div>
   </div>
 
-  <div class="vj-photo small"><img src="image008_editedsepia.png" alt="Paul Tosh at the piano — sepia"/></div>
+  <div class="vj-photo small align-right"><img src="image008_editedsepia.png" alt="Paul Tosh at the piano — sepia"/></div>
 
   <div class="vj-connector" aria-hidden="true">
     <svg viewBox="0 0 900 150" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
-      <defs><marker id="vjA2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#9c8a6a"/></marker></defs>
-      <path id="vjP2" class="vj-line" d="M 620,10 C 620,105 280,45 280,140" marker-end="url(#vjA2)"/>
+      <defs><marker id="vjA2" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#9c8a6a"/></marker></defs>
+      <path id="vjP2" class="vj-line" d="M 280,140 C 280,45 620,105 620,10" marker-start="url(#vjA2)"/>
       <text class="vj-path-label" dy="-9"><textPath href="#vjP2" startOffset="50%" text-anchor="middle">next · the concert show</textPath></text>
     </svg>
     <p class="vj-mobile-label">next · the concert show</p>
@@ -634,7 +644,10 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
     </div>
   </div>
 
-  <div class="vj-photo"><img src="JCCJune102.jpg" alt="The Song Is The Play — poster"/></div>
+  <div class="vj-photo align-left posters-pair">
+    <a href="JCCJune102.jpg" target="_blank" rel="noopener"><img src="JCCJune102.jpg" alt="The Song Is The Play — poster (tap to expand)"/></a>
+    <a href="PGSITPposter.jpg" target="_blank" rel="noopener"><img src="PGSITPposter.jpg" alt="Two Shows — poster (tap to expand)"/></a>
+  </div>
 
   <div class="vj-connector" aria-hidden="true">
     <svg viewBox="0 0 900 150" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
@@ -657,27 +670,29 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
     </div>
   </div>
 
-  <div class="vj-photo small"><img src="ufunnycopy.png" alt="Paul Tosh — a look back from the piano"/></div>
+  <div class="vj-photo small align-right"><img src="ufunnycopy.png" alt="Paul Tosh — a look back from the piano"/></div>
 
   <div class="vj-connector" aria-hidden="true">
     <svg viewBox="0 0 900 150" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
-      <defs><marker id="vjA4" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#9c8a6a"/></marker></defs>
-      <path id="vjP4" class="vj-line" d="M 620,10 C 620,105 280,45 280,140" marker-end="url(#vjA4)"/>
-      <text class="vj-path-label" dy="-9"><textPath href="#vjP4" startOffset="50%" text-anchor="middle">next · wisdom of the week</textPath></text>
+      <defs><marker id="vjA4" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#9c8a6a"/></marker></defs>
+      <path id="vjP4" class="vj-line" d="M 280,140 C 280,45 620,105 620,10" marker-start="url(#vjA4)"/>
+      <text class="vj-path-label" dy="-9"><textPath href="#vjP4" startOffset="50%" text-anchor="middle">next · wisdom from the show</textPath></text>
     </svg>
-    <p class="vj-mobile-label">next · wisdom of the week</p>
+    <p class="vj-mobile-label">next · wisdom from the show</p>
   </div>
 
   <!-- 05 WISDOM OF THE WEEK -->
   <div class="vj-step vj-left">
     <div class="vj-card">
       <p class="vj-num">05</p>
-      <p class="vj-title">Wisdom of the Week</p>
+      <p class="vj-title">Wisdom from the Show</p>
       <div class="vj-frame">
-        <iframe src="https://www.youtube.com/embed/CCpX8vz2CR8" title="Wisdom of the Week — Paul Tosh" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/CCpX8vz2CR8" title="Wisdom from the Show — Paul Tosh" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
     </div>
   </div>
+
+  <div class="vj-photo small align-left"><img src="AJimagecream.png" alt="Paul Tosh — at the microphone"/></div>
 
   <div class="vj-connector" aria-hidden="true">
     <svg viewBox="0 0 900 150" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
@@ -700,12 +715,12 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
     </div>
   </div>
 
-  <div class="vj-photo small"><img src="fishshot_edited.png" alt="Paul Tosh at the white piano"/></div>
+  <div class="vj-photo small align-right"><img src="fishshot_edited.png" alt="Paul Tosh at the white piano"/></div>
 
   <div class="vj-connector" aria-hidden="true">
     <svg viewBox="0 0 900 150" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
-      <defs><marker id="vjA6" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#9c8a6a"/></marker></defs>
-      <path id="vjP6" class="vj-line" d="M 620,10 C 620,105 280,45 280,140" marker-end="url(#vjA6)"/>
+      <defs><marker id="vjA6" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#9c8a6a"/></marker></defs>
+      <path id="vjP6" class="vj-line" d="M 280,140 C 280,45 620,105 620,10" marker-start="url(#vjA6)"/>
       <text class="vj-path-label" dy="-9"><textPath href="#vjP6" startOffset="50%" text-anchor="middle">next · the truck that carries it all</textPath></text>
     </svg>
     <p class="vj-mobile-label">next · the truck that carries it all</p>
@@ -724,7 +739,6 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
     </div>
   </div>
 
-  <div class="vj-photo small"><img src="AJimagecream.png" alt="Paul Tosh — at the microphone"/></div>
 
 </section>
 
