@@ -1327,7 +1327,20 @@ footer a { color: var(--gold); text-decoration: none; }
     </div>
 
     <div style="margin-top:4rem;" class="reveal">
-      <p class="section-label">The Covers</p>
+      <p class="section-label">Covers I</p>
+      <div class="video-main" style="padding-bottom:0;height:480px;">
+        <div id="covers1Player"></div>
+      </div>
+      <div id="covers1Tracklist" class="sitp-tracklist">
+        <p class="sitp-tracklist-note">Loading playlist…</p>
+      </div>
+      <div style="text-align:center;margin-top:2rem;">
+        <a href="https://www.youtube.com/playlist?list=PLZKcqTHDJw2o" target="_blank" class="btn-outline">View Covers I on YouTube →</a>
+      </div>
+    </div>
+
+    <div style="margin-top:4rem;" class="reveal">
+      <p class="section-label">Covers II</p>
       <div class="video-main" style="padding-bottom:0;height:480px;">
         <div id="coversPlayer"></div>
       </div>
@@ -1335,15 +1348,16 @@ footer a { color: var(--gold); text-decoration: none; }
         <p class="sitp-tracklist-note">Loading playlist…</p>
       </div>
       <div style="text-align:center;margin-top:2rem;">
-        <a href="https://www.youtube.com/playlist?list=PLWqkQ8Dvm5hE" target="_blank" class="btn-outline">View Covers Playlist on YouTube →</a>
+        <a href="https://www.youtube.com/playlist?list=PLWqkQ8Dvm5hE" target="_blank" class="btn-outline">View Covers II on YouTube →</a>
       </div>
     </div>
 
     <script>
     (function(){
       var LISTS = [
-        { pl: 'PLfiJVzeiivMA', playerId: 'sitpPlayer',   listId: 'sitpTracklist',   built:false, tries:0, player:null },
-        { pl: 'PLWqkQ8Dvm5hE', playerId: 'coversPlayer', listId: 'coversTracklist', built:false, tries:0, player:null }
+        { pl: 'PLfiJVzeiivMA', playerId: 'sitpPlayer',    listId: 'sitpTracklist',    built:false, tries:0, player:null },
+        { pl: 'PLZKcqTHDJw2o', playerId: 'covers1Player', listId: 'covers1Tracklist', built:false, tries:0, player:null },
+        { pl: 'PLWqkQ8Dvm5hE', playerId: 'coversPlayer',  listId: 'coversTracklist',  built:false, tries:0, player:null }
       ];
 
       var tag = document.createElement('script');
