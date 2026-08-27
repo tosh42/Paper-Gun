@@ -503,6 +503,12 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
 #lightbox img{max-width:94vw;max-height:92vh;width:auto;height:auto;box-shadow:0 30px 120px rgba(0,0,0,.9);border:1px solid rgba(156,138,106,.35);}
 #lightbox .lb-close{position:fixed;top:1rem;right:1.4rem;font-family:'DM Mono',monospace;font-size:1.4rem;color:#eae3d3;opacity:.7;cursor:pointer;background:none;border:none;line-height:1;}
 #lightbox .lb-close:hover{opacity:1;}
+
+@media(max-width:680px){
+  .duo-videos .dv{max-width:100% !important;flex:1 1 100% !important;}
+  .duo-videos .dv-frame{min-width:0 !important;flex:1 1 100% !important;width:100%;}
+  .duo-videos .dv > div{flex-wrap:wrap !important;}
+}
 </style>
 </head>
 <body>
@@ -608,7 +614,7 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
     <div class="dv" style="flex:3 1 780px;max-width:1060px;">
       <p class="dv-label">The Combined Introduction</p>
       <div style="display:flex;gap:1.1rem;align-items:stretch;flex-wrap:wrap;">
-        <div class="dv-frame" style="flex:1 1 720px;min-width:560px;"><iframe src="https://www.youtube.com/embed/qCnO8q0cUTI" title="Paul Tosh — Introduction" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+        <div class="dv-frame" style="flex:1 1 720px;min-width:560px;height:auto;padding-bottom:0;aspect-ratio:16/9;"><iframe src="https://www.youtube.com/embed/qCnO8q0cUTI" title="Paul Tosh — Introduction" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
         <div style="flex:0 0 175px;min-width:160px;border:1px solid rgba(156,138,106,.22);background:rgba(255,255,255,.02);padding:.9rem 1rem;font-family:'DM Mono',monospace;font-size:.58rem;letter-spacing:.08em;line-height:3.7;color:var(--cream);text-transform:uppercase;">
           <span style="color:var(--gold);opacity:.9;">0:00</span> Looping Intro<br/>
           <span style="color:var(--gold);opacity:.9;">0:38</span> The Song Is The Play<br/>
