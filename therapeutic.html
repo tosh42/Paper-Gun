@@ -104,19 +104,19 @@ footer p{font-family:'DM Mono',monospace;font-size:.55rem;letter-spacing:.28em;t
 <style>
 #site-nav{background:rgba(18,16,16,.98);border-bottom:1px solid rgba(156,138,106,.22);display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:0;padding:0 1rem;position:sticky;top:0;z-index:2000;}
 #site-nav .nav-sep{width:1px;height:14px;background:rgba(156,138,106,.15);flex-shrink:0;align-self:center;}
-.nav-drop{position:relative;display:inline-block;}
-.nav-drop > button{background:none;border:none;cursor:pointer;font-family:'DM Mono',monospace;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:#eae3d3;opacity:.8;padding:.75rem 1rem;transition:opacity .2s,color .2s;}
-.nav-drop > button:hover,.nav-drop.open > button{opacity:1;color:#b5a37e;}
-.nav-drop > button .caret{font-size:.6em;opacity:.6;margin-left:.35em;}
-.nav-menu{display:none;position:absolute;top:100%;left:50%;transform:translateX(-50%);min-width:230px;background:#171412;border:1px solid rgba(156,138,106,.22);box-shadow:0 14px 40px rgba(0,0,0,.65);padding:.5rem 0;text-align:left;z-index:2001;}
-.nav-drop.open .nav-menu{display:block;}
-.nav-menu a{display:block;font-family:'DM Mono',monospace;font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:#eae3d3;opacity:.85;padding:.7em 1.3em;text-decoration:none;border-bottom:none;transition:background .15s;}
-.nav-menu a:hover{background:rgba(156,138,106,.12);color:#b5a37e;}
-.nav-solo{font-family:'DM Mono',monospace;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:#eae3d3;opacity:.8;padding:.75rem 1rem;text-decoration:none;border-bottom:none;transition:opacity .2s,color .2s;}
-.nav-solo:hover{opacity:1;color:#b5a37e;}
-.nav-book{background:#a3271d;color:#eae3d3;font-family:'DM Mono',monospace;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;padding:.55rem 1.2rem;text-decoration:none;border-bottom:none;margin-left:.6rem;transition:background .2s;}
-.nav-book:hover{background:#c0392b;color:#eae3d3;}
-@media(max-width:680px){.nav-menu{position:static;transform:none;min-width:0;}}
+#site-nav .nav-drop{position:relative;display:inline-block;float:none;}
+#site-nav .nav-drop > button{background:none;border:none;cursor:pointer;font-family:'DM Mono',monospace;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:#eae3d3;opacity:.8;padding:.75rem 1rem;transition:opacity .2s,color .2s;}
+#site-nav .nav-drop > button:hover,#site-nav .nav-drop.open > button{opacity:1;color:#b5a37e;}
+#site-nav .nav-drop > button .caret{font-size:.6em;opacity:.6;margin-left:.35em;}
+#site-nav .nav-menu{display:none !important;position:absolute;top:100%;left:50%;transform:translateX(-50%);min-width:230px;width:max-content;background:#171412;border:1px solid rgba(156,138,106,.22);box-shadow:0 14px 40px rgba(0,0,0,.65);padding:.5rem 0;text-align:left;z-index:2001;flex-direction:column;}
+#site-nav .nav-drop.open .nav-menu{display:block !important;}
+#site-nav .nav-menu a{display:block !important;float:none;width:auto;margin:0;font-family:'DM Mono',monospace;font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:#eae3d3;opacity:.85;padding:.7em 1.3em;text-decoration:none;border:none;border-bottom:none;background:none;transition:background .15s;white-space:nowrap;}
+#site-nav .nav-menu a:hover{background:rgba(156,138,106,.12);color:#b5a37e;}
+#site-nav .nav-solo{font-family:'DM Mono',monospace;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:#eae3d3;opacity:.8;padding:.75rem 1rem;text-decoration:none;border:none;border-bottom:none;background:none;transition:opacity .2s,color .2s;}
+#site-nav .nav-solo:hover{opacity:1;color:#b5a37e;}
+#site-nav .nav-book{background:#a3271d;color:#eae3d3;font-family:'DM Mono',monospace;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;padding:.55rem 1.2rem;text-decoration:none;border:none;border-bottom:none;margin-left:.6rem;transition:background .2s;}
+#site-nav .nav-book:hover{background:#c0392b;color:#eae3d3;}
+@media(max-width:680px){#site-nav .nav-menu{position:static;transform:none;min-width:0;width:auto;}}
 </style>
 <nav id="site-nav">
   <div class="nav-drop">
