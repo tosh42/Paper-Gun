@@ -451,6 +451,7 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
 .vj-photo.align-left{justify-content:flex-start;padding-left:60px;}
 .vj-photo.align-right{justify-content:flex-end;padding-right:60px;}
 .vj-photo.posters-pair{gap:1.2rem;align-items:flex-start;}
+.vj-photo.posters-pair.align-left{padding-left:0;}
 .vj-photo.posters-pair a{flex:0 1 270px;display:block;transition:transform .15s;}
 .vj-photo.posters-pair a:hover{transform:translateY(-3px);}
 .vj-photo.posters-pair img{width:100%;max-width:270px;filter:none;opacity:1;border:1px solid rgba(156,138,106,.3);}
@@ -487,7 +488,7 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
 .poster-hero{width:100%;background:#000;}
 .poster-hero img{display:block;width:100%;height:auto;}
 .medicine-band{background:var(--ink);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:2.6rem 2rem 2.2rem;text-align:center;display:flex;flex-direction:column;align-items:center;gap:.5rem;}
-.mb-logo{width:34px;height:34px;object-fit:contain;border-radius:4px;opacity:.92;margin-bottom:.4rem;}
+.mb-logo{width:52px;height:52px;object-fit:contain;border-radius:4px;opacity:.92;margin-bottom:.4rem;}
 .medicine-band .hero-medicine{text-shadow:none;margin-bottom:.2rem;}
 .mb-name{font-family:'Cormorant Garamond',serif;font-size:clamp(1.6rem,3.4vw,2.3rem);font-weight:600;letter-spacing:.06em;color:var(--cream);}
 .mb-tag{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(.98rem,1.8vw,1.15rem);color:var(--cream);opacity:.7;}
@@ -506,23 +507,41 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
 </head>
 <body>
 
-<!-- SITE NAV — three dropdown menus -->
+<style>
+#site-nav{background:rgba(18,16,16,.98);border-bottom:1px solid rgba(156,138,106,.22);display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:0;padding:0 1rem;position:sticky;top:0;z-index:2000;}
+#site-nav .nav-sep{width:1px;height:14px;background:rgba(156,138,106,.15);flex-shrink:0;align-self:center;}
+.nav-drop{position:relative;display:inline-block;}
+.nav-drop > button{background:none;border:none;cursor:pointer;font-family:'DM Mono',monospace;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:#eae3d3;opacity:.8;padding:.75rem 1rem;transition:opacity .2s,color .2s;}
+.nav-drop > button:hover,.nav-drop.open > button{opacity:1;color:#b5a37e;}
+.nav-drop > button .caret{font-size:.6em;opacity:.6;margin-left:.35em;}
+.nav-menu{display:none;position:absolute;top:100%;left:50%;transform:translateX(-50%);min-width:230px;background:#171412;border:1px solid rgba(156,138,106,.22);box-shadow:0 14px 40px rgba(0,0,0,.65);padding:.5rem 0;text-align:left;z-index:2001;}
+.nav-drop.open .nav-menu{display:block;}
+.nav-menu a{display:block;font-family:'DM Mono',monospace;font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:#eae3d3;opacity:.85;padding:.7em 1.3em;text-decoration:none;border-bottom:none;transition:background .15s;}
+.nav-menu a:hover{background:rgba(156,138,106,.12);color:#b5a37e;}
+.nav-solo{font-family:'DM Mono',monospace;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:#eae3d3;opacity:.8;padding:.75rem 1rem;text-decoration:none;border-bottom:none;transition:opacity .2s,color .2s;}
+.nav-solo:hover{opacity:1;color:#b5a37e;}
+.nav-book{background:#a3271d;color:#eae3d3;font-family:'DM Mono',monospace;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;padding:.55rem 1.2rem;text-decoration:none;border-bottom:none;margin-left:.6rem;transition:background .2s;}
+.nav-book:hover{background:#c0392b;color:#eae3d3;}
+@media(max-width:680px){.nav-menu{position:static;transform:none;min-width:0;}}
+</style>
 <nav id="site-nav">
   <div class="nav-drop">
-    <button type="button">The Shows <span class="caret">▾</span></button>
+    <button type="button">The Shows <span class="caret">&#9662;</span></button>
     <div class="nav-menu">
       <a href="./index.html">Home</a>
-      <a href="./shows.html">Recent Shows</a>
       <a href="./papergun.html">Paper Gun</a>
       <a href="./sitp.html">The Song Is The Play</a>
-      <a href="./testimonials.html">Testimonials</a>
+      <a href="./fundraisers.html">Fundraisers</a>
+      <a href="./tasters.html">1-Minute Tasters</a>
       <a href="./agreement.html">Performance Agreement</a>
       <a href="./rider.html">Tech Rider</a>
     </div>
   </div>
   <div class="nav-sep"></div>
+  <a href="./testimonials.html" class="nav-solo">Testimonials</a>
+  <div class="nav-sep"></div>
   <div class="nav-drop">
-    <button type="button">Go Deeper <span class="caret">▾</span></button>
+    <button type="button">Go Deeper <span class="caret">&#9662;</span></button>
     <div class="nav-menu">
       <a href="./therapeutic.html">Therapeutic — Shadow Work</a>
       <a href="./papergun-full.html">Paper Gun — Deep Dive</a>
@@ -531,17 +550,31 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
   </div>
   <div class="nav-sep"></div>
   <div class="nav-drop">
-    <button type="button">On the Road <span class="caret">▾</span></button>
+    <button type="button">On the Road <span class="caret">&#9662;</span></button>
     <div class="nav-menu">
+      <a href="./shows.html">Recent Shows</a>
       <a href="./truckhomage.html">The CyberPhoenix</a>
       <a href="./posters.html">Posters</a>
-      <a href="./fundraisers.html">Fundraisers</a>
     </div>
   </div>
   <div class="nav-sep"></div>
-  <a href="mailto:bookings@tosh42.com" class="nav-book-red">◆ Book</a>
+  <a href="mailto:bookings@tosh42.com" class="nav-book">&#9670; Book</a>
 </nav>
+<script>
+(function(){
+  document.querySelectorAll('.nav-drop > button').forEach(function(btn){
+    btn.addEventListener('click', function(e){
+      e.stopPropagation();
+      var d = btn.parentElement, was = d.classList.contains('open');
+      document.querySelectorAll('.nav-drop.open').forEach(function(o){o.classList.remove('open');});
+      if(!was) d.classList.add('open');
+    });
+  });
+  document.addEventListener('click', function(){ document.querySelectorAll('.nav-drop.open').forEach(function(o){o.classList.remove('open');}); });
+})();
+</script>
 
+<!-- SITE NAV — three dropdown menus -->
 <!-- HERO — the Paper Gun shadow poster, shown whole -->
 <div class="poster-hero">
   <img src="PGshadowhero.jpg" alt="Paper Gun — a show about shadow work. We all carry shadows. The question is — what do we do with them? Now booking presenters."/>
@@ -571,18 +604,30 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
   <h2 class="blend-headline">The question is — what do we do with them?</h2>
   <p class="blend-body" style="margin-top:.6rem;">I have two shows — each one borrows a little from the other. Please see:</p>
 
-  <div class="duo-videos">
-    <div class="dv">
+  <div class="duo-videos" style="align-items:flex-start;">
+    <div class="dv" style="flex:1.5 1 480px;max-width:660px;">
       <p class="dv-label">The Combined Introduction</p>
-      <div class="dv-frame"><iframe src="https://www.youtube.com/embed/qCnO8q0cUTI" title="Paul Tosh — Introduction" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+      <div style="display:flex;gap:1.1rem;align-items:stretch;flex-wrap:wrap;">
+        <div class="dv-frame" style="flex:1 1 340px;min-width:280px;"><iframe src="https://www.youtube.com/embed/qCnO8q0cUTI" title="Paul Tosh — Introduction" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+        <div style="flex:0 1 190px;min-width:170px;border:1px solid rgba(156,138,106,.22);background:rgba(255,255,255,.02);padding:.9rem 1rem;font-family:'DM Mono',monospace;font-size:.58rem;letter-spacing:.08em;line-height:2.1;color:var(--cream);text-transform:uppercase;">
+          <span style="color:var(--gold);opacity:.9;">0:00</span> Looping Intro<br/>
+          <span style="color:var(--gold);opacity:.9;">0:38</span> The Song Is The Play<br/>
+          <span style="color:var(--gold);opacity:.9;">1:06</span> Seventies<br/>
+          <span style="color:var(--gold);opacity:.9;">2:10</span> A Few Laughs<br/>
+          <span style="color:var(--gold);opacity:.9;">2:55</span> Sinatra<br/>
+          <span style="color:var(--gold);opacity:.9;">3:12</span> Opera<br/>
+          <span style="color:var(--gold);opacity:.9;">4:06</span> New Original Show: Paper Gun<br/>
+          <span style="color:var(--gold);opacity:.9;">5:48</span> Wisdom From the Show<br/>
+          <span style="color:var(--gold);opacity:.9;">8:09</span> Looping Explained
+        </div>
+      </div>
     </div>
-    <div class="dv">
+    <div class="dv" style="flex:0 1 360px;max-width:400px;">
       <p class="dv-label">The Truck That Carries the Show</p>
       <div class="dv-frame"><iframe src="https://www.youtube.com/embed/wRYqaglwE3Q" title="The CyberPhoenix — Paul Tosh" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
     </div>
   </div>
 
-  <p class="blend-body" style="margin-top:2rem;max-width:660px;">I just want you to see an idea of the range I offer — so these below introduction videos are in the main categories of what my show has been like up till now (full show demos on <a href="./shows.html" style="color:var(--gold-l);border-bottom:1px solid rgba(156,138,106,.35);">Recent Shows</a>). But what I am doing now is a show still with the other stuff here and there — I have seen the most profound and meaningful use for my original work, which now comprises a three-act operetta: <em>Paper Gun</em>.</p>
 </section>
 
 <!-- ── GUIDED VIDEO JOURNEY · SEVEN DOORS ── -->
@@ -592,6 +637,9 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
     <span class="vj-kicker-text">Follow the Story · Seven Short Videos</span>
     <span class="vj-kicker-line right"></span>
   </div>
+
+  <p class="blend-body" style="margin:1.6rem auto 0;max-width:660px;text-align:center;">I just want you to see an idea of the range I offer — so these below introduction videos are in the main categories of what my show has been like up till now (full show demos on <a href="./shows.html" style="color:var(--gold-l);border-bottom:1px solid rgba(156,138,106,.35);">Recent Shows</a>). But what I am doing now is a show still with the other stuff here and there — I have seen the most profound and meaningful use for my original work, which now comprises a three-act operetta: <em>Paper Gun</em>.</p>
+
 
   <!-- 01 TESTIMONIALS -->
   <div class="vj-step vj-left">
@@ -603,7 +651,11 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
         <iframe src="https://www.youtube.com/embed/nN4UWzuYA-E" title="Testimonials — Paul Tosh" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
       <p class="vj-desc">I am overjoyed at the reactions I get, and thank G-d for that in the deepest way — here are some of them.</p>
-      <div class="vj-btnrow"><a class="more-btn" href="./testimonials.html">More Testimonials →</a></div>
+      <p class="vj-desc" style="margin-top:1.2rem;font-family:'DM Mono',monospace;font-size:.55rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);opacity:.7;">More testimonials</p>
+      <div class="vj-frame">
+        <iframe src="https://www.youtube.com/embed/4x61JRibfNA" title="Testimonials II — Paul Tosh" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="vj-btnrow"><a class="more-btn" href="./testimonials.html">And More →</a></div>
     </div>
     <div class="vj-side"><img src="Savan6_edited.png" alt="Paul Tosh singing at the piano"/></div>
     </div>
@@ -632,9 +684,19 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
       <p class="vj-desc"><span class="aq">An honest word: Paper Gun goes deeper than most entertainment — framed, held, and closed with care — see the therapeutic link below.</span></p>
       <p class="vj-desc">I've been introducing these songs of pain and love and reconciliation from my operetta in churches, synagogues, community centers, and senior facilities — I am now touring my one-man operetta; where the theme demands it, I supplement the original material with chosen cover songs by Bob Dylan, Frank Sinatra, Neil Diamond &amp; Billy Joel — songs that illuminate the same terrain from a different angle. The theatrical handling has been my core performing approach, honed across years of <a href="./sitp.html" style="color:var(--gold-l);border-bottom:1px solid rgba(156,138,106,.4);text-decoration:none;font-style:italic;">The Song Is The Play</a>. There will always be an unknown element — the show breathes differently each time, with relevance, and with a few surprises.</p>
       <div class="vj-btnrow">
-        <a class="more-btn" href="./papergun.html">Paper Gun — The Show →</a>
-        <a class="more-btn ghost" href="./therapeutic.html">Therapeutic — For Presenters &amp; Clinicians</a>
-        <a class="more-btn ghost" href="./papergun-full.html">The Deep Dive — Acts I · II · III</a>
+        <div style="display:flex;flex-direction:column;gap:.3rem;">
+          <a class="more-btn" href="./papergun.html">Paper Gun — The Show →</a>
+          <p class="btn-note" style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.85rem;color:var(--cream);opacity:.55;line-height:1.55;margin:0;">See sample — "Act I," "Act II," "Act III" playlists below</p>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:.3rem;">
+          <a class="more-btn ghost" href="./therapeutic.html">Therapeutic — For Presenters &amp; Clinicians</a>
+          <p class="btn-note" style="font-family:'DM Mono',monospace;font-size:.52rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);opacity:.7;margin:0 0 .2rem;">For presenters, clinicians, and group facilitators</p>
+          <p class="btn-note" style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.85rem;color:var(--cream);opacity:.55;line-height:1.55;margin:0;">Survival over grievance. An original operetta that carries a room through the universal resentments the way healing moves — complain, regulate, elevate — to the point where grief does its work. Created by Paul Tosh, author of the Grieving the Living protocol. Now booking presenters.</p>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:.3rem;">
+          <a class="more-btn ghost" href="./papergun-full.html">The Deep Dive — Acts I · II · III</a>
+          <p class="btn-note" style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.85rem;color:var(--cream);opacity:.55;line-height:1.55;margin:0;">To get an idea of the arc of each of the three acts — three playlists of all live pieces in context, the whole script, author's notes, a glossary and more.</p>
+        </div>
       </div>
     </div>
     <div class="vj-side vj-top"><img src="image008_editedsepia.png" alt="Paul Tosh at the piano — sepia"/></div>
@@ -712,6 +774,7 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
       <div class="vj-frame">
         <iframe src="https://www.youtube.com/embed/CCpX8vz2CR8" title="Wisdom from the Show — Paul Tosh" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
+      <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.95rem;color:var(--gold-l);opacity:.85;margin-top:.8rem;text-align:center;">Sometimes the destination is the trap, the journey's where it's at.</p>
     </div>
     <div class="vj-side"><img src="AJimagecream.png" alt="Paul Tosh — at the microphone"/></div>
     </div>
@@ -773,7 +836,8 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
   <p class="blend-eyebrow">The Full Song Playlists</p>
   <h2 class="blend-headline" style="text-align:center;">Scroll the Songs — Right Here</h2>
 
-  <div class="pl-grid">
+  <p class="pl-rowhead" style="font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.4em;text-transform:uppercase;color:var(--gold);opacity:.8;text-align:center;margin-top:2.4rem;">Live in the Making</p>
+  <div class="pl-grid" style="margin-top:1.2rem;">
 
     <div class="pl-block" data-plid="PLOV6fW3PlQNw" data-plname="Paper Gun · Act I">
       <p class="pl-title">Paper Gun · Act I</p>
@@ -795,6 +859,10 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
       <div class="pl-list"><p class="vj-tracklist-note">Loading playlist…</p></div>
       <a class="pl-ytlink" href="https://www.youtube.com/playlist?list=PLbFWSQ1KC0l8" target="_blank" rel="noopener">Open on YouTube →</a>
     </div>
+  </div>
+
+  <p class="pl-rowhead" style="font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.4em;text-transform:uppercase;color:var(--gold);opacity:.8;text-align:center;margin-top:4rem;">The Song Is The Play Introduction</p>
+  <div class="pl-grid" style="margin-top:1.2rem;">
 
     <div class="pl-block" data-plid="PLfiJVzeiivMA" data-plname="The Song Is The Play">
       <p class="pl-title">The Song Is The Play</p>
@@ -820,10 +888,10 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
   </div>
 </section>
 
-<!-- ── BOOKINGS & ENQUIRIES ── -->
+<!-- ── ENQUIRIES ── -->
 <div id="bottom-cta" style="border-top:1px solid var(--border);padding:3.5rem 2rem;text-align:center;display:flex;flex-direction:column;align-items:center;gap:1rem;">
   <p class="presenter-line">Now Booking Presenters</p>
-  <p style="font-family:'DM Mono',monospace;font-size:.6rem;letter-spacing:.38em;text-transform:uppercase;color:var(--gold);opacity:.55;">Bookings &amp; Enquiries</p>
+  <p style="font-family:'DM Mono',monospace;font-size:.6rem;letter-spacing:.38em;text-transform:uppercase;color:var(--gold);opacity:.55;">Enquiries</p>
   <h3 style="font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:clamp(1.3rem,3vw,1.9rem);color:var(--cream);line-height:1.4;">Bring Paul Tosh to your venue</h3>
   <p class="blend-body" style="max-width:560px;">Paul works across a wide range of venues and budgets. Please get in touch to discuss.<br/>Paul responds personally to every enquiry.</p>
   <a href="mailto:bookings@tosh42.com" class="cta-btn" style="font-size:.72rem;padding:.8em 2.4em;margin-top:.4rem;">◆ Book Now</a>
@@ -832,25 +900,13 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
     <a href="https://www.youtube.com/@TOSHFORTWO?sub_confirmation=1" target="_blank" rel="noopener">Subscribe on YouTube — @TOSHFORTWO</a>
     <a href="https://www.tiktok.com/@toshfortwo" target="_blank" rel="noopener">Follow on TikTok — @TOSHFORTWO</a>
   </div>
-  <p style="font-family:'DM Mono',monospace;font-size:.52rem;letter-spacing:.2em;text-transform:uppercase;color:var(--cream);opacity:.3;margin-top:1.4rem;">© 2026 Paul Tosh · tosh42.com · bookings@tosh42.com</p>
+  <p style="font-family:'DM Mono',monospace;font-size:.52rem;letter-spacing:.2em;text-transform:uppercase;color:var(--cream);opacity:.3;margin-top:1.4rem;">© 2026 Paul Tosh · tosh42.com · <a href="mailto:bookings@tosh42.com" style="color:var(--gold-l);text-decoration:none;border-bottom:1px solid rgba(156,138,106,.35);">bookings@tosh42.com</a></p>
 </div>
 
 <a href="./index.html" title="Home — tosh42.com" style="position:fixed;bottom:1.2rem;right:1.2rem;z-index:2147483647;background:#121010;border:1px solid rgba(156,138,106,.5);border-radius:50%;width:54px;height:54px;display:flex;align-items:center;justify-content:center;text-decoration:none;opacity:.88;transition:opacity .2s;font-family:monospace;font-size:.42rem;letter-spacing:.08em;text-transform:uppercase;color:#9c8a6a;text-align:center;line-height:1.3;box-shadow:0 2px 12px rgba(0,0,0,.7);" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity='.88'">tosh<br>42</a>
 
 <script>
 /* ── Dropdown menus (click to open, tap-friendly) ── */
-document.querySelectorAll('.nav-drop > button').forEach(function(btn){
-  btn.addEventListener('click', function(e){
-    e.stopPropagation();
-    var d = btn.parentElement;
-    var wasOpen = d.classList.contains('open');
-    document.querySelectorAll('.nav-drop.open').forEach(function(o){o.classList.remove('open');});
-    if(!wasOpen) d.classList.add('open');
-  });
-});
-document.addEventListener('click', function(){
-  document.querySelectorAll('.nav-drop.open').forEach(function(o){o.classList.remove('open');});
-});
 
 /* ── Five visible playlist tracklists via YouTube IFrame API ── */
 /* NOTE: playlist IDs below are the ones supplied so far — if a list fails to load,

@@ -75,7 +75,7 @@ p.body{opacity:.8;font-size:1.05rem;line-height:1.85;margin-bottom:1.4rem;font-w
 .video-wrap iframe{display:block;width:100%;aspect-ratio:16/9;border:0;}
 
 /* POSTER */
-#poster-section{max-width:860px;margin:0 auto;padding:4rem 2rem;text-align:center;}
+#poster-section{max-width:1060px;margin:0 auto;padding:4rem 2rem;text-align:center;}
 #poster-section svg{width:100%;max-width:460px;margin:0 auto;display:block;box-shadow:0 16px 80px rgba(0,0,0,.85);}
 
 /* SETLIST */
@@ -195,7 +195,9 @@ footer{text-align:center;padding:2rem;font-size:.7rem;letter-spacing:.2em;opacit
 .duo-videos .dv-label{font-family:'DM Mono',monospace;font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);opacity:.7;margin-bottom:.6rem;text-align:center;}
 .dv-frame{position:relative;padding-bottom:56.25%;height:0;background:#000;border:1px solid rgba(156,138,106,.25);}
 .dv-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:none;}
-.pl-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem;width:100%;max-width:1240px;margin:2.2rem auto 0;}
+.pl-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:2rem;width:100%;max-width:1240px;margin:2.2rem auto 0;}
+.pl-grid .pl-block{flex:1 1 300px;max-width:400px;}
+.pl-grid .pl-block{flex:1 1 300px;max-width:400px;}
 .pl-block{border:1px solid rgba(156,138,106,.22);background:rgba(255,255,255,.02);padding:1.2rem;}
 .pl-title{font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold-l);margin-bottom:.9rem;text-align:center;}
 .pl-frame{position:relative;padding-bottom:56.25%;height:0;background:#000;border:1px solid rgba(156,138,106,.22);}
@@ -208,6 +210,73 @@ footer{text-align:center;padding:2rem;font-size:.7rem;letter-spacing:.2em;opacit
 </head>
 <body>
 
+<style>
+#site-nav{background:rgba(18,16,16,.98);border-bottom:1px solid rgba(156,138,106,.22);display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:0;padding:0 1rem;position:sticky;top:0;z-index:2000;}
+#site-nav .nav-sep{width:1px;height:14px;background:rgba(156,138,106,.15);flex-shrink:0;align-self:center;}
+.nav-drop{position:relative;display:inline-block;}
+.nav-drop > button{background:none;border:none;cursor:pointer;font-family:'DM Mono',monospace;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:#eae3d3;opacity:.8;padding:.75rem 1rem;transition:opacity .2s,color .2s;}
+.nav-drop > button:hover,.nav-drop.open > button{opacity:1;color:#b5a37e;}
+.nav-drop > button .caret{font-size:.6em;opacity:.6;margin-left:.35em;}
+.nav-menu{display:none;position:absolute;top:100%;left:50%;transform:translateX(-50%);min-width:230px;background:#171412;border:1px solid rgba(156,138,106,.22);box-shadow:0 14px 40px rgba(0,0,0,.65);padding:.5rem 0;text-align:left;z-index:2001;}
+.nav-drop.open .nav-menu{display:block;}
+.nav-menu a{display:block;font-family:'DM Mono',monospace;font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:#eae3d3;opacity:.85;padding:.7em 1.3em;text-decoration:none;border-bottom:none;transition:background .15s;}
+.nav-menu a:hover{background:rgba(156,138,106,.12);color:#b5a37e;}
+.nav-solo{font-family:'DM Mono',monospace;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:#eae3d3;opacity:.8;padding:.75rem 1rem;text-decoration:none;border-bottom:none;transition:opacity .2s,color .2s;}
+.nav-solo:hover{opacity:1;color:#b5a37e;}
+.nav-book{background:#a3271d;color:#eae3d3;font-family:'DM Mono',monospace;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;padding:.55rem 1.2rem;text-decoration:none;border-bottom:none;margin-left:.6rem;transition:background .2s;}
+.nav-book:hover{background:#c0392b;color:#eae3d3;}
+@media(max-width:680px){.nav-menu{position:static;transform:none;min-width:0;}}
+</style>
+<nav id="site-nav">
+  <div class="nav-drop">
+    <button type="button">The Shows <span class="caret">&#9662;</span></button>
+    <div class="nav-menu">
+      <a href="./index.html">Home</a>
+      <a href="./papergun.html">Paper Gun</a>
+      <a href="./sitp.html">The Song Is The Play</a>
+      <a href="./fundraisers.html">Fundraisers</a>
+      <a href="./tasters.html">1-Minute Tasters</a>
+      <a href="./agreement.html">Performance Agreement</a>
+      <a href="./rider.html">Tech Rider</a>
+    </div>
+  </div>
+  <div class="nav-sep"></div>
+  <a href="./testimonials.html" class="nav-solo">Testimonials</a>
+  <div class="nav-sep"></div>
+  <div class="nav-drop">
+    <button type="button">Go Deeper <span class="caret">&#9662;</span></button>
+    <div class="nav-menu">
+      <a href="./therapeutic.html">Therapeutic — Shadow Work</a>
+      <a href="./papergun-full.html">Paper Gun — Deep Dive</a>
+      <a href="./favoritelinks.html">Favorite Links</a>
+    </div>
+  </div>
+  <div class="nav-sep"></div>
+  <div class="nav-drop">
+    <button type="button">On the Road <span class="caret">&#9662;</span></button>
+    <div class="nav-menu">
+      <a href="./shows.html">Recent Shows</a>
+      <a href="./truckhomage.html">The CyberPhoenix</a>
+      <a href="./posters.html">Posters</a>
+    </div>
+  </div>
+  <div class="nav-sep"></div>
+  <a href="mailto:bookings@tosh42.com" class="nav-book">&#9670; Book</a>
+</nav>
+<script>
+(function(){
+  document.querySelectorAll('.nav-drop > button').forEach(function(btn){
+    btn.addEventListener('click', function(e){
+      e.stopPropagation();
+      var d = btn.parentElement, was = d.classList.contains('open');
+      document.querySelectorAll('.nav-drop.open').forEach(function(o){o.classList.remove('open');});
+      if(!was) d.classList.add('open');
+    });
+  });
+  document.addEventListener('click', function(){ document.querySelectorAll('.nav-drop.open').forEach(function(o){o.classList.remove('open');}); });
+})();
+</script>
+
 <!-- TOP CTA BAR -->
 <div id="top-cta-bar">
   <p>Available for venues across the US &amp; Canada</p>
@@ -217,24 +286,14 @@ footer{text-align:center;padding:2rem;font-size:.7rem;letter-spacing:.2em;opacit
 <!-- FLOATING MOBILE CTA -->
 
 
-<!-- HERO -->
+<!-- HERO — title card -->
 <div id="hero" style="background:var(--ink);text-align:center;">
-
-  <!-- Above image -->
-  <p class="eyebrow"><span class="seg">Paul Tosh presents</span><span class="sep"> &nbsp;◆&nbsp; </span><span class="seg">A Premium Solo Show</span><span class="sep"> &nbsp;◆&nbsp; </span><span class="seg">tosh42.com</span></p>
 
   <!-- Image: Paper Gun title card, shown whole -->
   <div style="max-width:860px;margin:1.5rem auto 0;">
     <img src="VidstillPG.jpg" alt="Paper Gun — This is mine, but you can have it. A man. A piano. A reckoning." style="width:100%;display:block;height:auto;border:1px solid rgba(156,138,106,.25);box-shadow:0 16px 80px rgba(0,0,0,.85);"/>
   </div>
 
-  <!-- Below image -->
-  <span class="tag" style="display:block;margin-top:1.2rem;">A man. A piano. A reckoning.</span>
-  <p class="body" style="text-align:center;font-size:.85rem;letter-spacing:.2em;color:var(--gold);opacity:.65;margin-top:.75rem;">EMOTIONALLY ENGAGING &nbsp;·&nbsp; THEATRICAL &nbsp;·&nbsp; INDEPENDENCE</p>
-  <p class="body" style="max-width:680px;margin:1.8rem auto 0;text-align:center;font-style:italic;opacity:.75;">Paper Gun is an original song cycle — An operetta in three acts of twenty minutes each. A paper theme tied to the shadow and philosophical parallels about sacrifice, in which one man plays both sides of himself. Ending in independence and warmth, taking no prisoners on the way.</p>
-  <p class="body" style="max-width:680px;margin:1.4rem auto 0;text-align:center;font-style:italic;opacity:.85;color:var(--gold-l);">What this work does in the rooms it reaches: for the elderly, for the isolated, for people carrying weight they can't name until a song names it for them — is real. I've been in an impoverished enough state myself to know what I'm giving back.</p>
-
-  <div style="margin-top:2.4rem;display:flex;flex-wrap:wrap;gap:1rem;justify-content:center;align-items:center;"><a href="./papergun-full.html" style="display:inline-block;background:var(--gold);color:var(--ink);font-family:'DM Mono',monospace;font-size:clamp(.78rem,1.6vw,.92rem);letter-spacing:.26em;text-transform:uppercase;padding:1.1em 2.4em;text-decoration:none;border:2px solid var(--gold);box-shadow:0 8px 34px rgba(156,138,106,.28);transition:background .2s,transform .2s;" onmouseover="this.style.background='#b5a37e';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='#9c8a6a';this.style.transform='none'">⬡ The Deep Dive — Act I &nbsp;·&nbsp; II &nbsp;·&nbsp; III →</a><a href="./therapeutic.html" style="display:inline-block;background:transparent;color:var(--gold);font-family:'DM Mono',monospace;font-size:clamp(.72rem,1.5vw,.85rem);letter-spacing:.24em;text-transform:uppercase;padding:1.05em 2.1em;text-decoration:none;border:2px solid var(--gold);transition:background .2s,color .2s,transform .2s;" onmouseover="this.style.background='#9c8a6a';this.style.color='#121010';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='transparent';this.style.color='#9c8a6a';this.style.transform='none'">For Therapeutic Interest →</a></div>
 </div>
 
 <div class="rule"></div>
@@ -276,7 +335,6 @@ footer{text-align:center;padding:2rem;font-size:.7rem;letter-spacing:.2em;opacit
 <!-- SEE IT FOR YOURSELF — CLIPS -->
 <section class="fade" style="padding:3.5rem 2rem 0;max-width:1100px;margin:0 auto;">
   <p class="sl" style="justify-content:center;text-align:center;">See It For Yourself</p>
-  <h2 style="text-align:center;">An <em>Introduction</em></h2>
   <div class="duo-videos">
     <div class="dv">
       <p class="dv-label">Paper Gun — The Clip</p>
@@ -289,37 +347,21 @@ footer{text-align:center;padding:2rem;font-size:.7rem;letter-spacing:.2em;opacit
   </div>
 </section>
 
-<!-- WHO WROTE THAT -->
-<section class="fade" style="padding:3rem 2rem 0;max-width:760px;margin:0 auto;">
-  <p class="sl" style="justify-content:center;text-align:center;">"Who Wrote That?"</p>
-  <div class="dv-frame"><iframe src="https://www.youtube.com/embed/9mGmmZZRJWg" title="Paper Gun — Who Wrote That?" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-</section>
-
-<!-- THE THREE ACTS — SCROLLABLE PLAYLISTS -->
-<section id="acts-playlists" class="fade" style="padding:3.5rem 2rem;">
-  <p class="sl" style="justify-content:center;text-align:center;">The Operetta — Live</p>
-  <h2 style="text-align:center;">Three Acts. <em>Scroll the Songs.</em></h2>
-  <div class="pl-grid">
-    <div class="pl-block" data-plid="PLOV6fW3PlQNw" data-plname="Paper Gun · Act I">
-      <p class="pl-title">Act I</p>
-      <div class="pl-frame"><div class="pl-player"></div></div>
-      <div class="pl-list"><p class="vj-tracklist-note">Loading playlist…</p></div>
-      <a class="pl-ytlink" href="https://www.youtube.com/playlist?list=PLOV6fW3PlQNw" target="_blank" rel="noopener">Open on YouTube →</a>
+<!-- WHO WROTE THAT + WISDOM -->
+<section class="fade" style="padding:3rem 2rem 0;max-width:1000px;margin:0 auto;">
+  <div class="duo-videos" style="display:flex;gap:2rem;flex-wrap:wrap;justify-content:center;">
+    <div class="dv" style="flex:1 1 320px;max-width:440px;">
+      <p class="sl" style="justify-content:center;text-align:center;">"Who Wrote That?"</p>
+      <div class="dv-frame"><iframe src="https://www.youtube.com/embed/9mGmmZZRJWg" title="Paper Gun — Who Wrote That?" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
     </div>
-    <div class="pl-block" data-plid="PLYPdVuDAlJaE" data-plname="Paper Gun · Act II">
-      <p class="pl-title">Act II</p>
-      <div class="pl-frame"><div class="pl-player"></div></div>
-      <div class="pl-list"><p class="vj-tracklist-note">Loading playlist…</p></div>
-      <a class="pl-ytlink" href="https://www.youtube.com/playlist?list=PLYPdVuDAlJaE" target="_blank" rel="noopener">Open on YouTube →</a>
-    </div>
-    <div class="pl-block" data-plid="PLbFWSQ1KC0l8" data-plname="Paper Gun · Act III">
-      <p class="pl-title">Act III</p>
-      <div class="pl-frame"><div class="pl-player"></div></div>
-      <div class="pl-list"><p class="vj-tracklist-note">Loading playlist…</p></div>
-      <a class="pl-ytlink" href="https://www.youtube.com/playlist?list=PLbFWSQ1KC0l8" target="_blank" rel="noopener">Open on YouTube →</a>
+    <div class="dv" style="flex:1 1 320px;max-width:440px;">
+      <p class="sl" style="justify-content:center;text-align:center;">Wisdom From the Show</p>
+      <div class="dv-frame"><iframe src="https://www.youtube.com/embed/CCpX8vz2CR8" title="Wisdom from the Show — Paul Tosh" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
     </div>
   </div>
 </section>
+
+
 
 <!-- HUGO/HUXLEY QUOTE -->
 <div style="max-width:620px;margin:0 auto;padding:2.5rem 2rem 0;text-align:center;">
@@ -333,12 +375,29 @@ footer{text-align:center;padding:2rem;font-size:.7rem;letter-spacing:.2em;opacit
   <div style="display:flex;flex-wrap:wrap;justify-content:center;align-items:flex-start;gap:2rem;">
     <img src="PGshadowbirds3col.jpg"
          alt="Paper Gun — Show Poster"
-         style="width:100%;max-width:460px;flex:1 1 320px;display:block;box-shadow:0 16px 80px rgba(0,0,0,.85);"/>
+         style="width:100%;max-width:420px;flex:0 1 44%;min-width:260px;display:block;box-shadow:0 16px 80px rgba(0,0,0,.85);"/>
     <img src="papergun_poster_1.jpg"
          alt="Paper Gun — Paul Tosh Poster"
-         style="width:100%;max-width:460px;flex:1 1 320px;display:block;box-shadow:0 16px 80px rgba(0,0,0,.85);"/>
+         style="width:100%;max-width:420px;flex:0 1 44%;min-width:260px;display:block;box-shadow:0 16px 80px rgba(0,0,0,.85);"/>
   </div>
 </div>
+
+<div class="rule"></div>
+
+<!-- PAPER GUN — THE PITCH (moved from top) -->
+<section class="fade" style="background:var(--ink);text-align:center;padding:3rem 2rem 2.5rem;">
+
+  <!-- Above image -->
+  <p class="eyebrow"><span class="seg">Paul Tosh presents</span><span class="sep"> &nbsp;◆&nbsp; </span><span class="seg">A Premium Solo Show</span><span class="sep"> &nbsp;◆&nbsp; </span><span class="seg">tosh42.com</span></p>
+
+  <!-- Below image -->
+  <span class="tag" style="display:block;margin-top:1.2rem;">A man. A piano. A reckoning.</span>
+  <p class="body" style="text-align:center;font-size:.85rem;letter-spacing:.2em;color:var(--gold);opacity:.65;margin-top:.75rem;">EMOTIONALLY ENGAGING &nbsp;·&nbsp; THEATRICAL &nbsp;·&nbsp; INDEPENDENCE</p>
+  <p class="body" style="max-width:680px;margin:1.8rem auto 0;text-align:center;font-style:italic;opacity:.75;">Paper Gun is an original song cycle — An operetta in three acts of twenty minutes each. A paper theme tied to the shadow and philosophical parallels about sacrifice, in which one man plays both sides of himself. Ending in independence and warmth, taking no prisoners on the way.</p>
+  <p class="body" style="max-width:680px;margin:1.4rem auto 0;text-align:center;font-style:italic;opacity:.85;color:var(--gold-l);">What this work does in the rooms it reaches: for the elderly, for the isolated, for people carrying weight they can't name until a song names it for them — is real. I've been in an impoverished enough state myself to know what I'm giving back.</p>
+
+  <div style="margin-top:2.4rem;display:flex;flex-wrap:wrap;gap:1rem;justify-content:center;align-items:center;"><a href="./papergun-full.html" style="display:inline-block;background:var(--gold);color:var(--ink);font-family:'DM Mono',monospace;font-size:clamp(.78rem,1.6vw,.92rem);letter-spacing:.26em;text-transform:uppercase;padding:1.1em 2.4em;text-decoration:none;border:2px solid var(--gold);box-shadow:0 8px 34px rgba(156,138,106,.28);transition:background .2s,transform .2s;" onmouseover="this.style.background='#b5a37e';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='#9c8a6a';this.style.transform='none'">⬡ The Deep Dive — Act I &nbsp;·&nbsp; II &nbsp;·&nbsp; III →</a><a href="./therapeutic.html" style="display:inline-block;background:transparent;color:var(--gold);font-family:'DM Mono',monospace;font-size:clamp(.72rem,1.5vw,.85rem);letter-spacing:.24em;text-transform:uppercase;padding:1.05em 2.1em;text-decoration:none;border:2px solid var(--gold);transition:background .2s,color .2s,transform .2s;" onmouseover="this.style.background='#9c8a6a';this.style.color='#121010';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='transparent';this.style.color='#9c8a6a';this.style.transform='none'">For Therapeutic Interest →</a></div>
+</section>
 
 <div class="rule"></div>
 
@@ -519,16 +578,29 @@ footer{text-align:center;padding:2rem;font-size:.7rem;letter-spacing:.2em;opacit
 
 <div class="rule"></div>
 
-<!-- PLAYLIST — LIVE IN THE MAKING (scrollable) -->
-<section class="fade" style="padding:3.5rem 2rem;">
-  <p class="sl">Live in the Making</p>
-  <h2>Live in the Making — <em>Selections from the Operetta</em></h2>
-  <p class="body">A selection of live full videos — the pieces tested over the years that became Paper Gun.</p>
-  <div class="pl-grid" style="max-width:640px;">
-    <div class="pl-block" data-plid="PLSnxgBWzoUrtg4NQyPpBYldaTIIlJ7273" data-plname="Live in the Making">
+<!-- THE THREE ACTS — SCROLLABLE PLAYLISTS -->
+<section id="acts-playlists" class="fade" style="padding:3.5rem 2rem;">
+  <p class="sl" style="justify-content:center;text-align:center;">The Operetta — Live</p>
+  <h2 style="text-align:center;">Live in the Making — <em>Selections from the Operetta</em></h2>
+  <p class="body" style="text-align:center;max-width:640px;margin:1rem auto 0;">A selection of live full videos — the pieces tested over the years that became Paper Gun.</p>
+  <div class="pl-grid">
+    <div class="pl-block" data-plid="PLOV6fW3PlQNw" data-plname="Paper Gun · Act I">
+      <p class="pl-title">Act I</p>
       <div class="pl-frame"><div class="pl-player"></div></div>
       <div class="pl-list"><p class="vj-tracklist-note">Loading playlist…</p></div>
-      <a class="pl-ytlink" href="https://www.youtube.com/playlist?list=PLSnxgBWzoUrtg4NQyPpBYldaTIIlJ7273" target="_blank" rel="noopener">Open on YouTube →</a>
+      <a class="pl-ytlink" href="https://www.youtube.com/playlist?list=PLOV6fW3PlQNw" target="_blank" rel="noopener">Open on YouTube →</a>
+    </div>
+    <div class="pl-block" data-plid="PLYPdVuDAlJaE" data-plname="Paper Gun · Act II">
+      <p class="pl-title">Act II</p>
+      <div class="pl-frame"><div class="pl-player"></div></div>
+      <div class="pl-list"><p class="vj-tracklist-note">Loading playlist…</p></div>
+      <a class="pl-ytlink" href="https://www.youtube.com/playlist?list=PLYPdVuDAlJaE" target="_blank" rel="noopener">Open on YouTube →</a>
+    </div>
+    <div class="pl-block" data-plid="PLbFWSQ1KC0l8" data-plname="Paper Gun · Act III">
+      <p class="pl-title">Act III</p>
+      <div class="pl-frame"><div class="pl-player"></div></div>
+      <div class="pl-list"><p class="vj-tracklist-note">Loading playlist…</p></div>
+      <a class="pl-ytlink" href="https://www.youtube.com/playlist?list=PLbFWSQ1KC0l8" target="_blank" rel="noopener">Open on YouTube →</a>
     </div>
   </div>
 </section>
@@ -681,26 +753,7 @@ footer{text-align:center;padding:2rem;font-size:.7rem;letter-spacing:.2em;opacit
 
 <div class="rule"></div>
 
-<!-- THE VIDEO -->
-<div style="max-width:860px;margin:0 auto;padding:3rem 2rem 0;">
-  <div style="aspect-ratio:16/9;overflow:hidden;border:1px solid rgba(156,138,106,.22);box-shadow:0 16px 80px rgba(0,0,0,.85);">
-    <iframe style="width:100%;height:100%;border:0;display:block;" src="https://www.youtube.com/embed/DK8KPT6rreg" title="Paper Gun — Paul Tosh" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-  </div>
-</div>
 
-<div class="rule"></div>
-
-<!-- 1-MIN PLAYLIST -->
-<section class="fade" style="padding:3rem 2rem;">
-  <p class="sl" style="justify-content:center;text-align:center;">One-Minute Tastes</p>
-  <div class="pl-grid" style="max-width:640px;">
-    <div class="pl-block" data-plid="PLSnxgBWzoUrtwN_TZfc6gu8gzaQsP53iP" data-plname="The 1-Minute Playlist">
-      <div class="pl-frame"><div class="pl-player"></div></div>
-      <div class="pl-list"><p class="vj-tracklist-note">Loading playlist…</p></div>
-      <a class="pl-ytlink" href="https://youtube.com/playlist?list=PLSnxgBWzoUrtwN_TZfc6gu8gzaQsP53iP" target="_blank" rel="noopener">Open on YouTube →</a>
-    </div>
-  </div>
-</section>
 
 <div class="rule"></div>
 
@@ -723,7 +776,7 @@ footer{text-align:center;padding:2rem;font-size:.7rem;letter-spacing:.2em;opacit
   </div>
   <div style="border-top:1px solid rgba(156,138,106,.1);padding-top:1.5rem;display:flex;flex-direction:column;gap:.6rem;">
     <p style="font-family:Georgia,serif;font-style:italic;font-size:.85rem;color:#eae3d3;opacity:.35;">With thanks to Claude AI for incredible organising help and web design.</p>
-    <p style="font-family:Georgia,serif;font-style:italic;font-size:.85rem;color:#eae3d3;opacity:.35;">With ultimate thanks to Hashem.</p>
+    <p style="font-family:Georgia,serif;font-style:italic;font-size:.85rem;color:#eae3d3;opacity:.35;">With ultimate thanks to G-d.</p>
   </div>
 </div>
 

@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Posters · Paul Tosh · tosh42.com</title>
-<meta name="description" content="Show posters — Paper Gun and The Song Is The Play."/>
+<title>1-Minute Tasters · Paul Tosh · tosh42.com</title>
+<meta name="description" content="One-minute tastes of the pieces — scrollable playlist from Paul Tosh."/>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
@@ -48,19 +48,19 @@ a{color:var(--gold-l);}
 footer{text-align:center;padding:1.6rem;border-top:1px solid rgba(156,138,106,.1);}
 footer p{font-family:'DM Mono',monospace;font-size:.54rem;letter-spacing:.26em;text-transform:uppercase;color:var(--cream);opacity:.3;}
 
-.poster-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1.8rem;margin-top:2rem;}
-.poster-card{display:block;text-decoration:none;border:1px solid var(--border);background:rgba(255,255,255,.02);padding:.8rem;transition:transform .15s,border-color .2s;}
-.poster-card:hover{transform:translateY(-3px);border-color:rgba(156,138,106,.5);}
-.poster-card img{width:100%;height:auto;display:block;}
-.poster-card span{display:block;font-family:'DM Mono',monospace;font-size:.56rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);opacity:.7;margin-top:.7rem;text-align:center;line-height:1.6;}
+.pl-wrap{max-width:640px;margin:2rem auto 0;}
+.pl-frame{aspect-ratio:16/9;background:#000;border:1px solid var(--border);}
+.pl-frame > div{width:100%;height:100%;}
+.pl-list{max-height:300px;overflow-y:auto;border:1px solid var(--border);border-top:none;background:rgba(255,255,255,.02);}
+.pl-head{position:sticky;top:0;background:#171412;border-bottom:1px solid rgba(156,138,106,.25);padding:.55rem .8rem;font-family:'DM Mono',monospace;font-size:.55rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);}
+.pl-track{display:flex;align-items:center;gap:.8rem;padding:.55rem .8rem;cursor:pointer;border-bottom:1px solid rgba(156,138,106,.08);transition:background .15s;}
+.pl-track:hover{background:rgba(156,138,106,.1);}
+.pl-track.playing{background:rgba(156,138,106,.16);}
+.pl-track img{width:72px;height:40px;object-fit:cover;flex-shrink:0;}
+.pl-num{font-family:'DM Mono',monospace;font-size:.6rem;color:var(--gold);opacity:.6;width:1.4em;}
+.pl-tt{font-family:'Cormorant Garamond',serif;font-size:.95rem;color:var(--cream);opacity:.85;line-height:1.3;}
+.pl-note{padding:1rem;font-family:'DM Mono',monospace;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);opacity:.6;}
 
-
-/* ── POSTER LIGHTBOX ── */
-#lightbox{position:fixed;inset:0;background:rgba(10,9,8,.96);display:none;align-items:center;justify-content:center;z-index:99999;padding:1.5rem;cursor:zoom-out;}
-#lightbox.open{display:flex;}
-#lightbox img{max-width:94vw;max-height:92vh;width:auto;height:auto;box-shadow:0 30px 120px rgba(0,0,0,.9);border:1px solid rgba(156,138,106,.35);}
-#lightbox .lb-close{position:fixed;top:1rem;right:1.4rem;font-family:'DM Mono',monospace;font-size:1.4rem;color:#eae3d3;opacity:.7;cursor:pointer;background:none;border:none;line-height:1;}
-#lightbox .lb-close:hover{opacity:1;}
 </style>
 </head>
 <body>
@@ -133,63 +133,52 @@ footer p{font-family:'DM Mono',monospace;font-size:.54rem;letter-spacing:.26em;t
 </script>
 
 <div class="page-hero">
-  <p class="kicker">On the Road</p>
-  <h1>The <em>Posters</em></h1>
-  <p class="sub">Tap any poster to enlarge it.</p>
+  <p class="kicker">The Shows</p>
+  <h1>One-Minute <em>Tasters</em></h1>
+  <p class="sub">Each piece, in a minute. Scroll the list, tap any track to play it right here.</p>
 </div>
 
 <div class="wrap">
-  <div class="poster-grid">
-    <a class="poster-card" href="PGshadowhero.jpg" data-lightbox>
-      <img src="PGshadowhero.jpg" alt="Paper Gun — A Show About Shadow Work (landscape)" loading="lazy"/>
-      <span>Paper Gun — A Show About Shadow Work (landscape)</span>
-    </a>
-    <a class="poster-card" href="PGshadowbirds3col.jpg" data-lightbox>
-      <img src="PGshadowbirds3col.jpg" alt="Paper Gun — Shadow &amp; Birds" loading="lazy"/>
-      <span>Paper Gun — Shadow &amp; Birds</span>
-    </a>
-    <a class="poster-card" href="papergun_img_2.jpg" data-lightbox>
-      <img src="papergun_img_2.jpg" alt="Paper Gun — Presents" loading="lazy"/>
-      <span>Paper Gun — Presents</span>
-    </a>
-    <a class="poster-card" href="VidstillPG.jpg" data-lightbox>
-      <img src="VidstillPG.jpg" alt="Paper Gun — Title Card" loading="lazy"/>
-      <span>Paper Gun — Title Card</span>
-    </a>
-    <a class="poster-card" href="PGSITPposter.jpg" data-lightbox>
-      <img src="PGSITPposter.jpg" alt="Two Shows — Paper Gun &amp; The Song Is The Play" loading="lazy"/>
-      <span>Two Shows — Paper Gun &amp; The Song Is The Play</span>
-    </a>
-    <a class="poster-card" href="LHposter.png" data-lightbox>
-      <img src="LHposter.png" alt="Paul Tosh — Unhurried, a Little Outlaw" loading="lazy"/>
-      <span>Paul Tosh — Unhurried, a Little Outlaw</span>
-    </a>
-    <a class="poster-card" href="PTposterJun24old.jpg" data-lightbox>
-      <img src="PTposterJun24old.jpg" alt="Paul Tosh — Western" loading="lazy"/>
-      <span>Paul Tosh — Western</span>
-    </a>
-    <a class="poster-card" href="PTposterAug.jpg" data-lightbox>
-      <img src="PTposterAug.jpg" alt="Paul Tosh — Illustrated" loading="lazy"/>
-      <span>Paul Tosh — Illustrated</span>
-    </a>
-    <a class="poster-card" href="PTAyeletposter.jpg" data-lightbox>
-      <img src="PTAyeletposter.jpg" alt="Paul Tosh — Evening Garden" loading="lazy"/>
-      <span>Paul Tosh — Evening Garden</span>
-    </a>
-    <a class="poster-card" href="VibratoJune14.jpg" data-lightbox>
-      <img src="VibratoJune14.jpg" alt="The Song Is The Play — Vibrato Grill Jazz, LA" loading="lazy"/>
-      <span>The Song Is The Play — Vibrato Grill Jazz, LA</span>
-    </a>
-    <a class="poster-card" href="JCCJune102.jpg" data-lightbox>
-      <img src="JCCJune102.jpg" alt="The Song Is The Play — The JCC, Denver" loading="lazy"/>
-      <span>The Song Is The Play — The JCC, Denver</span>
-    </a>
-    <a class="poster-card" href="CDJune2026.jpg" data-lightbox>
-      <img src="CDJune2026.jpg" alt="Modern Day Nomadic Troubadour — Colorado 2026" loading="lazy"/>
-      <span>Modern Day Nomadic Troubadour — Colorado 2026</span>
-    </a>
+  <div class="pl-wrap">
+    <div class="pl-frame"><div id="tastePlayer"></div></div>
+    <div class="pl-list" id="tasteList"><p class="pl-note">Loading playlist&hellip;</p></div>
+    <div style="text-align:center;margin-top:1.6rem;">
+      <a href="https://youtube.com/playlist?list=PLSnxgBWzoUrtwN_TZfc6gu8gzaQsP53iP" target="_blank" rel="noopener" style="font-family:'DM Mono',monospace;font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);opacity:.7;text-decoration:none;border-bottom:1px solid rgba(156,138,106,.3);padding-bottom:.15rem;">Open on YouTube &rarr;</a>
+    </div>
   </div>
 </div>
+
+<script>
+(function(){
+  var PL='PLSnxgBWzoUrtwN_TZfc6gu8gzaQsP53iP', P=null, built=false, tries=0;
+  var tag=document.createElement('script'); tag.src='https://www.youtube.com/iframe_api'; document.head.appendChild(tag);
+  window.onYouTubeIframeAPIReady=function(){
+    P=new YT.Player('tastePlayer',{width:'100%',height:'100%',
+      playerVars:{listType:'playlist',list:PL,rel:0},
+      events:{onReady:build,onStateChange:mark}});
+  };
+  function build(){
+    var ids=P&&P.getPlaylist?P.getPlaylist():null;
+    if(!ids||!ids.length){ if(++tries<20){setTimeout(build,600);} else{document.getElementById('tasteList').innerHTML='<p class="pl-note">Playlist could not be loaded &mdash; open it on YouTube below.</p>';} return; }
+    if(built)return; built=true;
+    var w=document.getElementById('tasteList'); w.innerHTML='';
+    var head=document.createElement('p'); head.className='pl-head'; head.textContent=ids.length+' Tracks &middot; Scroll &amp; Tap to Play'; head.innerHTML=ids.length+' Tracks &middot; Scroll &amp; Tap to Play'; w.appendChild(head);
+    ids.forEach(function(id,i){
+      var r=document.createElement('div'); r.className='pl-track'; r.setAttribute('data-i',i);
+      r.innerHTML='<span class="pl-num">'+(i+1)+'</span><img loading="lazy" src="https://i.ytimg.com/vi/'+id+'/mqdefault.jpg" alt=""/><span class="pl-tt" id="ptt'+i+'">Track '+(i+1)+'</span>';
+      r.addEventListener('click',function(){P.playVideoAt(i);document.getElementById('tastePlayer').scrollIntoView({behavior:'smooth',block:'center'});});
+      w.appendChild(r);
+      fetch('https://noembed.com/embed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3D'+id).then(function(x){return x.json();}).then(function(d){if(d&&d.title){document.getElementById('ptt'+i).textContent=d.title;}}).catch(function(){});
+    });
+    mark();
+  }
+  function mark(){
+    if(!P||!P.getPlaylistIndex)return;
+    var idx=P.getPlaylistIndex();
+    document.querySelectorAll('#tasteList .pl-track').forEach(function(r){r.classList.toggle('playing',parseInt(r.getAttribute('data-i'),10)===idx);});
+  }
+})();
+</script>
 
 <div id="bottom-cta">
   <p class="presenter">Now Booking Presenters</p>
@@ -202,25 +191,5 @@ footer p{font-family:'DM Mono',monospace;font-size:.54rem;letter-spacing:.26em;t
 
 <a href="./index.html" title="Home — tosh42.com" style="position:fixed;bottom:1.2rem;right:1.2rem;z-index:2147483647;background:#121010;border:1px solid rgba(156,138,106,.5);border-radius:50%;width:54px;height:54px;display:flex;align-items:center;justify-content:center;text-decoration:none;opacity:.88;transition:opacity .2s;font-family:monospace;font-size:.42rem;letter-spacing:.08em;text-transform:uppercase;color:#9c8a6a;text-align:center;line-height:1.3;box-shadow:0 2px 12px rgba(0,0,0,.7);" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity='.88'">tosh<br>42</a>
 
-<div id="lightbox" aria-hidden="true">
-  <button class="lb-close" aria-label="Close">&times;</button>
-  <img src="" alt="Poster enlarged"/>
-</div>
-<script>
-(function(){
-  var lb = document.getElementById('lightbox');
-  var lbImg = lb.querySelector('img');
-  document.querySelectorAll('a[data-lightbox]').forEach(function(a){
-    a.addEventListener('click', function(e){
-      e.preventDefault();
-      lbImg.src = a.getAttribute('href');
-      lb.classList.add('open');
-    });
-  });
-  function closeLB(){ lb.classList.remove('open'); lbImg.src=''; }
-  lb.addEventListener('click', closeLB);
-  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeLB(); });
-})();
-</script>
 </body>
 </html>
