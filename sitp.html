@@ -1196,6 +1196,133 @@ footer a { color: var(--gold); text-decoration: none; }
   </div>
 </section>
 
+<!-- ── VIDEO ── -->
+<section id="video">
+  <div class="section-inner">
+    <div class="reveal">
+      <p class="section-label">Watch</p>
+      <h2 class="section-title">See it <em>live</em></h2>
+      <p class="video-intro">
+        The videos do the explaining. Watch audience reactions, full performances, and originals.
+      </p>
+    </div>
+
+    <!-- Playlist embed with visible tracklist -->
+    <div class="video-main reveal" style="padding-bottom:0;height:480px;">
+      <div id="sitpPlayer"></div>
+    </div>
+    <div id="sitpTracklist" class="sitp-tracklist reveal">
+      <p class="sitp-tracklist-note">Loading playlist…</p>
+    </div>
+
+    <div style="text-align:center;margin-top:2rem;" class="reveal">
+      <a href="https://www.youtube.com/playlist?list=PLfiJVzeiivMA" target="_blank" class="btn-outline">View Full Playlist on YouTube →</a>
+    </div>
+
+    <div style="margin-top:4rem;" class="reveal">
+      <p class="section-label">Covers I</p>
+      <div class="video-main" style="padding-bottom:0;height:480px;">
+        <div id="covers1Player"></div>
+      </div>
+      <div id="covers1Tracklist" class="sitp-tracklist">
+        <p class="sitp-tracklist-note">Loading playlist…</p>
+      </div>
+      <div style="text-align:center;margin-top:2rem;">
+        <a href="https://www.youtube.com/playlist?list=PLZKcqTHDJw2o" target="_blank" class="btn-outline">View Covers I on YouTube →</a>
+      </div>
+    </div>
+
+    <div style="margin-top:4rem;" class="reveal">
+      <p class="section-label">Covers II</p>
+      <div class="video-main" style="padding-bottom:0;height:480px;">
+        <div id="coversPlayer"></div>
+      </div>
+      <div id="coversTracklist" class="sitp-tracklist">
+        <p class="sitp-tracklist-note">Loading playlist…</p>
+      </div>
+      <div style="text-align:center;margin-top:2rem;">
+        <a href="https://www.youtube.com/playlist?list=PLWqkQ8Dvm5hE" target="_blank" class="btn-outline">View Covers II on YouTube →</a>
+      </div>
+    </div>
+
+    <script>
+    (function(){
+      var LISTS = [
+        { pl: 'PLfiJVzeiivMA', playerId: 'sitpPlayer',    listId: 'sitpTracklist',    built:false, tries:0, player:null },
+        { pl: 'PLZKcqTHDJw2o', playerId: 'covers1Player', listId: 'covers1Tracklist', built:false, tries:0, player:null },
+        { pl: 'PLWqkQ8Dvm5hE', playerId: 'coversPlayer',  listId: 'coversTracklist',  built:false, tries:0, player:null }
+      ];
+
+      var tag = document.createElement('script');
+      tag.src = 'https://www.youtube.com/iframe_api';
+      document.head.appendChild(tag);
+
+      window.onYouTubeIframeAPIReady = function(){
+        LISTS.forEach(function(L){
+          L.player = new YT.Player(L.playerId, {
+            width: '100%', height: '100%',
+            playerVars: { listType: 'playlist', list: L.pl, rel: 0 },
+            events: {
+              onReady: function(){ buildList(L); },
+              onStateChange: function(){ highlight(L); }
+            }
+          });
+        });
+      };
+
+      function buildList(L){
+        var ids = L.player && L.player.getPlaylist ? L.player.getPlaylist() : null;
+        if(!ids || !ids.length){
+          L.tries++;
+          if(L.tries < 20){ setTimeout(function(){ buildList(L); }, 600); }
+          else{
+            document.getElementById(L.listId).innerHTML =
+              '<p class="sitp-tracklist-note">Playlist could not be loaded — open it on YouTube below.</p>';
+          }
+          return;
+        }
+        if(L.built) return;
+        L.built = true;
+        var wrap = document.getElementById(L.listId);
+        wrap.innerHTML = '';
+        var head = document.createElement('p');
+        head.className = 'sitp-tracklist-head';
+        head.textContent = ids.length + ' Tracks · Scroll & Tap to Play';
+        wrap.appendChild(head);
+        ids.forEach(function(id, i){
+          var row = document.createElement('div');
+          row.className = 'sitp-track';
+          row.setAttribute('data-index', i);
+          row.innerHTML =
+            '<span class="sitp-track-num">' + (i+1) + '</span>' +
+            '<img loading="lazy" src="https://i.ytimg.com/vi/' + id + '/mqdefault.jpg" alt=""/>' +
+            '<span class="sitp-track-title" id="' + L.listId + 'TT' + i + '">Track ' + (i+1) + '</span>';
+          row.addEventListener('click', function(){
+            L.player.playVideoAt(i);
+            document.getElementById(L.playerId).scrollIntoView({behavior:'smooth', block:'center'});
+          });
+          wrap.appendChild(row);
+          fetch('https://noembed.com/embed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3D' + id)
+            .then(function(r){ return r.json(); })
+            .then(function(d){ if(d && d.title){ document.getElementById(L.listId + 'TT' + i).textContent = d.title; } })
+            .catch(function(){});
+        });
+        highlight(L);
+      }
+
+      function highlight(L){
+        if(!L.player || !L.player.getPlaylistIndex) return;
+        var idx = L.player.getPlaylistIndex();
+        var rows = document.querySelectorAll('#' + L.listId + ' .sitp-track');
+        rows.forEach(function(r){
+          r.classList.toggle('playing', parseInt(r.getAttribute('data-index'),10) === idx);
+        });
+      }
+    })();
+    </script>
+  </div>
+</section>
+
 <!-- ── WHO BOOKS PAUL ── -->
 <section id="venues">
   <div class="section-inner">
@@ -1357,133 +1484,6 @@ footer a { color: var(--gold); text-decoration: none; }
         <p class="t-source">Listening Room Network · Audition Review, Aug 2025</p>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- ── VIDEO ── -->
-<section id="video">
-  <div class="section-inner">
-    <div class="reveal">
-      <p class="section-label">Watch</p>
-      <h2 class="section-title">See it <em>live</em></h2>
-      <p class="video-intro">
-        The videos do the explaining. Watch audience reactions, full performances, and originals.
-      </p>
-    </div>
-
-    <!-- Playlist embed with visible tracklist -->
-    <div class="video-main reveal" style="padding-bottom:0;height:480px;">
-      <div id="sitpPlayer"></div>
-    </div>
-    <div id="sitpTracklist" class="sitp-tracklist reveal">
-      <p class="sitp-tracklist-note">Loading playlist…</p>
-    </div>
-
-    <div style="text-align:center;margin-top:2rem;" class="reveal">
-      <a href="https://www.youtube.com/playlist?list=PLfiJVzeiivMA" target="_blank" class="btn-outline">View Full Playlist on YouTube →</a>
-    </div>
-
-    <div style="margin-top:4rem;" class="reveal">
-      <p class="section-label">Covers I</p>
-      <div class="video-main" style="padding-bottom:0;height:480px;">
-        <div id="covers1Player"></div>
-      </div>
-      <div id="covers1Tracklist" class="sitp-tracklist">
-        <p class="sitp-tracklist-note">Loading playlist…</p>
-      </div>
-      <div style="text-align:center;margin-top:2rem;">
-        <a href="https://www.youtube.com/playlist?list=PLZKcqTHDJw2o" target="_blank" class="btn-outline">View Covers I on YouTube →</a>
-      </div>
-    </div>
-
-    <div style="margin-top:4rem;" class="reveal">
-      <p class="section-label">Covers II</p>
-      <div class="video-main" style="padding-bottom:0;height:480px;">
-        <div id="coversPlayer"></div>
-      </div>
-      <div id="coversTracklist" class="sitp-tracklist">
-        <p class="sitp-tracklist-note">Loading playlist…</p>
-      </div>
-      <div style="text-align:center;margin-top:2rem;">
-        <a href="https://www.youtube.com/playlist?list=PLWqkQ8Dvm5hE" target="_blank" class="btn-outline">View Covers II on YouTube →</a>
-      </div>
-    </div>
-
-    <script>
-    (function(){
-      var LISTS = [
-        { pl: 'PLfiJVzeiivMA', playerId: 'sitpPlayer',    listId: 'sitpTracklist',    built:false, tries:0, player:null },
-        { pl: 'PLZKcqTHDJw2o', playerId: 'covers1Player', listId: 'covers1Tracklist', built:false, tries:0, player:null },
-        { pl: 'PLWqkQ8Dvm5hE', playerId: 'coversPlayer',  listId: 'coversTracklist',  built:false, tries:0, player:null }
-      ];
-
-      var tag = document.createElement('script');
-      tag.src = 'https://www.youtube.com/iframe_api';
-      document.head.appendChild(tag);
-
-      window.onYouTubeIframeAPIReady = function(){
-        LISTS.forEach(function(L){
-          L.player = new YT.Player(L.playerId, {
-            width: '100%', height: '100%',
-            playerVars: { listType: 'playlist', list: L.pl, rel: 0 },
-            events: {
-              onReady: function(){ buildList(L); },
-              onStateChange: function(){ highlight(L); }
-            }
-          });
-        });
-      };
-
-      function buildList(L){
-        var ids = L.player && L.player.getPlaylist ? L.player.getPlaylist() : null;
-        if(!ids || !ids.length){
-          L.tries++;
-          if(L.tries < 20){ setTimeout(function(){ buildList(L); }, 600); }
-          else{
-            document.getElementById(L.listId).innerHTML =
-              '<p class="sitp-tracklist-note">Playlist could not be loaded — open it on YouTube below.</p>';
-          }
-          return;
-        }
-        if(L.built) return;
-        L.built = true;
-        var wrap = document.getElementById(L.listId);
-        wrap.innerHTML = '';
-        var head = document.createElement('p');
-        head.className = 'sitp-tracklist-head';
-        head.textContent = ids.length + ' Tracks · Scroll & Tap to Play';
-        wrap.appendChild(head);
-        ids.forEach(function(id, i){
-          var row = document.createElement('div');
-          row.className = 'sitp-track';
-          row.setAttribute('data-index', i);
-          row.innerHTML =
-            '<span class="sitp-track-num">' + (i+1) + '</span>' +
-            '<img loading="lazy" src="https://i.ytimg.com/vi/' + id + '/mqdefault.jpg" alt=""/>' +
-            '<span class="sitp-track-title" id="' + L.listId + 'TT' + i + '">Track ' + (i+1) + '</span>';
-          row.addEventListener('click', function(){
-            L.player.playVideoAt(i);
-            document.getElementById(L.playerId).scrollIntoView({behavior:'smooth', block:'center'});
-          });
-          wrap.appendChild(row);
-          fetch('https://noembed.com/embed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3D' + id)
-            .then(function(r){ return r.json(); })
-            .then(function(d){ if(d && d.title){ document.getElementById(L.listId + 'TT' + i).textContent = d.title; } })
-            .catch(function(){});
-        });
-        highlight(L);
-      }
-
-      function highlight(L){
-        if(!L.player || !L.player.getPlaylistIndex) return;
-        var idx = L.player.getPlaylistIndex();
-        var rows = document.querySelectorAll('#' + L.listId + ' .sitp-track');
-        rows.forEach(function(r){
-          r.classList.toggle('playing', parseInt(r.getAttribute('data-index'),10) === idx);
-        });
-      }
-    })();
-    </script>
   </div>
 </section>
 
