@@ -505,9 +505,13 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
 #lightbox .lb-close:hover{opacity:1;}
 
 @media(max-width:680px){
-  .duo-videos .dv{max-width:100% !important;flex:1 1 100% !important;}
-  .duo-videos .dv-frame{min-width:0 !important;flex:1 1 100% !important;width:100%;}
-  .duo-videos .dv > div{flex-wrap:wrap !important;}
+  .duo-videos{max-width:100% !important;}
+  .duo-videos .dv{max-width:100% !important;flex:1 1 100% !important;min-width:0 !important;}
+  .duo-videos .dv > div{flex-wrap:wrap !important;width:100% !important;min-width:0 !important;}
+  .duo-videos .dv-frame{min-width:0 !important;flex:1 1 100% !important;width:100% !important;max-width:100% !important;}
+  .duo-videos .dv > div > div:not(.dv-frame){flex:1 1 100% !important;min-width:0 !important;width:100% !important;text-align:center !important;}
+  #video-journey .vj-step{margin-bottom:2.6rem;}
+  .vj-connector{padding:1.4rem 0;}
 }
 </style>
 </head>
@@ -596,13 +600,7 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
 </div>
 
 <!-- TWO SHOWS LINE -->
-<div id="one-show-bar" style="background:var(--ink);border-bottom:1px solid var(--border);padding:.9rem 2rem;text-align:center;">
-  <p style="font-family:'DM Mono',monospace;font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;color:var(--cream);opacity:.65;margin:0;">Two shows · One pair of boots · Available across the US &amp; Canada</p>
-</div>
 
-<div style="display:flex;justify-content:center;padding:1.6rem 2rem 0;background:var(--ink);">
-  <img src="Herorepl1.png" alt="Paul Tosh — boots up, piano lit" style="max-width:620px;width:100%;height:auto;border:1px solid rgba(156,138,106,.25);"/>
-</div>
 
 <!-- ── INTRO: TWO SHOWS, TWO VIDEOS ── -->
 <section id="blend-intro">
@@ -628,10 +626,9 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
         </div>
       </div>
     </div>
-    <div class="dv" style="flex:0 1 360px;max-width:400px;">
-      <p class="dv-label" style="margin-top:2.2rem;">The Truck That Carries the Show</p>
-      <div class="dv-frame"><iframe src="https://www.youtube.com/embed/wRYqaglwE3Q" title="The CyberPhoenix — Paul Tosh" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-      <div style="text-align:center;margin-top:1rem;"><a class="more-btn ghost" href="./truckhomage.html">The Full Build →</a></div>
+    <div class="dv" style="flex:0 1 400px;max-width:440px;">
+      <p class="dv-label" style="margin-top:2.2rem;">Two shows · One pair of boots · Available across the US &amp; Canada</p>
+      <img src="Herorepl1.png" alt="Paul Tosh — boots up, piano lit" style="width:100%;height:auto;display:block;border:1px solid rgba(156,138,106,.25);"/>
     </div>
   </div>
 
@@ -737,9 +734,9 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
     <svg viewBox="0 0 900 150" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
       <defs><marker id="vjA3" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#9c8a6a"/></marker></defs>
       <path id="vjP3" class="vj-line" d="M 280,10 C 280,105 620,45 620,140" marker-end="url(#vjA3)"/>
-      <text class="vj-path-label" dy="-9"><textPath href="#vjP3" startOffset="50%" text-anchor="middle">next · funny stuff happens</textPath></text>
+      <text class="vj-path-label" dy="-9"><textPath href="#vjP3" startOffset="50%" text-anchor="middle">next · funny stuff</textPath></text>
     </svg>
-    <p class="vj-mobile-label">next · funny stuff happens</p>
+    <p class="vj-mobile-label">next · funny stuff</p>
   </div>
 
   <!-- 04 FUNNIES -->
