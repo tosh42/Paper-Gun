@@ -22,7 +22,7 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
 /* ── HERO ── */
 .hero{position:relative;width:100%;height:420px;overflow:hidden;flex-shrink:0;}
 .hero-img{width:100%;height:100%;object-fit:cover;object-position:center 28%;display:block;}
-.hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,#0d0b08 0%,rgba(13,11,8,.52) 45%,rgba(13,11,8,.18) 100%);}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,#121010 0%,rgba(18,16,16,.52) 45%,rgba(18,16,16,.18) 100%);}
 .hero-content{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding:2.8rem 2rem;text-align:center;}
 .hero-logo{position:absolute;top:1.2rem;left:1.4rem;width:30px;height:30px;object-fit:contain;border-radius:4px;display:block;opacity:.92;}
 .hero-tagline{position:absolute;top:1.2rem;left:1.4rem;display:flex;flex-direction:column;justify-content:flex-start;padding-top:34px;}
@@ -592,18 +592,27 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
 </script>
 
 <!-- SITE NAV — three dropdown menus -->
-<!-- HERO — the Paper Gun shadow poster, shown whole -->
-<div class="poster-hero">
-  <img src="PGshadowhero.jpg" alt="Paper Gun — a show about shadow work. We all carry shadows. The question is — what do we do with them? Now booking presenters."/>
+<!-- HERO — boots up, info overlaid -->
+<div class="hero">
+  <img class="hero-img" src="Herorepl1.png" alt="Paul Tosh"/>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <img src="logo_gold_smlr.jpg" alt="Tosh42" class="hero-logo"/>
+    <div class="hero-tagline"><p>Singer / Pianist <em style="font-family:'Cormorant Garamond',serif;font-style:italic;text-transform:none;letter-spacing:.04em;opacity:.85;">interactive · intimate</em><br/>Looping Artist <em style="font-family:'Cormorant Garamond',serif;font-style:italic;text-transform:none;letter-spacing:.04em;opacity:.85;">Ed Sheeran style — with a piano</em><br/>Songwriter<br/><span style="font-family:'DM Mono',monospace;font-size:.72rem;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);opacity:.85;">Modern Day</span><br/><span style="font-family:'DM Mono',monospace;font-size:.72rem;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);opacity:.85;">Nomadic Troubadour</span></p></div>
+    <p class="hero-name">Paul Tosh</p>
+    <p class="hero-tag">Unhurried, a little outlaw,<span class="hero-tag-break"> completely self-possessed.</span></p>
+  </div>
+</div>
+
+<!-- TWO SHOWS LINE -->
+<div id="one-show-bar" style="background:var(--ink);border-bottom:1px solid var(--border);padding:.9rem 2rem;text-align:center;">
+  <p style="font-family:'DM Mono',monospace;font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;color:var(--cream);opacity:.65;margin:0;">Two shows · One pair of boots · Available across the US &amp; Canada</p>
 </div>
 
 <!-- MEDICINE BAND — the site's opening line -->
 <div class="medicine-band">
   <img src="logo_gold_smlr.jpg" alt="Tosh42" class="mb-logo"/>
   <p class="hero-medicine">Music <b>is</b> the medicine</p>
-  <p class="mb-name">Paul Tosh</p>
-  <p class="mb-tag">Unhurried, a little outlaw, completely self-possessed.</p>
-  <p class="mb-roles">Singer / Pianist <span>interactive · intimate</span> &nbsp;·&nbsp; Looping Artist <span>Ed Sheeran style — with a piano</span> &nbsp;·&nbsp; Songwriter <br class="mbr"/><span class="mbr-dot">&nbsp;·&nbsp;</span> Modern Day Nomadic Troubadour</p>
 </div>
 
 <!-- TWO SHOWS LINE -->
@@ -611,8 +620,6 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
 
 <!-- ── INTRO: TWO SHOWS, TWO VIDEOS ── -->
 <section id="blend-intro">
-  <p class="blend-eyebrow">We all carry shadows</p>
-  <h2 class="blend-headline">The question is — what do we do with them?</h2>
   <p class="blend-body" style="margin-top:.6rem;">I have two shows — each one borrows a little from the other. Please see:</p>
 
   <div class="duo-videos" style="align-items:flex-start;width:100%;">
@@ -672,6 +679,14 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
       <text class="vj-path-label" dy="-9"><textPath href="#vjP1" startOffset="50%" text-anchor="middle">next · the operetta</textPath></text>
     </svg>
     <p class="vj-mobile-label">next · the operetta</p>
+  </div>
+
+  <div style="text-align:center;margin:2.2rem auto 0;padding:0 2rem;max-width:1000px;">
+    <p style="font-family:'Cinzel',serif;font-size:clamp(1.5rem,3.6vw,2.5rem);letter-spacing:.24em;text-transform:uppercase;color:var(--cream);opacity:.95;margin-bottom:.7rem;">We All Carry Shadows</p>
+    <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(1.1rem,2.2vw,1.5rem);color:var(--gold-l);opacity:.85;margin-bottom:1.8rem;">The question is — what do we do with them?</p>
+    <div class="poster-hero" style="background:transparent;">
+      <img src="PGshadowhero.jpg" alt="Paper Gun — a show about shadow work. We all carry shadows. The question is — what do we do with them? Now booking presenters." style="width:100%;height:auto;display:block;"/>
+    </div>
   </div>
 
   <!-- 02 PAPER GUN -->
@@ -862,11 +877,6 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
       <div class="pl-list"><p class="vj-tracklist-note">Loading playlist…</p></div>
       <a class="pl-ytlink" href="https://www.youtube.com/playlist?list=PLbFWSQ1KC0l8" target="_blank" rel="noopener">Open on YouTube →</a>
     </div>
-  </div>
-
-  <div style="text-align:center;margin:4.5rem auto 0;max-width:640px;padding:0 2rem;">
-    <p style="font-family:'DM Mono',monospace;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--cream);opacity:.65;margin-bottom:1rem;">Two shows · One pair of boots · Available across the US &amp; Canada</p>
-    <img src="Herorepl1.png" alt="Paul Tosh — boots up, piano lit" style="width:100%;max-width:620px;height:auto;display:block;margin:0 auto;border:1px solid rgba(156,138,106,.25);"/>
   </div>
 
   <p class="pl-rowhead" style="font-family:'Cinzel',serif;font-size:clamp(1.2rem,2.6vw,1.8rem);letter-spacing:.22em;text-transform:uppercase;color:var(--gold-l);opacity:.95;text-align:center;margin-top:3rem;">The Song Is The Play Introduction</p>
