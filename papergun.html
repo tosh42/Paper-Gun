@@ -305,7 +305,7 @@ footer{text-align:center;padding:2rem;font-size:.7rem;letter-spacing:.2em;opacit
 <section class="fade" style="max-width:820px;margin:0 auto;padding:3rem 2rem 0;">
   <p class="sl" style="justify-content:center;text-align:center;">Paper Gun</p>
   <h2 style="text-align:center;">Wisdom <em>from the Ages</em></h2>
-  <p class="body" style="margin-top:1.4rem;">I've spent years performing in senior communities, and the education has run in both directions: so many words of wisdom, so many conversations with remarkable people. Paper Gun opens with a live recording from one of those shows — my microphone happened to catch a Mr. Hay, and what he says sets the tone for the greatest lesson of them all about the human condition — and its movements are exactly what this original work traces.</p>
+  <p class="body" style="margin-top:1.4rem;">I've spent years performing in senior communities, and the education has run in both directions: so many words of wisdom, so many conversations with remarkable people. Paper Gun opens with a live recording from one of those shows — my microphone happened to catch a Mr. Hay, <button type="button" class="mrhay-btn" onclick="toggleMrHay(this)" style="display:inline-flex;align-items:center;gap:.4em;background:none;border:1px solid rgba(181,163,126,.55);border-radius:999px;color:#b5a37e;font-family:'DM Mono',monospace;font-size:.55rem;letter-spacing:.18em;text-transform:uppercase;padding:.3em .85em;cursor:pointer;vertical-align:middle;margin:0 .25em;transition:background .2s;" onmouseover="this.style.background='rgba(156,138,106,.12)'" onmouseout="this.style.background='none'"><span class="mrhay-glyph">&#9654;</span> Hear him</button> and what he says sets the tone for the greatest lesson of them all about the human condition — and its movements are exactly what this original work traces.</p>
   <p class="body">That's what built this show: the conversations, the getting to know them, wisdom collected one afternoon at a time over the years. I meet a lot of older people. Some carry resentment; some carry none. The difference between them is the heart of the show: when someone has hurt you, there's a better road than resentment — grieve the loss of what they meant to you, at their best.</p>
 </section>
 
@@ -871,6 +871,21 @@ function plFail(block){ block.querySelector('.pl-list').innerHTML='<p class="vj-
   if(document.readyState === 'complete') go();
   else window.addEventListener('load', go);
 })();
+</script>
+<script>
+function toggleMrHay(btn){
+  var a = document.getElementById('mrhay');
+  if(!a) return;
+  var glyphs = document.querySelectorAll('.mrhay-glyph');
+  if(a.paused){
+    a.play().catch(function(){});
+    glyphs.forEach(function(g){ g.innerHTML = '&#10074;&#10074;'; });
+  } else {
+    a.pause();
+    glyphs.forEach(function(g){ g.innerHTML = '&#9654;'; });
+  }
+  a.onended = function(){ glyphs.forEach(function(g){ g.innerHTML = '&#9654;'; }); };
+}
 </script>
 </body>
 </html>

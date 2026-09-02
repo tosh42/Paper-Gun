@@ -710,7 +710,7 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
         <iframe src="https://www.youtube.com/embed/XXpbKkUshL0" title="Paper Gun — Paul Tosh" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
       <p style="font-family:'DM Mono',monospace;font-size:.52rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);opacity:.6;margin-top:.6rem;text-align:center;">See full song playlists below</p>
-      <p class="vj-desc" style="margin-top:1rem;">Paper Gun was built in senior communities — years of conversations and collected wisdom. It opens with a live recording: my microphone caught a Mr. Hay, and what he says is the show's greatest lesson. Some of the people I meet carry resentment; some carry none. The difference is the heart of the show: better than resenting someone who hurt you is to grieve the loss of what they meant to you, at their best.</p>
+      <p class="vj-desc" style="margin-top:1rem;">Paper Gun was built in senior communities — years of conversations and collected wisdom. It opens with a live recording: my microphone caught a Mr. Hay, <button type="button" class="mrhay-btn" onclick="toggleMrHay(this)" style="display:inline-flex;align-items:center;gap:.4em;background:none;border:1px solid rgba(181,163,126,.55);border-radius:999px;color:#b5a37e;font-family:'DM Mono',monospace;font-size:.55rem;letter-spacing:.18em;text-transform:uppercase;padding:.3em .85em;cursor:pointer;vertical-align:middle;margin:0 .25em;transition:background .2s;" onmouseover="this.style.background='rgba(156,138,106,.12)'" onmouseout="this.style.background='none'"><span class="mrhay-glyph">&#9654;</span> Hear him</button> and what he says is the show's greatest lesson. Some of the people I meet carry resentment; some carry none. The difference is the heart of the show: better than resenting someone who hurt you is to grieve the loss of what they meant to you, at their best.</p>
       <p class="vj-desc"><em>It's about survival over grievance.</em> An original operetta — one man plays both sides of himself. A three-act paper theme tied to the shadow and sacrifice: a journey from disillusionment to authenticity. A niche, unconventional, therapeutic, theatrical one-man show.</p>
       <p class="vj-desc"><span class="aq">An honest word: Paper Gun goes deeper than most entertainment — framed, held, and closed with care — see the therapeutic link below.</span></p>
       <p class="vj-desc">I've been introducing these songs of pain and love and reconciliation from my operetta in churches, synagogues, community centers, and senior facilities — I am now touring my one-man operetta; where the theme demands it, I supplement the original material with chosen cover songs by Bob Dylan, Frank Sinatra, Neil Diamond &amp; Billy Joel — songs that illuminate the same terrain from a different angle. The theatrical handling has been my core performing approach, honed across years of <a href="./sitp.html" style="color:var(--gold-l);border-bottom:1px solid rgba(156,138,106,.4);text-decoration:none;font-style:italic;">The Song Is The Play</a>. There will always be an unknown element — the show breathes differently each time, with relevance, and with a few surprises.</p>
@@ -1059,6 +1059,21 @@ function plFail(block){
   if(document.readyState === 'complete') go();
   else window.addEventListener('load', go);
 })();
+</script>
+<script>
+function toggleMrHay(btn){
+  var a = document.getElementById('mrhay');
+  if(!a) return;
+  var glyphs = document.querySelectorAll('.mrhay-glyph');
+  if(a.paused){
+    a.play().catch(function(){});
+    glyphs.forEach(function(g){ g.innerHTML = '&#10074;&#10074;'; });
+  } else {
+    a.pause();
+    glyphs.forEach(function(g){ g.innerHTML = '&#9654;'; });
+  }
+  a.onended = function(){ glyphs.forEach(function(g){ g.innerHTML = '&#9654;'; }); };
+}
 </script>
 </body>
 </html>

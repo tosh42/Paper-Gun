@@ -190,7 +190,7 @@ footer p{font-family:'DM Mono',monospace;font-size:.55rem;letter-spacing:.28em;t
 </section>
 
 <section style="max-width:760px;margin:0 auto;padding:2.6rem 2rem 0;">
-  <p style="font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(1.05rem,2vw,1.2rem);line-height:1.9;opacity:.85;">Paper Gun was built in senior communities — years of conversations and collected wisdom. It opens with a live recording: my microphone caught a Mr. Hay, and what he says is the show's greatest lesson. Some of the people I meet carry resentment; some carry none. The difference is the heart of the show: better than resenting someone who hurt you is to grieve the loss of what they meant to you, at their best.</p>
+  <p style="font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(1.05rem,2vw,1.2rem);line-height:1.9;opacity:.85;">Paper Gun was built in senior communities — years of conversations and collected wisdom. It opens with a live recording: my microphone caught a Mr. Hay, <button type="button" class="mrhay-btn" onclick="toggleMrHay(this)" style="display:inline-flex;align-items:center;gap:.4em;background:none;border:1px solid rgba(181,163,126,.55);border-radius:999px;color:#b5a37e;font-family:'DM Mono',monospace;font-size:.55rem;letter-spacing:.18em;text-transform:uppercase;padding:.3em .85em;cursor:pointer;vertical-align:middle;margin:0 .25em;transition:background .2s;" onmouseover="this.style.background='rgba(156,138,106,.12)'" onmouseout="this.style.background='none'"><span class="mrhay-glyph">&#9654;</span> Hear him</button> and what he says is the show's greatest lesson. Some of the people I meet carry resentment; some carry none. The difference is the heart of the show: better than resenting someone who hurt you is to grieve the loss of what they meant to you, at their best.</p>
 </section>
 
 <!-- ── THE PITCH ── -->
@@ -373,5 +373,22 @@ footer p{font-family:'DM Mono',monospace;font-size:.55rem;letter-spacing:.28em;t
 
 <a href="./index.html" title="Home — tosh42.com" style="position:fixed;bottom:1.2rem;right:1.2rem;z-index:2147483647;background:#121010;border:1px solid rgba(156,138,106,.5);border-radius:50%;width:54px;height:54px;display:flex;align-items:center;justify-content:center;text-decoration:none;opacity:.88;transition:opacity .2s;font-family:monospace;font-size:.42rem;letter-spacing:.08em;text-transform:uppercase;color:#9c8a6a;text-align:center;line-height:1.3;box-shadow:0 2px 12px rgba(0,0,0,.7);" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity='.88'">tosh<br>42</a>
 
+
+<audio id="mrhay" src="MrHay.m4a" preload="auto"></audio>
+<script>
+function toggleMrHay(btn){
+  var a = document.getElementById('mrhay');
+  if(!a) return;
+  var glyphs = document.querySelectorAll('.mrhay-glyph');
+  if(a.paused){
+    a.play().catch(function(){});
+    glyphs.forEach(function(g){ g.innerHTML = '&#10074;&#10074;'; });
+  } else {
+    a.pause();
+    glyphs.forEach(function(g){ g.innerHTML = '&#9654;'; });
+  }
+  a.onended = function(){ glyphs.forEach(function(g){ g.innerHTML = '&#9654;'; }); };
+}
+</script>
 </body>
 </html>
