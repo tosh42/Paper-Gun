@@ -301,6 +301,14 @@ footer{text-align:center;padding:2rem;font-size:.7rem;letter-spacing:.2em;opacit
 
 </div>
 
+<!-- WISDOM FROM THE AGES -->
+<section class="fade" style="max-width:820px;margin:0 auto;padding:3rem 2rem 0;">
+  <p class="sl" style="justify-content:center;text-align:center;">Paper Gun</p>
+  <h2 style="text-align:center;">Wisdom <em>from the Ages</em></h2>
+  <p class="body" style="margin-top:1.4rem;">I've spent years performing in senior communities, and the education has run in both directions: so many words of wisdom, so many conversations with remarkable people. Paper Gun opens with a live recording from one of those shows — my microphone happened to catch a Mr. Hay, and what he says sets the tone for the greatest lesson of them all about the human condition — and its movements are exactly what this original work traces.</p>
+  <p class="body">That's what built this show: the conversations, the getting to know them, wisdom collected one afternoon at a time over the years. I meet a lot of older people. Some carry resentment; some carry none. The difference between them is the heart of the show: when someone has hurt you, there's a better road than resentment — grieve the loss of what they meant to you, at their best.</p>
+</section>
+
 <div class="rule"></div>
 
 <!-- SETTING THE SCENE -->
@@ -840,6 +848,29 @@ function buildTL(block, player){
   }, 900);
 }
 function plFail(block){ block.querySelector('.pl-list').innerHTML='<p class="vj-tracklist-note">Playlist could not be loaded — open it on YouTube below.</p>'; }
+</script>
+
+<audio id="mrhay" src="MrHay.m4a" preload="auto"></audio>
+<script>
+(function(){
+  var a = document.getElementById('mrhay');
+  if(!a) return;
+  var tried = false;
+  function go(){
+    if(tried) return; tried = true;
+    a.play().catch(function(){
+      tried = false;
+      ['pointerdown','keydown','touchstart'].forEach(function(ev){
+        document.addEventListener(ev, function once(){
+          document.removeEventListener(ev, once);
+          if(!tried){ tried = true; a.play().catch(function(){}); }
+        }, {once:true});
+      });
+    });
+  }
+  if(document.readyState === 'complete') go();
+  else window.addEventListener('load', go);
+})();
 </script>
 </body>
 </html>

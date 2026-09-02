@@ -120,7 +120,7 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
   .panel{min-height:50vh;padding:3rem 1.5rem;}
   .panel-sitp{min-height:auto;padding-bottom:3rem;overflow:visible;}
   .hero{height:320px;}
-  .hero-tagline{top:1.2rem;left:1.4rem;padding-top:90px;}
+  .hero-tagline{top:1.2rem;left:1.4rem;padding-top:40px;}
   .hero-tag-break{display:block;}
   .hero-aside{top:33%;right:.4rem;bottom:auto;transform:translateY(-50%);}
   .hero-aside p{font-size:.9rem;}
@@ -710,6 +710,7 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
         <iframe src="https://www.youtube.com/embed/XXpbKkUshL0" title="Paper Gun — Paul Tosh" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
       <p style="font-family:'DM Mono',monospace;font-size:.52rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);opacity:.6;margin-top:.6rem;text-align:center;">See full song playlists below</p>
+      <p class="vj-desc" style="margin-top:1rem;">Paper Gun was built in senior communities — years of conversations and collected wisdom. It opens with a live recording: my microphone caught a Mr. Hay, and what he says is the show's greatest lesson. Some of the people I meet carry resentment; some carry none. The difference is the heart of the show: better than resenting someone who hurt you is to grieve the loss of what they meant to you, at their best.</p>
       <p class="vj-desc"><em>It's about survival over grievance.</em> An original operetta — one man plays both sides of himself. A three-act paper theme tied to the shadow and sacrifice: a journey from disillusionment to authenticity. A niche, unconventional, therapeutic, theatrical one-man show.</p>
       <p class="vj-desc"><span class="aq">An honest word: Paper Gun goes deeper than most entertainment — framed, held, and closed with care — see the therapeutic link below.</span></p>
       <p class="vj-desc">I've been introducing these songs of pain and love and reconciliation from my operetta in churches, synagogues, community centers, and senior facilities — I am now touring my one-man operetta; where the theme demands it, I supplement the original material with chosen cover songs by Bob Dylan, Frank Sinatra, Neil Diamond &amp; Billy Joel — songs that illuminate the same terrain from a different angle. The theatrical handling has been my core performing approach, honed across years of <a href="./sitp.html" style="color:var(--gold-l);border-bottom:1px solid rgba(156,138,106,.4);text-decoration:none;font-style:italic;">The Song Is The Play</a>. There will always be an unknown element — the show breathes differently each time, with relevance, and with a few surprises.</p>
@@ -720,8 +721,6 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
         </div>
         <div style="display:flex;flex-direction:column;gap:.3rem;">
           <a class="more-btn ghost" href="./therapeutic.html">Therapeutic — For Presenters &amp; Clinicians</a>
-          <p class="btn-note" style="font-family:'DM Mono',monospace;font-size:.52rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);opacity:.7;margin:0 0 .2rem;">For presenters, clinicians, and group facilitators</p>
-          <p class="btn-note" style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.85rem;color:var(--cream);opacity:.55;line-height:1.55;margin:0;">Living well with an unavoidably negative outcome is about survival over grievance.<br/><br/>An original operetta — one man plays both sides of himself. A three-act paper theme tied to the shadow and sacrifice: a journey from disillusionment to authenticity.<br/><br/>An unconventional, therapeutic, and theatrical one-man show.</p>
         </div>
         <div style="display:flex;flex-direction:column;gap:.3rem;">
           <a class="more-btn ghost" href="./papergun-full.html">The Deep Dive — Acts I · II · III</a>
@@ -1036,6 +1035,29 @@ function plFail(block){
   function closeLB(){ lb.classList.remove('open'); lbImg.src=''; }
   lb.addEventListener('click', closeLB);
   document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeLB(); });
+})();
+</script>
+
+<audio id="mrhay" src="MrHay.m4a" preload="auto"></audio>
+<script>
+(function(){
+  var a = document.getElementById('mrhay');
+  if(!a) return;
+  var tried = false;
+  function go(){
+    if(tried) return; tried = true;
+    a.play().catch(function(){
+      tried = false;
+      ['pointerdown','keydown','touchstart'].forEach(function(ev){
+        document.addEventListener(ev, function once(){
+          document.removeEventListener(ev, once);
+          if(!tried){ tried = true; a.play().catch(function(){}); }
+        }, {once:true});
+      });
+    });
+  }
+  if(document.readyState === 'complete') go();
+  else window.addEventListener('load', go);
 })();
 </script>
 </body>
