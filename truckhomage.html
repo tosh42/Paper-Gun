@@ -64,6 +64,20 @@ footer p{font-family:'DM Mono',monospace;font-size:.54rem;letter-spacing:.26em;t
 .photo-band{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.2rem;margin-top:1.8rem;}
 .photo-band img{width:100%;height:auto;display:block;border:1px solid var(--border);}
 
+
+.wrap-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.4rem;margin-top:2rem;}
+.wrap-shot{display:block;text-decoration:none;border:1px solid var(--border);background:rgba(255,255,255,.02);padding:.7rem;transition:transform .15s,border-color .2s;}
+.wrap-shot:hover{transform:translateY(-3px);border-color:rgba(156,138,106,.5);}
+.wrap-shot img{width:100%;height:auto;display:block;}
+.wrap-shot span{display:block;font-family:'DM Mono',monospace;font-size:.55rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);opacity:.7;margin-top:.6rem;text-align:center;line-height:1.6;}
+.wrap-shot.wide{grid-column:1 / -1;}
+@media(max-width:680px){.wrap-grid{grid-template-columns:1fr;}}
+/* ── LIGHTBOX ── */
+#lightbox{position:fixed;inset:0;background:rgba(10,9,8,.96);display:none;align-items:center;justify-content:center;z-index:99999;padding:1.5rem;cursor:zoom-out;}
+#lightbox.open{display:flex;}
+#lightbox img{max-width:94vw;max-height:92vh;width:auto;height:auto;box-shadow:0 30px 120px rgba(0,0,0,.9);border:1px solid rgba(156,138,106,.35);}
+#lightbox .lb-close{position:fixed;top:1rem;right:1.4rem;font-family:'DM Mono',monospace;font-size:1.4rem;color:#eae3d3;opacity:.7;cursor:pointer;background:none;border:none;line-height:1;}
+#lightbox .lb-close:hover{opacity:1;}
 </style>
 </head>
 <body>
@@ -274,6 +288,31 @@ footer p{font-family:'DM Mono',monospace;font-size:.54rem;letter-spacing:.26em;t
 
 
 
+<div class="rule"></div>
+
+<div class="wrap">
+  <p class="sec-label">The Wrap, Side by Side</p>
+  <p class="body">Every quote on the truck is a line I've been singing for years &mdash; The Beatles, Bob Dylan, Sinatra, Billy Joel, Deacon Blue. Tap any panel to see it full size.</p>
+  <div class="wrap-grid">
+    <a href="Tside2.jpg" data-lightbox class="wrap-shot wide">
+      <img src="Tside2.jpg" alt="Paper Gun side — the silhouette, the piano, and 'We all carry shadows. The question is — what do we do with them?'" loading="lazy"/>
+      <span>Paper Gun side &middot; The Beatles &middot; Deacon Blue</span>
+    </a>
+    <a href="Tside1.jpg" data-lightbox class="wrap-shot wide">
+      <img src="Tside1.jpg" alt="The Song Is The Play side — boots up on the table, hat resting, with Bob Dylan and Frank Sinatra lines" loading="lazy"/>
+      <span>The Song Is The Play side &middot; Dylan &middot; Sinatra</span>
+    </a>
+    <a href="Tfront.jpg" data-lightbox class="wrap-shot">
+      <img src="Tfront.jpg" alt="Front of the CyberPhoenix — 'It's been a long winter of indifference', Billy Joel" loading="lazy"/>
+      <span>Front &middot; Billy Joel</span>
+    </a>
+    <a href="Tback.jpg" data-lightbox class="wrap-shot">
+      <img src="Tback.jpg" alt="Back of the camper — PAUL TOSH, the 42, QR code, and the TOSH42 plate" loading="lazy"/>
+      <span>Back &middot; Paul Tosh &middot; 42</span>
+    </a>
+  </div>
+</div>
+
 <div id="bottom-cta">
   <p class="presenter">Now Booking Presenters</p>
   <h3>Bring Paul Tosh to your venue</h3>
@@ -285,5 +324,21 @@ footer p{font-family:'DM Mono',monospace;font-size:.54rem;letter-spacing:.26em;t
 
 <a href="./index.html" title="Home — tosh42.com" style="position:fixed;bottom:1.2rem;right:1.2rem;z-index:2147483647;background:#121010;border:1px solid rgba(156,138,106,.5);border-radius:50%;width:54px;height:54px;display:flex;align-items:center;justify-content:center;text-decoration:none;opacity:.88;transition:opacity .2s;font-family:monospace;font-size:.42rem;letter-spacing:.08em;text-transform:uppercase;color:#9c8a6a;text-align:center;line-height:1.3;box-shadow:0 2px 12px rgba(0,0,0,.7);" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity='.88'">tosh<br>42</a>
 
+
+<div id="lightbox" aria-hidden="true">
+  <button class="lb-close" aria-label="Close">&times;</button>
+  <img src="" alt="Wrap panel enlarged"/>
+</div>
+<script>
+(function(){
+  var lb=document.getElementById('lightbox'), im=lb.querySelector('img');
+  document.querySelectorAll('a[data-lightbox]').forEach(function(a){
+    a.addEventListener('click',function(e){e.preventDefault();im.src=a.getAttribute('href');lb.classList.add('open');});
+  });
+  function close(){lb.classList.remove('open');im.src='';}
+  lb.addEventListener('click',close);
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+})();
+</script>
 </body>
 </html>
