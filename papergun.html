@@ -351,7 +351,7 @@ footer{text-align:center;padding:2rem;font-size:.7rem;letter-spacing:.2em;opacit
   <div class="duo-videos">
     <div class="dv">
       <p class="dv-label">Paper Gun — The Clip</p>
-      <div class="dv-frame"><iframe src="https://www.youtube.com/embed/XXpbKkUshL0" title="Paper Gun — Paul Tosh" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+      <div class="dv-frame"><iframe src="https://www.youtube.com/embed/w_G3hPV1dUY" title="Paper Gun — Paul Tosh" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
     </div>
     <div class="dv">
       <p class="dv-label">More Clips</p>
@@ -851,27 +851,7 @@ function plFail(block){ block.querySelector('.pl-list').innerHTML='<p class="vj-
 </script>
 
 <audio id="mrhay" src="MrHay.m4a" preload="auto"></audio>
-<script>
-(function(){
-  var a = document.getElementById('mrhay');
-  if(!a) return;
-  var tried = false;
-  function go(){
-    if(tried) return; tried = true;
-    a.play().catch(function(){
-      tried = false;
-      ['pointerdown','keydown','touchstart'].forEach(function(ev){
-        document.addEventListener(ev, function once(){
-          document.removeEventListener(ev, once);
-          if(!tried){ tried = true; a.play().catch(function(){}); }
-        }, {once:true});
-      });
-    });
-  }
-  if(document.readyState === 'complete') go();
-  else window.addEventListener('load', go);
-})();
-</script>
+
 <script>
 function toggleMrHay(btn){
   var a = document.getElementById('mrhay');
