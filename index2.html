@@ -178,7 +178,6 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
 .vj-track-num{font-family:'DM Mono',monospace;font-size:.55rem;letter-spacing:.15em;color:var(--gold);opacity:.6;flex-shrink:0;width:1.4em;text-align:right;}
 .vj-track-title{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.95rem;color:var(--cream);opacity:.8;line-height:1.35;overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;}
 .vj-track.playing .vj-track-title{color:var(--gold-l);opacity:1;}
-.vj-tracklist-note{font-family:'DM Mono',monospace;font-size:.55rem;letter-spacing:.2em;text-transform:uppercase;color:var(--cream);opacity:.35;padding:.8rem;text-align:center;}
 .vj-connector{width:100%;max-width:900px;}
 .vj-connector svg{display:block;width:100%;height:auto;overflow:visible;}
 .vj-line{fill:none;stroke:var(--gold);stroke-width:1.6;stroke-dasharray:7 9;stroke-linecap:round;opacity:.7;animation:vjdash 20s linear infinite;}
@@ -469,15 +468,7 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
 
 /* Five playlists section */
 #playlists-5{background:var(--ink);border-top:1px solid var(--border);padding:4rem 2rem;display:flex;flex-direction:column;align-items:center;}
-.pl-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:2rem;width:100%;max-width:1240px;margin-top:2.2rem;}
-.pl-grid .pl-block{flex:1 1 300px;max-width:380px;}
-.pl-block{border:1px solid var(--border);background:rgba(255,255,255,.02);padding:1.2rem;}
-.pl-title{font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold-l);margin-bottom:.9rem;text-align:center;}
-.pl-frame{position:relative;padding-bottom:56.25%;height:0;background:#000;border:1px solid var(--border);}
-.pl-frame iframe,.pl-frame > div{position:absolute;inset:0;width:100%;height:100%;border:none;}
-.pl-list{margin-top:.8rem;border:1px solid rgba(156,138,106,.22);background:rgba(156,138,106,.03);max-height:300px;overflow-y:auto;scrollbar-width:thin;scrollbar-color:rgba(156,138,106,.4) transparent;}
-.pl-ytlink{display:block;text-align:center;font-family:'DM Mono',monospace;font-size:.56rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);opacity:.6;margin-top:.7rem;}
-.pl-ytlink:hover{opacity:1;}
+.pl-frame iframe,.pl-ytlink:hover{opacity:1;}
 
 /* Footer social row */
 .social-row{display:flex;gap:1.6rem;flex-wrap:wrap;justify-content:center;margin-top:1.4rem;}
@@ -710,10 +701,13 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
         <iframe src="https://www.youtube.com/embed/w_G3hPV1dUY" title="Paper Gun — Paul Tosh" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
       <p style="font-family:'DM Mono',monospace;font-size:.52rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);opacity:.6;margin-top:.6rem;text-align:center;">See full song playlists below</p>
+      <div class="vj-btnrow" style="margin-top:.6rem;"><a class="more-btn ghost" href="./papergun.html">Full songs here &rarr;</a></div>
       <p class="vj-desc" style="margin-top:1rem;">Paper Gun was built in senior communities — years of conversations and collected wisdom. It opens with a live recording: my microphone caught a Mr. Hay, <button type="button" class="mrhay-btn" onclick="toggleMrHay(this)" style="display:inline-flex;align-items:center;gap:.4em;background:none;border:1px solid rgba(181,163,126,.55);border-radius:999px;color:#b5a37e;font-family:'DM Mono',monospace;font-size:.55rem;letter-spacing:.18em;text-transform:uppercase;padding:.3em .85em;cursor:pointer;vertical-align:middle;margin:0 .25em;transition:background .2s;" onmouseover="this.style.background='rgba(156,138,106,.12)'" onmouseout="this.style.background='none'"><span class="mrhay-glyph">&#9654;</span> Hear him</button> and what he says is the show's greatest lesson. Some of the people I meet carry resentment; some carry none. The difference is the heart of the show: better than resenting someone who hurt you is to grieve the loss of what they meant to you, at their best.</p>
       <p class="vj-desc"><em>It's about survival over grievance.</em> An original operetta — one man plays both sides of himself. A three-act paper theme tied to the shadow and sacrifice: a journey from disillusionment to authenticity. A niche, unconventional, therapeutic, theatrical one-man show.</p>
       <p class="vj-desc"><span class="aq">An honest word: Paper Gun goes deeper than most entertainment — framed, held, and closed with care — see the therapeutic link below.</span></p>
       <p class="vj-desc">I've been introducing these songs of pain and love and reconciliation from my operetta in churches, synagogues, community centers, and senior facilities — I am now touring my one-man operetta; where the theme demands it, I supplement the original material with chosen cover songs by Bob Dylan, Frank Sinatra, Neil Diamond &amp; Billy Joel — songs that illuminate the same terrain from a different angle. The theatrical handling has been my core performing approach, honed across years of <a href="./sitp.html" style="color:var(--gold-l);border-bottom:1px solid rgba(156,138,106,.4);text-decoration:none;font-style:italic;">The Song Is The Play</a>. There will always be an unknown element — the show breathes differently each time, with relevance, and with a few surprises.</p>
+      <p style="font-family:'Cormorant Garamond',serif;font-size:clamp(1.02rem,1.9vw,1.2rem);line-height:1.7;color:var(--cream);opacity:.9;margin:1.4rem 0 .3rem;"><strong style="font-weight:600;">Childhood trauma becomes resentment. Resentment becomes poor choices.</strong></p>
+      <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(1rem,1.8vw,1.15rem);line-height:1.7;color:var(--gold-l);opacity:.85;margin:0 0 1.4rem;">Paper Gun is catharsis and a method for reclaiming a life from it.</p>
       <div class="vj-btnrow">
         <div style="display:flex;flex-direction:column;gap:.3rem;">
           <a class="more-btn" href="./papergun.html">Paper Gun — The Show →</a>
@@ -751,6 +745,7 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
         <iframe src="https://www.youtube.com/embed/W7FXm5pnmOw" title="The Song Is The Play — Paul Tosh" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
       <p style="font-family:'DM Mono',monospace;font-size:.52rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);opacity:.6;margin-top:.6rem;text-align:center;">See full song playlists below</p>
+      <div class="vj-btnrow" style="margin-top:.6rem;"><a class="more-btn ghost" href="./sitp.html">Full songs here &rarr;</a></div>
       <p class="vj-desc"><em>It's not a recital — it's an interpretation.</em> Classic song performed as theatre against thematic backgrounds &amp; live piano looping. The Beatles, Bob Dylan, Billy Joel, Elton John, Shakespeare, Oasis &amp; Prince — each acted out as a scene, then orchestrated with live looping piano. Plus stories from the road. <span class="aq">Where iconic songs become living theatre.</span></p>
       <div class="vj-btnrow"><a class="more-btn" href="./sitp.html">The Song Is The Play →</a></div>
     </div>
@@ -779,7 +774,7 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
       <div class="vj-frame">
         <iframe src="https://www.youtube.com/embed/ah4RlX-OYVQ" title="Funnies — Paul Tosh" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
-      <p class="vj-desc">Can't tell a joke to save my life — but funny stuff always happens.</p>
+      <p class="vj-desc">Funny stuff always happens.</p>
     </div>
     <div class="vj-side"><img src="ufunnycopy.png" alt="Paul Tosh — a look back from the piano"/></div>
     </div>
@@ -862,60 +857,13 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
 
 </section>
 
-<!-- ── FIVE FULL SONG PLAYLISTS ── -->
-<section id="playlists-5">
+<!-- ── SCROLL THE SONGS ── -->
+<section id="playlists-5" style="text-align:center;">
   <p class="blend-eyebrow">The Full Song Playlists</p>
-  <h2 class="blend-headline" style="text-align:center;">Scroll the Songs — Right Here</h2>
-
-  <p class="pl-rowhead" style="font-family:'Cinzel',serif;font-size:clamp(1.2rem,2.6vw,1.8rem);letter-spacing:.22em;text-transform:uppercase;color:var(--gold-l);opacity:.95;text-align:center;margin-top:2.6rem;">Live in the Making</p>
-  <div class="pl-grid" style="margin-top:1.2rem;">
-
-    <div class="pl-block" data-plid="PLOV6fW3PlQNw" data-plname="Paper Gun · Act I">
-      <p class="pl-title">Paper Gun · Act I</p>
-      <div class="pl-frame"><div class="pl-player"></div></div>
-      <div class="pl-list"><p class="vj-tracklist-note">Loading playlist…</p></div>
-      <a class="pl-ytlink" href="https://www.youtube.com/playlist?list=PLOV6fW3PlQNw" target="_blank" rel="noopener">Open on YouTube →</a>
-    </div>
-
-    <div class="pl-block" data-plid="PLYPdVuDAlJaE" data-plname="Paper Gun · Act II">
-      <p class="pl-title">Paper Gun · Act II</p>
-      <div class="pl-frame"><div class="pl-player"></div></div>
-      <div class="pl-list"><p class="vj-tracklist-note">Loading playlist…</p></div>
-      <a class="pl-ytlink" href="https://www.youtube.com/playlist?list=PLYPdVuDAlJaE" target="_blank" rel="noopener">Open on YouTube →</a>
-    </div>
-
-    <div class="pl-block" data-plid="PLbFWSQ1KC0l8" data-plname="Paper Gun · Act III">
-      <p class="pl-title">Paper Gun · Act III</p>
-      <div class="pl-frame"><div class="pl-player"></div></div>
-      <div class="pl-list"><p class="vj-tracklist-note">Loading playlist…</p></div>
-      <a class="pl-ytlink" href="https://www.youtube.com/playlist?list=PLbFWSQ1KC0l8" target="_blank" rel="noopener">Open on YouTube →</a>
-    </div>
-  </div>
-
-  <p class="pl-rowhead" style="font-family:'Cinzel',serif;font-size:clamp(1.2rem,2.6vw,1.8rem);letter-spacing:.22em;text-transform:uppercase;color:var(--gold-l);opacity:.95;text-align:center;margin-top:3rem;">The Song Is The Play Introduction</p>
-  <div class="pl-grid" style="margin-top:1.2rem;">
-
-    <div class="pl-block" data-plid="PLfiJVzeiivMA" data-plname="The Song Is The Play">
-      <p class="pl-title">The Song Is The Play</p>
-      <div class="pl-frame"><div class="pl-player"></div></div>
-      <div class="pl-list"><p class="vj-tracklist-note">Loading playlist…</p></div>
-      <a class="pl-ytlink" href="https://www.youtube.com/playlist?list=PLfiJVzeiivMA" target="_blank" rel="noopener">Open on YouTube →</a>
-    </div>
-
-    <div class="pl-block" data-plid="PLZKcqTHDJw2o" data-plname="Covers I">
-      <p class="pl-title">Covers I</p>
-      <div class="pl-frame"><div class="pl-player"></div></div>
-      <div class="pl-list"><p class="vj-tracklist-note">Loading playlist…</p></div>
-      <a class="pl-ytlink" href="https://www.youtube.com/playlist?list=PLZKcqTHDJw2o" target="_blank" rel="noopener">Open on YouTube →</a>
-    </div>
-
-    <div class="pl-block" data-plid="PLWqkQ8Dvm5hE" data-plname="Covers II">
-      <p class="pl-title">Covers II</p>
-      <div class="pl-frame"><div class="pl-player"></div></div>
-      <div class="pl-list"><p class="vj-tracklist-note">Loading playlist…</p></div>
-      <a class="pl-ytlink" href="https://www.youtube.com/playlist?list=PLWqkQ8Dvm5hE" target="_blank" rel="noopener">Open on YouTube →</a>
-    </div>
-
+  <h2 class="blend-headline" style="text-align:center;">Scroll the songs — the acts, the covers, the show</h2>
+  <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:1.8rem;">
+    <a class="more-btn" href="./papergun.html">Paper Gun — Acts I · II · III &rarr;</a>
+    <a class="more-btn ghost" href="./sitp.html">The Song Is The Play &amp; Covers &rarr;</a>
   </div>
 </section>
 
@@ -955,66 +903,7 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
 
 <a href="./index.html" title="Home — tosh42.com" style="position:fixed;bottom:1.2rem;right:1.2rem;z-index:2147483647;background:#121010;border:1px solid rgba(156,138,106,.5);border-radius:50%;width:54px;height:54px;display:flex;align-items:center;justify-content:center;text-decoration:none;opacity:.88;transition:opacity .2s;font-family:monospace;font-size:.42rem;letter-spacing:.08em;text-transform:uppercase;color:#9c8a6a;text-align:center;line-height:1.3;box-shadow:0 2px 12px rgba(0,0,0,.7);" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity='.88'">tosh<br>42</a>
 
-<script>
-/* ── Dropdown menus (click to open, tap-friendly) ── */
 
-/* ── Five visible playlist tracklists via YouTube IFrame API ── */
-/* NOTE: playlist IDs below are the ones supplied so far — if a list fails to load,
-   the ID is truncated: paste the full ID from YouTube Share → Copy Link. */
-var PL_PLAYERS = [];
-var tag = document.createElement('script');
-tag.src = "https://www.youtube.com/iframe_api";
-document.head.appendChild(tag);
-
-function onYouTubeIframeAPIReady(){
-  document.querySelectorAll('.pl-block').forEach(function(block, i){
-    var plid = block.getAttribute('data-plid');
-    var holder = block.querySelector('.pl-player');
-    holder.id = 'plPlayer' + i;
-    var player = new YT.Player(holder.id, {
-      playerVars: { listType: 'playlist', list: plid, rel: 0 },
-      events: {
-        'onReady': function(ev){ buildTracklist(ev, block, player); },
-        'onError': function(){ plFail(block); }
-      }
-    });
-    PL_PLAYERS.push(player);
-  });
-}
-
-function buildTracklist(ev, block, player){
-  setTimeout(function(){
-    try{
-      var vids = player.getPlaylist();
-      var listEl = block.querySelector('.pl-list');
-      if(!vids || !vids.length){ plFail(block); return; }
-      listEl.innerHTML = '';
-      var head = document.createElement('div');
-      head.className = 'vj-tracklist-head';
-      head.textContent = block.getAttribute('data-plname') + ' · ' + vids.length + ' songs';
-      listEl.appendChild(head);
-      vids.forEach(function(vid, idx){
-        var row = document.createElement('a');
-        row.href = 'javascript:void(0)';
-        row.style.cssText = 'display:flex;gap:.7rem;align-items:baseline;padding:.55rem .8rem;border-bottom:1px solid rgba(156,138,106,.1);font-family:\'Cormorant Garamond\',serif;font-size:.95rem;color:var(--cream);opacity:.8;';
-        row.innerHTML = '<span style="font-family:\'DM Mono\',monospace;font-size:.55rem;color:var(--gold);opacity:.7;">'+String(idx+1).padStart(2,'0')+'</span><span class="pl-song-'+idx+'">…</span>';
-        row.addEventListener('click', function(){ player.playVideoAt(idx); });
-        listEl.appendChild(row);
-        /* fetch title via oEmbed (no API key needed) */
-        fetch('https://www.youtube.com/oembed?format=json&url=https://www.youtube.com/watch?v='+vid)
-          .then(function(r){return r.json();})
-          .then(function(d){ var s = row.querySelector('.pl-song-'+idx); if(s) s.textContent = d.title; })
-          .catch(function(){ var s = row.querySelector('.pl-song-'+idx); if(s) s.textContent = 'Song '+(idx+1); });
-      });
-    }catch(e){ plFail(block); }
-  }, 900);
-}
-
-function plFail(block){
-  block.querySelector('.pl-list').innerHTML =
-    '<p class="vj-tracklist-note">Playlist could not be loaded — open it on YouTube below.</p>';
-}
-</script>
 
 
 <div id="lightbox" aria-hidden="true">
