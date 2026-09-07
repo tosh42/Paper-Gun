@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>1-Minute Tasters · Paul Tosh · tosh42.com</title>
-<meta name="description" content="One-minute tastes of the pieces — scrollable playlist from Paul Tosh."/>
+<title>Venue Partnership · Paul Tosh · tosh42.com</title>
+<meta name="description" content="Two ways to host a Paul Tosh performance — choose the partnership that fits your venue."/>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
@@ -61,8 +61,60 @@ footer p{font-family:'DM Mono',monospace;font-size:.54rem;letter-spacing:.26em;t
 .pl-tt{font-family:'Cormorant Garamond',serif;font-size:.95rem;color:var(--cream);opacity:.85;line-height:1.3;}
 .pl-note{padding:1rem;font-family:'DM Mono',monospace;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);opacity:.6;}
 
+
+.ev-card{border:1px solid rgba(156,138,106,.32);background:rgba(255,255,255,.025);padding:2.2rem 2rem;max-width:720px;margin:0 auto;}
+.ev-badge{display:inline-block;font-family:'DM Mono',monospace;font-size:.55rem;letter-spacing:.28em;text-transform:uppercase;color:var(--red-l);border:1px solid rgba(163,39,29,.5);padding:.35em .9em;margin-bottom:1.4rem;}
+.ev-show{font-family:'Cinzel',serif;font-size:clamp(1.35rem,3.4vw,2rem);letter-spacing:.1em;color:var(--cream);margin-bottom:.5rem;}
+.ev-sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(1rem,2vw,1.18rem);color:var(--gold-l);opacity:.85;margin-bottom:1.8rem;}
+.ev-rows{display:flex;flex-direction:column;gap:.1rem;margin-bottom:1.9rem;}
+.ev-row{display:flex;gap:1rem;align-items:baseline;padding:.65rem 0;border-bottom:1px solid rgba(156,138,106,.14);}
+.ev-key{font-family:'DM Mono',monospace;font-size:.58rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);opacity:.75;min-width:88px;}
+.ev-val{font-family:'Cormorant Garamond',serif;font-size:clamp(1rem,1.9vw,1.15rem);color:var(--cream);opacity:.9;line-height:1.6;}
+.ev-buy{display:inline-block;background:var(--red);color:var(--cream);font-family:'DM Mono',monospace;font-size:.8rem;letter-spacing:.24em;text-transform:uppercase;text-decoration:none;padding:1.05em 2.6em;transition:background .2s,transform .15s;}
+.ev-buy:hover{background:var(--red-l);transform:translateY(-2px);color:var(--cream);}
+.ev-note{font-family:'DM Mono',monospace;font-size:.54rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);opacity:.5;margin-top:1rem;}
+.no-dates{max-width:720px;margin:0 auto;text-align:center;border:1px solid var(--border);background:rgba(255,255,255,.02);padding:2.4rem 2rem;}
+
+.opt-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:1.6rem;max-width:960px;margin:2.4rem auto 0;align-items:stretch;}
+.opt{border:1px solid rgba(156,138,106,.3);background:rgba(255,255,255,.025);padding:2rem 1.8rem;display:flex;flex-direction:column;}
+.opt.featured{border-color:rgba(163,39,29,.65);background:rgba(163,39,29,.06);}
+.opt-tag{font-family:'DM Mono',monospace;font-size:.54rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);opacity:.8;margin-bottom:.9rem;}
+.opt.featured .opt-tag{color:var(--red-l);opacity:1;}
+.opt h3{font-family:'Cinzel',serif;font-size:1.15rem;letter-spacing:.09em;color:var(--cream);margin-bottom:.5rem;line-height:1.35;}
+.opt .split{font-family:'Cinzel',serif;font-size:clamp(1.8rem,4vw,2.5rem);letter-spacing:.06em;color:var(--gold-l);margin:.6rem 0 .2rem;}
+.opt.featured .split{color:var(--red-l);}
+.opt .split small{display:block;font-family:'DM Mono',monospace;font-size:.52rem;letter-spacing:.24em;text-transform:uppercase;opacity:.65;margin-top:.4rem;color:var(--cream);}
+.opt ul{list-style:none;padding:0;margin:1.3rem 0 0;}
+.opt li{font-family:'Cormorant Garamond',serif;font-size:1rem;line-height:1.65;color:var(--cream);opacity:.82;padding:.45rem 0 .45rem 1.2rem;position:relative;border-bottom:1px solid rgba(156,138,106,.12);}
+.opt li::before{content:'·';position:absolute;left:.2rem;color:var(--gold);opacity:.8;}
+.opt .pick{margin-top:auto;padding-top:1.4rem;}
+.opt .pick span{display:inline-block;font-family:'DM Mono',monospace;font-size:.58rem;letter-spacing:.22em;text-transform:uppercase;color:var(--cream);opacity:.75;border:1px solid rgba(156,138,106,.4);padding:.5em 1.1em;}
+.terms{max-width:760px;margin:0 auto;border:1px solid var(--border);background:rgba(255,255,255,.02);padding:2.6rem 2.4rem;}
+.terms h3{font-family:'DM Mono',monospace;font-size:.66rem;letter-spacing:.26em;text-transform:uppercase;color:var(--gold-l);margin:1.9rem 0 .7rem;}
+.terms h3:first-of-type{margin-top:0;}
+.terms p,.terms li{font-size:clamp(.98rem,1.7vw,1.08rem);line-height:1.8;color:var(--cream);opacity:.84;}
+.terms ul{list-style:none;padding:0;}
+.terms li{border-left:2px solid rgba(156,138,106,.32);padding-left:1rem;margin-bottom:.55rem;}
+.fill{display:inline-block;min-width:180px;border-bottom:1px solid rgba(156,138,106,.5);}
+.chk{display:flex;gap:.7rem;align-items:flex-start;margin:.5rem 0;font-size:1.02rem;}
+.sig-row{display:flex;gap:3rem;flex-wrap:wrap;margin-top:2.6rem;}
+.sig-block{flex:1 1 260px;}
+.sig-line{border-bottom:1px solid rgba(156,138,106,.6);height:2.2rem;margin-bottom:.4rem;}
+.sig-label{font-family:'DM Mono',monospace;font-size:.56rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);opacity:.6;}
+.print-btn{background:none;border:1px solid var(--gold);color:var(--gold-l);font-family:'DM Mono',monospace;font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;padding:.8em 1.9em;cursor:pointer;transition:background .2s;}
+.print-btn:hover{background:rgba(156,138,106,.12);}
+@media print{
+  #site-nav,#bottom-cta,footer,.print-row,a[title="Home — tosh42.com"]{display:none!important;}
+  body{background:#fff;color:#111;}
+  .opt,.terms{border:1px solid #999;background:#fff;}
+  .opt h3,.opt li,.terms p,.terms li,.chk,.page-hero h1,.page-hero .sub{color:#111;opacity:1;}
+  .opt .split{color:#111;}
+  .opt-tag,.terms h3,.sig-label,.page-hero .kicker{color:#555;}
+  .opt.featured{background:#fff;}
+}
 </style>
 </head>
+
 <body>
 
 <style>
@@ -140,52 +192,101 @@ footer p{font-family:'DM Mono',monospace;font-size:.54rem;letter-spacing:.26em;t
 </script>
 
 <div class="page-hero">
-  <p class="kicker">The Shows</p>
-  <h1>One-Minute <em>Tasters</em></h1>
-  <p class="sub">Each piece, in a minute. Scroll the list, tap any track to play it right here.</p>
+  <p class="kicker">For Venues</p>
+  <h1>Two ways to <em>host the show</em></h1>
+  <p class="sub">Whoever brings the audience takes the bigger share. Pick the arrangement that fits how you like to work &mdash; both are on this page, and both are simple.</p>
+  <div class="print-row" style="margin-top:1.6rem;"><button class="print-btn" onclick="window.print()">Print This Agreement</button></div>
 </div>
+
+<div class="wrap" style="padding-bottom:1rem;">
+  <div class="opt-grid">
+
+    <div class="opt featured">
+      <p class="opt-tag">Option A &middot; Simplest for you</p>
+      <h3>You provide the room.<br/>I fill it.</h3>
+      <p class="split">80 / 20<small>Performer / Venue</small></p>
+      <ul>
+        <li>You supply the room, a piano, and someone on the door</li>
+        <li>I do all promotion &mdash; posters, street, socials, my own audience list</li>
+        <li>I carry every cost and every risk</li>
+        <li>Ticketing runs through my box office; you are paid after the show</li>
+        <li><strong style="color:var(--gold-l);font-weight:600;">Your bar and food takings are entirely yours</strong></li>
+      </ul>
+      <div class="pick"><span>&#9723; We'll take Option A</span></div>
+    </div>
+
+    <div class="opt">
+      <p class="opt-tag">Option B &middot; We fill it together</p>
+      <h3>You promote to your people.<br/>We share it.</h3>
+      <p class="split">60 / 40<small>Performer / Venue</small></p>
+      <ul>
+        <li>Everything in Option A, plus your promotion</li>
+        <li>One email to your mailing list, no later than two weeks before</li>
+        <li>At least one social post, plus a poster displayed in the venue</li>
+        <li>Listing on your website or newsletter events page</li>
+        <li><strong style="color:var(--gold-l);font-weight:600;">If the promotion doesn't go out, the split reverts to Option A</strong></li>
+      </ul>
+      <div class="pick"><span>&#9723; We'll take Option B</span></div>
+    </div>
+
+  </div>
+
+  <p class="body" style="max-width:760px;margin:2.2rem auto 0;text-align:center;font-style:italic;">Every seat filled is a bar tab, a dinner, and a room that feels alive. The show is one hour; the evening is yours.</p>
+</div>
+
+<div class="rule"></div>
 
 <div class="wrap">
-  <div class="pl-wrap">
-    <div class="pl-frame"><div id="tastePlayer"></div></div>
-    <div class="pl-list" id="tasteList"><p class="pl-note">Loading playlist&hellip;</p></div>
-    <div style="text-align:center;margin-top:1.6rem;">
-      <a href="https://youtube.com/playlist?list=PLSnxgBWzoUrtwN_TZfc6gu8gzaQsP53iP" target="_blank" rel="noopener" style="font-family:'DM Mono',monospace;font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);opacity:.7;text-decoration:none;border-bottom:1px solid rgba(156,138,106,.3);padding-bottom:.15rem;">Open on YouTube &rarr;</a>
+  <div class="terms">
+    <h3>The Details</h3>
+    <p>Date of Performance: <span class="fill">&nbsp;</span> &nbsp; Venue: <span class="fill">&nbsp;</span></p>
+    <p style="margin-top:.5rem;">Doors: <span class="fill">&nbsp;</span> &nbsp; Performance: <span class="fill">&nbsp;</span> &nbsp; Ticket price: <span class="fill">&nbsp;</span></p>
+    <p style="margin-top:.7rem;">Show duration: one hour, with an allowance of up to thirty minutes overrun.</p>
+
+    <h3>Which Show</h3>
+    <div class="chk"><span>&#9723;</span><span><strong>Paper Gun</strong> &mdash; an original one-man operetta, a show about shadow work</span></div>
+    <div class="chk"><span>&#9723;</span><span><strong>The Song Is The Play</strong> &mdash; iconic songs as living theatre, with live piano looping</span></div>
+
+    <h3>The Split</h3>
+    <div class="chk"><span>&#9723;</span><span><strong>Option A &mdash; 80 / 20</strong> in the performer's favour. Venue provides room, piano, and door staff.</span></div>
+    <div class="chk"><span>&#9723;</span><span><strong>Option B &mdash; 60 / 40</strong> in the performer's favour, conditional on the promotion listed above being carried out.</span></div>
+    <p style="margin-top:.9rem;">The performer receives the greater of <span class="fill">&nbsp;</span> (minimum) or the agreed percentage of net ticket revenue.</p>
+    <p style="margin-top:.5rem;">"Net" means gross ticket sales less ticketing and card-processing fees (approximately $1 per ticket). Bar, food, and merchandise revenue are excluded from the split and belong entirely to the venue.</p>
+
+    <h3>What the Venue Supplies</h3>
+    <ul>
+      <li>A real piano, tuned where possible</li>
+      <li>One person on the door to check tickets</li>
+      <li>Room access at least four hours before the performance &mdash; see the <a href="./rider.html">technical rider</a></li>
+      <li>Complimentary seats: up to <span class="fill">&nbsp;</span>, counted outside the split</li>
+      <li>A safe overnight parking space for the performance camper, where possible &mdash; see the <a href="./agreement.html">performance agreement</a></li>
+    </ul>
+
+    <h3>What the Performer Supplies</h3>
+    <ul>
+      <li>Full sound system, run from an iPad mixer &mdash; integrates with any house PA</li>
+      <li>All ticketing, handled through the performer's own box office; tickets are emailed with a QR code</li>
+      <li>Posters and promotional artwork, supplied print-ready at no cost to the venue</li>
+      <li>Settlement to the venue within seven days of the performance</li>
+    </ul>
+
+    <h3>If the Show Cannot Go Ahead</h3>
+    <p>Either party may cancel in writing no later than fourteen days before the performance without penalty. Inside fourteen days, the parties will make reasonable efforts to reschedule before cancelling. Neither party is liable for events beyond reasonable control.</p>
+
+    <div class="sig-row">
+      <div class="sig-block">
+        <div class="sig-line"></div>
+        <p class="sig-label">For the Venue &middot; Name &amp; Date</p>
+      </div>
+      <div class="sig-block">
+        <div class="sig-line"></div>
+        <p class="sig-label">Performer: Paul Toshner &middot; Date</p>
+      </div>
     </div>
   </div>
-</div>
 
-<script>
-(function(){
-  var PL='PLSnxgBWzoUrtwN_TZfc6gu8gzaQsP53iP', P=null, built=false, tries=0;
-  var tag=document.createElement('script'); tag.src='https://www.youtube.com/iframe_api'; document.head.appendChild(tag);
-  window.onYouTubeIframeAPIReady=function(){
-    P=new YT.Player('tastePlayer',{width:'100%',height:'100%',
-      playerVars:{listType:'playlist',list:PL,rel:0},
-      events:{onReady:build,onStateChange:mark}});
-  };
-  function build(){
-    var ids=P&&P.getPlaylist?P.getPlaylist():null;
-    if(!ids||!ids.length){ if(++tries<20){setTimeout(build,600);} else{document.getElementById('tasteList').innerHTML='<p class="pl-note">Playlist could not be loaded &mdash; open it on YouTube below.</p>';} return; }
-    if(built)return; built=true;
-    var w=document.getElementById('tasteList'); w.innerHTML='';
-    var head=document.createElement('p'); head.className='pl-head'; head.textContent=ids.length+' Tracks &middot; Scroll &amp; Tap to Play'; head.innerHTML=ids.length+' Tracks &middot; Scroll &amp; Tap to Play'; w.appendChild(head);
-    ids.forEach(function(id,i){
-      var r=document.createElement('div'); r.className='pl-track'; r.setAttribute('data-i',i);
-      r.innerHTML='<span class="pl-num">'+(i+1)+'</span><img loading="lazy" src="https://i.ytimg.com/vi/'+id+'/mqdefault.jpg" alt=""/><span class="pl-tt" id="ptt'+i+'">Track '+(i+1)+'</span>';
-      r.addEventListener('click',function(){P.playVideoAt(i);document.getElementById('tastePlayer').scrollIntoView({behavior:'smooth',block:'center'});});
-      w.appendChild(r);
-      fetch('https://noembed.com/embed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3D'+id).then(function(x){return x.json();}).then(function(d){if(d&&d.title){document.getElementById('ptt'+i).textContent=d.title;}}).catch(function(){});
-    });
-    mark();
-  }
-  function mark(){
-    if(!P||!P.getPlaylistIndex)return;
-    var idx=P.getPlaylistIndex();
-    document.querySelectorAll('#tasteList .pl-track').forEach(function(r){r.classList.toggle('playing',parseInt(r.getAttribute('data-i'),10)===idx);});
-  }
-})();
-</script>
+  <p class="body" style="text-align:center;margin-top:2rem;">Questions, or want to talk it through? <a href="mailto:bookings@tosh42.com" style="color:var(--gold-l);">bookings@tosh42.com</a></p>
+</div>
 
 <div id="bottom-cta">
   <p class="presenter">Now Booking Presenters</p>
