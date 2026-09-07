@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Posters · Paul Tosh · tosh42.com</title>
-<meta name="description" content="Show posters — Paper Gun and The Song Is The Play."/>
+<title>Tickets · Paul Tosh · tosh42.com</title>
+<meta name="description" content="Tickets for upcoming Paul Tosh performances — Paper Gun and The Song Is The Play."/>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
@@ -48,21 +48,35 @@ a{color:var(--gold-l);}
 footer{text-align:center;padding:1.6rem;border-top:1px solid rgba(156,138,106,.1);}
 footer p{font-family:'DM Mono',monospace;font-size:.54rem;letter-spacing:.26em;text-transform:uppercase;color:var(--cream);opacity:.3;}
 
-.poster-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1.8rem;margin-top:2rem;}
-.poster-card{display:block;text-decoration:none;border:1px solid var(--border);background:rgba(255,255,255,.02);padding:.8rem;transition:transform .15s,border-color .2s;}
-.poster-card:hover{transform:translateY(-3px);border-color:rgba(156,138,106,.5);}
-.poster-card img{width:100%;height:auto;display:block;}
-.poster-card span{display:block;font-family:'DM Mono',monospace;font-size:.56rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);opacity:.7;margin-top:.7rem;text-align:center;line-height:1.6;}
+.pl-wrap{max-width:640px;margin:2rem auto 0;}
+.pl-frame{aspect-ratio:16/9;background:#000;border:1px solid var(--border);}
+.pl-frame > div{width:100%;height:100%;}
+.pl-list{max-height:560px;overflow-y:auto;border:1px solid var(--border);border-top:none;background:rgba(255,255,255,.02);}
+.pl-head{position:sticky;top:0;background:#171412;border-bottom:1px solid rgba(156,138,106,.25);padding:.55rem .8rem;font-family:'DM Mono',monospace;font-size:.55rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);}
+.pl-track{display:flex;align-items:center;gap:.8rem;padding:.55rem .8rem;cursor:pointer;border-bottom:1px solid rgba(156,138,106,.08);transition:background .15s;}
+.pl-track:hover{background:rgba(156,138,106,.1);}
+.pl-track.playing{background:rgba(156,138,106,.16);}
+.pl-track img{width:72px;height:40px;object-fit:cover;flex-shrink:0;}
+.pl-num{font-family:'DM Mono',monospace;font-size:.6rem;color:var(--gold);opacity:.6;width:1.4em;}
+.pl-tt{font-family:'Cormorant Garamond',serif;font-size:.95rem;color:var(--cream);opacity:.85;line-height:1.3;}
+.pl-note{padding:1rem;font-family:'DM Mono',monospace;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);opacity:.6;}
 
 
-/* ── POSTER LIGHTBOX ── */
-#lightbox{position:fixed;inset:0;background:rgba(10,9,8,.96);display:none;align-items:center;justify-content:center;z-index:99999;padding:1.5rem;cursor:zoom-out;}
-#lightbox.open{display:flex;}
-#lightbox img{max-width:94vw;max-height:92vh;width:auto;height:auto;box-shadow:0 30px 120px rgba(0,0,0,.9);border:1px solid rgba(156,138,106,.35);}
-#lightbox .lb-close{position:fixed;top:1rem;right:1.4rem;font-family:'DM Mono',monospace;font-size:1.4rem;color:#eae3d3;opacity:.7;cursor:pointer;background:none;border:none;line-height:1;}
-#lightbox .lb-close:hover{opacity:1;}
+.ev-card{border:1px solid rgba(156,138,106,.32);background:rgba(255,255,255,.025);padding:2.2rem 2rem;max-width:720px;margin:0 auto;}
+.ev-badge{display:inline-block;font-family:'DM Mono',monospace;font-size:.55rem;letter-spacing:.28em;text-transform:uppercase;color:var(--red-l);border:1px solid rgba(163,39,29,.5);padding:.35em .9em;margin-bottom:1.4rem;}
+.ev-show{font-family:'Cinzel',serif;font-size:clamp(1.35rem,3.4vw,2rem);letter-spacing:.1em;color:var(--cream);margin-bottom:.5rem;}
+.ev-sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(1rem,2vw,1.18rem);color:var(--gold-l);opacity:.85;margin-bottom:1.8rem;}
+.ev-rows{display:flex;flex-direction:column;gap:.1rem;margin-bottom:1.9rem;}
+.ev-row{display:flex;gap:1rem;align-items:baseline;padding:.65rem 0;border-bottom:1px solid rgba(156,138,106,.14);}
+.ev-key{font-family:'DM Mono',monospace;font-size:.58rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);opacity:.75;min-width:88px;}
+.ev-val{font-family:'Cormorant Garamond',serif;font-size:clamp(1rem,1.9vw,1.15rem);color:var(--cream);opacity:.9;line-height:1.6;}
+.ev-buy{display:inline-block;background:var(--red);color:var(--cream);font-family:'DM Mono',monospace;font-size:.8rem;letter-spacing:.24em;text-transform:uppercase;text-decoration:none;padding:1.05em 2.6em;transition:background .2s,transform .15s;}
+.ev-buy:hover{background:var(--red-l);transform:translateY(-2px);color:var(--cream);}
+.ev-note{font-family:'DM Mono',monospace;font-size:.54rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);opacity:.5;margin-top:1rem;}
+.no-dates{max-width:720px;margin:0 auto;text-align:center;border:1px solid var(--border);background:rgba(255,255,255,.02);padding:2.4rem 2rem;}
 </style>
 </head>
+
 <body>
 
 <style>
@@ -139,58 +153,53 @@ footer p{font-family:'DM Mono',monospace;font-size:.54rem;letter-spacing:.26em;t
 </script>
 
 <div class="page-hero">
-  <p class="kicker">On the Road</p>
-  <h1>The <em>Posters</em></h1>
-  <p class="sub">Tap any poster to enlarge it.</p>
+  <p class="kicker">Tickets</p>
+  <h1>Come to the <em>show</em></h1>
+  <p class="sub">One man, one piano, and every song built live in front of you.</p>
 </div>
 
+<!-- ══ UPCOMING EVENT — edit the five fields below, and the BUY link ══ -->
 <div class="wrap">
-  <div class="poster-grid">
-    <a class="poster-card" href="PGshadowhero.jpg" data-lightbox>
-      <img src="PGshadowhero.jpg" alt="Paper Gun — A Show About Shadow Work (landscape)" loading="lazy"/>
-      <span>Paper Gun — A Show About Shadow Work (landscape)</span>
-    </a>
-    <a class="poster-card" href="PGshadowbirds3col.jpg" data-lightbox>
-      <img src="PGshadowbirds3col.jpg" alt="Paper Gun — Shadow &amp; Birds" loading="lazy"/>
-      <span>Paper Gun — Shadow &amp; Birds</span>
-    </a>
-    <a class="poster-card" href="papergun_img_2.jpg" data-lightbox>
-      <img src="papergun_img_2.jpg" alt="Paper Gun — Presents" loading="lazy"/>
-      <span>Paper Gun — Presents</span>
-    </a>
-    <a class="poster-card" href="VidstillPG.jpg" data-lightbox>
-      <img src="VidstillPG.jpg" alt="Paper Gun — Title Card" loading="lazy"/>
-      <span>Paper Gun — Title Card</span>
-    </a>
-    <a class="poster-card" href="PGSITPposter.jpg" data-lightbox>
-      <img src="PGSITPposter.jpg" alt="Two Shows — Paper Gun &amp; The Song Is The Play" loading="lazy"/>
-      <span>Two Shows — Paper Gun &amp; The Song Is The Play</span>
-    </a>
-    <a class="poster-card" href="LHposter.png" data-lightbox>
-      <img src="LHposter.png" alt="Paul Tosh — Unhurried, a Little Outlaw" loading="lazy"/>
-      <span>Paul Tosh — Unhurried, a Little Outlaw</span>
-    </a>
-    <a class="poster-card" href="PTposterJun24old.jpg" data-lightbox>
-      <img src="PTposterJun24old.jpg" alt="Paul Tosh — Western" loading="lazy"/>
-      <span>Paul Tosh — Western</span>
-    </a>
-    <a class="poster-card" href="PTposterAug.jpg" data-lightbox>
-      <img src="PTposterAug.jpg" alt="Paul Tosh — Illustrated" loading="lazy"/>
-      <span>Paul Tosh — Illustrated</span>
-    </a>
-    <a class="poster-card" href="PTAyeletposter.jpg" data-lightbox>
-      <img src="PTAyeletposter.jpg" alt="Paul Tosh — Evening Garden" loading="lazy"/>
-      <span>Paul Tosh — Evening Garden</span>
-    </a>
-    <a class="poster-card" href="JCCJune102.jpg" data-lightbox>
-      <img src="JCCJune102.jpg" alt="The Song Is The Play — The JCC, Denver" loading="lazy"/>
-      <span>The Song Is The Play — The JCC, Denver</span>
-    </a>
-    <a class="poster-card" href="CDJune2026.jpg" data-lightbox>
-      <img src="CDJune2026.jpg" alt="Modern Day Nomadic Troubadour — Colorado 2026" loading="lazy"/>
-      <span>Modern Day Nomadic Troubadour — Colorado 2026</span>
-    </a>
+  <div class="ev-card">
+    <p class="ev-badge">Next Performance</p>
+    <p class="ev-show">Paper Gun</p>
+    <p class="ev-sub">An original one-man operetta &mdash; a show about shadow work</p>
+
+    <div class="ev-rows">
+      <div class="ev-row"><span class="ev-key">Date</span><span class="ev-val">Thursday, 00 Month 2026</span></div>
+      <div class="ev-row"><span class="ev-key">Doors</span><span class="ev-val">0:00 pm &nbsp;&middot;&nbsp; Performance 0:00 pm</span></div>
+      <div class="ev-row"><span class="ev-key">Venue</span><span class="ev-val">Venue Name<br/>Street Address, City, State</span></div>
+      <div class="ev-row"><span class="ev-key">Tickets</span><span class="ev-val">$00 &nbsp;&middot;&nbsp; limited seating</span></div>
+      <div class="ev-row"><span class="ev-key">Running</span><span class="ev-val">About one hour, no interval</span></div>
+    </div>
+
+    <div style="text-align:center;">
+      <a class="ev-buy" href="#" onclick="return false;">&#9670; Buy Tickets</a>
+      <p class="ev-note">Secure checkout &middot; ticket emailed instantly</p>
+    </div>
   </div>
+
+  <p class="body" style="max-width:720px;margin:2.4rem auto 0;text-align:center;">Tickets are also available from Paul in person &mdash; card or cash, ticket emailed on the spot.</p>
+</div>
+
+<div class="rule"></div>
+
+<div class="wrap" style="text-align:center;">
+  <p class="sec-label">Before You Come</p>
+  <p class="body" style="max-width:680px;margin:0 auto 1.6rem;">If you haven't seen the show, start here &mdash; a few minutes will tell you more than any description.</p>
+  <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+    <a class="cta-red" style="background:none;border:1px solid rgba(156,138,106,.5);color:var(--gold-l);" href="./papergun.html">About Paper Gun &rarr;</a>
+    <a class="cta-red" style="background:none;border:1px solid rgba(156,138,106,.5);color:var(--gold-l);" href="./sitp.html">The Song Is The Play &rarr;</a>
+    <a class="cta-red" style="background:none;border:1px solid rgba(156,138,106,.5);color:var(--gold-l);" href="./testimonials.html">What People Say &rarr;</a>
+  </div>
+</div>
+
+<div class="rule"></div>
+
+<div class="wrap" style="text-align:center;padding-bottom:1rem;">
+  <p class="sec-label">Booking a Show Instead?</p>
+  <p class="body" style="max-width:680px;margin:0 auto 1.4rem;">Venues, senior communities, JCCs, theatres and fundraisers &mdash; Paul tours across the US &amp; Canada.</p>
+  <a href="mailto:bookings@tosh42.com" class="cta-red">&#9670; Enquire About Booking</a>
 </div>
 
 <div id="bottom-cta">
@@ -204,25 +213,5 @@ footer p{font-family:'DM Mono',monospace;font-size:.54rem;letter-spacing:.26em;t
 
 <a href="./index.html" title="Home — tosh42.com" style="position:fixed;bottom:1.2rem;right:1.2rem;z-index:2147483647;background:#121010;border:1px solid rgba(156,138,106,.5);border-radius:50%;width:54px;height:54px;display:flex;align-items:center;justify-content:center;text-decoration:none;opacity:.88;transition:opacity .2s;font-family:monospace;font-size:.42rem;letter-spacing:.08em;text-transform:uppercase;color:#9c8a6a;text-align:center;line-height:1.3;box-shadow:0 2px 12px rgba(0,0,0,.7);" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity='.88'">tosh<br>42</a>
 
-<div id="lightbox" aria-hidden="true">
-  <button class="lb-close" aria-label="Close">&times;</button>
-  <img src="" alt="Poster enlarged"/>
-</div>
-<script>
-(function(){
-  var lb = document.getElementById('lightbox');
-  var lbImg = lb.querySelector('img');
-  document.querySelectorAll('a[data-lightbox]').forEach(function(a){
-    a.addEventListener('click', function(e){
-      e.preventDefault();
-      lbImg.src = a.getAttribute('href');
-      lb.classList.add('open');
-    });
-  });
-  function closeLB(){ lb.classList.remove('open'); lbImg.src=''; }
-  lb.addEventListener('click', closeLB);
-  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeLB(); });
-})();
-</script>
 </body>
 </html>
