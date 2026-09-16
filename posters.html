@@ -61,6 +61,12 @@ footer p{font-family:'DM Mono',monospace;font-size:.54rem;letter-spacing:.26em;t
 #lightbox img{max-width:94vw;max-height:92vh;width:auto;height:auto;box-shadow:0 30px 120px rgba(0,0,0,.9);border:1px solid rgba(156,138,106,.35);}
 #lightbox .lb-close{position:fixed;top:1rem;right:1.4rem;font-family:'DM Mono',monospace;font-size:1.4rem;color:#eae3d3;opacity:.7;cursor:pointer;background:none;border:none;line-height:1;}
 #lightbox .lb-close:hover{opacity:1;}
+
+.banner-stack{display:flex;flex-direction:column;gap:2rem;max-width:1100px;margin:0 auto;}
+.banner-shot{display:block;text-decoration:none;border:1px solid var(--border);background:rgba(255,255,255,.02);padding:.6rem;transition:transform .15s,border-color .2s;}
+.banner-shot:hover{transform:translateY(-3px);border-color:rgba(156,138,106,.5);}
+.banner-shot img{width:100%;height:auto;display:block;}
+.banner-shot span{display:block;font-family:'DM Mono',monospace;font-size:.56rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);opacity:.7;margin-top:.7rem;text-align:center;}
 </style>
 </head>
 <body>
@@ -193,6 +199,28 @@ footer p{font-family:'DM Mono',monospace;font-size:.54rem;letter-spacing:.26em;t
     </a>
   </div>
 </div>
+
+<div class="rule" style="max-width:600px;margin:1rem auto;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:.25;"></div>
+
+<div class="wrap" style="padding-top:2.4rem;">
+  <p class="sec-label" style="text-align:center;">Banners</p>
+  <p class="body" style="max-width:640px;margin:0 auto 2rem;text-align:center;">Wide-format artwork for stage backdrops, web headers and print. Tap any banner to enlarge it.</p>
+  <div class="banner-stack">
+    <a href="banner1.jpg" data-lightbox class="banner-shot">
+      <img src="banner1.jpg" alt="Paper Gun — a show about shadow work. Wide banner." loading="lazy"/>
+      <span>Paper Gun &middot; Shadow Work</span>
+    </a>
+    <a href="banner3.jpg" data-lightbox class="banner-shot">
+      <img src="banner3.jpg" alt="Paper Gun — This is mine, but you can have it. Wide banner." loading="lazy"/>
+      <span>Paper Gun &middot; This is mine, but you can have it</span>
+    </a>
+    <a href="banner2.jpg" data-lightbox class="banner-shot">
+      <img src="banner2.jpg" alt="Paul Tosh — Modern Day Nomadic Troubadour. Wide banner." loading="lazy"/>
+      <span>Paul Tosh &middot; Modern Day Nomadic Troubadour</span>
+    </a>
+  </div>
+</div>
+
 
 <div id="bottom-cta">
   <p class="presenter">Now Booking Presenters</p>
