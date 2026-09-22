@@ -15,30 +15,30 @@ body{background:var(--ink);color:var(--parchment);font-family:Georgia,serif;font
 /* ── GUIDED VIDEO JOURNEY ── */
 #video-journey{background:var(--ink);display:flex;flex-direction:column;align-items:center;padding:1.5rem 2rem 3rem;}
 .vj-kicker{display:flex;align-items:center;gap:.9rem;margin-bottom:2.4rem;}
-.vj-kicker-text{font-family:'DM Mono',monospace;font-size:.58rem;letter-spacing:.42em;text-transform:uppercase;color:var(--gold);opacity:.8;white-space:nowrap;text-align:center;}
+.vj-kicker-text{font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.42em;text-transform:uppercase;color:var(--gold);opacity:.8;white-space:nowrap;text-align:center;}
 .vj-kicker-line{width:36px;height:1px;background:linear-gradient(90deg,transparent,rgba(156,138,106,.55));}
 .vj-kicker-line.right{background:linear-gradient(90deg,rgba(156,138,106,.55),transparent);}
 .vj-step{width:100%;max-width:900px;display:flex;flex-direction:column;}
 .vj-step.vj-left{align-items:flex-start;}
 .vj-step.vj-right{align-items:flex-end;}
 .vj-card{width:100%;max-width:560px;display:flex;flex-direction:column;}
-.vj-num{font-family:'DM Mono',monospace;font-size:.6rem;letter-spacing:.42em;color:var(--gold);opacity:.75;margin-bottom:.45rem;}
+.vj-num{font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.42em;color:var(--gold);opacity:.8;margin-bottom:.45rem;}
 .vj-title{font-family:Georgia,serif;font-style:italic;font-size:clamp(1.15rem,2vw,1.45rem);color:var(--parchment);opacity:.92;margin-bottom:.85rem;line-height:1.35;}
 .vj-frame{width:100%;aspect-ratio:16/9;overflow:hidden;border:1px solid rgba(156,138,106,.28);box-shadow:0 12px 55px rgba(0,0,0,.68);}
 .vj-frame iframe{width:100%;height:100%;border:0;display:block;}
-.vj-plist-link{font-family:'DM Mono',monospace;font-size:.56rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);opacity:.6;text-decoration:none;margin-top:.7rem;border-bottom:1px solid rgba(156,138,106,.25);padding-bottom:.1rem;align-self:flex-start;transition:opacity .2s;}
+.vj-plist-link{font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);opacity:.8;text-decoration:none;margin-top:.7rem;border-bottom:1px solid rgba(156,138,106,.25);padding-bottom:.1rem;align-self:flex-start;transition:opacity .2s;}
 .vj-plist-link:hover{opacity:1;}
 .vj-tracklist{width:100%;margin-top:.9rem;border:1px solid rgba(156,138,106,.22);background:rgba(156,138,106,.03);max-height:440px;overflow-y:auto;scrollbar-width:thin;scrollbar-color:rgba(156,138,106,.4) transparent;}
-.vj-tracklist-head{position:sticky;top:0;z-index:2;background:#14100a;border-bottom:1px solid rgba(156,138,106,.25);padding:.55rem .8rem;font-family:'DM Mono',monospace;font-size:.55rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);opacity:.85;text-align:left;}
+.vj-tracklist-head{position:sticky;top:0;z-index:2;background:#14100a;border-bottom:1px solid rgba(156,138,106,.25);padding:.55rem .8rem;font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);opacity:.85;text-align:left;}
 .vj-track{display:flex;align-items:center;gap:.8rem;padding:.55rem .8rem;cursor:pointer;border-bottom:1px solid rgba(156,138,106,.1);transition:background .2s;}
 .vj-track:last-child{border-bottom:none;}
 .vj-track:hover{background:rgba(156,138,106,.08);}
 .vj-track.playing{background:rgba(156,138,106,.13);}
 .vj-track img{width:86px;aspect-ratio:16/9;object-fit:cover;flex-shrink:0;display:block;border:1px solid rgba(156,138,106,.2);}
-.vj-track-num{font-family:'DM Mono',monospace;font-size:.55rem;letter-spacing:.15em;color:var(--gold);opacity:.6;flex-shrink:0;width:1.4em;text-align:right;}
+.vj-track-num{font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.15em;color:var(--gold);opacity:.8;flex-shrink:0;width:1.4em;text-align:right;}
 .vj-track-title{font-family:Georgia,serif;font-style:italic;font-size:.95rem;color:var(--parchment);opacity:.8;line-height:1.35;overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;text-align:left;}
 .vj-track.playing .vj-track-title{color:var(--gold-l);opacity:1;}
-.vj-tracklist-note{font-family:'DM Mono',monospace;font-size:.55rem;letter-spacing:.2em;text-transform:uppercase;color:var(--parchment);opacity:.35;padding:.8rem;text-align:center;}
+.vj-tracklist-note{font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--parchment);opacity:.8;padding:.8rem;text-align:center;}
 .vj-connector{width:100%;max-width:900px;}
 .vj-connector svg{display:block;width:100%;height:auto;overflow:visible;}
 .vj-line{fill:none;stroke:var(--gold);stroke-width:1.6;stroke-dasharray:7 9;stroke-linecap:round;opacity:.7;animation:vjdash 20s linear infinite;}
@@ -49,7 +49,7 @@ body{background:var(--ink);color:var(--parchment);font-family:Georgia,serif;font
   #video-journey{padding:1rem 1.2rem 2.4rem;}
   .vj-step .vj-card{max-width:100%;}
   .vj-connector svg{display:none;}
-  .vj-mobile-label{display:flex;flex-direction:column;align-items:center;gap:.45rem;font-family:'DM Mono',monospace;font-size:.58rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);opacity:.82;padding:1.5rem 0;text-align:center;}
+  .vj-mobile-label{display:flex;flex-direction:column;align-items:center;gap:.45rem;font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);opacity:.82;padding:1.5rem 0;text-align:center;}
   .vj-mobile-label::before{content:'';width:1px;height:26px;background:linear-gradient(to bottom,transparent,var(--gold));opacity:.6;}
 }
 .sl{font-size:.7rem;letter-spacing:.4em;text-transform:uppercase;color:var(--gold);opacity:.7;margin-bottom:1.5rem;}
@@ -174,7 +174,7 @@ footer{text-align:center;padding:2rem;font-size:.7rem;letter-spacing:.2em;opacit
   position:fixed;bottom:1.4rem;left:50%;transform:translateX(-50%);
   z-index:999;
   background:var(--gold);color:var(--ink);
-  font-family:Georgia,serif;font-size:.78rem;letter-spacing:.28em;
+  font-family:Georgia,serif;font-size:.92rem;letter-spacing:.28em;
   text-transform:uppercase;text-decoration:none;
   padding:.9em 2.6em;
   box-shadow:0 6px 36px rgba(0,0,0,.75),0 0 0 1px rgba(156,138,106,.35);
@@ -193,7 +193,7 @@ footer{text-align:center;padding:2rem;font-size:.7rem;letter-spacing:.2em;opacit
 .btn-gold:hover{background:var(--red-l)!important;border-color:var(--red-l)!important;}
 .duo-videos{display:flex;gap:2rem;flex-wrap:wrap;justify-content:center;max-width:1100px;margin:2rem auto 0;}
 .duo-videos .dv{flex:1 1 380px;max-width:520px;}
-.duo-videos .dv-label{font-family:'DM Mono',monospace;font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);opacity:.7;margin-bottom:.6rem;text-align:center;}
+.duo-videos .dv-label{font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);opacity:.8;margin-bottom:.6rem;text-align:center;}
 .dv-frame{position:relative;padding-bottom:56.25%;height:0;background:#000;border:1px solid rgba(156,138,106,.25);}
 .dv-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:none;}
 .pl-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:2rem;width:100%;max-width:1240px;margin:2.2rem auto 0;}
@@ -204,9 +204,9 @@ footer{text-align:center;padding:2rem;font-size:.7rem;letter-spacing:.2em;opacit
 .pl-frame{position:relative;padding-bottom:56.25%;height:0;background:#000;border:1px solid rgba(156,138,106,.22);}
 .pl-frame iframe,.pl-frame > div{position:absolute;inset:0;width:100%;height:100%;border:none;}
 .pl-list{margin-top:.8rem;border:1px solid rgba(156,138,106,.22);background:rgba(156,138,106,.03);max-height:300px;overflow-y:auto;scrollbar-width:thin;scrollbar-color:rgba(156,138,106,.4) transparent;}
-.pl-ytlink{display:block;text-align:center;font-family:'DM Mono',monospace;font-size:.56rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);opacity:.6;margin-top:.7rem;}
+.pl-ytlink{display:block;text-align:center;font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);opacity:.8;margin-top:.7rem;}
 .pl-ytlink:hover{opacity:1;}
-.vj-tracklist-head{position:sticky;top:0;z-index:2;background:#171310;border-bottom:1px solid rgba(156,138,106,.25);padding:.55rem .8rem;font-family:'DM Mono',monospace;font-size:.55rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);opacity:.85;}
+.vj-tracklist-head{position:sticky;top:0;z-index:2;background:#171310;border-bottom:1px solid rgba(156,138,106,.25);padding:.55rem .8rem;font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);opacity:.85;}
 </style>
 </head>
 <body>
@@ -242,7 +242,7 @@ footer{text-align:center;padding:2rem;font-size:.7rem;letter-spacing:.2em;opacit
   </div>
   <div class="nav-sep"></div>
   <div class="nav-drop">
-    <button type="button">Always <span class="caret">&#9662;</span></button>
+    <button type="button">For Presenters <span class="caret">&#9662;</span></button>
     <div class="nav-menu">
       <a href="./testimonials.html">Testimonials</a>
       <a href="./agreement.html">Performance Agreement</a>
@@ -308,7 +308,7 @@ footer{text-align:center;padding:2rem;font-size:.7rem;letter-spacing:.2em;opacit
 
 <div style="background:var(--ink);padding:1.6rem 2rem 0;">
   <div style="max-width:640px;margin:0 auto;text-align:center;">
-    <p style="font-family:'DM Mono',monospace;font-size:.58rem;letter-spacing:.42em;text-transform:uppercase;color:var(--gold);opacity:.85;margin-bottom:.9rem;">Mission</p>
+    <p style="font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.42em;text-transform:uppercase;color:var(--gold);opacity:.85;margin-bottom:.9rem;">Mission</p>
     <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(1.05rem,2vw,1.28rem);line-height:1.75;color:var(--cream);opacity:.9;margin:0;">To make opera's scale of feeling small enough to travel and honest enough to matter &mdash; the old form, carrying what people are carrying now.</p>
   </div>
 </div>
@@ -345,7 +345,7 @@ footer{text-align:center;padding:2rem;font-size:.7rem;letter-spacing:.2em;opacit
   <p class="sl" style="justify-content:center;text-align:center;">Paper Gun</p>
   <h2 style="text-align:center;">Wisdom <em>from the Ages</em></h2>
   <p class="body" style="margin-top:1.4rem;">I've been introducing these songs of pain and love and reconciliation from my operetta in churches, country clubs, synagogues, community centers, and senior facilities &mdash; I am now touring my one-man operetta; where the theme demands it, I supplement the original material with chosen cover songs by Bob Dylan, Frank Sinatra, Neil Diamond &amp; Billy Joel &mdash; songs that illuminate the same terrain from a different angle. The theatrical handling has been my core performing approach, honed across years of <a href="./sitp.html" style="color:var(--gold-l);border-bottom:1px solid rgba(156,138,106,.4);text-decoration:none;font-style:italic;">The Song Is The Play</a>. There will always be an unknown element &mdash; the show breathes differently each time, with relevance, and with a few surprises.</p>
-  <p class="body">The education has run in both directions: so many words of wisdom, so many conversations with remarkable people. Paper Gun opens with a live recording from one of those shows &mdash; my microphone happened to catch a Mr. Hay, <button type="button" class="mrhay-btn" onclick="toggleMrHay(this)" style="display:inline-flex;align-items:center;gap:.4em;background:none;border:1px solid rgba(181,163,126,.55);border-radius:999px;color:#b5a37e;font-family:'DM Mono',monospace;font-size:.55rem;letter-spacing:.18em;text-transform:uppercase;padding:.3em .85em;cursor:pointer;vertical-align:middle;margin:0 .25em;transition:background .2s;" onmouseover="this.style.background='rgba(156,138,106,.12)'" onmouseout="this.style.background='none'"><span class="mrhay-glyph">&#9654;</span> Hear him</button> and what he says sets the tone for the greatest lesson of them all about the human condition &mdash; and its movements are exactly what this original work traces.</p>
+  <p class="body">The education has run in both directions: so many words of wisdom, so many conversations with remarkable people. Paper Gun opens with a live recording from one of those shows &mdash; my microphone happened to catch a Mr. Hay, <button type="button" class="mrhay-btn" onclick="toggleMrHay(this)" style="display:inline-flex;align-items:center;gap:.4em;background:none;border:1px solid rgba(181,163,126,.55);border-radius:999px;color:#b5a37e;font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;padding:.3em .85em;cursor:pointer;vertical-align:middle;margin:0 .25em;transition:background .2s;" onmouseover="this.style.background='rgba(156,138,106,.12)'" onmouseout="this.style.background='none'"><span class="mrhay-glyph">&#9654;</span> Hear him</button> and what he says sets the tone for the greatest lesson of them all about the human condition &mdash; and its movements are exactly what this original work traces.</p>
   <p class="body">That's what built this show: the conversations, the getting to know them, wisdom collected one afternoon at a time over the years. I meet a lot of older people. Some carry resentment; some carry none. The difference between them is the heart of the show: when someone has hurt you, there's a better road than resentment &mdash; grieve the loss of what they meant to you, at their best.</p>
 </section>
 
@@ -370,7 +370,7 @@ footer{text-align:center;padding:2rem;font-size:.7rem;letter-spacing:.2em;opacit
   <div class="duo-videos">
     <div class="dv">
       <p class="dv-label">Paper Gun — The Clips</p>
-      <div class="dv-frame"><iframe src="https://www.youtube.com/embed/Blkdh0y83us" title="Paper Gun — Paul Tosh" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+      <div class="dv-frame"><iframe src="https://www.youtube.com/embed/j-1l7oBouAw" title="Paper Gun — Paul Tosh" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
     </div>
     <div class="dv">
       <p class="dv-label">More Clips</p>
@@ -398,7 +398,7 @@ footer{text-align:center;padding:2rem;font-size:.7rem;letter-spacing:.2em;opacit
 <!-- HUGO/HUXLEY QUOTE -->
 <div style="max-width:620px;margin:0 auto;padding:2.5rem 2rem 0;text-align:center;">
   <blockquote style="font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:clamp(1.1rem,2vw,1.35rem);color:#eae3d3;opacity:.82;line-height:1.8;margin-bottom:.8rem;">"After silence, that which cannot be put into words, but cannot remain unexpressed"</blockquote>
-  <cite style="font-family:'DM Mono',monospace;font-size:.58rem;letter-spacing:.22em;text-transform:uppercase;color:#9c8a6a;opacity:.65;font-style:normal;">Hugo / Huxley</cite>
+  <cite style="font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:#9c8a6a;opacity:.8;font-style:normal;">Hugo / Huxley</cite>
 </div>
 
 <!-- POSTER -->
@@ -453,8 +453,10 @@ footer{text-align:center;padding:2rem;font-size:.7rem;letter-spacing:.2em;opacit
   <!-- Below image -->
   <span class="tag" style="display:block;margin-top:1.2rem;">A man. A piano. A reckoning.</span>
   <p class="body" style="text-align:center;font-size:.85rem;letter-spacing:.2em;color:var(--gold);opacity:.65;margin-top:.75rem;">EMOTIONALLY ENGAGING &nbsp;·&nbsp; THEATRICAL &nbsp;·&nbsp; INDEPENDENCE</p>
-  <p class="body" style="max-width:680px;margin:1.8rem auto 0;text-align:center;font-style:italic;opacity:.75;">Paper Gun is an original song cycle — An operetta in three acts of thirty minutes each. A paper theme tied to the shadow and philosophical parallels about sacrifice, in which one man plays both sides of himself. Ending in independence and warmth, taking no prisoners on the way.</p>
-  <p class="body" style="max-width:680px;margin:1.4rem auto 0;text-align:center;font-style:italic;opacity:.85;color:var(--gold-l);">What this work does in the rooms it reaches: for the elderly, for the isolated, for people carrying weight they can't name until a song names it for them — is real. I've been in an impoverished enough state myself to know what I'm giving.</p>
+  <p class="body" style="max-width:680px;margin:1.8rem auto 0;text-align:center;opacity:.75;">Paper Gun is an original song cycle — An operetta in three acts of thirty minutes each. A paper theme tied to the shadow and philosophical parallels about sacrifice, in which one man plays both sides of himself. Ending in independence and warmth, taking no prisoners on the way.</p>
+  <p class="body" style="max-width:680px;margin:1.2rem auto 0;text-align:center;">It's about survival over grievance. An original operetta / an actual mini opera &mdash; one man plays both sides of himself. A three-act paper theme tied to the shadow and sacrifice: a journey from disillusionment to authenticity. A niche, unconventional, therapeutic, theatrical one-man show.</p>
+  <p class="body" style="max-width:680px;margin:1.2rem auto 0;text-align:center;">I have always had two shows &mdash; each one borrows a little from the other: I supplement the original material with chosen cover songs in the Song Is The Play theatrical format. There is always an unknown element to illuminate the terrain from a different angle.</p>
+  <p class="body" style="max-width:680px;margin:1.4rem auto 0;text-align:center;opacity:.85;color:var(--gold-l);">What this work does in the rooms it reaches: for the elderly, for the isolated, for people carrying weight they can't name until a song names it for them — is real. I've been in an impoverished enough state myself to know what I'm giving.</p>
 
   <div style="margin-top:2.4rem;display:flex;flex-wrap:wrap;gap:1rem;justify-content:center;align-items:center;"><a href="./papergun-full.html" style="display:inline-block;background:var(--gold);color:var(--ink);font-family:'DM Mono',monospace;font-size:clamp(.78rem,1.6vw,.92rem);letter-spacing:.26em;text-transform:uppercase;padding:1.1em 2.4em;text-decoration:none;border:2px solid var(--gold);box-shadow:0 8px 34px rgba(156,138,106,.28);transition:background .2s,transform .2s;" onmouseover="this.style.background='#b5a37e';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='#9c8a6a';this.style.transform='none'">⬡ The Deep Dive — Act I &nbsp;·&nbsp; II &nbsp;·&nbsp; III →</a><a href="./therapeutic.html" style="display:inline-block;background:transparent;color:var(--gold);font-family:'DM Mono',monospace;font-size:clamp(.72rem,1.5vw,.85rem);letter-spacing:.24em;text-transform:uppercase;padding:1.05em 2.1em;text-decoration:none;border:2px solid var(--gold);transition:background .2s,color .2s,transform .2s;" onmouseover="this.style.background='#9c8a6a';this.style.color='#121010';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='transparent';this.style.color='#9c8a6a';this.style.transform='none'">For Therapeutic Interest →</a></div>
 </section>
@@ -465,13 +467,13 @@ footer{text-align:center;padding:2rem;font-size:.7rem;letter-spacing:.2em;opacit
 <section class="fade" id="programme" style="padding:3rem 2rem;max-width:860px;margin:0 auto;">
   <p style="font-size:.7rem;letter-spacing:.4em;text-transform:uppercase;color:#9c8a6a;opacity:.7;text-align:center;margin-bottom:.6rem;">The Programme</p>
   <h2 style="font-family:Georgia,serif;font-size:clamp(1.6rem,3.5vw,2.4rem);font-weight:700;color:#eae3d3;text-align:center;margin-bottom:.4rem;line-height:1.2;">Thirty-Five Songs. <span class="reckoning-break"></span><em style="color:#b5a37e;">One Reckoning.</em></h2>
-  <p style="font-family:Georgia,serif;font-size:1rem;font-style:italic;color:#eae3d3;opacity:.72;text-align:center;max-width:620px;margin:0 auto 1.8rem;line-height:1.85;">There are two people in every difficult relationship. In my experience — they're often the same person. Say something true to someone you love and if the painter takes themselves out of the painting, you are left in something beautiful, but holding both sides of whether you did the right thing. Tonight I hope you get a sense of independence, and what that means for better for worse, ultimately for better. A vicarious exercise through your French brother, the classic "I'm alright, Jack" — your shadow work — whomever that is for you, because it mostly lives in you / not outside of you.</p>
-  <p style="font-family:Georgia,serif;font-size:1rem;color:#eae3d3;opacity:.65;text-align:center;max-width:600px;margin:0 auto 1.5rem;line-height:1.75;">The protagonist contains extremes. <em>"I know in this song the bully is me, but the bully is feeling free."</em> He's not the innocent party observing. He's someone who recognises the negative pull in himself, fights it, and emerges. That's the whole arc. This work operates on multiple registers simultaneously — emotional, theatrical, philosophical — and different audiences will unlock different layers.</p>
-  <p style="font-family:Georgia,serif;font-size:1rem;font-style:italic;color:#eae3d3;opacity:.75;text-align:center;max-width:600px;margin:0 auto 1.5rem;line-height:1.75;">A niche and unconventional product; therapeutic theatrical performance to help people &mdash; punchy, strong, aimed at the heart.</p>
-  <p style="font-family:Georgia,serif;font-size:.95rem;font-style:italic;color:#eae3d3;opacity:.5;text-align:center;margin-bottom:2.5rem;">Click a song, see a line.</p>
+  <p style="font-family:Georgia,serif;font-size:1rem;color:#eae3d3;opacity:.8;text-align:center;max-width:620px;margin:0 auto 1.8rem;line-height:1.85;">There are two people in every difficult relationship. In my experience — they're often the same person. Say something true to someone you love and if the painter takes themselves out of the painting, you are left in something beautiful, but holding both sides of whether you did the right thing. Tonight I hope you get a sense of independence, and what that means for better for worse, ultimately for better. A vicarious exercise through your French brother, the classic "I'm alright, Jack" — your shadow work — whomever that is for you, because it mostly lives in you / not outside of you.</p>
+  <p style="font-family:Georgia,serif;font-size:1rem;color:#eae3d3;opacity:.8;text-align:center;max-width:600px;margin:0 auto 1.5rem;line-height:1.75;">The protagonist contains extremes. <em>"I know in this song the bully is me, but the bully is feeling free."</em> He's not the innocent party observing. He's someone who recognises the negative pull in himself, fights it, and emerges. That's the whole arc. This work operates on multiple registers simultaneously — emotional, theatrical, philosophical — and different audiences will unlock different layers.</p>
+  <p style="font-family:Georgia,serif;font-size:1rem;font-style:italic;color:#eae3d3;opacity:.8;text-align:center;max-width:600px;margin:0 auto 1.5rem;line-height:1.75;">A niche and unconventional product; therapeutic theatrical performance to help people &mdash; punchy, strong, aimed at the heart.</p>
+  <p style="font-family:Georgia,serif;font-size:.95rem;font-style:italic;color:#eae3d3;opacity:.8;text-align:center;margin-bottom:2.5rem;">Click a song, see a line.</p>
 
   <style>
-    .act-header{font-family:Georgia,serif;font-size:.7rem;letter-spacing:.35em;text-transform:uppercase;color:#9c8a6a;opacity:.6;margin:2rem 0 .8rem;text-align:center;}
+    .act-header{font-family:Georgia,serif;font-size:.92rem;letter-spacing:.35em;text-transform:uppercase;color:#9c8a6a;opacity:.8;margin:2rem 0 .8rem;text-align:center;}
     .song-item{border-bottom:1px solid rgba(156,138,106,.12);padding:.6rem 0;}
     .song-item summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:baseline;gap:1rem;font-family:Georgia,serif;}
     .song-item summary::-webkit-details-marker{display:none;}
@@ -767,7 +769,7 @@ footer{text-align:center;padding:2rem;font-size:.7rem;letter-spacing:.2em;opacit
     <p class="sl">Investment</p>
     <span class="price-num">$POA</span>
     <p style="margin-top:1.5rem;font-size:.8rem;letter-spacing:.2em;opacity:.5;text-transform:uppercase;">All-inclusive · Travel · Accommodation · Sound</p>
-    <p style="margin-top:1.5rem;font-size:.95rem;opacity:.65;font-style:italic;font-weight:300;">Paul travels in a custom self-contained performance camper, making him available for venues across the entire United States and Canada — with no hotel riders, no staging requirements, no hidden costs. Just asking for a safe place to park.</p>
+    <p style="margin-top:1.5rem;font-size:.95rem;opacity:.65;font-weight:300;">Paul travels in a custom self-contained performance camper, making him available for venues across the entire United States and Canada — with no hotel riders, no staging requirements, no hidden costs. Just asking for a safe place to park.</p>
     <img src="trukcut3.png" alt="CyberPhoenix — Tosh42" style="max-width:420px;width:100%;display:block;margin:1.5rem auto 0;opacity:.88;filter:brightness(.9);"/>
     <p style="margin-top:1.2rem;font-size:.95rem;opacity:.55;font-style:italic;font-weight:300;">Paul works across a wide range of venues and budgets. Please get in touch to discuss.</p>
   </div>
@@ -788,6 +790,24 @@ footer{text-align:center;padding:2rem;font-size:.7rem;letter-spacing:.2em;opacit
 <div class="rule"></div>
 
 <!-- ABOUT -->
+<!-- ── BEFORE YOU BEGIN ── -->
+<section class="fade" style="max-width:720px;margin:0 auto;padding:3rem 2rem 1rem;text-align:center;">
+  <p class="sl center">Before You Begin</p>
+  <p class="body" style="margin-top:1rem;">What you will see is one man&rsquo;s version of the work &mdash; lived vicariously, from a seat. If something in it touched a part of your own life, there&rsquo;s a way to begin that work for yourself.</p>
+  <p class="body"><a href="./therapeutic.html#protocol" style="color:var(--gold-l);border-bottom:1px solid rgba(156,138,106,.4);text-decoration:none;">The protocol the show is built on &rarr;</a> a way of turning resentment into grief, so that it stops costing you. It&rsquo;s best walked with a trained therapist beside you.</p>
+</section>
+
+<!-- ── HOST INTRODUCTION ── -->
+<section style="background:var(--ink);padding:4rem 2rem;border-top:1px solid var(--border);">
+  <div style="max-width:760px;margin:0 auto;text-align:center;">
+    <p style="font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.42em;text-transform:uppercase;color:var(--gold);opacity:.85;margin-bottom:1.6rem;">Host Introduction</p>
+    <div style="border:1px solid rgba(156,138,106,.28);background:rgba(255,255,255,.02);padding:2.4rem 2.2rem;text-align:left;">
+      <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(1.05rem,2vw,1.25rem);line-height:1.95;color:var(--cream);opacity:.88;margin:0;">"Tonight is something rare: an original operetta, written and performed by one man at a piano. It's called Paper Gun, and it's about the journey every one of us makes &mdash; from the resentments we carry to something we can finally call our own. It's honest, and it's handled with care from the first note to the last. He's performed for two decades across three countries, and he wrote every word you're about to hear. Please welcome the author and the voice of Paper Gun&hellip; Paul Tosh."</p>
+    </div>
+    <p style="font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);opacity:.8;margin-top:1.1rem;">For presenters &mdash; read as written, or make it your own</p>
+  </div>
+</section>
+
 <section class="fade">
   <p class="sl">About the Performer / Author</p>
   <h2>Paul Tosh</h2>
@@ -842,24 +862,24 @@ footer{text-align:center;padding:2rem;font-size:.7rem;letter-spacing:.2em;opacit
 
 <!-- CREDITS -->
 <div style="max-width:600px;margin:0 auto;padding:3rem 2rem 2rem;text-align:center;border-top:1px solid rgba(156,138,106,.12);">
-  <p style="font-family:'DM Mono',monospace;font-size:.55rem;letter-spacing:.35em;text-transform:uppercase;color:#9c8a6a;opacity:.5;margin-bottom:2rem;">Credits</p>
+  <p style="font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.35em;text-transform:uppercase;color:#9c8a6a;opacity:.8;margin-bottom:2rem;">Credits</p>
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem 2rem;margin-bottom:2rem;">
     <div>
-      <p style="font-family:'DM Mono',monospace;font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:#9c8a6a;opacity:.5;margin-bottom:.3rem;">Piano &amp; Vocals</p>
+      <p style="font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:#9c8a6a;opacity:.8;margin-bottom:.3rem;">Piano &amp; Vocals</p>
       <p style="font-family:Georgia,serif;font-size:1.1rem;color:#eae3d3;opacity:.8;">Paul Tosh</p>
     </div>
     <div>
-      <p style="font-family:'DM Mono',monospace;font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:#9c8a6a;opacity:.5;margin-bottom:.3rem;">Soloist / Narrator</p>
+      <p style="font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:#9c8a6a;opacity:.8;margin-bottom:.3rem;">Soloist / Narrator</p>
       <p style="font-family:Georgia,serif;font-size:1.1rem;color:#eae3d3;opacity:.8;">Mesoud Benasully</p>
     </div>
   </div>
   <div style="margin-bottom:2rem;">
-    <p style="font-family:'DM Mono',monospace;font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:#9c8a6a;opacity:.5;margin-bottom:.3rem;">Executive Producer</p>
+    <p style="font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:#9c8a6a;opacity:.8;margin-bottom:.3rem;">Executive Producer</p>
     <p style="font-family:Georgia,serif;font-size:1.1rem;color:#eae3d3;opacity:.8;">Eli Gestetner <span style="font-size:.75rem;color:#888;opacity:.7;font-style:italic;"> — The Signpost</span></p>
   </div>
   <div style="border-top:1px solid rgba(156,138,106,.1);padding-top:1.5rem;display:flex;flex-direction:column;gap:.6rem;">
-    <p style="font-family:Georgia,serif;font-style:italic;font-size:.85rem;color:#eae3d3;opacity:.35;">With thanks to Claude AI for incredible organising help and web design.</p>
-    <p style="font-family:Georgia,serif;font-style:italic;font-size:.85rem;color:#eae3d3;opacity:.35;">With ultimate thanks to G-d.</p>
+    <p style="font-family:Georgia,serif;font-style:italic;font-size:.92rem;color:#eae3d3;opacity:.8;">With thanks to Claude AI for incredible organising help and web design.</p>
+    <p style="font-family:Georgia,serif;font-style:italic;font-size:.92rem;color:#eae3d3;opacity:.8;">With ultimate thanks to G-d.</p>
   </div>
 </div>
 
@@ -881,7 +901,7 @@ footer{text-align:center;padding:2rem;font-size:.7rem;letter-spacing:.2em;opacit
 
 <footer style="text-align:center;padding:1.5rem;font-size:.7rem;letter-spacing:.2em;opacity:.22;border-top:1px solid rgba(234,227,211,.06);">© 2026 Paul Tosh · tosh42.com · <a href="mailto:bookings@tosh42.com" style="color:var(--gold);">bookings@tosh42.com</a></footer>
 
-<a href="./index.html" title="Home — tosh42.com" style="position:fixed;bottom:1.2rem;right:1.2rem;z-index:2147483647;background:#121010;border:1px solid rgba(156,138,106,.5);border-radius:50%;width:54px;height:54px;display:flex;align-items:center;justify-content:center;text-decoration:none;opacity:.88;transition:opacity .2s;font-family:monospace;font-size:.42rem;letter-spacing:.08em;text-transform:uppercase;color:#9c8a6a;text-align:center;line-height:1.3;box-shadow:0 2px 12px rgba(0,0,0,.7);" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity='.88'">tosh<br>42</a>
+<a href="./index.html" title="Home — tosh42.com" style="position:fixed;bottom:1.2rem;right:1.2rem;z-index:2147483647;background:#121010;border:1px solid rgba(156,138,106,.5);border-radius:50%;width:54px;height:54px;display:flex;align-items:center;justify-content:center;text-decoration:none;opacity:.88;transition:opacity .2s;font-family:monospace;font-size:.92rem;letter-spacing:.08em;text-transform:uppercase;color:#9c8a6a;text-align:center;line-height:1.3;box-shadow:0 2px 12px rgba(0,0,0,.7);" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity='.88'">tosh<br>42</a>
 
 <script>
 /* Multi-playlist scrollable tracklists (Acts I-III · Live in the Making · 1-Minute) */
@@ -907,7 +927,7 @@ function buildTL(block, player){
       vids.forEach(function(vid, idx){
         var row = document.createElement('a'); row.href='javascript:void(0)';
         row.style.cssText='display:flex;gap:.7rem;align-items:baseline;padding:.55rem .8rem;border-bottom:1px solid rgba(156,138,106,.1);font-family:Georgia,serif;font-size:.95rem;color:var(--parchment);opacity:.8;text-decoration:none;';
-        row.innerHTML='<span style="font-family:\'DM Mono\',monospace;font-size:.55rem;color:var(--gold);opacity:.7;">'+String(idx+1).padStart(2,'0')+'</span><span class="pl-s'+idx+'">…</span>';
+        row.innerHTML='<span style="font-family:\'DM Mono\',monospace;font-size:.62rem;color:var(--gold);opacity:.8;">'+String(idx+1).padStart(2,'0')+'</span><span class="pl-s'+idx+'">…</span>';
         row.addEventListener('click', function(){ player.playVideoAt(idx); });
         listEl.appendChild(row);
         fetch('https://www.youtube.com/oembed?format=json&url=https://www.youtube.com/watch?v='+vid)

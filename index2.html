@@ -17,27 +17,29 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
 .cta-btn:hover{background:var(--red-l);}
 
 #top-info{background:rgba(13,11,8,.97);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:center;padding:.75rem 2rem;flex-shrink:0;}
-#top-info p{font-family:'DM Mono',monospace;font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;color:var(--cream);opacity:.65;text-align:center;}
+#top-info p{font-family:'DM Mono',monospace;font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;color:var(--cream);opacity:.8;text-align:center;}
 
 /* ── HERO ── */
 .hero{position:relative;width:100%;height:420px;overflow:hidden;flex-shrink:0;}
 .hero-img{width:100%;height:100%;object-fit:cover;object-position:center 28%;display:block;}
+.hero-mopera{position:absolute;left:1.2rem;bottom:1.2rem;width:78px;height:78px;border-radius:50%;z-index:3;box-shadow:0 0 0 1px rgba(156,138,106,.45),0 6px 22px rgba(0,0,0,.6);}
+@media(max-width:680px){.hero-mopera{width:54px;height:54px;left:.8rem;bottom:.8rem;}}
 .hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,#121010 0%,rgba(18,16,16,.52) 45%,rgba(18,16,16,.18) 100%);}
 .hero-content{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding:2.8rem 2rem;text-align:center;}
 .hero-logo{position:absolute;top:1.2rem;left:1.4rem;width:48px;height:48px;object-fit:contain;border-radius:4px;display:block;opacity:.92;}
 .hero-tagline{position:absolute;top:1.2rem;left:1.4rem;display:flex;flex-direction:column;justify-content:flex-start;padding-top:56px;}
-.hero-tagline p{font-family:'DM Mono',monospace;font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;color:var(--cream);opacity:.7;line-height:1.9;text-align:left;}
+.hero-tagline p{font-family:'DM Mono',monospace;font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;color:var(--cream);opacity:.8;line-height:1.9;text-align:left;}
 .hero-aside{position:absolute;top:1.2rem;right:1.4rem;}
-.hero-aside p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.05rem;color:var(--cream);opacity:.78;line-height:1.6;letter-spacing:.04em;max-width:220px;text-align:right;}
+.hero-aside p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.05rem;color:var(--cream);opacity:.8;line-height:1.6;letter-spacing:.04em;max-width:220px;text-align:right;}
 .hero-name{font-family:'Cinzel',serif;font-size:clamp(.8rem,1.4vw,.95rem);letter-spacing:.52em;color:var(--gold);opacity:.92;text-transform:uppercase;margin-bottom:.35rem;}
-.hero-tag{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(.95rem,1.5vw,1.05rem);color:var(--cream);opacity:.6;letter-spacing:.1em;}
+.hero-tag{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(.95rem,1.5vw,1.05rem);color:var(--cream);opacity:.8;letter-spacing:.1em;}
 .hero-tag-break{display:inline;}
 
 /* ── POSTER SECTION ── */
 #poster-section{display:flex;flex-direction:column;align-items:center;padding:3rem 2rem 3rem;background:var(--ink);border-bottom:1px solid var(--border);}
 #poster-section img{max-width:560px;width:100%;display:block;box-shadow:0 4px 40px rgba(0,0,0,.6);}
 #poster-intro{max-width:680px;width:100%;margin:2.4rem auto 2.8rem;text-align:center;display:flex;flex-direction:column;gap:1rem;}
-#poster-intro p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(1rem,1.6vw,1.15rem);color:var(--cream);opacity:.72;line-height:1.85;letter-spacing:.02em;}
+#poster-intro p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(1rem,1.6vw,1.15rem);color:var(--cream);opacity:.8;line-height:1.85;letter-spacing:.02em;}
 
 /* ── SPLIT PANELS ── */
 .split{display:grid;grid-template-columns:1fr 1fr;flex:1;min-height:0;}
@@ -54,45 +56,45 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
 .panel-pg{border-right:1px solid rgba(184,151,58,.15);}
 
 .panel-inner{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;text-align:center;max-width:380px;justify-content:flex-start;}
-.panel-label{font-family:'DM Mono',monospace;font-size:.6rem;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);opacity:.7;margin-bottom:1.2rem;}
+.panel-label{font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);opacity:.8;margin-bottom:1.2rem;}
 .panel-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.8rem,6vw,5rem);font-weight:300;line-height:.95;color:var(--cream);margin-bottom:.3em;}
 .panel-title em{font-style:italic;color:var(--gold-l);}
-.panel-sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(.9rem,1.5vw,1.1rem);color:var(--cream);opacity:.55;margin-bottom:1.8rem;line-height:1.5;max-width:300px;}
+.panel-sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(.9rem,1.5vw,1.1rem);color:var(--cream);opacity:.8;margin-bottom:1.8rem;line-height:1.5;max-width:300px;}
 .panel-desc{font-size:clamp(.8rem,1.2vw,.95rem);color:var(--cream);opacity:.6;line-height:1.7;margin-bottom:2rem;max-width:300px;font-weight:300;}
 .panel-btn{display:inline-block;border:1px solid var(--gold);color:var(--gold);font-family:'DM Mono',monospace;font-size:.65rem;letter-spacing:.25em;text-transform:uppercase;padding:.7em 2em;transition:background .2s,color .2s;text-decoration:none;}
 .panel-btn:hover{background:var(--gold);color:var(--ink);}
 
-.panel-quote{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(.82rem,1.2vw,.95rem);color:var(--cream);opacity:.6;line-height:1.6;margin-bottom:1.2rem;max-width:300px;}
+.panel-quote{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(.82rem,1.2vw,.95rem);color:var(--cream);opacity:.8;line-height:1.6;margin-bottom:1.2rem;max-width:300px;}
 
 .panel-video-wrap{margin:1.2rem 0;width:100%;max-width:340px;aspect-ratio:16/9;overflow:hidden;}
 .panel-video-wrap iframe{width:100%;height:100%;border:0;display:block;}
 
 .deep-dive{margin-top:1.4rem;padding:1.2rem 1.4rem;border:1px solid rgba(184,151,58,.2);max-width:340px;width:100%;text-align:left;}
-.deep-dive-label{font-family:'DM Mono',monospace;font-size:.55rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);opacity:.7;margin-bottom:.5rem;}
-.deep-dive p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.88rem;color:var(--cream);opacity:.55;line-height:1.6;margin-bottom:.6rem;}
-.deep-dive a{font-family:'DM Mono',monospace;font-size:.55rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);opacity:.8;text-decoration:none;border-bottom:1px solid rgba(184,151,58,.3);padding-bottom:.1rem;}
+.deep-dive-label{font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);opacity:.8;margin-bottom:.5rem;}
+.deep-dive p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.92rem;color:var(--cream);opacity:.8;line-height:1.6;margin-bottom:.6rem;}
+.deep-dive a{font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);opacity:.8;text-decoration:none;border-bottom:1px solid rgba(184,151,58,.3);padding-bottom:.1rem;}
 .deep-dive a:hover{opacity:1;}
 
 .sitp-wrapper{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;width:100%;}
 .panel-inner-link{display:flex;flex-direction:column;align-items:center;text-align:center;max-width:380px;text-decoration:none;color:inherit;}
 
 .t-for-two{margin-top:1.6rem;padding:1.2rem 1.4rem;border:1px solid rgba(184,151,58,.2);max-width:340px;width:100%;text-align:center;}
-.t-for-two-label{font-family:'DM Mono',monospace;font-size:.55rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);opacity:.8;margin-bottom:.5rem;}
-.t-for-two p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.9rem;color:var(--cream);opacity:.6;line-height:1.6;margin-bottom:.8rem;}
+.t-for-two-label{font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);opacity:.8;margin-bottom:.5rem;}
+.t-for-two p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.92rem;color:var(--cream);opacity:.8;line-height:1.6;margin-bottom:.8rem;}
 
 /* ── BETWEEN PANELS AND BOOKINGS ── */
 #extra-videos{background:var(--ink);border-top:1px solid var(--border);padding:4rem 2rem;display:flex;flex-direction:column;align-items:center;gap:3.5rem;}
 .extra-video-block{display:flex;flex-direction:column;align-items:center;text-align:center;max-width:640px;width:100%;}
-.extra-video-label{font-family:'DM Mono',monospace;font-size:.6rem;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);opacity:.7;margin-bottom:.6rem;}
+.extra-video-label{font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);opacity:.8;margin-bottom:.6rem;}
 .extra-video-title{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(1.1rem,2vw,1.4rem);color:var(--cream);opacity:.85;margin-bottom:.3rem;line-height:1.4;}
-.extra-video-desc{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.9rem;color:var(--cream);opacity:.5;margin-bottom:1.2rem;line-height:1.6;max-width:500px;}
+.extra-video-desc{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.92rem;color:var(--cream);opacity:.8;margin-bottom:1.2rem;line-height:1.6;max-width:500px;}
 .extra-video-wrap{width:100%;max-width:560px;aspect-ratio:16/9;overflow:hidden;margin-bottom:1rem;}
 .extra-video-wrap iframe{width:100%;height:100%;border:0;display:block;}
-.extra-video-btn{display:inline-block;border:1px solid rgba(184,151,58,.5);color:var(--gold);font-family:'DM Mono',monospace;font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;padding:.6em 1.8em;text-decoration:none;transition:background .2s,color .2s;}
+.extra-video-btn{display:inline-block;border:1px solid rgba(184,151,58,.5);color:var(--gold);font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;padding:.6em 1.8em;text-decoration:none;transition:background .2s,color .2s;}
 .extra-video-btn:hover{background:var(--gold);color:var(--ink);}
 
 .taster-block{display:flex;flex-direction:column;align-items:center;text-align:center;max-width:640px;width:100%;}
-.taster-desc{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(1rem,1.6vw,1.15rem);color:var(--cream);opacity:.65;margin-bottom:1.2rem;line-height:1.7;}
+.taster-desc{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(1rem,1.6vw,1.15rem);color:var(--cream);opacity:.8;margin-bottom:1.2rem;line-height:1.7;}
 .taster-btn{display:inline-block;background:var(--gold);color:var(--ink);font-family:'DM Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;padding:.65em 2em;text-decoration:none;transition:background .2s;}
 .taster-btn:hover{background:var(--gold-l);}
 
@@ -100,13 +102,13 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
 
 /* ── BOTTOM CTA ── */
 #bottom-cta{background:rgba(13,11,8,.98);border-top:1px solid var(--border);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.2rem;padding:4rem 2rem 3.5rem;flex-shrink:0;text-align:center;overflow:visible;}
-#bottom-cta .cta-label{font-family:'DM Mono',monospace;font-size:.6rem;letter-spacing:.4em;text-transform:uppercase;color:var(--gold);opacity:.6;}
+#bottom-cta .cta-label{font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.4em;text-transform:uppercase;color:var(--gold);opacity:.8;}
 #bottom-cta h3{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:clamp(1.4rem,3vw,2rem);color:var(--cream);line-height:1.4;}
-#bottom-cta p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.95rem;color:var(--cream);opacity:.5;max-width:480px;}
+#bottom-cta p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.95rem;color:var(--cream);opacity:.8;max-width:480px;}
 #bottom-cta .cta-btn{font-size:.78rem;padding:.8em 2.6em;letter-spacing:.28em;margin-top:.4rem;}
 
 .yt-subscribe{display:flex;flex-direction:column;align-items:center;margin-top:.8rem;gap:.5rem;}
-.yt-subscribe p{font-family:'DM Mono',monospace;font-size:.6rem;letter-spacing:.25em;text-transform:uppercase;color:var(--cream);opacity:.4;}
+.yt-subscribe p{font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.25em;text-transform:uppercase;color:var(--cream);opacity:.8;}
 .yt-subscribe a{display:inline-flex;align-items:center;gap:.5em;background:#c00;color:#fff;font-family:'DM Mono',monospace;font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;padding:.55em 1.6em;text-decoration:none;transition:background .2s;}
 .yt-subscribe a:hover{background:#e00;}
 .yt-subscribe a svg{width:16px;height:16px;fill:#fff;flex-shrink:0;}
@@ -138,7 +140,7 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
 #blend-intro{background:var(--ink);border-bottom:1px solid var(--border);display:flex;flex-direction:column;align-items:center;text-align:center;padding:3.2rem 2rem 2.8rem;}
 .blend-eyebrow{font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.5em;text-transform:uppercase;color:var(--gold);opacity:.85;margin-bottom:1.1rem;}
 .blend-headline{font-family:'Cormorant Garamond',serif;font-weight:300;font-style:italic;font-size:clamp(1.7rem,3.6vw,2.6rem);color:var(--cream);line-height:1.25;margin-bottom:1.5rem;max-width:720px;}
-.blend-body{font-family:'Cormorant Garamond',serif;font-size:clamp(1rem,1.7vw,1.18rem);color:var(--cream);opacity:.75;line-height:1.85;max-width:680px;letter-spacing:.02em;}
+.blend-body{font-family:'Cormorant Garamond',serif;font-size:clamp(1rem,1.7vw,1.18rem);color:var(--cream);opacity:.8;line-height:1.85;max-width:680px;letter-spacing:.02em;}
 .blend-body em{color:var(--gold-l);font-style:italic;}
 .blend-settings{margin-top:.9rem;opacity:.58;font-style:italic;}
 
@@ -155,29 +157,29 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
 /* ── GUIDED VIDEO JOURNEY ── */
 #video-journey{background:var(--ink);display:flex;flex-direction:column;align-items:center;padding:3rem 2rem 4rem;border-bottom:1px solid var(--border);}
 .vj-kicker{display:flex;align-items:center;gap:.9rem;margin-bottom:2.4rem;}
-.vj-kicker-text{font-family:'DM Mono',monospace;font-size:.58rem;letter-spacing:.42em;text-transform:uppercase;color:var(--gold);opacity:.8;white-space:nowrap;text-align:center;}
+.vj-kicker-text{font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.42em;text-transform:uppercase;color:var(--gold);opacity:.8;white-space:nowrap;text-align:center;}
 .vj-kicker-line{width:36px;height:1px;background:linear-gradient(90deg,transparent,rgba(184,151,58,.55));}
 .vj-kicker-line.right{background:linear-gradient(90deg,rgba(184,151,58,.55),transparent);}
 .vj-step{width:100%;max-width:900px;display:flex;flex-direction:column;}
 .vj-step.vj-left{align-items:flex-start;}
 .vj-step.vj-right{align-items:flex-end;}
 .vj-card{width:100%;max-width:560px;display:flex;flex-direction:column;}
-.vj-num{font-family:'DM Mono',monospace;font-size:.6rem;letter-spacing:.42em;color:var(--gold);opacity:.75;margin-bottom:.45rem;}
+.vj-num{font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.42em;color:var(--gold);opacity:.8;margin-bottom:.45rem;}
 .vj-title{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(1.15rem,2vw,1.45rem);color:var(--cream);opacity:.92;margin-bottom:.85rem;line-height:1.35;}
 .vj-frame{width:100%;aspect-ratio:16/9;overflow:hidden;border:1px solid rgba(184,151,58,.28);box-shadow:0 12px 55px rgba(0,0,0,.68);}
 .vj-frame iframe{width:100%;height:100%;border:0;display:block;}
-.vj-plist-link{font-family:'DM Mono',monospace;font-size:.56rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);opacity:.6;text-decoration:none;margin-top:.7rem;border-bottom:1px solid rgba(184,151,58,.25);padding-bottom:.1rem;align-self:flex-start;transition:opacity .2s;}
+.vj-plist-link{font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);opacity:.8;text-decoration:none;margin-top:.7rem;border-bottom:1px solid rgba(184,151,58,.25);padding-bottom:.1rem;align-self:flex-start;transition:opacity .2s;}
 .vj-plist-link:hover{opacity:1;}
 /* Visible playlist tracklist */
 .vj-tracklist{width:100%;margin-top:.9rem;border:1px solid rgba(184,151,58,.22);background:rgba(184,151,58,.03);max-height:440px;overflow-y:auto;scrollbar-width:thin;scrollbar-color:rgba(184,151,58,.4) transparent;}
-.vj-tracklist-head{position:sticky;top:0;z-index:2;background:#14100a;border-bottom:1px solid rgba(184,151,58,.25);padding:.55rem .8rem;font-family:'DM Mono',monospace;font-size:.55rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);opacity:.85;}
+.vj-tracklist-head{position:sticky;top:0;z-index:2;background:#14100a;border-bottom:1px solid rgba(184,151,58,.25);padding:.55rem .8rem;font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);opacity:.85;}
 @media(max-width:680px){.vj-tracklist{max-height:340px;}}
 .vj-track{display:flex;align-items:center;gap:.8rem;padding:.55rem .8rem;cursor:pointer;border-bottom:1px solid rgba(184,151,58,.1);transition:background .2s;}
 .vj-track:last-child{border-bottom:none;}
 .vj-track:hover{background:rgba(184,151,58,.08);}
 .vj-track.playing{background:rgba(184,151,58,.13);}
 .vj-track img{width:86px;aspect-ratio:16/9;object-fit:cover;flex-shrink:0;display:block;border:1px solid rgba(184,151,58,.2);}
-.vj-track-num{font-family:'DM Mono',monospace;font-size:.55rem;letter-spacing:.15em;color:var(--gold);opacity:.6;flex-shrink:0;width:1.4em;text-align:right;}
+.vj-track-num{font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.15em;color:var(--gold);opacity:.8;flex-shrink:0;width:1.4em;text-align:right;}
 .vj-track-title{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.95rem;color:var(--cream);opacity:.8;line-height:1.35;overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;}
 .vj-track.playing .vj-track-title{color:var(--gold-l);opacity:1;}
 .vj-connector{width:100%;max-width:900px;}
@@ -194,7 +196,7 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
   #video-journey{padding:2.4rem 1.2rem 3rem;}
   .vj-step .vj-card{max-width:100%;}
   .vj-connector svg{display:none;}
-  .vj-mobile-label{display:flex;flex-direction:column;align-items:center;gap:.45rem;font-family:'DM Mono',monospace;font-size:.58rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);opacity:.82;padding:1.5rem 0;text-align:center;}
+  .vj-mobile-label{display:flex;flex-direction:column;align-items:center;gap:.45rem;font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);opacity:.82;padding:1.5rem 0;text-align:center;}
   .vj-mobile-label::before{content:'';width:1px;height:26px;background:linear-gradient(to bottom,transparent,var(--gold));opacity:.6;}
 }
 
@@ -214,11 +216,11 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
 }
 #site-nav a{
   font-family:'DM Mono',monospace;
-  font-size:.58rem;
+  font-size:.62rem;
   letter-spacing:.22em;
   text-transform:uppercase;
   color:var(--cream);
-  opacity:.45;
+  opacity:.8;
   text-decoration:none;
   padding:.75rem 1.1rem;
   display:inline-block;
@@ -343,7 +345,7 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
 }
 .sotw-kicker-text {
   font-family: 'DM Mono', monospace;
-  font-size: .57rem;
+  font-size:.62rem;
   letter-spacing: .46em;
   text-transform: uppercase;
   color: var(--gold);
@@ -383,11 +385,11 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
 .sotw-yt-link {
   margin-top: 1.1rem;
   font-family: 'DM Mono', monospace;
-  font-size: .54rem;
+  font-size:.62rem;
   letter-spacing: .26em;
   text-transform: uppercase;
   color: var(--gold);
-  opacity: .42;
+  opacity:.8;
   text-decoration: none;
   border-bottom: 1px solid rgba(184,151,58,.2);
   padding-bottom: .1rem;
@@ -436,7 +438,7 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
 /* Two videos side by side */
 .duo-videos{display:flex;gap:2rem;flex-wrap:wrap;justify-content:center;max-width:1340px;margin:2rem auto 0;}
 .duo-videos .dv{flex:1 1 420px;max-width:540px;}
-.duo-videos .dv-label{font-family:'DM Mono',monospace;font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);opacity:.7;margin-bottom:.6rem;text-align:center;}
+.duo-videos .dv-label{font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);opacity:.8;margin-bottom:.6rem;text-align:center;}
 .dv-frame{position:relative;padding-bottom:56.25%;height:0;background:#000;border:1px solid var(--border);}
 .dv-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:none;}
 
@@ -475,7 +477,7 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
 
 /* Footer social row */
 .social-row{display:flex;gap:1.6rem;flex-wrap:wrap;justify-content:center;margin-top:1.4rem;}
-.social-row a{font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);opacity:.7;border-bottom:1px solid rgba(156,138,106,.3);padding-bottom:.15rem;transition:opacity .2s;}
+.social-row a{font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);opacity:.8;border-bottom:1px solid rgba(156,138,106,.3);padding-bottom:.15rem;transition:opacity .2s;}
 .social-row a:hover{opacity:1;}
 
 /* Poster hero — shown whole, never cropped */
@@ -485,8 +487,8 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
 .mb-logo{width:52px;height:52px;object-fit:contain;border-radius:4px;opacity:.92;margin-bottom:.4rem;}
 .medicine-band .hero-medicine{text-shadow:none;margin-bottom:.2rem;}
 .mb-name{font-family:'Cormorant Garamond',serif;font-size:clamp(1.6rem,3.4vw,2.3rem);font-weight:600;letter-spacing:.06em;color:var(--cream);}
-.mb-tag{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(.98rem,1.8vw,1.15rem);color:var(--cream);opacity:.7;}
-.mb-roles{font-family:'DM Mono',monospace;font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-l);opacity:.85;line-height:2;max-width:820px;margin-top:.5rem;}
+.mb-tag{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(.98rem,1.8vw,1.15rem);color:var(--cream);opacity:.8;}
+.mb-roles{font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-l);opacity:.85;line-height:2;max-width:820px;margin-top:.5rem;}
 .mb-roles span{display:inline-block;opacity:.6;letter-spacing:.14em;text-transform:none;font-size:.58rem;}
 
 .presenter-line{font-family:'DM Mono',monospace;font-size:.68rem;letter-spacing:.3em;text-transform:uppercase;color:var(--red-l);margin-bottom:.4rem;}
@@ -495,7 +497,7 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
 #lightbox{position:fixed;inset:0;background:rgba(10,9,8,.96);display:none;align-items:center;justify-content:center;z-index:99999;padding:1.5rem;cursor:zoom-out;}
 #lightbox.open{display:flex;}
 #lightbox img{max-width:94vw;max-height:92vh;width:auto;height:auto;box-shadow:0 30px 120px rgba(0,0,0,.9);border:1px solid rgba(156,138,106,.35);}
-#lightbox .lb-close{position:fixed;top:1rem;right:1.4rem;font-family:'DM Mono',monospace;font-size:1.4rem;color:#eae3d3;opacity:.7;cursor:pointer;background:none;border:none;line-height:1;}
+#lightbox .lb-close{position:fixed;top:1rem;right:1.4rem;font-family:'DM Mono',monospace;font-size:1.4rem;color:#eae3d3;opacity:.8;cursor:pointer;background:none;border:none;line-height:1;}
 #lightbox .lb-close:hover{opacity:1;}
 
 @media(max-width:680px){
@@ -513,6 +515,32 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
 @media(max-width:680px){.mbr{display:block;}.mbr-dot{display:none;}}
 .mbr2{display:none;}
 @media(max-width:680px){.mbr2{display:block;}}
+
+.book-form{width:100%;max-width:460px;margin:1.6rem auto 0;display:flex;flex-direction:column;gap:.6rem;text-align:left;}
+.book-form .bf-label{font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.26em;text-transform:uppercase;color:var(--gold);opacity:.8;text-align:center;margin-bottom:.3rem;}
+.book-form input,.book-form textarea{width:100%;background:rgba(255,255,255,.03);border:1px solid rgba(156,138,106,.35);color:var(--cream);font-family:'Cormorant Garamond',serif;font-size:1rem;padding:.7rem .85rem;border-radius:2px;}
+.book-form input::placeholder,.book-form textarea::placeholder{color:var(--cream);opacity:.45;}
+.book-form input:focus,.book-form textarea:focus{outline:none;border-color:var(--gold-l);}
+.book-form button{align-self:center;margin-top:.4rem;background:var(--gold);color:#121010;border:0;font-family:'DM Mono',monospace;font-size:.66rem;letter-spacing:.24em;text-transform:uppercase;padding:.85em 2.2em;cursor:pointer;}
+.book-form button:hover{background:var(--gold-l);}
+/* lite YouTube embeds */
+.lite-yt{position:relative;width:100%;height:100%;background:#000 center/cover no-repeat;cursor:pointer;display:block;}
+.vj-frame .lite-yt{position:relative;}
+.dv-frame .lite-yt{position:absolute;inset:0;}
+.lite-yt::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 55%,rgba(0,0,0,.35));}
+.lite-yt-play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:68px;height:48px;border:0;border-radius:12px;background:rgba(18,16,16,.78);z-index:2;cursor:pointer;transition:background .2s;}
+.lite-yt-play::before{content:'';position:absolute;left:50%;top:50%;transform:translate(-40%,-50%);border-style:solid;border-width:11px 0 11px 18px;border-color:transparent transparent transparent #eae3d3;}
+.lite-yt:hover .lite-yt-play{background:#a3271d;}
+
+/* Paper Gun — the headline show gets more room and weight */
+.vj-step.vj-headline{max-width:1100px;}
+.vj-headline .vj-card{max-width:720px;}
+.vj-headline .vj-row{gap:3rem;}
+.vj-headline .vj-title{font-size:clamp(1.6rem,3.2vw,2.3rem);margin-bottom:1.3rem;letter-spacing:.01em;}
+.vj-headline .vj-frame{box-shadow:0 18px 80px rgba(0,0,0,.8);}
+.vj-headline .vj-desc{font-size:clamp(1.08rem,1.9vw,1.25rem);max-width:680px;margin-top:1.4rem;}
+.vj-headline .vj-btnrow{margin-top:2rem;}
+@media(max-width:680px){.vj-headline .vj-title{font-size:1.5rem;}}
 </style>
 </head>
 <body>
@@ -548,7 +576,7 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
   </div>
   <div class="nav-sep"></div>
   <div class="nav-drop">
-    <button type="button">Always <span class="caret">&#9662;</span></button>
+    <button type="button">For Presenters <span class="caret">&#9662;</span></button>
     <div class="nav-menu">
       <a href="./testimonials.html">Testimonials</a>
       <a href="./agreement.html">Performance Agreement</a>
@@ -596,9 +624,10 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
 <div class="hero">
   <img class="hero-img" src="Herorepl1.png" alt="Paul Tosh"/>
   <div class="hero-overlay"></div>
+  <img src="moperavector.png" alt="A Mopera Production" class="hero-mopera"/>
   <div class="hero-content">
     <img src="logo_gold_smlr.jpg" alt="Tosh42" class="hero-logo"/>
-    <div class="hero-tagline"><p>Singer / Pianist <em style="font-family:'Cormorant Garamond',serif;font-style:italic;text-transform:none;letter-spacing:.04em;opacity:.85;">theatrical · intimate</em><br/>Looping Artist <em style="font-family:'Cormorant Garamond',serif;font-style:italic;text-transform:none;letter-spacing:.04em;opacity:.85;">Ed Sheeran style — with a piano</em><br/>Songwriter<br/>Opera Star<br/><span style="font-family:'DM Mono',monospace;font-size:.92rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);opacity:.95;line-height:1.25;display:block;">Modern Day</span><span style="font-family:'DM Mono',monospace;font-size:.92rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);opacity:.95;line-height:1.25;display:block;">Nomadic</span><span style="font-family:'DM Mono',monospace;font-size:.92rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);opacity:.95;line-height:1.25;display:block;">Troubadour</span></p></div>
+    <div class="hero-tagline"><p>Singer / Pianist <em style="font-family:'Cormorant Garamond',serif;font-style:italic;text-transform:none;letter-spacing:.04em;opacity:.85;">theatrical · intimate</em><br/>Looping Artist <em style="font-family:'Cormorant Garamond',serif;font-style:italic;text-transform:none;letter-spacing:.04em;opacity:.85;">Ed Sheeran style — with a piano</em><br/>Songwriter<br/><span style="font-family:'DM Mono',monospace;font-size:.92rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);opacity:.95;line-height:1.25;display:block;">Modern Day </span> <span style="font-family:'DM Mono',monospace;font-size:.92rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);opacity:.95;line-height:1.25;display:block;">Nomadic </span> <span style="font-family:'DM Mono',monospace;font-size:.92rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);opacity:.95;line-height:1.25;display:block;">Troubadour</span></p></div>
     <p class="hero-name">Paul Tosh</p>
     <p class="hero-tag">Unhurried, a little outlaw,<span class="hero-tag-break"> completely self-possessed.</span></p>
   </div>
@@ -618,20 +647,15 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
 </div>
 
 <div id="one-show-bar" style="background:var(--ink);border-bottom:1px solid var(--border);padding:.9rem 2rem;text-align:center;">
-  <p style="font-family:'DM Mono',monospace;font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;color:var(--cream);opacity:.65;margin:0;">Two shows · One pair of boots · Available across the US &amp; Canada</p>
+  <p style="font-family:'DM Mono',monospace;font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;color:var(--cream);opacity:.8;margin:0;">Two shows · One pair of boots · Available across the US &amp; Canada</p>
 </div>
 
 <!-- ══ PAPER GUN — THE OPERETTA ══ -->
 <section id="pg-top" style="background:var(--ink);padding:3.4rem 2rem 1rem;">
   <div style="max-width:1000px;margin:0 auto;">
-    <p style="font-family:'DM Mono',monospace;font-size:.6rem;letter-spacing:.45em;text-transform:uppercase;color:var(--gold);opacity:.85;text-align:center;margin-bottom:1.6rem;">The Operetta</p>
-
-    <div style="display:flex;justify-content:center;margin:0 auto 2.2rem;">
-      <img src="moperavector.png" alt="A Mopera — a musical and an opera, to clean things up." style="width:100%;max-width:170px;height:auto;display:block;border-radius:50%;border:1px solid rgba(156,138,106,.45);box-shadow:0 0 0 6px rgba(18,16,16,1),0 8px 30px rgba(0,0,0,.6);" loading="lazy"/>
-    </div>
   <div style="text-align:center;margin:2.2rem auto 0;padding:0 2rem;max-width:1000px;">
     <p style="font-family:'Cinzel',serif;font-size:clamp(1.5rem,3.6vw,2.5rem);letter-spacing:.24em;text-transform:uppercase;color:var(--cream);opacity:.95;margin-bottom:.7rem;">We All Carry Shadows</p>
-    <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(1rem,2vw,1.3rem);color:var(--cream);opacity:.7;margin-bottom:.5rem;">It's the human condition</p>
+    <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(1rem,2vw,1.3rem);color:var(--cream);opacity:.8;margin-bottom:.5rem;">It's the human condition</p>
     <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(1.1rem,2.2vw,1.5rem);color:var(--gold-l);opacity:.85;margin-bottom:1.8rem;">The question is —<br class="mbr2"/> what do we do with them?</p>
     <div class="poster-hero" style="background:transparent;">
       <img src="PGshadowhero.jpg" alt="Paper Gun — a show about shadow work. We all carry shadows. The question is — what do we do with them? Now booking presenters." style="width:100%;height:auto;display:block;"/>
@@ -640,39 +664,34 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
   </div>
 </section>
 
-<section style="background:var(--ink);padding:0 0 2rem;">
+<section style="background:var(--ink);padding:1rem 0 5rem;">
   <div class="video-journey" style="display:flex;flex-direction:column;align-items:center;">
   <!-- 02 PAPER GUN -->
   <div style="height:3.2rem;" aria-hidden="true"></div>
 
-  <div class="vj-step vj-right">
+  <div class="vj-step vj-right vj-headline">
     <div class="vj-row">
     <div class="vj-card">
-      <p class="vj-num">01</p>
       <p class="vj-title">Paper Gun — <em>a show about shadow work</em></p>
       <div class="vj-frame">
-        <iframe src="https://www.youtube.com/embed/Blkdh0y83us" title="Paper Gun — Paul Tosh" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div class="lite-yt" data-id="j-1l7oBouAw" data-title="Paper Gun — Paul Tosh" role="button" tabindex="0" aria-label="Play video: Paper Gun — Paul Tosh"><button class="lite-yt-play" type="button" aria-hidden="true" tabindex="-1"></button></div>
       </div>
-      <p style="font-family:'DM Mono',monospace;font-size:.52rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);opacity:.6;margin-top:.6rem;text-align:center;">See full song playlists below</p>
-      <div class="vj-btnrow" style="margin-top:.6rem;"><a class="more-btn ghost" href="./papergun.html#acts-playlists">Full songs here &rarr;</a></div>
-      <p class="vj-desc" style="margin-top:1rem;">Paper Gun, about a romantically conflicted opera star, was built in senior communities &mdash; years of conversations and collected wisdom. Some of the people I met carry resentment, some carry none. The difference is the heart of the show. It opens with a live recording: my microphone picked up from a Mr. Hay. <button type="button" class="mrhay-btn" onclick="toggleMrHay(this)" style="display:inline-flex;align-items:center;gap:.4em;background:none;border:1px solid rgba(181,163,126,.55);border-radius:999px;color:#b5a37e;font-family:'DM Mono',monospace;font-size:.55rem;letter-spacing:.18em;text-transform:uppercase;padding:.3em .85em;cursor:pointer;vertical-align:middle;margin:0 .25em;transition:background .2s;" onmouseover="this.style.background='rgba(156,138,106,.12)'" onmouseout="this.style.background='none'"><span class="mrhay-glyph">&#9654;</span> Hear him</button> and what he says is the show's greatest lesson.</p>
-      <p class="vj-desc" style="margin-top:1rem;">I have always had two shows &mdash; each one borrows a little from the other: I supplement the original material with chosen cover songs in the Song Is The Play theatrical format. There is always an unknown element to illuminate the terrain from a different angle.</p>
+      <p style="margin-top:.6rem;text-align:center;"><a href="./papergun.html#acts-playlists" style="font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-l);text-decoration:none;border-bottom:1px solid rgba(156,138,106,.4);padding-bottom:.1rem;">Full songs &rarr;</a></p>
+      <p class="vj-desc" style="margin-top:1rem;">Paper Gun was built in senior communities &mdash; years of conversations and collected wisdom. Some of the people I met carry resentment, some carry none. The difference is the heart of the show. It opens with a live recording: my microphone caught an elderly gentleman, Mr. Hay. <button type="button" class="mrhay-btn" onclick="toggleMrHay(this)" style="display:inline-flex;align-items:center;gap:.4em;background:none;border:1px solid rgba(181,163,126,.55);border-radius:999px;color:#b5a37e;font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;padding:.3em .85em;cursor:pointer;vertical-align:middle;margin:0 .25em;transition:background .2s;" onmouseover="this.style.background='rgba(156,138,106,.12)'" onmouseout="this.style.background='none'"><span class="mrhay-glyph">&#9654;</span> Hear him</button> and what he says is the show's greatest lesson.</p>
+      <p class="vj-desc">It&rsquo;s about survival over grievance &mdash; an original operetta in which one man plays both sides of himself.</p>
       <p class="vj-desc"><span class="aq">An honest word: Paper Gun goes deeper than most entertainment — framed, held, and closed with care — see the therapeutic link below.</span></p>
       <div class="vj-btnrow">
         <div style="display:flex;flex-direction:column;gap:.3rem;">
-          <a class="more-btn" href="./papergun.html">Paper Gun — The Show →</a>
-          <p class="btn-note" style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.85rem;color:var(--cream);opacity:.55;line-height:1.55;margin:0 0 1.4rem;">See sample — "Act I," "Act II," "Act III" playlists below</p>
+          <a class="more-btn" href="./papergun.html" style="margin-bottom:1.4rem;">Paper Gun — The Show →</a>
         </div>
         <div style="display:flex;flex-direction:column;gap:.3rem;margin-bottom:1.6rem;">
           <a class="more-btn ghost" href="./therapeutic.html">Therapeutic — For Presenters &amp; Clinicians</a>
-          <p class="btn-note" style="font-family:'Cormorant Garamond',serif;font-size:1.08rem;color:var(--cream);opacity:.95;line-height:1.75;margin:.6rem 0 0;">What you&rsquo;ve seen is one man&rsquo;s version of the work &mdash; lived vicariously, from a seat. If something in it touched a part of your own life, there&rsquo;s a way to begin that work for yourself.</p>
-          <p class="btn-note" style="font-family:'Cormorant Garamond',serif;font-size:1.08rem;color:var(--cream);opacity:.95;line-height:1.75;margin:.7rem 0 0;"><a href="./therapeutic.html#protocol" style="color:var(--gold-l);border-bottom:1px solid rgba(156,138,106,.4);text-decoration:none;">The protocol the show is built on &rarr;</a> a way of turning resentment into grief, so that it stops costing you. It&rsquo;s best walked with a trained therapist beside you.</p>
-          <p class="btn-note" style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.02rem;color:var(--gold-l);opacity:.92;line-height:1.65;margin:.9rem 0 0;">Paper Gun is catharsis and a method for reclaiming a life from it.</p>
+          <p class="btn-note" style="font-family:'Cormorant Garamond',serif;font-size:1.05rem;color:var(--cream);opacity:.92;line-height:1.7;margin:.6rem 0 0;"><a href="./therapeutic.html#protocol" style="color:var(--gold-l);border-bottom:1px solid rgba(156,138,106,.4);text-decoration:none;">The protocol the show is built on &rarr;</a></p>
+          <p class="btn-note" style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.02rem;color:var(--gold-l);opacity:.92;line-height:1.65;margin:.9rem 0 0;">Paper Gun is catharsis, and a method for reclaiming your life from resentment.</p>
         </div>
         <div style="display:flex;flex-direction:column;gap:.3rem;">
           <a class="more-btn ghost" href="./papergun-full.html">The Deep Dive — Acts I · II · III</a>
-          <p class="btn-note" style="font-family:'Cormorant Garamond',serif;font-size:1.12rem;color:var(--cream);opacity:.95;line-height:1.8;margin:.6rem 0 0;">It's about survival over grievance. An original operetta / an actual mini opera &mdash; one man plays both sides of himself. A three-act paper theme tied to the shadow and sacrifice: a journey from disillusionment to authenticity. A niche, unconventional, therapeutic, theatrical one-man show.</p>
-          <p class="btn-note" style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.85rem;color:var(--cream);opacity:.55;line-height:1.55;margin:.7rem 0 0;">To get an idea of the arc of each of the three acts — three playlists of all live pieces in context, the whole script, author's notes, a glossary and more.</p>
+          <p class="btn-note" style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.92rem;color:var(--cream);opacity:.8;line-height:1.55;margin:.7rem 0 0;">To get an idea of the arc of each of the three acts — three playlists of all live pieces in context, the whole script, author's notes, a glossary and more.</p>
         </div>
       </div>
     </div>
@@ -685,49 +704,7 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
   </div>
 </section>
 
-<!-- connector: the operetta → the homage -->
-<div class="vj-connector" aria-hidden="true" style="margin:0 auto;">
-  <svg viewBox="0 0 900 150" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
-    <defs><marker id="vjA0" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#9c8a6a"/></marker></defs>
-    <path id="vjP0" class="vj-line" d="M 280,140 C 280,45 620,105 620,10" marker-start="url(#vjA0)"/>
-    <text class="vj-path-label" dy="-9"><textPath href="#vjP0" startOffset="50%" text-anchor="middle">next · the truck</textPath></text>
-  </svg>
-  <p class="vj-mobile-label">next · the truck</p>
-</div>
 
-<!-- ══ AN HOMAGE ══ -->
-<section id="blend-intro" style="align-items:flex-start;">
-
-  <div class="duo-videos" style="align-items:flex-start;width:100%;justify-content:flex-start;">
-    <div class="dv" style="flex:1 1 100%;width:100%;max-width:900px;margin:0;">
-      <p class="dv-label">An Homage</p>
-      <div style="display:flex;gap:1.6rem;align-items:flex-start;flex-wrap:wrap;width:100%;">
-        <div style="flex:1 1 320px;min-width:280px;">
-        <div class="dv-frame"><iframe src="https://www.youtube.com/embed/2uNfM2K1BbI" title="An Homage — Paul Tosh" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-      <p style="font-family:'DM Mono',monospace;font-size:.52rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);opacity:.6;margin-top:.6rem;text-align:center;">See full song playlists below</p>
-        </div>
-        <div class="ts-row" style="flex:0 1 280px;min-width:240px;display:flex;flex-direction:column;gap:1.1rem;align-items:flex-start;">
-        <div style="flex:0 0 auto;width:100%;text-align:left;border:1px solid rgba(156,138,106,.22);background:rgba(255,255,255,.02);padding:.85rem 1.1rem;font-family:'DM Mono',monospace;font-size:.68rem;letter-spacing:.07em;line-height:1.85;color:var(--cream);text-transform:uppercase;">
-          <span style="color:var(--gold);opacity:.9;">0:00</span> An Homage: The Lyrics<br/>
-          <span style="color:var(--gold);opacity:.9;">2:53</span> Camper Roof &amp; Interior<br/>
-          <span style="color:var(--gold);opacity:.9;">4:01</span> The Song Is The Play<br/>
-          <span style="color:var(--gold);opacity:.9;">5:10</span> A Few Laughs<br/>
-          <span style="color:var(--gold);opacity:.9;">5:59</span> Opera<br/>
-          <span style="color:var(--gold);opacity:.9;">6:52</span> New Show: Paper Gun<br/>
-          <span style="color:var(--gold);opacity:.9;">8:16</span> Wisdom From the Show<br/>
-          <span style="color:var(--gold);opacity:.9;">10:30</span> Looping Explained
-        </div>
-        <a href="./truckhomage.html" class="ts-truck" style="flex:0 0 auto;display:block;text-decoration:none;text-align:left;">
-          <span style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.05rem;line-height:1.7;color:var(--cream);opacity:.88;display:block;margin-top:0;text-align:left;">This is not AI — this really is my truck camper. All the homage quotes on it are the lines from the songs I have been singing for so long that have always struck me as the most meaningful.</span>
-          <span style="font-family:'DM Mono',monospace;font-size:.56rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-l);opacity:.9;display:inline-block;margin-top:.6rem;border-bottom:1px solid rgba(156,138,106,.35);padding-bottom:.15rem;">The Full Build &rarr;</span>
-        </a>
-        </div>
-      </div>
-    </div>
-
-  </div>
-
-</section>
 
 
 
@@ -745,7 +722,7 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
     <span class="vj-kicker-line right"></span>
   </div>
 
-  <p class="blend-body" style="margin:1.6rem auto 0;max-width:660px;text-align:center;">I just want you to see an idea of the range I offer — these below introduction videos show the main categories of what my show has been till now (full show demos on <a href="./shows.html" style="color:var(--gold-l);border-bottom:1px solid rgba(156,138,106,.35);">Recent Shows</a>). But what I am doing now is my own show, still with some other stuff in there — but I have seen the most meaningful use for my original work, which now comprises the three-act operetta: <em>Paper Gun</em>.</p>
+  <p class="blend-body" style="margin:1.6rem auto 0;max-width:660px;text-align:center;">I want to give you an idea of the range I offer. The introduction videos below show the main kinds of show I&rsquo;ve performed until now (full show demos are on <a href="./shows.html" style="color:var(--gold-l);border-bottom:1px solid rgba(156,138,106,.35);">Recent Shows</a>). What I&rsquo;m doing now is my own show &mdash; still with some of that in it &mdash; because I&rsquo;ve found the most meaningful use for my original work: the three-act operetta, <em>Paper Gun</em>.</p>
 
 
   <!-- 01 TESTIMONIALS -->
@@ -757,7 +734,7 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
       <p class="vj-num">01</p>
       <p class="vj-title">Testimonials</p>
       <div class="vj-frame">
-        <iframe src="https://www.youtube.com/embed/nN4UWzuYA-E" title="Testimonials — Paul Tosh" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div class="lite-yt" data-id="nN4UWzuYA-E" data-title="Testimonials — Paul Tosh" role="button" tabindex="0" aria-label="Play video: Testimonials — Paul Tosh"><button class="lite-yt-play" type="button" aria-hidden="true" tabindex="-1"></button></div>
       </div>
       <p class="vj-desc">I am overjoyed at the reactions I get, and thank G-d for that in the deepest way — here are some of them.</p>
     </div>
@@ -782,9 +759,9 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
       <p class="vj-num">02</p>
       <p class="vj-title">The Song Is The Play</p>
       <div class="vj-frame">
-        <iframe src="https://www.youtube.com/embed/W7FXm5pnmOw" title="The Song Is The Play — Paul Tosh" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div class="lite-yt" data-id="W7FXm5pnmOw" data-title="The Song Is The Play — Paul Tosh" role="button" tabindex="0" aria-label="Play video: The Song Is The Play — Paul Tosh"><button class="lite-yt-play" type="button" aria-hidden="true" tabindex="-1"></button></div>
       </div>
-      <p style="font-family:'DM Mono',monospace;font-size:.52rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);opacity:.6;margin-top:.6rem;text-align:center;">See full song playlists below</p>
+      <p style="margin-top:.6rem;text-align:center;"><a href="./sitp.html#video" style="font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-l);text-decoration:none;border-bottom:1px solid rgba(156,138,106,.4);padding-bottom:.1rem;">Full songs &rarr;</a></p>
       <div class="vj-btnrow" style="margin-top:.6rem;"><a class="more-btn ghost" href="./sitp.html#video">Full songs here &rarr;</a></div>
       <p class="vj-desc"><span class="aq">Where iconic songs become living theatre,</span> <em>never a recital — always an interpretation.</em> Classic song performed against thematic backgrounds &amp; live piano looping. The Beatles, Bob Dylan, Billy Joel, Elton John, Shakespeare, Oasis &amp; Prince — each acted out as a scene, and orchestrated with live looping piano. Plus a few stories from the road.</p>
       <div class="vj-btnrow"><a class="more-btn" href="./sitp.html">The Song Is The Play →</a></div>
@@ -815,7 +792,7 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
       <p class="vj-num">03</p>
       <p class="vj-title">Funnies</p>
       <div class="vj-frame">
-        <iframe src="https://www.youtube.com/embed/ah4RlX-OYVQ" title="Funnies — Paul Tosh" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div class="lite-yt" data-id="ah4RlX-OYVQ" data-title="Funnies — Paul Tosh" role="button" tabindex="0" aria-label="Play video: Funnies — Paul Tosh"><button class="lite-yt-play" type="button" aria-hidden="true" tabindex="-1"></button></div>
       </div>
       <p class="vj-desc">Funny stuff always happens.</p>
     </div>
@@ -840,9 +817,9 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
       <p class="vj-num">04</p>
       <p class="vj-title">Covers</p>
       <div class="vj-frame">
-        <iframe src="https://www.youtube.com/embed/dI7-rsryEPI" title="Covers — Paul Tosh" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div class="lite-yt" data-id="dI7-rsryEPI" data-title="Covers — Paul Tosh" role="button" tabindex="0" aria-label="Play video: Covers — Paul Tosh"><button class="lite-yt-play" type="button" aria-hidden="true" tabindex="-1"></button></div>
       </div>
-      <p style="font-family:'DM Mono',monospace;font-size:.52rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);opacity:.6;margin-top:.6rem;text-align:center;">See full song playlists below</p>
+      <p style="margin-top:.6rem;text-align:center;"><a href="./sitp.html#video" style="font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-l);text-decoration:none;border-bottom:1px solid rgba(156,138,106,.4);padding-bottom:.1rem;">Full songs &rarr;</a></p>
       <p class="vj-desc">'70s, Billy Joel, Bob Dylan, Sinatra, Neil Diamond, opera, Scottish traditional.</p>
     </div>
     <div class="vj-side"><img src="fishshot_edited.png" alt="Paul Tosh at the white piano"/></div>
@@ -865,7 +842,7 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
       <p class="vj-num">05</p>
       <p class="vj-title">Wisdom from the Show</p>
       <div class="vj-frame">
-        <iframe src="https://www.youtube.com/embed/CCpX8vz2CR8" title="Wisdom from the Show — Paul Tosh" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div class="lite-yt" data-id="CCpX8vz2CR8" data-title="Wisdom from the Show — Paul Tosh" role="button" tabindex="0" aria-label="Play video: Wisdom from the Show — Paul Tosh"><button class="lite-yt-play" type="button" aria-hidden="true" tabindex="-1"></button></div>
       </div>
       <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.95rem;color:var(--gold-l);opacity:.85;margin-top:.8rem;text-align:center;">Sometimes the destination is the trap, the journey's where it's at.</p>
     </div>
@@ -874,9 +851,52 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
   </div>
 </section>
 
+<!-- connector: wisdom → the homage -->
+<div class="vj-connector" aria-hidden="true" style="margin:0 auto;">
+  <svg viewBox="0 0 900 150" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+    <defs><marker id="vjA0" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#9c8a6a"/></marker></defs>
+    <path id="vjP0" class="vj-line" d="M 280,140 C 280,45 620,105 620,10" marker-start="url(#vjA0)"/>
+    <text class="vj-path-label" dy="-9"><textPath href="#vjP0" startOffset="50%" text-anchor="middle">next · the truck</textPath></text>
+  </svg>
+  <p class="vj-mobile-label">next · the truck</p>
+</div>
+
+<!-- ══ AN HOMAGE ══ -->
+<section id="blend-intro" style="align-items:flex-start;">
+
+  <div class="duo-videos" style="align-items:flex-start;width:100%;justify-content:flex-start;">
+    <div class="dv" style="flex:1 1 100%;width:100%;max-width:900px;margin:0;">
+      <p class="dv-label">An Homage</p>
+      <div style="display:flex;gap:1.6rem;align-items:flex-start;flex-wrap:wrap;width:100%;">
+        <div style="flex:1 1 320px;min-width:280px;">
+        <div class="dv-frame"><div class="lite-yt" data-id="2uNfM2K1BbI" data-title="An Homage — Paul Tosh" role="button" tabindex="0" aria-label="Play video: An Homage — Paul Tosh"><button class="lite-yt-play" type="button" aria-hidden="true" tabindex="-1"></button></div></div>
+      <p style="margin-top:.6rem;text-align:center;"><a href="./sitp.html#video" style="font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-l);text-decoration:none;border-bottom:1px solid rgba(156,138,106,.4);padding-bottom:.1rem;">Full songs &rarr;</a></p>
+        </div>
+        <div class="ts-row" style="flex:0 1 280px;min-width:240px;display:flex;flex-direction:column;gap:1.1rem;align-items:flex-start;">
+        <div style="flex:0 0 auto;width:100%;text-align:left;border:1px solid rgba(156,138,106,.22);background:rgba(255,255,255,.02);padding:.85rem 1.1rem;font-family:'DM Mono',monospace;font-size:.68rem;letter-spacing:.07em;line-height:1.85;color:var(--cream);text-transform:uppercase;">
+          <span style="color:var(--gold);opacity:.9;">0:00</span> An Homage: The Lyrics<br/>
+          <span style="color:var(--gold);opacity:.9;">2:53</span> Camper Roof &amp; Interior<br/>
+          <span style="color:var(--gold);opacity:.9;">4:01</span> The Song Is The Play<br/>
+          <span style="color:var(--gold);opacity:.9;">5:10</span> A Few Laughs<br/>
+          <span style="color:var(--gold);opacity:.9;">5:59</span> Opera<br/>
+          <span style="color:var(--gold);opacity:.9;">6:52</span> New Show: Paper Gun<br/>
+          <span style="color:var(--gold);opacity:.9;">8:16</span> Wisdom From the Show<br/>
+          <span style="color:var(--gold);opacity:.9;">10:30</span> Looping Explained
+        </div>
+        <div class="ts-truck" style="flex:0 0 auto;display:block;text-decoration:none;text-align:left;">
+          <span style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.05rem;line-height:1.7;color:var(--cream);opacity:.88;display:block;margin-top:0;text-align:left;">This is not AI — this really is my truck camper. All the homage quotes on it are the lines from the songs I have been singing for so long that have always struck me as the most meaningful.</span>
+          <a href="./truckhomage.html" style="text-decoration:none;"><span style="font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-l);opacity:.9;display:inline-block;margin-top:.6rem;border-bottom:1px solid rgba(156,138,106,.35);padding-bottom:.15rem;">The Full Build &rarr;</span></a>
+        </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
 <!-- ── SCROLL THE SONGS ── -->
 <section id="playlists-5" style="text-align:center;">
-  <p class="blend-eyebrow">The Full Song Playlists</p>
   <h2 class="blend-headline" style="text-align:center;">Scroll the songs — the acts, the covers, the show</h2>
   <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:1.8rem;">
     <a class="more-btn" href="./papergun.html#acts-playlists">Paper Gun — Acts I · II · III &rarr;</a>
@@ -891,7 +911,7 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
     <div style="border:1px solid rgba(156,138,106,.28);background:rgba(255,255,255,.02);padding:2.4rem 2.2rem;text-align:left;">
       <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(1.05rem,2vw,1.25rem);line-height:1.95;color:var(--cream);opacity:.88;margin:0;">"Tonight is something rare: an original operetta, written and performed by one man at a piano. It's called Paper Gun, and it's about the journey every one of us makes &mdash; from the resentments we carry to something we can finally call our own. It's honest, and it's handled with care from the first note to the last. He's performed for two decades across three countries, and he wrote every word you're about to hear. Please welcome the author and the voice of Paper Gun&hellip; Paul Tosh."</p>
     </div>
-    <p style="font-family:'DM Mono',monospace;font-size:.54rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);opacity:.55;margin-top:1.1rem;">For presenters &mdash; read as written, or make it your own</p>
+    <p style="font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);opacity:.8;margin-top:1.1rem;">For presenters &mdash; read as written, or make it your own</p>
   </div>
 </section>
 
@@ -899,23 +919,34 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
 <div class="medicine-band">
   <img src="logo_gold_smlr.jpg" alt="Tosh42" class="mb-logo"/>
   <p class="hero-medicine">Music <b>is</b> the medicine</p>
-  <p style="font-family:'Sabon','Sabon LT Std','EB Garamond','Cormorant Garamond',Georgia,serif;font-style:italic;font-size:clamp(1rem,2vw,1.3rem);color:var(--gold-l);opacity:.85;margin-top:.4rem;letter-spacing:.03em;">to life the universe and everything</p>
+  <p style="font-family:'Sabon','Sabon LT Std','EB Garamond','Cormorant Garamond',Georgia,serif;font-style:italic;font-size:clamp(1rem,2vw,1.3rem);color:var(--gold-l);opacity:.85;margin-top:.4rem;letter-spacing:.03em;">the answer to life, the universe and everything</p>
 </div>
 
 
 <!-- ── ENQUIRIES ── -->
 <div id="bottom-cta" style="border-top:1px solid var(--border);padding:3.5rem 2rem;text-align:center;display:flex;flex-direction:column;align-items:center;gap:1rem;">
   <p class="presenter-line">Now Booking Presenters</p>
-  <p style="font-family:'DM Mono',monospace;font-size:.6rem;letter-spacing:.38em;text-transform:uppercase;color:var(--gold);opacity:.55;">Enquiries</p>
   <h3 style="font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:clamp(1.3rem,3vw,1.9rem);color:var(--cream);line-height:1.4;">Bring Paul Tosh to your venue</h3>
   <p class="blend-body" style="max-width:560px;">Paul works across a wide range of venues and budgets. Please get in touch to discuss.<br/>Paul responds personally to every enquiry.</p>
   <a href="mailto:bookings@tosh42.com" class="cta-btn" style="font-size:.72rem;padding:.8em 2.4em;margin-top:.4rem;">◆ Book Now</a>
-  <a href="./rider.html" style="font-family:'DM Mono',monospace;font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);opacity:.5;border-bottom:1px solid rgba(156,138,106,.25);padding-bottom:.1rem;">⬡ Technical Rider →</a>
+  <p style="font-family:'Cormorant Garamond',serif;font-size:1.05rem;color:var(--cream);opacity:.85;margin:.2rem 0 0;">or write to <strong style="color:var(--gold-l);font-weight:500;user-select:all;">bookings@tosh42.com</strong></p>
+
+  <form class="book-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+    <p class="bf-label">Or send an enquiry here</p>
+    <input type="text" name="name" placeholder="Your name" required/>
+    <input type="email" name="email" placeholder="Your email" required/>
+    <input type="text" name="venue" placeholder="Venue or organisation"/>
+    <input type="text" name="dates" placeholder="Dates you have in mind"/>
+    <textarea name="message" rows="4" placeholder="Tell me a little about the room and the audience"></textarea>
+    <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off"/>
+    <button type="submit">◆ Send Enquiry</button>
+  </form>
+  <a href="./rider.html" style="font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);opacity:.8;border-bottom:1px solid rgba(156,138,106,.25);padding-bottom:.1rem;">⬡ Technical Rider →</a>
 
   <div style="max-width:450px;width:100%;margin:2.6rem auto 0;text-align:center;">
-    <p style="font-family:'DM Mono',monospace;font-size:.55rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);opacity:.7;margin-bottom:.7rem;">More testimonials</p>
+    <p style="font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);opacity:.8;margin-bottom:.7rem;">More testimonials</p>
     <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;background:#000;border:1px solid rgba(156,138,106,.25);">
-      <iframe style="position:absolute;inset:0;width:100%;height:100%;border:0;" src="https://www.youtube.com/embed/4x61JRibfNA" title="Testimonials II — Paul Tosh" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <div class="lite-yt" data-id="4x61JRibfNA" data-title="Testimonials II — Paul Tosh" style="position:absolute;inset:0;width:100%;height:100%;border:0;" role="button" tabindex="0" aria-label="Play video: Testimonials II — Paul Tosh"><button class="lite-yt-play" type="button" aria-hidden="true" tabindex="-1"></button></div>
     </div>
     <div style="margin-top:1rem;"><a class="more-btn" href="./testimonials.html">And More →</a></div>
   </div>
@@ -925,10 +956,10 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
     <a href="https://www.tiktok.com/@toshfortwo" target="_blank" rel="noopener">TikTok — @toshfortwo</a>
     <a href="https://www.linkedin.com/in/paultoshner/" target="_blank" rel="noopener">LinkedIn — Paul Toshner</a>
   </div>
-  <p style="font-family:'DM Mono',monospace;font-size:.52rem;letter-spacing:.2em;text-transform:uppercase;color:var(--cream);opacity:.3;margin-top:1.4rem;">© 2026 Paul Tosh · tosh42.com · <a href="mailto:bookings@tosh42.com" style="color:var(--gold-l);text-decoration:none;border-bottom:1px solid rgba(156,138,106,.35);">bookings@tosh42.com</a></p>
+  <p style="font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--cream);opacity:.8;margin-top:1.4rem;">© 2026 Paul Tosh · tosh42.com · <a href="mailto:bookings@tosh42.com" style="color:var(--gold-l);text-decoration:none;border-bottom:1px solid rgba(156,138,106,.35);">bookings@tosh42.com</a></p>
 </div>
 
-<a href="./index.html" title="Home — tosh42.com" style="position:fixed;bottom:1.2rem;right:1.2rem;z-index:2147483647;background:#121010;border:1px solid rgba(156,138,106,.5);border-radius:50%;width:54px;height:54px;display:flex;align-items:center;justify-content:center;text-decoration:none;opacity:.88;transition:opacity .2s;font-family:monospace;font-size:.42rem;letter-spacing:.08em;text-transform:uppercase;color:#9c8a6a;text-align:center;line-height:1.3;box-shadow:0 2px 12px rgba(0,0,0,.7);" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity='.88'">tosh<br>42</a>
+<a href="./index.html" title="Home — tosh42.com" style="position:fixed;bottom:1.2rem;right:1.2rem;z-index:2147483647;background:#121010;border:1px solid rgba(156,138,106,.5);border-radius:50%;width:54px;height:54px;display:flex;align-items:center;justify-content:center;text-decoration:none;opacity:.88;transition:opacity .2s;font-family:monospace;font-size:.92rem;letter-spacing:.08em;text-transform:uppercase;color:#9c8a6a;text-align:center;line-height:1.3;box-shadow:0 2px 12px rgba(0,0,0,.7);" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity='.88'">tosh<br>42</a>
 
 
 
@@ -954,7 +985,7 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
 })();
 </script>
 
-<audio id="mrhay" src="MrHay.m4a" preload="auto"></audio>
+<audio id="mrhay" src="MrHay.m4a" preload="none" aria-hidden="true"></audio>
 
 <script>
 function toggleMrHay(btn){
@@ -970,6 +1001,27 @@ function toggleMrHay(btn){
   }
   a.onended = function(){ glyphs.forEach(function(g){ g.innerHTML = '&#9654;'; }); };
 }
+</script>
+
+<script>
+(function(){
+  function load(el){
+    var f=document.createElement('iframe');
+    f.src='https://www.youtube.com/embed/'+el.dataset.id+'?autoplay=1&rel=0';
+    f.title=el.dataset.title||'Video';
+    f.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+    f.allowFullscreen=true;
+    f.setAttribute('style', el.getAttribute('style')||'');
+    f.style.width='100%'; f.style.height='100%'; f.style.border='0';
+    if(el.parentNode && el.parentNode.classList.contains('dv-frame')){ f.style.position='absolute'; f.style.inset='0'; }
+    el.replaceWith(f);
+  }
+  document.querySelectorAll('.lite-yt').forEach(function(el){
+    el.style.backgroundImage='url(https://i.ytimg.com/vi/'+el.dataset.id+'/hqdefault.jpg)';
+    el.addEventListener('click', function(){ load(el); });
+    el.addEventListener('keydown', function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); load(el); } });
+  });
+})();
 </script>
 </body>
 </html>
