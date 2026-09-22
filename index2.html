@@ -22,8 +22,12 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
 /* ── HERO ── */
 .hero{position:relative;width:100%;height:420px;overflow:hidden;flex-shrink:0;}
 .hero-img{width:100%;height:100%;object-fit:cover;object-position:center 28%;display:block;}
-.hero-mopera{position:absolute;left:1.2rem;bottom:1.2rem;width:78px;height:78px;border-radius:50%;z-index:3;box-shadow:0 0 0 1px rgba(156,138,106,.45),0 6px 22px rgba(0,0,0,.6);}
-@media(max-width:680px){.hero-mopera{width:54px;height:54px;left:.8rem;bottom:.8rem;}}
+.hero-badges{position:absolute;left:1.2rem;bottom:1.2rem;z-index:3;display:flex;align-items:flex-end;gap:.9rem;}
+.hero-badges a{display:block;line-height:0;transition:transform .2s;}
+.hero-badges a:hover{transform:translateY(-2px);}
+.hero-mopera{width:78px;height:78px;border-radius:50%;display:block;box-shadow:0 0 0 1px rgba(156,138,106,.45),0 6px 22px rgba(0,0,0,.6);}
+.hero-truck{height:78px;width:auto;display:block;filter:drop-shadow(0 6px 14px rgba(0,0,0,.6));}
+@media(max-width:680px){.hero-badges{left:.8rem;bottom:.8rem;gap:.6rem;}.hero-mopera{width:54px;height:54px;}.hero-truck{height:54px;}}
 .hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,#121010 0%,rgba(18,16,16,.52) 45%,rgba(18,16,16,.18) 100%);}
 .hero-content{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding:2.8rem 2rem;text-align:center;}
 .hero-logo{position:absolute;top:1.2rem;left:1.4rem;width:48px;height:48px;object-fit:contain;border-radius:4px;display:block;opacity:.92;}
@@ -624,7 +628,10 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
 <div class="hero">
   <img class="hero-img" src="Herorepl1.png" alt="Paul Tosh"/>
   <div class="hero-overlay"></div>
-  <img src="moperavector.png" alt="A Mopera Production" class="hero-mopera"/>
+  <div class="hero-badges">
+    <a href="./therapeutic.html" title="Therapeutic — for presenters &amp; clinicians"><img src="moperavector.png" alt="A Mopera Production — therapeutic page" class="hero-mopera"/></a>
+    <a href="./truckhomage.html" title="The truck — an homage"><img src="trukcut3.png" alt="The CyberPhoenix truck — truck page" class="hero-truck"/></a>
+  </div>
   <div class="hero-content">
     <img src="logo_gold_smlr.jpg" alt="Tosh42" class="hero-logo"/>
     <div class="hero-tagline"><p>Singer / Pianist <em style="font-family:'Cormorant Garamond',serif;font-style:italic;text-transform:none;letter-spacing:.04em;opacity:.85;">theatrical · intimate</em><br/>Looping Artist <em style="font-family:'Cormorant Garamond',serif;font-style:italic;text-transform:none;letter-spacing:.04em;opacity:.85;">Ed Sheeran style — with a piano</em><br/>Songwriter<br/><span style="font-family:'DM Mono',monospace;font-size:.92rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);opacity:.95;line-height:1.25;display:block;">Modern Day </span> <span style="font-family:'DM Mono',monospace;font-size:.92rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);opacity:.95;line-height:1.25;display:block;">Nomadic </span> <span style="font-family:'DM Mono',monospace;font-size:.92rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);opacity:.95;line-height:1.25;display:block;">Troubadour</span></p></div>
