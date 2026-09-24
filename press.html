@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Performance Agreement · Paul Tosh · tosh42.com</title>
+<title>For Press — Paul Tosh · Paper Gun</title>
 <meta name="description" content="Performance agreement for booking Paul Tosh — Paper Gun and The Song Is The Play."/>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -73,27 +73,14 @@ footer p{font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.26em;t
   .agree-sec h3,.ad-sub,.sig-label{color:#555;}
 }
 
+#lightbox{position:fixed;inset:0;background:rgba(10,9,8,.96);display:none;align-items:center;justify-content:center;z-index:99999;padding:1.5rem;cursor:zoom-out;}
+#lightbox.open{display:flex;}
+#lightbox img{max-width:94vw;max-height:92vh;width:auto;height:auto;box-shadow:0 30px 120px rgba(0,0,0,.9);border:1px solid rgba(156,138,106,.35);}
+#lightbox .lb-close{position:fixed;top:1rem;right:1.4rem;font-family:'DM Mono',monospace;font-size:1.4rem;color:#eae3d3;opacity:.8;cursor:pointer;background:none;border:none;line-height:1;}
+#lightbox .lb-close:hover{opacity:1;}
 </style>
 </head>
 <body>
-
-<style>
-#site-nav{background:rgba(18,16,16,.98);border-bottom:1px solid rgba(156,138,106,.22);display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:0;padding:0 1rem;position:sticky;top:0;z-index:2000;}
-#site-nav .nav-sep{width:1px;height:14px;background:rgba(156,138,106,.15);flex-shrink:0;align-self:center;}
-#site-nav .nav-drop{position:relative;display:inline-block;float:none;}
-#site-nav .nav-drop > button{background:none;border:none;cursor:pointer;font-family:'DM Mono',monospace;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:#eae3d3;opacity:.8;padding:.75rem 1rem;transition:opacity .2s,color .2s;}
-#site-nav .nav-drop > button:hover,#site-nav .nav-drop.open > button{opacity:1;color:#b5a37e;}
-#site-nav .nav-drop > button .caret{font-size:.6em;opacity:.6;margin-left:.35em;}
-#site-nav .nav-menu{display:none !important;position:absolute;top:100%;left:50%;transform:translateX(-50%);min-width:230px;width:max-content;background:#171412;border:1px solid rgba(156,138,106,.22);box-shadow:0 14px 40px rgba(0,0,0,.65);padding:.5rem 0;text-align:left;z-index:2001;flex-direction:column;}
-#site-nav .nav-drop.open .nav-menu{display:block !important;}
-#site-nav .nav-menu a{display:block !important;float:none;width:auto;margin:0;font-family:'DM Mono',monospace;font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:#eae3d3;opacity:.85;padding:.7em 1.3em;text-decoration:none;border:none;border-bottom:none;background:none;transition:background .15s;white-space:nowrap;}
-#site-nav .nav-menu a:hover{background:rgba(156,138,106,.12);color:#b5a37e;}
-#site-nav .nav-solo{font-family:'DM Mono',monospace;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:#eae3d3;opacity:.8;padding:.75rem 1rem;text-decoration:none;border:none;border-bottom:none;background:none;transition:opacity .2s,color .2s;}
-#site-nav .nav-solo:hover{opacity:1;color:#b5a37e;}
-#site-nav .nav-book{background:#a3271d;color:#eae3d3;font-family:'DM Mono',monospace;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;padding:.55rem 1.2rem;text-decoration:none;border:none;border-bottom:none;margin-left:.6rem;transition:background .2s;}
-#site-nav .nav-book:hover{background:#c0392b;color:#eae3d3;}
-@media(max-width:680px){#site-nav .nav-menu{position:static;transform:none;min-width:0;width:auto;}}
-</style>
 <nav id="site-nav">
   <div class="nav-drop">
     <button type="button">The Shows <span class="caret">&#9662;</span></button>
@@ -137,100 +124,96 @@ footer p{font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.26em;t
   <div class="nav-sep"></div>
   <a href="mailto:bookings@tosh42.com" class="nav-book">&#9670; Book</a>
 </nav>
-<script>
-(function(){
-  document.querySelectorAll('.nav-drop > button').forEach(function(btn){
-    btn.addEventListener('click', function(e){
-      e.stopPropagation();
-      var d = btn.parentElement, was = d.classList.contains('open');
-      document.querySelectorAll('.nav-drop.open').forEach(function(o){o.classList.remove('open');});
-      if(!was) d.classList.add('open');
-    });
-  });
-  document.addEventListener('click', function(){ document.querySelectorAll('.nav-drop.open').forEach(function(o){o.classList.remove('open');}); });
-})();
-</script>
 
-<div class="page-hero">
-  <p class="kicker">Bookings</p>
-  <h1>Performance <em>Agreement</em></h1>
-  <p class="sub">Simple, clear, and camper-friendly. Print it, sign it, and we&rsquo;re on.</p>
-  <div class="print-row" style="margin-top:1.6rem;"><button class="print-btn" onclick="window.print()">Print This Agreement</button></div>
+<div id="hero" style="text-align:center;padding:4rem 2rem 1rem;">
+  <p class="sec-label" style="justify-content:center;">For Press</p>
+  <h1 style="font-family:'Cinzel',serif;font-size:clamp(2rem,5vw,3.2rem);letter-spacing:.08em;margin:.6rem 0 1rem;">Press Kit</h1>
+  <p class="body" style="max-width:640px;margin:0 auto;">Everything here is free to use. Photographs, video and text may be reproduced with credit to Paul Tosh and a link to tosh42.com. For anything else &mdash; an interview, a live excerpt for broadcast, a higher-resolution file &mdash; write to <a href="mailto:bookings@tosh42.com" style="color:var(--gold-l);">bookings@tosh42.com</a>.</p>
 </div>
 
+<div class="rule"></div>
+
 <div class="wrap">
-  <div class="agree-doc">
-    <img src="logo_gold_smlr.jpg" alt="Tosh42" style="width:44px;height:44px;object-fit:contain;display:block;margin:0 auto 1rem;border-radius:6px;"/>
-    <h2>Performance Agreement</h2>
-    <p class="ad-sub">Paul Tosh &middot; tosh42.com &middot; bookings@tosh42.com</p>
+  <p class="sec-label">The Release</p>
+  <h2 class="sec-title">Press release</h2>
+  <p class="body">A ready-to-edit release for the current tour, with the venue, date and time left blank for your listing. Supplied as a Word file so you can lift what you need.</p>
+  <p style="margin-top:1.2rem;"><a href="PaperGun-press-release.docx" class="btn-gold" download>&#9670; Download the press release (.docx)</a></p>
+</div>
 
-    <div class="agree-sec">
-      <h3>1 &middot; Details</h3>
-      <p>Date of Performance / Venue / Start Time: <span class="fill">&nbsp;</span></p>
-      <p style="margin-top:.5rem;">Show Duration: 90 minutes, with an allowance of up to 15 minutes overrun.</p>
-    </div>
+<div class="rule"></div>
 
-    <div class="agree-sec">
-      <h3>2 &middot; Fee</h3>
-      <p>Payment can be made by Zelle or by check. Email <a href="mailto:bookings@tosh42.com">bookings@tosh42.com</a> for a Zelle number or mailing address.</p>
-      <p style="margin-top:.7rem;font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);opacity:.8;">Which Show</p>
-      <div class="showpick">
-        <span>&#9723; Paper Gun</span>
-        <span>&#9723; The Song Is The Play</span>
-      </div>
-    </div>
+<div class="wrap">
+  <p class="sec-label">Biographies</p>
+  <h2 class="sec-title">Three lengths</h2>
 
-    <div class="agree-sec">
-      <h3>3 &middot; Technical Requirements</h3>
-      <ul>
-        <li>A real piano.</li>
-        <li>Protective peelable black soft velcro is applied to the piano to prevent marking when securing performance equipment. After the show you may choose to keep it in place if future performances are anticipated.</li>
-        <li>No food served during the performance — only before, after, or during the interval.</li>
-      </ul>
-    </div>
+  <h3 style="font-family:'DM Mono',monospace;font-size:.68rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-l);margin:2rem 0 .7rem;">Fifty words</h3>
+  <p class="body" style="user-select:all;">Paul Tosh is a Scottish-born singer, pianist and looping artist based in Manheim, Pennsylvania. He performs <em>Paper Gun</em>, an original one-man operetta, and <em>The Song Is The Play</em>, in which iconic songs are performed as theatre. He tours the United States and Canada in a self-contained performance camper.</p>
 
-    <div class="agree-sec">
-      <h3>4 &middot; Setup, Breakdown &amp; Performance Times</h3>
-      <p>Setup, soundcheck, and performance start times are scheduled elements of this production.</p>
-      <ul style="margin-top:.6rem;">
-        <li>Initial setup: 60 minutes &middot; Sound check: 5 minutes</li>
-        <li>Doors open to audience: at least 30 minutes prior to performance (more is fine)</li>
-        <li>Post-show meet &amp; greet: approx. 20 minutes</li>
-        <li>Additional buffer: 30 minutes pre- or post-show as needed</li>
-        <li><strong style="color:var(--gold-l);">Total on-site time required: approx. 4 hours</strong></li>
-      </ul>
-      <p style="margin-top:.6rem;">More on: <a href="./rider.html">tosh42.com/rider.html</a></p>
-    </div>
+  <h3 style="font-family:'DM Mono',monospace;font-size:.68rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-l);margin:2rem 0 .7rem;">One hundred words</h3>
+  <p class="body" style="user-select:all;">Paul Tosh is a singer, pianist and looping artist based in Manheim, Pennsylvania. Born in Scotland to two opera enthusiasts and trained by the classical voice coach Lide DeRosa in Glasgow, he learned his trade in piano bars across Europe before settling in the United States. For two decades he has performed in senior residences, churches, synagogues and theatres across the United States and Canada. Out of those rooms came <em>Paper Gun</em>, a three-act operetta for one performer and a piano, about resentment and what to do with it. He also performs <em>The Song Is The Play</em>, treating iconic songs as theatre with live piano looping.</p>
 
-    <div class="agree-sec">
-      <h3>5 &middot; Parking &mdash; Please Confirm Early</h3>
-      <p><strong style="color:var(--gold-l);">This one genuinely matters.</strong> I travel in a mobile camper and arrive the night before a performance, so a safe overnight space is a real part of the arrangement rather than a courtesy. <strong style="color:var(--gold-l);">A quiet residential street is ideal &mdash; better than a monitored city lot.</strong> Somewhere on the facility grounds works well too. What matters is quiet and safe rather than watched.</p>
-      <p style="margin-top:.7rem;">Please confirm this before the date is fixed &mdash; it is the one detail that can&rsquo;t be solved on the day.</p>
-      <p style="margin-top:.9rem;">Overnight camper parking confirmed: &nbsp;&#9723; Yes &nbsp;&nbsp;&#9723; To be arranged &nbsp;&mdash;&nbsp; Location: <span class="fill">&nbsp;</span></p>
-      <img src="trukcut3.png" alt="The CyberPhoenix — performance camper" style="max-width:460px;width:100%;display:block;margin:1.4rem auto 0;"/>
-    </div>
+  <h3 style="font-family:'DM Mono',monospace;font-size:.68rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-l);margin:2rem 0 .7rem;">Two hundred words</h3>
+  <p class="body" style="user-select:all;">Paul Tosh is a singer, pianist and looping artist based in Manheim, Pennsylvania, where he also works as a supervisor on a farm. Born in Scotland, the son of two opera enthusiasts, he trained with the classical voice coach Lide DeRosa in Glasgow and learned his trade in piano bars across Europe before settling in the United States.</p>
+  <p class="body" style="user-select:all;">For roughly two decades he has performed in senior residences, churches, synagogues, community centres and theatres across the United States and Canada &mdash; several thousand performances, and several thousand conversations afterwards. Among the residents he has sung to: a backing singer for Ray Charles, a pilot who flew for Mariah Carey, a chef who cooked for Bill Gates, and a man who worked security for Bill Clinton.</p>
+  <p class="body" style="user-select:all;">Out of those rooms came <em>Paper Gun</em>, an original operetta in three acts for one performer and a piano, in which a single character is sung by two voices &mdash; the man, and the voice in his head that keeps the argument going. It is about resentment and what to do with it, and it is used by presenters as a shared therapeutic experience as much as a concert. He also performs <em>The Song Is The Play</em>, in which songs by Dylan, Sinatra, the Beatles and others are acted out as theatre with live piano looping. He tours in a Cybertruck fitted with a custom camper and wrapped in lyrics from his own songs.</p>
+</div>
 
-    <div class="clause">
-      <h3>6 &middot; Filming &amp; Recording</h3>
-      <p>The Performer may film, photograph and record the performance for archive, promotional and documentary use, and retains the rights to that material. A notice to this effect is displayed at the entrance and carried on the ticket page, so that attendance constitutes notice.</p>
-      <p style="margin-top:.7rem;">The Venue is welcome to use short excerpts to promote its own programme, with credit to Paul Tosh and a link to tosh42.com. Any other use, or any commercial use, is by written agreement.</p>
-      <p style="margin-top:.7rem;">If the Venue&rsquo;s own policy restricts recording, or if the audience includes people who cannot appear on camera, please tell me before the date is fixed and cameras will be placed to face the stage only, or left packed.</p>
-      <p style="margin-top:.9rem;">Filming permitted: &nbsp;&#9723; Yes &nbsp;&nbsp;&#9723; Stage only &nbsp;&nbsp;&#9723; No &nbsp;&mdash;&nbsp; Notes: <span class="fill">&nbsp;</span></p>
-    </div>
+<div class="rule"></div>
 
-    <p class="body" style="text-align:center;margin-top:1.6rem;">Thank you for your cooperation — looking forward to a memorable event.</p>
-
-    <div class="sig-row">
-      <div class="sig-block">
-        <div class="sig-line"></div>
-        <p class="sig-label">Presenter Signature &middot; Date</p>
-      </div>
-      <div class="sig-block">
-        <div class="sig-line"></div>
-        <p class="sig-label">Performer: Paul Toshner &middot; Date</p>
-      </div>
-    </div>
+<div class="wrap">
+  <p class="sec-label">The Facts</p>
+  <h2 class="sec-title">Fact sheet</h2>
+  <div style="max-width:640px;margin:1.4rem auto 0;">
+    <p class="body"><strong>Show</strong> &mdash; <em>Paper Gun</em>, an original operetta in three acts</p>
+    <p class="body"><strong>Performers</strong> &mdash; one; with a soloist / narrator</p>
+    <p class="body"><strong>Running time</strong> &mdash; 90 minutes, plus interval</p>
+    <p class="body"><strong>Instrument</strong> &mdash; piano, with live looping</p>
+    <p class="body"><strong>Second show</strong> &mdash; <em>The Song Is The Play</em>, iconic songs as theatre</p>
+    <p class="body"><strong>Audiences</strong> &mdash; venues, 55+ communities, theatres, houses of worship, fundraisers</p>
+    <p class="body"><strong>Territory</strong> &mdash; United States and Canada; self-contained performance camper</p>
+    <p class="body"><strong>Tickets</strong> &mdash; $35 general admission; $60 patron seat, limited to 12</p>
+    <p class="body"><strong>Audience participation</strong> &mdash; none; nobody is singled out or asked to disclose anything</p>
+    <p class="body"><strong>Recording</strong> &mdash; performances are filmed; a notice is displayed at the entrance</p>
+    <p class="body"><strong>Online</strong> &mdash; tosh42.com &middot; @toshfortwo</p>
   </div>
+</div>
+
+<div class="rule"></div>
+
+<div class="wrap">
+  <p class="sec-label">Images</p>
+  <h2 class="sec-title">Photographs &amp; artwork</h2>
+  <p class="body" style="text-align:center;max-width:620px;margin:0 auto 2rem;">Click any image to open it full size, then save it. Free to use with credit to Paul Tosh.</p>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.4rem;max-width:900px;margin:0 auto;">
+    <a href="ticketimage.jpg" data-lightbox><img src="ticketimage.jpg" alt="Paul Tosh at the piano — Paper Gun" style="width:100%;height:auto;display:block;border:1px solid var(--border);"/></a>
+    <a href="1stPoster.PNG" data-lightbox><img src="1stPoster.PNG" alt="Paper Gun — preview performance poster" style="width:100%;height:auto;display:block;border:1px solid var(--border);"/></a>
+    <a href="Pgrey.jpg" data-lightbox><img src="Pgrey.jpg" alt="Paper Gun — a show about shadow work" style="width:100%;height:auto;display:block;border:1px solid var(--border);"/></a>
+    <a href="Tside1.jpg" data-lightbox><img src="Tside1.jpg" alt="The CyberPhoenix — the touring camper, wrapped in lyrics" style="width:100%;height:auto;display:block;border:1px solid var(--border);"/></a>
+    <a href="Tside2.jpg" data-lightbox><img src="Tside2.jpg" alt="The CyberPhoenix — the other side" style="width:100%;height:auto;display:block;border:1px solid var(--border);"/></a>
+    <a href="moperavector.png" data-lightbox><img src="moperavector.png" alt="A Mopera Production — logo" style="width:100%;height:auto;display:block;border:1px solid var(--border);background:#0d0b0b;"/></a>
+  </div>
+  <p class="body" style="text-align:center;margin-top:1.6rem;"><a href="./posters.html" style="color:var(--gold-l);">All posters and banners &rarr;</a></p>
+</div>
+
+<div class="rule"></div>
+
+<div class="wrap">
+  <p class="sec-label">Video</p>
+  <h2 class="sec-title">To watch or embed</h2>
+  <div style="max-width:640px;margin:1.4rem auto 0;">
+    <p class="body"><a href="https://youtu.be/86R0_gEssYU" target="_blank" rel="noopener">Paper Gun &mdash; introduction</a></p>
+    <p class="body"><a href="https://youtu.be/2uNfM2K1BbI" target="_blank" rel="noopener">An Homage &mdash; the truck, and the lyrics it carries</a></p>
+    <p class="body"><a href="https://www.youtube.com/@ToshForTwo" target="_blank" rel="noopener">Full channel &mdash; @ToshForTwo</a></p>
+    <p class="body"><a href="./shows.html">Recent shows &rarr;</a> &nbsp;&middot;&nbsp; <a href="./papergun-full.html">The full script &rarr;</a> &nbsp;&middot;&nbsp; <a href="./therapeutic.html">For clinicians &rarr;</a></p>
+  </div>
+</div>
+
+<div class="rule"></div>
+
+<div class="wrap" style="text-align:center;">
+  <p class="sec-label" style="justify-content:center;">Interviews</p>
+  <h2 class="sec-title">Available by phone or in person</h2>
+  <p class="body" style="max-width:600px;margin:1rem auto 0;">Paul Tosh will perform a short excerpt for broadcast or filming, and is happy to talk about the show, the twenty years of rooms behind it, or the truck. Write to <strong style="color:var(--gold-l);user-select:all;">bookings@tosh42.com</strong>.</p>
 </div>
 
 <div id="bottom-cta">
@@ -244,5 +227,25 @@ footer p{font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.26em;t
 
 <a href="./index.html" title="Home — tosh42.com" style="position:fixed;bottom:1.2rem;right:1.2rem;z-index:2147483647;background:#121010;border:1px solid rgba(156,138,106,.5);border-radius:50%;width:54px;height:54px;display:flex;align-items:center;justify-content:center;text-decoration:none;opacity:.88;transition:opacity .2s;font-family:monospace;font-size:.92rem;letter-spacing:.08em;text-transform:uppercase;color:#9c8a6a;text-align:center;line-height:1.3;box-shadow:0 2px 12px rgba(0,0,0,.7);" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity='.88'">tosh<br>42</a>
 
+<div id="lightbox" aria-hidden="true">
+  <button class="lb-close" aria-label="Close">&times;</button>
+  <img src="" alt="Poster enlarged"/>
+</div>
+<script>
+(function(){
+  var lb = document.getElementById('lightbox');
+  var lbImg = lb.querySelector('img');
+  document.querySelectorAll('a[data-lightbox]').forEach(function(a){
+    a.addEventListener('click', function(e){
+      e.preventDefault();
+      lbImg.src = a.getAttribute('href');
+      lb.classList.add('open');
+    });
+  });
+  function closeLB(){ lb.classList.remove('open'); lbImg.src=''; }
+  lb.addEventListener('click', closeLB);
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeLB(); });
+})();
+</script>
 </body>
 </html>
