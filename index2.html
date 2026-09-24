@@ -545,6 +545,13 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
 .vj-headline .vj-desc{font-size:clamp(1.08rem,1.9vw,1.25rem);max-width:680px;margin-top:1.4rem;}
 .vj-headline .vj-btnrow{margin-top:2rem;}
 @media(max-width:680px){.vj-headline .vj-title{font-size:1.5rem;}}
+
+.hero-quote{position:absolute;right:1.6rem;bottom:1.6rem;z-index:3;max-width:330px;text-align:right;text-shadow:0 2px 14px rgba(0,0,0,.9);}
+.hero-quote .hq-line{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(1rem,1.7vw,1.22rem);line-height:1.5;color:#f3ece0;margin:0;}
+.hero-quote .hq-cite{font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:#d8c79c;margin:.6rem 0 0;}
+.hero-quote .hq-cite a{color:#e3cf9f;text-decoration:none;border-bottom:1px solid rgba(227,207,159,.45);}
+.hero-quote .hq-note{font-family:'Cormorant Garamond',serif;font-size:.8rem;line-height:1.45;color:#e7dfd0;opacity:.8;margin:.45rem 0 0;}
+@media(max-width:680px){.hero-quote{position:static;max-width:none;text-align:center;margin:1.1rem auto 0;padding:0 1.2rem;text-shadow:none;}}
 </style>
 </head>
 <body>
@@ -628,6 +635,11 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
 <div class="hero">
   <img class="hero-img" src="Herorepl1.png" alt="Paul Tosh"/>
   <div class="hero-overlay"></div>
+  <div class="hero-quote">
+    <p class="hq-line">&ldquo;Last night made me feel like the pre-WWII era of the arts in society. Loved it.&rdquo;</p>
+    <p class="hq-cite">Libby Fox &middot; Director, <a href="https://www.swampfoxdockandmarine.com/" target="_blank" rel="noopener">Swamp Fox Dock &amp; Marine</a></p>
+    <p class="hq-note">Host of the first performance of the operetta, at the home concert they put on in Charleston</p>
+  </div>
   <div class="hero-badges">
     <a href="./therapeutic.html" title="Therapeutic — for presenters &amp; clinicians"><img src="moperavector.png" alt="A Mopera Production — therapeutic page" class="hero-mopera"/></a>
     <a href="./truckhomage.html" title="The truck — an homage"><img src="trukcut3.png" alt="The CyberPhoenix truck — truck page" class="hero-truck"/></a>
