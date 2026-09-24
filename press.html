@@ -150,11 +150,11 @@ footer p{font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.26em;t
   <p class="body" style="user-select:all;">Paul Tosh is a Scottish-born singer, pianist and looping artist based in Manheim, Pennsylvania. He performs <em>Paper Gun</em>, an original one-man operetta, and <em>The Song Is The Play</em>, in which iconic songs are performed as theatre. He tours the United States and Canada in a self-contained performance camper.</p>
 
   <h3 style="font-family:'DM Mono',monospace;font-size:.68rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-l);margin:2rem 0 .7rem;">One hundred words</h3>
-  <p class="body" style="user-select:all;">Paul Tosh is a singer, pianist and looping artist based in Manheim, Pennsylvania. Born in Scotland to two opera enthusiasts and trained by the classical voice coach Lide DeRosa in Glasgow, he learned his trade in piano bars across Europe before settling in the United States. For two decades he has performed in senior residences, churches, synagogues and theatres across the United States and Canada. Out of those rooms came <em>Paper Gun</em>, a three-act operetta for one performer and a piano, about resentment and what to do with it. He also performs <em>The Song Is The Play</em>, treating iconic songs as theatre with live piano looping.</p>
+  <p class="body" style="user-select:all;">Paul Tosh is a singer, pianist and looping artist based in Manheim, Pennsylvania. Born in Scotland to two opera enthusiasts and trained by the classical voice coach Lide DeRosa in Glasgow, he learned his trade in piano bars across Europe before settling in the United States. For two decades he has performed in senior residences, churches and theatres across the United States and Canada. Out of those rooms came <em>Paper Gun</em>, a three-act operetta for one performer and a piano, about resentment and what to do with it. He also performs <em>The Song Is The Play</em>, treating iconic songs as theatre with live piano looping.</p>
 
   <h3 style="font-family:'DM Mono',monospace;font-size:.68rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-l);margin:2rem 0 .7rem;">Two hundred words</h3>
   <p class="body" style="user-select:all;">Paul Tosh is a singer, pianist and looping artist based in Manheim, Pennsylvania, where he also works as a supervisor on a farm. Born in Scotland, the son of two opera enthusiasts, he trained with the classical voice coach Lide DeRosa in Glasgow and learned his trade in piano bars across Europe before settling in the United States.</p>
-  <p class="body" style="user-select:all;">For roughly two decades he has performed in senior residences, churches, synagogues, community centres and theatres across the United States and Canada &mdash; several thousand performances, and several thousand conversations afterwards. Among the residents he has sung to: a backing singer for Ray Charles, a pilot who flew for Mariah Carey, a chef who cooked for Bill Gates, and a man who worked security for Bill Clinton.</p>
+  <p class="body" style="user-select:all;">For roughly two decades he has performed in senior residences, churches, community centres and theatres across the United States and Canada &mdash; several thousand performances, and several thousand conversations afterwards. Among the residents he has sung to: a backing singer for Ray Charles, a pilot who flew for Mariah Carey, a chef who cooked for Bill Gates, and a man who worked security for Bill Clinton.</p>
   <p class="body" style="user-select:all;">Out of those rooms came <em>Paper Gun</em>, an original operetta in three acts for one performer and a piano, in which a single character is sung by two voices &mdash; the man, and the voice in his head that keeps the argument going. It is about resentment and what to do with it, and it is used by presenters as a shared therapeutic experience as much as a concert. He also performs <em>The Song Is The Play</em>, in which songs by Dylan, Sinatra, the Beatles and others are acted out as theatre with live piano looping. He tours in a Cybertruck fitted with a custom camper and wrapped in lyrics from his own songs.</p>
 </div>
 
@@ -165,7 +165,7 @@ footer p{font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.26em;t
   <h2 class="sec-title">Fact sheet</h2>
   <div style="max-width:640px;margin:1.4rem auto 0;">
     <p class="body"><strong>Show</strong> &mdash; <em>Paper Gun</em>, an original operetta in three acts</p>
-    <p class="body"><strong>Performers</strong> &mdash; one; with a soloist / narrator</p>
+    <p class="body"><strong>Performers</strong> &mdash; one; sometimes with a soloist / narrator</p>
     <p class="body"><strong>Running time</strong> &mdash; 90 minutes, plus interval</p>
     <p class="body"><strong>Instrument</strong> &mdash; piano, with live looping</p>
     <p class="body"><strong>Second show</strong> &mdash; <em>The Song Is The Play</em>, iconic songs as theatre</p>
@@ -223,7 +223,7 @@ footer p{font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.26em;t
   <a href="./rider.html" class="rider">&#11041; Technical Rider &rarr;</a>
 </div>
 
-<footer><p>&copy; 2026 Paul Tosh &nbsp;&middot;&nbsp; tosh42.com &nbsp;&middot;&nbsp; bookings@tosh42.com &nbsp;&middot;&nbsp; <a href="./press.html" style="color:var(--gold-l);text-decoration:none;">For Press</a></p></footer>
+<footer><p>&copy; 2026 Paul Tosh &nbsp;&middot;&nbsp; tosh42.com &nbsp;&middot;&nbsp; bookings@tosh42.com &nbsp;&middot;&nbsp; <a href="./press.html" style="color:var(--gold-l);text-decoration:none;white-space:nowrap;">&#128240; For Press</a></p></footer>
 
 <a href="./index.html" title="Home — tosh42.com" style="position:fixed;bottom:1.2rem;right:1.2rem;z-index:2147483647;background:#121010;border:1px solid rgba(156,138,106,.5);border-radius:50%;width:54px;height:54px;display:flex;align-items:center;justify-content:center;text-decoration:none;opacity:.88;transition:opacity .2s;font-family:monospace;font-size:.92rem;letter-spacing:.08em;text-transform:uppercase;color:#9c8a6a;text-align:center;line-height:1.3;box-shadow:0 2px 12px rgba(0,0,0,.7);" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity='.88'">tosh<br>42</a>
 
@@ -245,6 +245,19 @@ footer p{font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.26em;t
   function closeLB(){ lb.classList.remove('open'); lbImg.src=''; }
   lb.addEventListener('click', closeLB);
   document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeLB(); });
+})();
+</script>
+<script>
+(function(){
+  document.querySelectorAll('.nav-drop > button').forEach(function(btn){
+    btn.addEventListener('click', function(e){
+      e.stopPropagation();
+      var d = btn.parentElement, was = d.classList.contains('open');
+      document.querySelectorAll('.nav-drop.open').forEach(function(o){o.classList.remove('open');});
+      if(!was) d.classList.add('open');
+    });
+  });
+  document.addEventListener('click', function(){ document.querySelectorAll('.nav-drop.open').forEach(function(o){o.classList.remove('open');}); });
 })();
 </script>
 </body>
