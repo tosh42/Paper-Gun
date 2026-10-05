@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Paper Gun · First Performance · You are invited · Paul Tosh</title>
+<meta name="description" content="Paper Gun, a new original operetta by Paul Tosh. First performance, free, by invitation. Fifty seats. Reserve yours."/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#121010;--cream:#eae3d3;--gold:#9c8a6a;--gold-l:#b5a37e;--red:#a3271d;--red-l:#c0392b;--border:rgba(156,138,106,.22);}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',Georgia,serif;overflow-x:hidden;min-height:100vh;}
+a{color:var(--gold-l);}
+:focus-visible{outline:2px solid var(--gold-l);outline-offset:3px;}
+.mono{font-family:'DM Mono',monospace;text-transform:uppercase;}
+
+/* ── RED BAR ── */
+#seat-bar{background:var(--red);padding:.9rem 1.5rem;}
+#seat-bar .in{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:1.4rem;flex-wrap:wrap;text-align:center;}
+#seat-bar p{font-family:'DM Mono',monospace;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--cream);line-height:1.7;}
+#seat-bar a{background:var(--cream);color:var(--red);font-family:'DM Mono',monospace;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;text-decoration:none;padding:.7em 1.8em;white-space:nowrap;transition:opacity .2s;}
+#seat-bar a:hover{opacity:.85;}
+
+/* ── HERO: poster + invitation ── */
+.invite{max-width:1120px;margin:0 auto;padding:3.2rem 2rem 3.6rem;display:grid;grid-template-columns:minmax(0,440px) minmax(0,1fr);gap:3.6rem;align-items:center;}
+.poster{display:block;line-height:0;border:1px solid rgba(156,138,106,.35);box-shadow:0 24px 90px rgba(0,0,0,.85);cursor:zoom-in;}
+.poster img{width:100%;height:auto;display:block;}
+.poster-hint{font-family:'DM Mono',monospace;font-size:.6rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);opacity:.8;text-align:center;margin-top:.8rem;}
+.invite-text .who{font-family:'DM Mono',monospace;font-size:.68rem;letter-spacing:.42em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;}
+.invite-text h1{font-family:'Cinzel',serif;font-weight:400;font-size:clamp(2.6rem,6vw,4.4rem);letter-spacing:.08em;line-height:1.05;color:var(--cream);}
+.invite-text .kind{font-family:'DM Mono',monospace;font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;color:var(--cream);opacity:.75;margin-top:.9rem;}
+.invite-text .guest{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:clamp(1.5rem,3vw,2.1rem);color:var(--gold-l);margin-top:2rem;line-height:1.25;}
+.invite-text .pitch{font-size:clamp(1.12rem,1.9vw,1.3rem);line-height:1.75;color:var(--cream);opacity:.88;margin-top:.9rem;max-width:34em;}
+
+/* the stub: echoes the cream ticket panel on the poster, and puts the date in real text */
+.stub{background:var(--cream);color:var(--ink);margin-top:2rem;padding:5px;max-width:520px;}
+.stub .in{border:1px solid var(--red);padding:1.2rem 1.4rem 1.3rem;text-align:center;}
+.stub .label{font-family:'Cinzel',serif;font-weight:600;font-size:.82rem;letter-spacing:.3em;text-transform:uppercase;color:var(--red);}
+.stub .when{font-family:'Cinzel',serif;font-weight:600;font-size:clamp(1.15rem,2.4vw,1.5rem);letter-spacing:.06em;margin-top:.5rem;line-height:1.3;}
+.stub .when span{color:var(--red);padding:0 .25em;}
+.stub .where{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:1.12rem;line-height:1.5;margin-top:.45rem;}
+.stub .terms{font-family:'DM Mono',monospace;font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--red);margin-top:.8rem;}
+
+.actions{display:flex;align-items:center;gap:1.6rem;flex-wrap:wrap;margin-top:1.8rem;}
+.cta-red{display:inline-block;background:var(--red);color:var(--cream);font-family:'DM Mono',monospace;font-size:.78rem;letter-spacing:.24em;text-transform:uppercase;text-decoration:none;padding:1em 2.4em;border:0;cursor:pointer;transition:background .2s,transform .15s;}
+.cta-red:hover{background:var(--red-l);transform:translateY(-2px);}
+.quiet{font-family:'DM Mono',monospace;font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-l);text-decoration:none;border-bottom:1px solid rgba(156,138,106,.4);padding-bottom:.15rem;}
+.quiet:hover{color:var(--cream);}
+
+/* ── THREE THINGS TO KNOW ── */
+.know{border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+.know .in{max-width:1120px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);}
+.know div.item{padding:2.2rem 2rem;text-align:center;}
+.know div.item + div.item{border-left:1px solid var(--border);}
+.know h2{font-family:'Cinzel',serif;font-weight:400;font-size:1rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-l);margin-bottom:.7rem;}
+.know p{font-size:1.1rem;line-height:1.65;color:var(--cream);opacity:.85;max-width:22em;margin:0 auto;}
+
+/* ── SECTIONS ── */
+.wrap{max-width:900px;margin:0 auto;padding:3.6rem 2rem;}
+.sec-head{font-family:'Cinzel',serif;font-weight:400;font-size:clamp(1.3rem,3vw,1.8rem);letter-spacing:.1em;color:var(--cream);text-align:center;margin-bottom:.6rem;}
+.sec-sub{font-style:italic;font-size:1.12rem;line-height:1.6;color:var(--cream);opacity:.8;text-align:center;max-width:34em;margin:0 auto 2rem;}
+.rule{max-width:600px;margin:0 auto;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:.25;}
+
+.video-wrap{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;background:#000;border:1px solid var(--border);}
+.video-wrap iframe{position:absolute;inset:0;width:100%;height:100%;border:none;}
+.vid-ph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.9rem;text-align:center;padding:1rem;background:repeating-linear-gradient(135deg,#171412 0 14px,#141110 14px 28px);}
+.vid-ph .play{width:68px;height:48px;border-radius:12px;background:rgba(234,227,211,.1);position:relative;}
+.vid-ph .play::before{content:'';position:absolute;left:50%;top:50%;transform:translate(-40%,-50%);border-style:solid;border-width:11px 0 11px 18px;border-color:transparent transparent transparent rgba(234,227,211,.55);}
+.vid-ph p{font-family:'DM Mono',monospace;font-size:.64rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);line-height:1.8;}
+.vid-pair{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem;margin-top:1.4rem;}
+.vid-cap{font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);opacity:.85;margin-top:.7rem;text-align:center;}
+
+.teasers{display:grid;grid-template-columns:repeat(3,1fr);gap:2.4rem;margin-top:2rem;}
+.teasers p{font-style:italic;font-weight:300;font-size:clamp(1.2rem,2.1vw,1.4rem);line-height:1.55;color:var(--cream);opacity:.9;border-top:1px solid rgba(156,138,106,.4);padding-top:1.1rem;}
+.center{text-align:center;margin-top:2.4rem;}
+
+/* ── RESERVE ── */
+#reserve{border-top:1px solid var(--border);scroll-margin-top:3.5rem;}
+.seat-form{width:100%;max-width:480px;margin:0 auto;display:flex;flex-direction:column;gap:.9rem;}
+.seat-form label{font-family:'DM Mono',monospace;font-size:.64rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-l);display:block;margin-bottom:.35rem;}
+.seat-form input[type=text],.seat-form input[type=email],.seat-form select{width:100%;background:rgba(255,255,255,.03);border:1px solid rgba(156,138,106,.45);color:var(--cream);font-family:'Cormorant Garamond',serif;font-size:1.12rem;padding:.75rem .9rem;border-radius:2px;}
+.seat-form select option{background:#171412;color:var(--cream);}
+.seat-form input:focus,.seat-form select:focus{outline:none;border-color:var(--gold-l);}
+.seat-form .tick{display:flex;gap:.8rem;align-items:flex-start;font-family:'Cormorant Garamond',serif;font-size:1.08rem;letter-spacing:0;text-transform:none;line-height:1.5;color:var(--cream);opacity:.9;margin:.3rem 0 0;}
+.seat-form .tick input{width:1.15rem;height:1.15rem;margin-top:.25rem;flex-shrink:0;accent-color:var(--red);}
+.seat-form button{align-self:center;margin-top:.6rem;}
+.or-mail{text-align:center;font-size:1.12rem;line-height:1.7;color:var(--cream);opacity:.88;margin-top:1.8rem;}
+.or-mail a{color:var(--gold-l);font-weight:600;}
+
+/* ── FULL SITE ── */
+.fullsite{border-top:1px solid var(--border);text-align:center;padding:3rem 2rem;}
+.fullsite p{font-style:italic;font-size:1.15rem;line-height:1.6;color:var(--cream);opacity:.82;max-width:32em;margin:0 auto 1.3rem;}
+.fullsite .row{display:flex;justify-content:center;gap:2rem;flex-wrap:wrap;}
+
+footer{text-align:center;padding:1.6rem;border-top:1px solid rgba(156,138,106,.1);}
+footer p{font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.26em;text-transform:uppercase;color:var(--cream);opacity:.8;line-height:2;}
+
+#lightbox{position:fixed;inset:0;background:rgba(10,9,8,.96);display:none;align-items:center;justify-content:center;z-index:99999;padding:1.5rem;cursor:zoom-out;}
+#lightbox.open{display:flex;}
+#lightbox img{max-width:94vw;max-height:92vh;width:auto;height:auto;box-shadow:0 30px 120px rgba(0,0,0,.9);border:1px solid rgba(156,138,106,.35);}
+#lightbox .lb-close{position:fixed;top:1rem;right:1.4rem;font-family:'DM Mono',monospace;font-size:1.4rem;color:#eae3d3;opacity:.8;cursor:pointer;background:none;border:none;line-height:1;}
+
+@media(max-width:860px){
+  .invite{grid-template-columns:1fr;gap:2.2rem;padding:2.2rem 1.4rem 2.8rem;}
+  .poster-col{max-width:420px;margin:0 auto;width:100%;}
+  .invite-text{text-align:center;}
+  .invite-text .pitch,.stub{margin-left:auto;margin-right:auto;}
+  .actions{justify-content:center;}
+  .know .in{grid-template-columns:1fr;}
+  .know div.item + div.item{border-left:0;border-top:1px solid var(--border);}
+  .teasers{grid-template-columns:1fr;gap:1.6rem;}
+  .vid-pair{grid-template-columns:1fr;}
+  .wrap{padding:2.8rem 1.4rem;}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto;}.cta-red:hover{transform:none;}}
+</style>
+</head>
+<body>
+
+<style>
+#site-nav{background:rgba(18,16,16,.98);border-bottom:1px solid rgba(156,138,106,.22);display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:0;padding:0 1rem;position:sticky;top:0;z-index:2000;}
+#site-nav .nav-sep{width:1px;height:14px;background:rgba(156,138,106,.15);flex-shrink:0;align-self:center;}
+#site-nav .nav-drop{position:relative;display:inline-block;float:none;}
+#site-nav .nav-drop > button{background:none;border:none;cursor:pointer;font-family:'DM Mono',monospace;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:#eae3d3;opacity:.8;padding:.75rem 1rem;transition:opacity .2s,color .2s;}
+#site-nav .nav-drop > button:hover,#site-nav .nav-drop.open > button{opacity:1;color:#b5a37e;}
+#site-nav .nav-drop > button .caret{font-size:.6em;opacity:.6;margin-left:.35em;}
+#site-nav .nav-menu{display:none !important;position:absolute;top:100%;left:50%;transform:translateX(-50%);min-width:230px;width:max-content;background:#171412;border:1px solid rgba(156,138,106,.22);box-shadow:0 14px 40px rgba(0,0,0,.65);padding:.5rem 0;text-align:left;z-index:2001;flex-direction:column;}
+#site-nav .nav-drop.open .nav-menu{display:block !important;}
+#site-nav .nav-menu a{display:block !important;float:none;width:auto;margin:0;font-family:'DM Mono',monospace;font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:#eae3d3;opacity:.85;padding:.7em 1.3em;text-decoration:none;border:none;border-bottom:none;background:none;transition:background .15s;white-space:nowrap;}
+#site-nav .nav-menu a:hover{background:rgba(156,138,106,.12);color:#b5a37e;}
+#site-nav .nav-solo{font-family:'DM Mono',monospace;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:#eae3d3;opacity:.8;padding:.75rem 1rem;text-decoration:none;border:none;border-bottom:none;background:none;transition:opacity .2s,color .2s;}
+#site-nav .nav-solo:hover{opacity:1;color:#b5a37e;}
+#site-nav .nav-book{background:#a3271d;color:#eae3d3;font-family:'DM Mono',monospace;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;padding:.55rem 1.2rem;text-decoration:none;border:none;border-bottom:none;margin-left:.6rem;transition:background .2s;}
+#site-nav .nav-book:hover{background:#c0392b;color:#eae3d3;}
+@media(max-width:680px){#site-nav .nav-menu{position:static;transform:none;min-width:0;width:auto;}}
+</style>
+<nav id="site-nav">
+  <div class="nav-drop">
+    <button type="button">The Shows <span class="caret">&#9662;</span></button>
+    <div class="nav-menu">
+      <a href="./index.html">Home</a>
+      <a href="./index2.html">Full Site</a>
+      <a href="./tickets.html">Tickets</a>
+      <a href="./papergun.html">Paper Gun</a>
+      <a href="./sitp.html">The Song Is The Play</a>
+      <a href="./fundraisers.html">Fundraisers</a>
+      <a href="./tasters.html">1-Minute Tasters</a>
+    </div>
+  </div>
+  <div class="nav-sep"></div>
+  <div class="nav-drop">
+    <button type="button">For Presenters <span class="caret">&#9662;</span></button>
+    <div class="nav-menu">
+      <a href="./testimonials.html">Testimonials</a>
+      <a href="./agreement.html">Performance Agreement</a>
+      <a href="./venue-partnership.html">Venue Partnership</a>
+      <a href="./rider.html">Tech Rider</a>
+    </div>
+  </div>
+  <div class="nav-sep"></div>
+  <div class="nav-drop">
+    <button type="button">Go Deeper <span class="caret">&#9662;</span></button>
+    <div class="nav-menu">
+      <a href="./therapeutic.html">Therapeutic — Shadow Work</a>
+      <a href="./papergun-full.html">Paper Gun — Deep Dive</a>
+      <a href="./favoritelinks.html">Favorite Links</a>
+    </div>
+  </div>
+  <div class="nav-sep"></div>
+  <div class="nav-drop">
+    <button type="button">On the Road <span class="caret">&#9662;</span></button>
+    <div class="nav-menu">
+      <a href="./truckhomage.html">Truck Homage</a>
+      <a href="./shows.html">Recent Shows</a>
+      <a href="./posters.html">Posters</a>
+    </div>
+  </div>
+  <div class="nav-sep"></div>
+  <a href="mailto:bookings@tosh42.com" class="nav-book">&#9670; Book</a>
+</nav>
+<script>
+(function(){
+  document.querySelectorAll('.nav-drop > button').forEach(function(btn){
+    btn.addEventListener('click', function(e){
+      e.stopPropagation();
+      var d = btn.parentElement, was = d.classList.contains('open');
+      document.querySelectorAll('.nav-drop.open').forEach(function(o){o.classList.remove('open');});
+      if(!was) d.classList.add('open');
+    });
+  });
+  document.addEventListener('click', function(){ document.querySelectorAll('.nav-drop.open').forEach(function(o){o.classList.remove('open');}); });
+})();
+</script>
+
+<!-- ══════════════════════════════════════════════════════════════
+     PREVIEW LANDING PAGE (index3.html, becomes index.html at launch)
+     DATE AND VENUE ARE PLACEHOLDERS copied from the poster.
+     They appear in three places, each marked  EVENT DETAILS:
+       1. the red bar   2. the cream stub   3. the form's hidden subject
+     ══════════════════════════════════════════════════════════════ -->
+
+<!-- EVENT DETAILS 1 of 3: red bar -->
+<div id="seat-bar">
+  <div class="in">
+    <p>Paper Gun &nbsp;&middot;&nbsp; First performance &nbsp;&middot;&nbsp; Sunday June 8 &nbsp;&middot;&nbsp; 7:00 pm &nbsp;&middot;&nbsp; Free &nbsp;&middot;&nbsp; 50 seats</p>
+    <a href="#reserve">Reserve a seat</a>
+  </div>
+</div>
+
+<main>
+
+<!-- ── POSTER + INVITATION ── -->
+<section class="invite">
+  <div class="poster-col">
+    <!-- POSTER IMAGE: change the filename in both places on the next line if you rename it on GitHub -->
+    <a class="poster" href="firtposter7.PNG" data-lightbox><img src="firtposter7.PNG" alt="Poster: Paul Tosh, Paper Gun, a new original operetta, one man, one piano. First performance. You are invited as my guest."/></a>
+    <p class="poster-hint">Tap the poster to enlarge</p>
+  </div>
+
+  <div class="invite-text">
+    <p class="who">Paul Tosh</p>
+    <h1>Paper Gun</h1>
+    <p class="kind">A new original operetta &nbsp;&middot;&nbsp; One man &nbsp;&middot;&nbsp; One piano</p>
+
+    <p class="guest">First performance. You are invited as my guest.</p>
+    <p class="pitch">A show in three acts, about resentment and how to put it down. Ninety minutes. No tickets. No charge.</p>
+
+    <!-- EVENT DETAILS 2 of 3: the stub -->
+    <div class="stub"><div class="in">
+      <p class="label">First Performance</p>
+      <p class="when">Sunday, June 8, 2025 <span>&#9733;</span> <b style="font-weight:inherit;white-space:nowrap;">7:00 pm</b></p>
+      <p class="where">Lancaster Arts University<br/>1250 University Drive, Lancaster, PA 17603</p>
+      <p class="terms">Seats are limited to 50</p>
+    </div></div>
+
+    <div class="actions">
+      <a href="#reserve" class="cta-red">&#9670; Reserve a seat</a>
+      <a href="./index2.html" class="quiet">See the full site</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── THREE THINGS TO KNOW (wording from the poster) ── -->
+<section class="know" aria-label="Three things to know before you come">
+  <div class="in">
+    <div class="item">
+      <h2>Filmed and recorded</h2>
+      <p>By attending, you may appear in video, photographs or audio recordings.</p>
+    </div>
+    <div class="item">
+      <h2>A first run</h2>
+      <p>There may be the odd pause along the way.</p>
+    </div>
+    <div class="item">
+      <h2>Talkback</h2>
+      <p>Please stay for twenty minutes afterwards, on two counts: the premise behind the show, and the show itself. Your reaction is the reason for the evening.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── FROM REHEARSAL: video placeholders ──
+     To put a real video in: delete the whole <div class="vid-ph">...</div>
+     inside a frame and paste this in its place, with your YouTube ID:
+     <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="Paper Gun, from rehearsal" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+-->
+<section class="wrap">
+  <h2 class="sec-head">From rehearsal</h2>
+  <p class="sec-sub">A few minutes from the room where the show is being put together.</p>
+
+  <div class="video-wrap">
+    <div class="vid-ph"><span class="play" aria-hidden="true"></span><p>Rehearsal video<br/>to be added</p></div>
+  </div>
+
+  <div class="vid-pair">
+    <div>
+      <div class="video-wrap">
+        <div class="vid-ph"><span class="play" aria-hidden="true"></span><p>Rehearsal clip 2<br/>to be added</p></div>
+      </div>
+      <p class="vid-cap">Caption to be added</p>
+    </div>
+    <div>
+      <div class="video-wrap">
+        <div class="vid-ph"><span class="play" aria-hidden="true"></span><p>Rehearsal clip 3<br/>to be added</p></div>
+      </div>
+      <p class="vid-cap">Caption to be added</p>
+    </div>
+  </div>
+</section>
+
+<div class="rule"></div>
+
+<!-- ── TEASERS (lines already used on the full site) ── -->
+<section class="wrap">
+  <h2 class="sec-head">What the evening is about</h2>
+  <div class="teasers">
+    <p>We all carry shadows. It&rsquo;s the human condition. The question is, what do we do with them?</p>
+    <p>An original operetta in which one man plays both sides of himself.</p>
+    <p>It opens with a live recording of an elderly gentleman, Mr. Hay. What he says is the show&rsquo;s greatest lesson.</p>
+  </div>
+  <div class="center"><a href="./papergun.html" class="quiet">More about Paper Gun</a></div>
+</section>
+
+<!-- ── RESERVE ── -->
+<section id="reserve">
+  <div class="wrap">
+    <h2 class="sec-head">Reserve a seat</h2>
+    <p class="sec-sub">Fifty seats, free, as my guest. Leave your name and I will write back to confirm your place.</p>
+
+    <!-- FORMSPREE: replace YOUR_FORM_ID with the real form ID.
+         Until then, the button opens the visitor's email with the details filled in. -->
+    <form class="seat-form" id="seat-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+      <!-- EVENT DETAILS 3 of 3: email subject line -->
+      <input type="hidden" name="_subject" value="Paper Gun first performance: seat request (Sunday June 8, 7:00 pm)"/>
+      <div><label for="sf-name">Your name</label><input id="sf-name" type="text" name="name" autocomplete="name" required/></div>
+      <div><label for="sf-email">Your email</label><input id="sf-email" type="email" name="email" autocomplete="email" required/></div>
+      <div><label for="sf-seats">How many seats</label>
+        <select id="sf-seats" name="seats"><option value="1">1 seat</option><option value="2">2 seats</option></select>
+      </div>
+      <label class="tick"><input type="checkbox" name="filming_ok" value="yes" required/><span>I understand the evening is filmed and recorded, and that I may appear in video, photographs or audio.</span></label>
+      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off"/>
+      <button type="submit" class="cta-red">&#9670; Reserve a seat</button>
+    </form>
+
+    <p class="or-mail">Or email <a href="mailto:bookings@tosh42.com?subject=Paper%20Gun%20first%20performance%3A%20seat%20request">bookings@tosh42.com</a><br/>or call 904 860 2362</p>
+  </div>
+</section>
+
+<!-- ── THE FULL SITE ── -->
+<section class="fullsite">
+  <p>This page is here while the first performance fills. Everything else about the shows, the songs and the truck is on the full site.</p>
+  <div class="row">
+    <a href="./index2.html" class="quiet">See the full site</a>
+    <a href="./papergun.html" class="quiet">Paper Gun</a>
+    <a href="./testimonials.html" class="quiet">What people say</a>
+  </div>
+</section>
+
+</main>
+
+<footer><p>&copy; 2026 Paul Tosh &nbsp;&middot;&nbsp; tosh42.com &nbsp;&middot;&nbsp; bookings@tosh42.com &nbsp;&middot;&nbsp; <a href="./press.html" style="color:var(--gold-l);text-decoration:none;white-space:nowrap;">&#128240; For Press</a> &nbsp;&middot;&nbsp; <a href="./thanks.html" style="color:var(--gold-l);text-decoration:none;white-space:nowrap;">&#10084; With Thanks</a></p></footer>
+
+<div id="lightbox" aria-hidden="true">
+  <button class="lb-close" aria-label="Close">&times;</button>
+  <img src="" alt="Poster enlarged"/>
+</div>
+<script>
+(function(){
+  var lb = document.getElementById('lightbox');
+  var lbImg = lb.querySelector('img');
+  document.querySelectorAll('a[data-lightbox]').forEach(function(a){
+    a.addEventListener('click', function(e){
+      e.preventDefault();
+      lbImg.src = a.getAttribute('href');
+      lb.classList.add('open');
+    });
+  });
+  function closeLB(){ lb.classList.remove('open'); lbImg.src=''; }
+  lb.addEventListener('click', closeLB);
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeLB(); });
+
+  /* Until the Formspree ID is in, send the seat request by email instead. */
+  var f = document.getElementById('seat-form');
+  f.addEventListener('submit', function(e){
+    if(f.action.indexOf('YOUR_FORM_ID') === -1) return;
+    e.preventDefault();
+    var body = 'Name: ' + f.elements['name'].value + '\n'
+             + 'Email: ' + f.elements['email'].value + '\n'
+             + 'Seats: ' + f.elements['seats'].value + '\n'
+             + 'I understand the evening is filmed and recorded.\n';
+    window.location.href = 'mailto:bookings@tosh42.com?subject=' + encodeURIComponent(f.elements['_subject'].value) + '&body=' + encodeURIComponent(body);
+  });
+})();
+</script>
+
+<a href="./index.html" title="Home — tosh42.com" style="position:fixed;bottom:1.2rem;right:1.2rem;z-index:2147483647;background:#121010;border:1px solid rgba(156,138,106,.5);border-radius:50%;width:54px;height:54px;display:flex;align-items:center;justify-content:center;text-decoration:none;opacity:.88;transition:opacity .2s;font-family:monospace;font-size:.92rem;letter-spacing:.08em;text-transform:uppercase;color:#9c8a6a;text-align:center;line-height:1.3;box-shadow:0 2px 12px rgba(0,0,0,.7);" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity='.88'">tosh<br>42</a>
+
+</body>
+</html>
