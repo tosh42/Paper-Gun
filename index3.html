@@ -280,21 +280,12 @@ footer p{font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.26em;t
      To change the playlist, replace the ID in two places: the PL= line in the script
      below and the "Open on YouTube" link. -->
 <section class="wrap">
-  <h2 class="sec-head">Live in the Making</h2>
-  <div class="pl-wrap">
-    <div class="pl-frame"><div id="makingPlayer"></div></div>
-    <div class="pl-list" id="makingList"><p class="pl-note">Loading playlist&hellip;</p></div>
-    <div style="text-align:center;margin-top:1.6rem;">
-      <a href="https://youtube.com/playlist?list=PLXFHfnZjiDSo" target="_blank" rel="noopener" class="quiet">Open on YouTube</a>
-    </div>
-  </div>
-
   <!-- TWO VIDEOS STILL TO COME.
        To put a real video in: delete the whole <div class="vid-ph">...</div> inside a frame
        and paste this in its place, with your YouTube ID:
        <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="Paper Gun" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   -->
-  <div class="vid-pair">
+  <div class="vid-pair" style="margin-top:0">
     <div>
       <p class="vid-title">Live in the Making Clips</p>
       <div class="video-wrap">
@@ -306,6 +297,15 @@ footer p{font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.26em;t
       <div class="video-wrap">
         <div class="vid-ph"><span class="play" aria-hidden="true"></span><p>Video to be added</p></div>
       </div>
+    </div>
+  </div>
+
+  <h2 class="sec-head" style="margin-top:3.4rem">Live in the Making</h2>
+  <div class="pl-wrap">
+    <div class="pl-frame"><div id="makingPlayer"></div></div>
+    <div class="pl-list" id="makingList"><p class="pl-note">Loading playlist&hellip;</p></div>
+    <div style="text-align:center;margin-top:1.6rem;">
+      <a href="https://youtube.com/playlist?list=PLXFHfnZjiDSo" target="_blank" rel="noopener" class="quiet">Open on YouTube</a>
     </div>
   </div>
 </section>
