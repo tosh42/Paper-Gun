@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"/>
+<meta name="robots" content="noindex,nofollow"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Venue Partnership · Paul Tosh · tosh42.com</title>
 <meta name="description" content="Two ways to host a Paul Tosh performance — choose the partnership that fits your venue."/>
@@ -152,6 +153,8 @@ footer p{font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.26em;t
     <button type="button">For Presenters <span class="caret">&#9662;</span></button>
     <div class="nav-menu">
       <a href="./testimonials.html">Testimonials</a>
+      <a href="./agreement.html">Performance Agreement &#128274;</a>
+      <a href="./venue-partnership.html">Venue Partnership &#128274;</a>
       <a href="./rider.html">Tech Rider</a>
     </div>
   </div>
@@ -189,198 +192,115 @@ footer p{font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.26em;t
 })();
 </script>
 
-<div class="page-hero">
-  <p class="kicker">For Venues</p>
-  <h1>Two ways to <em>host the show</em></h1>
-  <p class="sub">Whoever brings the audience takes the bigger share. Pick the arrangement that fits how you like to work &mdash; both are on this page, and both are simple.</p>
-  <div class="print-row" style="margin-top:1.6rem;"><button class="print-btn" onclick="window.print()">Print This Agreement</button></div>
-</div>
-
-<div class="wrap" style="padding-bottom:1rem;">
-  <div class="opt-grid">
-
-    <div class="opt featured">
-      <p class="opt-tag">Option A &middot; Simplest for you</p>
-      <h3>You provide the room.<br/>I fill it.</h3>
-      <p class="split">80 / 20<small>Performer / Venue</small></p>
-      <ul>
-        <li>You supply the room, a piano, and someone on the door</li>
-        <li>I do all promotion &mdash; posters, street.</li>
-        <li>I carry every cost and every risk</li>
-        <li>Ticketing runs through my box office; you are paid after the show</li>
-        <li><strong style="color:var(--gold-l);font-weight:600;">Your bar and food takings are entirely yours</strong></li>
-      </ul>
-      <div class="pick"><span>&#9723; We'll take Option A</span></div>
-    </div>
-
-    <div class="opt">
-      <p class="opt-tag">Option B &middot; We fill it together</p>
-      <h3>You promote to your people.<br/>We share it.</h3>
-      <p class="split">60 / 40<small>Performer / Venue</small></p>
-      <ul>
-        <li>Everything in Option A, plus your promotion</li>
-        <li>One email to your mailing list, no later than two weeks before</li>
-        <li>At least one social post, plus a poster displayed in the venue</li>
-        <li>Listing on your website or newsletter events page</li>
-        <li><strong style="color:var(--gold-l);font-weight:600;">If the promotion doesn't go out, the split reverts to Option A</strong></li>
-      </ul>
-      <div class="pick"><span>&#9723; We'll take Option B</span></div>
-    </div>
-
+<style>#gate{min-height:78vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:4.5rem 16px 5rem;background:#121010;}
+#gate .g-card{width:100%;max-width:520px;border:1px solid rgba(156,138,106,.32);background:rgba(156,138,106,.045);padding:2.6rem 2rem 2.4rem;text-align:center;}
+#gate .g-kick{font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.4em;text-transform:uppercase;color:#9c8a6a;margin:0 0 1.1rem;}
+#gate .g-title{font-family:'Cinzel',serif;font-weight:400;font-size:clamp(1.35rem,4.4vw,1.9rem);letter-spacing:.08em;line-height:1.3;color:#eae3d3;margin:0 0 1.1rem;}
+#gate .g-text{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:clamp(1.08rem,2.4vw,1.25rem);line-height:1.7;color:#eae3d3;opacity:.88;margin:0 0 1.8rem;}
+#gate .g-label{display:block;font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:#b5a37e;margin:0 0 .6rem;text-align:left;}
+#gate .g-row{display:flex;gap:.6rem;}
+#gate input{flex:1 1 auto;min-width:0;background:#0d0b0b;border:1px solid rgba(156,138,106,.5);color:#eae3d3;font-family:'DM Mono',monospace;font-size:1.05rem;letter-spacing:.3em;padding:.8em .9em;border-radius:0;}
+#gate input:focus{outline:2px solid #b5a37e;outline-offset:2px;}
+#gate button{flex:0 0 auto;background:#a3271d;border:1px solid #a3271d;color:#eae3d3;font-family:'DM Mono',monospace;font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;padding:0 1.5em;cursor:pointer;transition:background .2s;}
+#gate button:hover{background:#c0392b;}
+#gate button:focus-visible,#gate a:focus-visible{outline:2px solid #b5a37e;outline-offset:3px;}
+#gate .g-msg{display:none;font-family:'Cormorant Garamond',Georgia,serif;font-size:1.05rem;line-height:1.5;color:#e08a80;margin:.9rem 0 0;text-align:left;}
+#gate .g-msg.on{display:block;}
+#gate .g-or{font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:#9c8a6a;margin:2.2rem 0 .9rem;padding-top:1.8rem;border-top:1px solid rgba(156,138,106,.22);}
+#gate .g-mail{display:inline-block;border:1px solid #9c8a6a;color:#b5a37e;font-family:'DM Mono',monospace;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;padding:.95em 1.6em;transition:background .2s,color .2s;}
+#gate .g-mail:hover{background:#9c8a6a;color:#121010;}
+#gate .g-addr{font-family:'DM Mono',monospace;font-size:.72rem;letter-spacing:.12em;color:#eae3d3;opacity:.7;margin:.9rem 0 0;}
+#gate .g-pub{margin:1.6rem 0 0;}
+#gate .g-pub a{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.05rem;color:#b5a37e;text-decoration:none;border-bottom:1px solid rgba(156,138,106,.4);}
+#gate .g-foot{font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:#eae3d3;opacity:.6;margin:2.2rem 0 0;}
+@media(max-width:420px){#gate .g-row{flex-direction:column;}#gate button{padding:.95em 1.5em;}}
+@media print{#gate{display:none!important;}}
+</style>
+<div id="gate">
+  <div class="g-card">
+    <p class="g-kick">&#128274; Private page</p>
+    <h1 class="g-title">Venue Partnership</h1>
+    <p class="g-text">This page opens with a password. Email Paul and he will send it to you.</p>
+    <form id="g-form" autocomplete="off">
+      <label class="g-label" for="g-pw">Password</label>
+      <div class="g-row"><input id="g-pw" type="password" autocomplete="off" autocapitalize="off" spellcheck="false" aria-describedby="g-msg"/><button type="submit">Unlock</button></div>
+      <p id="g-msg" class="g-msg" role="alert"></p>
+    </form>
+    <p class="g-or">No password yet?</p>
+    <a class="g-mail" href="mailto:bookings@tosh42.com?subject=Password%20request%3A%20Venue%20Partnership">&#9993; Email Paul for the password</a>
+    <p class="g-addr">bookings@tosh42.com</p>
+    
+    <noscript><p class="g-msg" style="display:block">This page needs JavaScript switched on to open.</p></noscript>
   </div>
-
+  <p class="g-foot">&copy; 2026 Paul Tosh &nbsp;&middot;&nbsp; tosh42.com</p>
+  <a href="./index.html" title="Home — tosh42.com" style="position:fixed;bottom:1.2rem;right:1.2rem;z-index:2147483647;background:#121010;border:1px solid rgba(156,138,106,.5);border-radius:50%;width:54px;height:54px;display:flex;align-items:center;justify-content:center;text-decoration:none;opacity:.88;transition:opacity .2s;font-family:monospace;font-size:.92rem;letter-spacing:.08em;text-transform:uppercase;color:#9c8a6a;text-align:center;line-height:1.3;box-shadow:0 2px 12px rgba(0,0,0,.7);" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity='.88'">tosh<br>42</a>
 </div>
+<div id="gated"></div>
+<script>
+var GATE={s:"c7cd293aa206b95e",c:"d6ca34f6f73467cb",d:"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"};
+(function(){
+  var K=[0x428a2f98,0x71374491,0xb5c0fbcf,0xe9b5dba5,0x3956c25b,0x59f111f1,0x923f82a4,0xab1c5ed5,0xd807aa98,0x12835b01,0x243185be,0x550c7dc3,0x72be5d74,0x80deb1fe,0x9bdc06a7,0xc19bf174,0xe49b69c1,0xefbe4786,0x0fc19dc6,0x240ca1cc,0x2de92c6f,0x4a7484aa,0x5cb0a9dc,0x76f988da,0x983e5152,0xa831c66d,0xb00327c8,0xbf597fc7,0xc6e00bf3,0xd5a79147,0x06ca6351,0x14292967,0x27b70a85,0x2e1b2138,0x4d2c6dfc,0x53380d13,0x650a7354,0x766a0abb,0x81c2c92e,0x92722c85,0xa2bfe8a1,0xa81a664b,0xc24b8b70,0xc76c51a3,0xd192e819,0xd6990624,0xf40e3585,0x106aa070,0x19a4c116,0x1e376c08,0x2748774c,0x34b0bcb5,0x391c0cb3,0x4ed8aa4a,0x5b9cca4f,0x682e6ff3,0x748f82ee,0x78a5636f,0x84c87814,0x8cc70208,0x90befffa,0xa4506ceb,0xbef9a3f7,0xc67178f2];
+  var W=new Int32Array(64);
+  function sha(m){
+    var l=m.length,n=((l+8)>>6)+1,b=new Uint8Array(n*64),i,j;
+    b.set(m);b[l]=0x80;
+    var bits=l*8;b[n*64-4]=bits>>>24;b[n*64-3]=bits>>>16&255;b[n*64-2]=bits>>>8&255;b[n*64-1]=bits&255;
+    var h0=0x6a09e667,h1=0xbb67ae85,h2=0x3c6ef372,h3=0xa54ff53a,h4=0x510e527f,h5=0x9b05688c,h6=0x1f83d9ab,h7=0x5be0cd19;
+    for(i=0;i<n;i++){
+      for(j=0;j<16;j++){var o=i*64+j*4;W[j]=(b[o]<<24)|(b[o+1]<<16)|(b[o+2]<<8)|b[o+3];}
+      for(j=16;j<64;j++){var x=W[j-15],y=W[j-2];
+        var s0=((x>>>7)|(x<<25))^((x>>>18)|(x<<14))^(x>>>3),s1=((y>>>17)|(y<<15))^((y>>>19)|(y<<13))^(y>>>10);
+        W[j]=(W[j-16]+s0+W[j-7]+s1)|0;}
+      var a=h0,c=h1,d=h2,e=h3,f=h4,g=h5,h=h6,k=h7;
+      for(j=0;j<64;j++){
+        var S1=((f>>>6)|(f<<26))^((f>>>11)|(f<<21))^((f>>>25)|(f<<7)),ch=(f&g)^(~f&h),t1=(k+S1+ch+K[j]+W[j])|0;
+        var S0=((a>>>2)|(a<<30))^((a>>>13)|(a<<19))^((a>>>22)|(a<<10)),mj=(a&c)^(a&d)^(c&d),t2=(S0+mj)|0;
+        k=h;h=g;g=f;f=(e+t1)|0;e=d;d=c;c=a;a=(t1+t2)|0;}
+      h0=(h0+a)|0;h1=(h1+c)|0;h2=(h2+d)|0;h3=(h3+e)|0;h4=(h4+f)|0;h5=(h5+g)|0;h6=(h6+h)|0;h7=(h7+k)|0;
+    }
+    var out=new Uint8Array(32),H=[h0,h1,h2,h3,h4,h5,h6,h7];
+    for(i=0;i<8;i++){out[i*4]=H[i]>>>24;out[i*4+1]=H[i]>>>16&255;out[i*4+2]=H[i]>>>8&255;out[i*4+3]=H[i]&255;}
+    return out;
+  }
+  function utf8(s){s=unescape(encodeURIComponent(s));var b=new Uint8Array(s.length);for(var i=0;i<s.length;i++)b[i]=s.charCodeAt(i);return b;}
+  function cat(a,b){var c=new Uint8Array(a.length+b.length);c.set(a);c.set(b,a.length);return c;}
+  function hex(b){var s='';for(var i=0;i<b.length;i++)s+=(b[i]<16?'0':'')+b[i].toString(16);return s;}
+  function key(pw){var k=sha(utf8(pw+':'+GATE.s));for(var i=0;i<5000;i++)k=sha(k);return k;}
+  var KEYNAME='tosh42-pass';
+  function unlock(pw){
+    var k=key(pw);
+    if(hex(sha(cat(k,utf8('check')))).slice(0,16)!==GATE.c)return false;
+    var raw=atob(GATE.d),n=raw.length,out=new Uint8Array(n),buf=new Uint8Array(36);buf.set(k);
+    for(var blk=0;blk*32<n;blk++){
+      buf[32]=blk>>>24;buf[33]=blk>>>16&255;buf[34]=blk>>>8&255;buf[35]=blk&255;
+      var ks=sha(buf),base=blk*32;
+      for(var j=0;j<32&&base+j<n;j++)out[base+j]=raw.charCodeAt(base+j)^ks[j];
+    }
+    var text;
+    if(window.TextDecoder){text=new TextDecoder('utf-8').decode(out);}
+    else{var s='';for(var i=0;i<n;i++)s+=String.fromCharCode(out[i]);text=decodeURIComponent(escape(s));}
+    var host=document.getElementById('gated');host.innerHTML=text;
+    var olds=host.querySelectorAll('script');
+    for(var q=0;q<olds.length;q++){var o=olds[q],sc=document.createElement('script');
+      for(var a=0;a<o.attributes.length;a++)sc.setAttribute(o.attributes[a].name,o.attributes[a].value);
+      sc.text=o.textContent;o.parentNode.replaceChild(sc,o);}
+    var g=document.getElementById('gate');g.parentNode.removeChild(g);
+    try{localStorage.setItem(KEYNAME,pw);}catch(e){}
+    var t=location.hash?document.getElementById(location.hash.slice(1)):null;
+    if(t&&t.scrollIntoView){t.scrollIntoView();}else{window.scrollTo(0,0);}
+    return true;
+  }
+  var saved=null;try{saved=localStorage.getItem(KEYNAME);}catch(e){}
+  if(saved&&unlock(saved))return;
+  var form=document.getElementById('g-form'),inp=document.getElementById('g-pw'),msg=document.getElementById('g-msg');
+  form.addEventListener('submit',function(ev){
+    ev.preventDefault();
+    var pw=(inp.value||'').replace(/^\s+|\s+$/g,'');
+    if(!pw){msg.textContent='Type the password Paul sent you, then press Unlock.';msg.className='g-msg on';inp.focus();return;}
+    if(!unlock(pw)){msg.textContent='That password did not open the page. Check it, or email Paul for the current one.';msg.className='g-msg on';inp.select();}
+  });
+})();
 
-<div class="rule"></div>
-
-<div class="wrap">
-  <p class="sec-label" style="text-align:center;">Recommended Pricing</p>
-  <p class="body" style="max-width:720px;margin:0 auto 2rem;text-align:center;">A two-tier structure, kept deliberately simple. One price everywhere &mdash; online, at the door, and in person. Seats are limited by the room, and that scarcity is part of the offer.</p>
-
-  <div class="opt-grid" style="max-width:820px;">
-    <div class="opt">
-      <p class="opt-tag">Standard</p>
-      <h3>General Admission</h3>
-      <p class="split">$35<small>Per seat</small></p>
-      <ul>
-        <li>90 minutes &mdash; one man, one piano</li>
-        <li>Same price online, on the street, and at the door</li>
-        <li>Never discounted; a thin room is filled with complimentary seats, not price cuts</li>
-      </ul>
-    </div>
-
-    <div class="opt featured">
-      <p class="opt-tag">Limited &middot; Twelve only</p>
-      <h3>Patron Seat</h3>
-      <p class="split">$60<small>Per seat</small></p>
-      <ul>
-        <li>Reserved seating</li>
-        <li>A signed Patron Edition of the script &mdash; the full operetta, all three acts, with the author's notes</li>
-        <li>A conversation with the performer after the show</li>
-        <li><strong style="color:var(--red-l);font-weight:600;">Capped at twelve, and the cap is real</strong></li>
-      </ul>
-    </div>
-  </div>
-
-  <p class="body" style="max-width:720px;margin:2rem auto 0;text-align:center;font-style:italic;">Venues are welcome to propose a different price for their room &mdash; but the tiers stay in this shape, and the standard ticket is never publicly discounted.</p>
-</div>
-
-<div class="rule"></div>
-
-<div class="wrap">
-  <div class="terms">
-    <h3>The Details</h3>
-    <p>Date of Performance: <span class="fill">&nbsp;</span> &nbsp; Venue: <span class="fill">&nbsp;</span></p>
-    <p style="margin-top:.5rem;">Doors: <span class="fill">&nbsp;</span> &nbsp; Performance: <span class="fill">&nbsp;</span> &nbsp; Ticket price: <span class="fill">&nbsp;</span> (general) &nbsp; <span class="fill">&nbsp;</span> (patron, max 12)</p>
-    <p style="margin-top:.7rem;">Show duration: 90 minutes, with an allowance of up to fifteen minutes overrun.</p>
-    <p style="margin-top:.7rem;">Overnight camper parking confirmed: &nbsp;&#9723; Yes &nbsp;&nbsp;&#9723; To be arranged &nbsp;&mdash;&nbsp; Location: <span class="fill">&nbsp;</span></p>
-
-    <h3>Which Show</h3>
-    <div class="chk"><span>&#9723;</span><span><strong>Paper Gun</strong> &mdash; an original one-man operetta, a show about shadow work</span></div>
-    <div class="chk"><span>&#9723;</span><span><strong>The Song Is The Play</strong> &mdash; iconic songs as living theatre, with live piano looping</span></div>
-
-    <h3>The Split</h3>
-    <div class="chk"><span>&#9723;</span><span><strong>Option A &mdash; 80 / 20</strong> in the performer's favour. Venue provides room, piano, and door staff.</span></div>
-    <div class="chk"><span>&#9723;</span><span><strong>Option B &mdash; 60 / 40</strong> in the performer's favour, conditional on the promotion listed above being carried out.</span></div>
-    <p style="margin-top:.9rem;">The performer receives the greater of <span class="fill">&nbsp;</span> (minimum) or the agreed percentage of net ticket revenue.</p>
-    <p style="margin-top:.5rem;">"Net" means gross ticket sales less ticketing and card-processing fees (approximately $1 per ticket). Bar, food, and merchandise revenue are excluded from the split and belong entirely to the venue / performer.</p>
-
-    <h3>What the Venue Supplies</h3>
-    <ul>
-      <li>A real piano, tuned where possible</li>
-      <li>One person on the door to check tickets</li>
-      <li>Room access two hours before the performance &mdash; see the <a href="./rider.html">technical rider</a></li>
-      <li>Complimentary seats: up to <span class="fill">&nbsp;</span>, counted outside the split</li>
-      <li><strong style="color:var(--gold-l);font-weight:600;">A safe overnight parking space for the performance camper &mdash; this one matters.</strong> Paul tours in a camper and arrives the night before, so a secure space is a real part of the arrangement, not a courtesy. <strong style="color:var(--gold-l);">A quiet residential street is ideal &mdash; preferred over a monitored city lot;</strong> somewhere on the facility grounds works well too. Quiet and safe matters more than watched. Please confirm this before the date is fixed. See the <a href="./agreement.html">performance agreement</a> and the <a href="./truckhomage.html">CyberPhoenix</a>.</li>
-    </ul>
-
-    <h3>Lighting &mdash; One Cue, One Person</h3>
-    <p>I play three tracks before each of the three acts. I can signal for the house lights to go up or down at all of them &mdash; the first one is the only cue that needs watching for the time.</p>
-    <p style="margin-top:.7rem;">The same person who greets your guests can handle the lighting. There is one cue: <strong style="color:var(--gold-l);">house lights down at marker #1, 2 minutes 31 seconds into the third track (ET)</strong>.</p>
-
-    <h3>Social Media &mdash; Can You Carry It?</h3>
-    <p>Everything a post needs already exists: video clips, posters, photographs, and the site itself. I supply the material ready to go &mdash; you simply post it to the people who already follow you. Every post points at <strong style="color:var(--gold-l);">tosh42.com</strong>, where the ticket link sits at the top of the page.</p>
-
-    <p style="margin-top:1.1rem;font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);opacity:.8;">What the Venue Can Take On</p>
-    <div class="chk"><span>&#9723;</span><span>Announcement post when tickets go on sale</span></div>
-    <div class="chk"><span>&#9723;</span><span>One reminder post in the final week</span></div>
-    <div class="chk"><span>&#9723;</span><span>Stories or reels using the clips supplied</span></div>
-    <div class="chk"><span>&#9723;</span><span>The event listed on the venue's Facebook or website events page</span></div>
-    <div class="chk"><span>&#9723;</span><span>Tagging the performer so posts can be shared onward to his audience &mdash;<br/>
-      <a href="https://www.instagram.com/toshfortwo/" target="_blank" rel="noopener" style="color:var(--gold-l);">Instagram <strong>@toshfortwo</strong></a> &nbsp;&middot;&nbsp;
-      <a href="https://www.tiktok.com/@toshfortwo" target="_blank" rel="noopener" style="color:var(--gold-l);">TikTok <strong>@toshfortwo</strong></a> &nbsp;&middot;&nbsp;
-      <a href="https://www.youtube.com/@ToshForTwo" target="_blank" rel="noopener" style="color:var(--gold-l);">YouTube <strong>@ToshForTwo</strong></a> &nbsp;&middot;&nbsp;
-      <a href="https://www.linkedin.com/in/paultoshner/" target="_blank" rel="noopener" style="color:var(--gold-l);">LinkedIn <strong>Paul Toshner</strong></a></span></div>
-    <div class="chk"><span>&#9723;</span><span>A boosted or paid post &mdash; budget: <span class="fill" style="min-width:110px;">&nbsp;</span></span></div>
-
-    <p style="margin-top:1.1rem;">Venue handles: <span class="fill" style="min-width:200px;">&nbsp;</span> &nbsp;&middot;&nbsp; Platforms: <span class="fill" style="min-width:200px;">&nbsp;</span></p>
-    <p style="margin-top:.5rem;">Mailing list size: <span class="fill" style="min-width:110px;">&nbsp;</span> &nbsp;&middot;&nbsp; Social following: <span class="fill" style="min-width:110px;">&nbsp;</span> &nbsp;&middot;&nbsp; Who to send material to: <span class="fill" style="min-width:180px;">&nbsp;</span></p>
-    <p style="margin-top:.8rem;font-style:italic;opacity:.75;">Taking this on is what moves the arrangement from Option A to Option B.</p>
-
-    <h3>Become a Commission Seller</h3>
-    <p>Anyone can sell tickets for the show &mdash; venue staff, front-of-house, friends of the room. <strong style="color:var(--gold-l);">$5 per general ticket, $10 per patron, paid within seven days of the show</strong>, on tickets tracked to your code or login.</p>
-    <p style="margin-top:.7rem;">Send me your email and I&rsquo;ll add your phone as a point of sale. It works with NFC &mdash; most phones have it &mdash; so you can take a card payment and the ticket lands in the buyer&rsquo;s inbox on the spot.</p>
-    <p style="margin-top:.7rem;">Names and emails of anyone who&rsquo;d like a seller login: <span class="fill" style="min-width:340px;">&nbsp;</span></p>
-    <p style="margin-top:.5rem;"><span class="fill" style="min-width:420px;">&nbsp;</span></p>
-
-    <h3>Local Knowledge &mdash; Where Should I Stand?</h3>
-    <p>You know your town better than I do. In the days before the show I hand out flyers in person, and sometimes park the truck and play outdoors. Two good suggestions from you are worth more than my guessing.</p>
-
-    <p style="margin-top:1.1rem;font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);opacity:.8;">On Foot &mdash; Flyers</p>
-    <p>1. <span class="fill" style="min-width:300px;">&nbsp;</span> &nbsp; Best time: <span class="fill" style="min-width:130px;">&nbsp;</span></p>
-    <p style="margin-top:.5rem;">2. <span class="fill" style="min-width:300px;">&nbsp;</span> &nbsp; Best time: <span class="fill" style="min-width:130px;">&nbsp;</span></p>
-
-    <p style="margin-top:1.3rem;font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);opacity:.8;">With the Truck &mdash; Outdoor Performance</p>
-    <p>1. <span class="fill" style="min-width:300px;">&nbsp;</span> &nbsp; Best time: <span class="fill" style="min-width:130px;">&nbsp;</span></p>
-    <p style="margin-top:.5rem;">2. <span class="fill" style="min-width:300px;">&nbsp;</span> &nbsp; Best time: <span class="fill" style="min-width:130px;">&nbsp;</span></p>
-
-    <p style="margin-top:1.1rem;">Anywhere here that needs a permit, a permission, or a word with someone first? <span class="fill" style="min-width:340px;">&nbsp;</span></p>
-    <p style="margin-top:.5rem;">Anywhere I should avoid? <span class="fill" style="min-width:400px;">&nbsp;</span></p>
-
-    <h3>Filming &amp; Recording</h3>
-    <p>Performances are filmed and recorded for archive and promotion, and a notice is displayed at the entrance and on the ticket page. The venue is welcome to use short excerpts to promote its own programme, with credit.</p>
-    <p style="margin-top:.7rem;">If your policy restricts recording, or your audience includes people who cannot appear on camera, say so before the date is fixed &mdash; cameras can face the stage only, or stay in the case.</p>
-    <p style="margin-top:.9rem;">Filming: &nbsp;&#9723; Yes &nbsp;&nbsp;&#9723; Stage only &nbsp;&nbsp;&#9723; No</p>
-
-    <h3>What the Performer Supplies</h3>
-    <ul>
-      <li>Full sound system, run from an iPad mixer &mdash; integrates with any house PA</li>
-      <li>All ticketing, handled through the performer's own box office; tickets are emailed with a QR code</li>
-      <li>Posters and promotional artwork, supplied print-ready at no cost to the venue</li>
-      <li>Settlement to the venue within seven days of the performance</li>
-    </ul>
-
-    <h3>Insurance</h3>
-    <p>The Venue maintains general liability insurance covering its premises. The Performer maintains general liability insurance of not less than $1,000,000 per occurrence. Each party is responsible for its own equipment and property.</p>
-
-    <h3>If the Show Cannot Go Ahead</h3>
-    <p>Either party may cancel in writing no later than fourteen days before the performance without penalty. Inside fourteen days, the parties will make reasonable efforts to reschedule before cancelling. Neither party is liable for events beyond reasonable control.</p>
-
-    <div class="sig-row">
-      <div class="sig-block">
-        <div class="sig-line"></div>
-        <p class="sig-label">For the Venue &middot; Name &amp; Date</p>
-      </div>
-      <div class="sig-block">
-        <div class="sig-line"></div>
-        <p class="sig-label">Performer: Paul Toshner &middot; Date</p>
-      </div>
-    </div>
-  </div>
-
-  <p class="body" style="text-align:center;margin-top:2rem;">Questions, or want to talk it through? <a href="mailto:bookings@tosh42.com" style="color:var(--gold-l);">bookings@tosh42.com</a></p>
-</div>
-
-<div id="bottom-cta">
-  <p class="presenter">Now Booking Presenters</p>
-  <h3>Bring Paul Tosh to your venue</h3>
-  <a href="mailto:bookings@tosh42.com" class="cta-red">&#9670; Book Now</a>
-  <a href="./rider.html" class="rider">&#11041; Technical Rider &rarr;</a>
-</div>
-
-<footer><p>&copy; 2026 Paul Tosh &nbsp;&middot;&nbsp; tosh42.com &nbsp;&middot;&nbsp; bookings@tosh42.com &nbsp;&middot;&nbsp; <a href="./press.html" style="color:var(--gold-l);text-decoration:none;white-space:nowrap;">&#128240; For Press</a> &nbsp;&middot;&nbsp; <a href="./thanks.html" style="color:var(--gold-l);text-decoration:none;white-space:nowrap;">&#10084; With Thanks</a> &nbsp;&middot;&nbsp; <a href="./agreement.html" style="color:var(--gold-l);text-decoration:none;white-space:nowrap;">Performance Agreement</a> &nbsp;&middot;&nbsp; <a href="./venue-partnership.html" style="color:var(--gold-l);text-decoration:none;white-space:nowrap;">Venue Partnership</a> &nbsp;&middot;&nbsp; <a href="./favoritelinks.html" style="color:var(--gold-l);text-decoration:none;white-space:nowrap;">Favorite Links</a></p></footer>
-
-<a href="./index.html" title="Home — tosh42.com" style="position:fixed;bottom:1.2rem;right:1.2rem;z-index:2147483647;background:#121010;border:1px solid rgba(156,138,106,.5);border-radius:50%;width:54px;height:54px;display:flex;align-items:center;justify-content:center;text-decoration:none;opacity:.88;transition:opacity .2s;font-family:monospace;font-size:.92rem;letter-spacing:.08em;text-transform:uppercase;color:#9c8a6a;text-align:center;line-height:1.3;box-shadow:0 2px 12px rgba(0,0,0,.7);" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity='.88'">tosh<br>42</a>
-
+</script>
 </body>
 </html>
