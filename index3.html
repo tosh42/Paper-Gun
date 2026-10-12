@@ -378,28 +378,33 @@ footer p{font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.26em;t
   <div class="center"><a href="./papergun.html" class="quiet">More about Paper Gun</a></div>
 </section>
 
-<!-- ── RESERVE ── -->
+<!-- ── RESERVE ──
+     Seats are handled by Ticket Tailor. Right now the event has NO tickets on sale and
+     the waiting list is switched on, so this button opens the waiting-list sign-up.
+
+     TO EMBED IT INSTEAD OF LINKING OUT: in Ticket Tailor open the event, find the
+     embed / widget code, and paste it between the two marked lines below. Then delete
+     the .cta-red link above it. Nothing else needs changing.
+     ────────────────────────────────────────────────────────────────── -->
 <section id="reserve">
   <div class="wrap">
     <h2 class="sec-head">Reserve a seat</h2>
-    <p class="sec-sub">Fifty seats, free, as my guest. The date is being set now. Leave your name and I will write to you with it, and hold your place.</p>
+    <p class="sec-sub">Fifty seats, free, as my guest. The date is being set now &mdash; join the
+      waiting list and I&rsquo;ll write to you with it, and hold your place.</p>
 
-    <!-- FORMSPREE: replace YOUR_FORM_ID with the real form ID.
-         Until then, the button opens the visitor's email with the details filled in. -->
-    <form class="seat-form" id="seat-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-      <!-- EVENT DETAILS 3 of 3: email subject line -->
-      <input type="hidden" name="_subject" value="Paper Gun first performance: seat request (date to be announced)"/>
-      <div><label for="sf-name">Your name</label><input id="sf-name" type="text" name="name" autocomplete="name" required/></div>
-      <div><label for="sf-email">Your email</label><input id="sf-email" type="email" name="email" autocomplete="email" required/></div>
-      <div><label for="sf-seats">How many seats</label>
-        <select id="sf-seats" name="seats"><option value="1">1 seat</option><option value="2">2 seats</option></select>
-      </div>
-      <label class="tick"><input type="checkbox" name="filming_ok" value="yes" required/><span>I understand the evening is filmed and recorded, and that I may appear in video, photographs or audio.</span></label>
-      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off"/>
-      <button type="submit" class="cta-red">&#9670; Reserve a seat</button>
-    </form>
+    <div style="text-align:center;">
+      <a href="https://www.tickettailor.com/events/tosh42/2418209" target="_blank" rel="noopener"
+         class="cta-red">&#9670; Join the waiting list</a>
+    </div>
+
+    <!-- ===== TICKET TAILOR EMBED GOES HERE ===== -->
+    <!-- ===== END TICKET TAILOR EMBED ===== -->
 
     <p class="or-mail">Or email <a href="mailto:bookings@tosh42.com?subject=Paper%20Gun%20first%20performance%3A%20seat%20request">bookings@tosh42.com</a><br/>or call 904 860 2362</p>
+
+    <p style="text-align:center;font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);opacity:.8;margin-top:1.6rem;line-height:1.9;">
+      The evening is filmed and recorded &middot; By attending you may appear in the footage
+    </p>
   </div>
 </section>
 
@@ -451,17 +456,6 @@ footer p{font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.26em;t
   lb.addEventListener('click', closeLB);
   document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeLB(); });
 
-  /* Until the Formspree ID is in, send the seat request by email instead. */
-  var f = document.getElementById('seat-form');
-  f.addEventListener('submit', function(e){
-    if(f.action.indexOf('YOUR_FORM_ID') === -1) return;
-    e.preventDefault();
-    var body = 'Name: ' + f.elements['name'].value + '\n'
-             + 'Email: ' + f.elements['email'].value + '\n'
-             + 'Seats: ' + f.elements['seats'].value + '\n'
-             + 'I understand the evening is filmed and recorded.\n';
-    window.location.href = 'mailto:bookings@tosh42.com?subject=' + encodeURIComponent(f.elements['_subject'].value) + '&body=' + encodeURIComponent(body);
-  });
 })();
 </script>
 
