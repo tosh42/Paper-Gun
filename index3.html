@@ -63,6 +63,10 @@ a{color:var(--gold-l);}
 .sec-head{font-family:'Cinzel',serif;font-weight:400;font-size:clamp(1.3rem,3vw,1.8rem);letter-spacing:.1em;color:var(--cream);text-align:center;margin-bottom:.6rem;}
 .sec-sub{font-style:italic;font-size:1.12rem;line-height:1.6;color:var(--cream);opacity:.8;text-align:center;max-width:34em;margin:0 auto 2rem;}
 .rule{max-width:600px;margin:0 auto;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:.25;}
+.shadowband{position:relative;width:100%;min-height:min(78vh,680px);background-image:url("hatshadow.jpg");background-size:cover;background-position:50% 3%;background-repeat:no-repeat;display:flex;align-items:flex-end;justify-content:center;overflow:hidden;}
+.shadowband::before{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,var(--ink) 0%,rgba(18,16,16,.35) 16%,rgba(18,16,16,.12) 40%,rgba(18,16,16,.62) 78%,var(--ink) 100%);pointer-events:none;}
+.shadowband p{position:relative;z-index:1;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:400;font-size:clamp(1.15rem,2.6vw,1.75rem);line-height:1.5;color:var(--cream);text-align:center;max-width:22em;margin:0 1.5rem 3.2rem;text-shadow:0 2px 18px rgba(18,16,16,.9);}
+@media(max-width:700px){.shadowband{min-height:min(68vh,520px);background-position:52% 2%;}.shadowband p{margin-bottom:2.2rem;}}
 
 .video-wrap{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;background:#000;border:1px solid var(--border);}
 .video-wrap iframe{position:absolute;inset:0;width:100%;height:100%;border:none;}
@@ -278,6 +282,11 @@ footer p{font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.26em;t
       <a href="./index2.html" class="quiet">See the full site</a>
     </div>
   </div>
+</section>
+
+<!-- ── THE SHADOW BAND ── -->
+<section class="shadowband" aria-label="The hat, and the shadow of the man wearing it">
+  <p>One man plays both sides of himself.</p>
 </section>
 
 <!-- ── THREE THINGS TO KNOW (wording from the poster) ── -->
