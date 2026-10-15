@@ -304,21 +304,21 @@ footer p{font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.26em;t
 <section class="wrap wide">
   <p class="vid-title">Live in the Making Clips</p>
   <div class="clips">
-    <div class="video-wrap"><iframe id="clipsFrame" src="https://www.youtube.com/embed/pwpblz8QmDY?rel=0" title="Live in the Making Clips &mdash; Paul Tosh" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+    <div class="video-wrap"><iframe id="clipsFrame" src="https://www.youtube.com/embed/gTXfy1_8LXY?rel=0" title="Live in the Making Clips &mdash; Paul Tosh" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
     <nav class="chapters" aria-label="Chapters in this video">
       <p class="ch-head">In this video</p>
       <ol>
         <li><button type="button" data-t="0"><span class="ch-t">0:00</span>Index</button></li>
         <li><button type="button" data-t="2"><span class="ch-t">0:02</span>Paper Gun Excerpts I</button></li>
         <li><button type="button" data-t="92"><span class="ch-t">1:32</span>About</button></li>
-        <li><button type="button" data-t="152"><span class="ch-t">2:32</span>And a few laughs</button></li>
-        <li><button type="button" data-t="200"><span class="ch-t">3:20</span>Paper Gun Excerpts II</button></li>
-        <li><button type="button" data-t="291"><span class="ch-t">4:51</span>Looping explained</button></li>
-        <li><button type="button" data-t="393"><span class="ch-t">6:33</span>Classic songs as theatre</button></li>
-        <li><button type="button" data-t="498"><span class="ch-t">8:18</span>Opera</button></li>
-        <li><button type="button" data-t="690"><span class="ch-t">11:30</span>The backdrops</button></li>
-        <li><button type="button" data-t="768"><span class="ch-t">12:48</span>Rehearsals</button></li>
-        <li><button type="button" data-t="900"><span class="ch-t">15:00</span>The truck</button></li>
+        <li><button type="button" data-t="148"><span class="ch-t">2:28</span>And a few laughs</button></li>
+        <li><button type="button" data-t="191"><span class="ch-t">3:11</span>Paper Gun Excerpts II</button></li>
+        <li><button type="button" data-t="282"><span class="ch-t">4:42</span>Looping explained</button></li>
+        <li><button type="button" data-t="384"><span class="ch-t">6:24</span>Classic songs as theatre</button></li>
+        <li><button type="button" data-t="489"><span class="ch-t">8:09</span>Opera</button></li>
+        <li><button type="button" data-t="681"><span class="ch-t">11:21</span>The backdrops</button></li>
+        <li><button type="button" data-t="760"><span class="ch-t">12:40</span>Rehearsals</button></li>
+        <li><button type="button" data-t="891"><span class="ch-t">14:51</span>The truck</button></li>
       </ol>
     </nav>
   </div>
@@ -466,7 +466,7 @@ footer p{font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.26em;t
   var f=document.getElementById('clipsFrame'); if(!f) return;
   document.querySelectorAll('.chapters button').forEach(function(b){
     b.addEventListener('click',function(){
-      f.src='https://www.youtube.com/embed/pwpblz8QmDY?rel=0&autoplay=1&start='+b.getAttribute('data-t');
+      f.src='https://www.youtube.com/embed/gTXfy1_8LXY?rel=0&autoplay=1&start='+b.getAttribute('data-t');
       document.querySelectorAll('.chapters button.on').forEach(function(o){o.classList.remove('on');});
       b.classList.add('on');
       if(window.innerWidth<=820){f.scrollIntoView({behavior:'smooth',block:'center'});}
