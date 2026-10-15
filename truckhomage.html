@@ -66,6 +66,10 @@ footer p{font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.26em;t
 
 
 .wrap-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.4rem;margin-top:2rem;}
+.clipbox{max-width:820px;margin:2rem auto 0;}
+.clipbox video{width:100%;height:auto;display:block;border:1px solid var(--border);background:#000;}
+.clipbox span{display:block;font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);opacity:.8;margin-top:.6rem;text-align:center;}
+
 .wrap-shot{display:block;text-decoration:none;border:1px solid var(--border);background:rgba(255,255,255,.02);padding:.7rem;transition:transform .15s,border-color .2s;}
 .wrap-shot:hover{transform:translateY(-3px);border-color:rgba(156,138,106,.5);}
 .wrap-shot img{width:100%;height:auto;display:block;}
@@ -297,6 +301,14 @@ footer p{font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.26em;t
 <div class="wrap">
   <p class="sec-label">The Wrap, Side by Side</p>
   <p class="body">Every quote on the truck is a line I've been singing for years &mdash; The Beatles, Bob Dylan, Sinatra, Billy Joel, Deacon Blue. Tap any panel to see it full size.</p>
+  <div class="clipbox">
+    <video controls preload="metadata" playsinline poster="theopensecret-poster.jpg">
+      <source src="theopensecret.mp4" type="video/mp4"/>
+      <p>Your browser can&rsquo;t play this clip. <a href="theopensecret.mp4">Download it instead</a>.</p>
+    </video>
+    <span>The Open Secret</span>
+  </div>
+
   <div class="wrap-grid">
     <a href="Tside2.jpg?v=2" data-lightbox class="wrap-shot wide">
       <img src="Tside2.jpg?v=2" alt="Paper Gun side — the silhouette, the piano, and 'We all carry shadows. The question is — what do we do with them?'" loading="lazy"/>

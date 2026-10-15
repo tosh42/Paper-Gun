@@ -63,6 +63,10 @@ a{color:var(--gold-l);}
 .sec-head{font-family:'Cinzel',serif;font-weight:400;font-size:clamp(1.3rem,3vw,1.8rem);letter-spacing:.1em;color:var(--cream);text-align:center;margin-bottom:.6rem;}
 .sec-sub{font-style:italic;font-size:1.12rem;line-height:1.6;color:var(--cream);opacity:.8;text-align:center;max-width:34em;margin:0 auto 2rem;}
 .rule{max-width:600px;margin:0 auto;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:.25;}
+.clipbox{max-width:820px;margin:2rem auto 0;}
+.clipbox video{width:100%;height:auto;display:block;border:1px solid var(--border);background:#000;}
+.clipbox span{display:block;font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);opacity:.8;margin-top:.6rem;text-align:center;}
+
 .shadowband{position:relative;width:100%;min-height:min(78vh,680px);background-image:url("hatshaddow.jpg");background-size:cover;background-position:50% 3%;background-repeat:no-repeat;display:flex;align-items:flex-end;justify-content:center;overflow:hidden;}
 .shadowband::before{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,var(--ink) 0%,rgba(18,16,16,.35) 16%,rgba(18,16,16,.12) 40%,rgba(18,16,16,.62) 78%,var(--ink) 100%);pointer-events:none;}
 .shadowband p{position:relative;z-index:1;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:400;font-size:clamp(1.15rem,2.6vw,1.75rem);line-height:1.5;color:var(--cream);text-align:center;max-width:22em;margin:0 1.5rem 3.2rem;text-shadow:0 2px 18px rgba(18,16,16,.9);}
@@ -430,6 +434,19 @@ footer p{font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.26em;t
     <a href="GalBar3.PNG" data-lightbox><img src="GalBar3.PNG" alt="Backdrop board: the tavern" loading="lazy"/><span>The tavern</span></a>
     <a href="painting_venice.jpg" data-lightbox><img src="painting_venice.jpg" alt="Backdrop board: the painting" loading="lazy"/><span>The painting</span></a>
     <a href="hatshaddow.jpg" data-lightbox><img src="hatshaddow.jpg" alt="The performer&rsquo;s hat, with the shadow of a man wearing it cast on the boards beside it" loading="lazy"/><span>The shadow</span></a>
+  </div>
+</section>
+
+<!-- ── THE OPEN SECRET CLIP ── -->
+<div class="rule"></div>
+<section class="wrap">
+  <h2 class="sec-head">The Open Secret</h2>
+  <div class="clipbox">
+    <video controls preload="metadata" playsinline poster="theopensecret-poster.jpg">
+      <source src="theopensecret.mp4" type="video/mp4"/>
+      <p>Your browser can&rsquo;t play this clip. <a href="theopensecret.mp4">Download it instead</a>.</p>
+    </video>
+    <span>The Open Secret</span>
   </div>
 </section>
 
