@@ -1,145 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>tosh42 — Coming Soon</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>tosh42 &mdash; Back shortly</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#121010;--cream:#eae3d3;--gold:#9c8a6a;--gold-l:#b5a37e;--red:#a3271d;--red-l:#c0392b;}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',Georgia,serif;min-height:100vh;}
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            background: #1a1a1a;
-            color: #e8e8e8;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
+.hero{position:relative;width:100%;min-height:100vh;
+      background-image:url('hatshaddow.jpg');background-size:cover;background-position:50% 3%;
+      background-repeat:no-repeat;display:flex;align-items:flex-end;justify-content:center;overflow:hidden;}
+.hero::before{content:"";position:absolute;inset:0;pointer-events:none;
+      background:linear-gradient(to bottom,var(--ink) 0%,rgba(18,16,16,.30) 18%,rgba(18,16,16,.10) 42%,rgba(18,16,16,.68) 76%,var(--ink) 100%);}
 
-        .hero {
-            width: 100%;
-            height: 100vh;
-            background-image: url('Herorepl1.png');
-            background-size: cover;
-            background-position: center;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
+.content{position:relative;z-index:2;text-align:center;padding:0 1.5rem 3.4rem;max-width:40rem;}
+.line{font-size:clamp(1.25rem,2.6vw,1.75rem);font-weight:300;line-height:1.5;
+      text-shadow:0 2px 18px rgba(18,16,16,.9);}
+.tagline{font-family:'DM Mono',monospace;font-size:.64rem;letter-spacing:.24em;text-transform:uppercase;
+      color:var(--gold);opacity:.9;margin-top:1.9rem;}
+.contact-button{display:inline-block;margin-top:.9rem;padding:.95em 2.6em;background:var(--red);
+      color:var(--cream);font-family:'DM Mono',monospace;font-size:.72rem;letter-spacing:.24em;
+      text-transform:uppercase;text-decoration:none;transition:background .2s,transform .15s;}
+.contact-button:hover{background:var(--red-l);transform:translateY(-2px);}
 
-        .hero::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.4);
-            z-index: 1;
-        }
-
-        .content {
-            position: relative;
-            z-index: 2;
-            padding: 2rem;
-            max-width: 700px;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            gap: 2rem;
-        }
-
-        h1 {
-            font-size: 2.5rem;
-            font-weight: 300;
-            letter-spacing: 0.05em;
-            margin-bottom: 1rem;
-        }
-
-        .under-construction {
-            font-size: 1.35rem;
-            font-weight: 300;
-            letter-spacing: .03em;
-            color: #b0b0b0;
-            line-height: 1.6;
-            margin-bottom: 1rem;
-        }
-
-        .video-container {
-            width: 100%;
-            max-width: 600px;
-            margin: 2rem auto;
-            aspect-ratio: 16 / 9;
-        }
-
-        .video-container iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-
-        .contact-button {
-            display: inline-block;
-            padding: 1rem 2rem;
-            background: #8b0000;
-            color: #f5f5f5;
-            text-decoration: none;
-            font-size: 1rem;
-            letter-spacing: 0.05em;
-            transition: background 0.3s ease;
-            margin: 1rem auto;
-            border: none;
-            cursor: pointer;
-        }
-
-        .contact-button:hover {
-            background: #a00000;
-        }
-
-        .tagline {
-            font-size: 0.95rem;
-            color: #999;
-            margin-top: 1rem;
-            font-style: italic;
-        }
-
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 1.8rem;
-            }
-
-            .content {
-                padding: 1.5rem;
-            }
-
-            .video-container {
-                max-width: 100%;
-            }
-        }
-    </style>
+@media(max-width:700px){
+  .hero{background-position:52% 2%;}
+  .content{padding-bottom:2.6rem;}
+}
+</style>
 </head>
 <body>
-    <div class="hero">
-        <div class="content">
-            <div>
-                <p class="under-construction">
-                    We&rsquo;re rebuilding &mdash; a fresh look. Back shortly.
-                </p>
-            </div>
-
-            <div>
-                <p class="tagline">Questions? Get in touch.</p>
-                <a href="mailto:bookings@tosh42.com" class="contact-button">Contact</a>
-            </div>
-        </div>
-    </div>
+<div class="hero">
+  <div class="content">
+    <p class="line">We&rsquo;re rebuilding &mdash; a fresh look. Back shortly.</p>
+    <p class="tagline">Questions? Get in touch</p>
+    <a href="mailto:bookings@tosh42.com" class="contact-button">Contact</a>
+  </div>
+</div>
 </body>
 </html>
