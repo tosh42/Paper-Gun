@@ -1,0 +1,2453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<meta name="robots" content="noindex,nofollow,noarchive"/>
+<meta name="referrer" content="no-referrer"/>
+<title>The Rehearsal — Paper Gun, three acts · Paul Tosh</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{--ink:#121010;--cream:#eae3d3;--parchment:#e6dfd1;--gold:#9c8a6a;--gold-l:#b5a37e;--ash:#211d19;--red:#a3271d;--red-l:#c0392b;--border:rgba(156,138,106,.18);}
+body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',Georgia,serif;font-size:17px;line-height:1.75;overflow-x:hidden;}
+a{color:var(--gold);text-decoration:none;}
+a:hover{color:var(--gold-l);}
+
+/* TOP BAR */
+#top-bar{background:rgba(13,11,8,.97);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:.75rem 2rem;flex-wrap:wrap;gap:1rem;}
+#top-bar a{font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--cream);opacity:.8;}
+#top-bar a:hover{opacity:1;color:var(--gold);}
+#top-bar .book-btn{background:var(--gold);color:var(--ink);padding:.5em 1.6em;opacity:1;}
+#top-bar .book-btn:hover{background:var(--gold-l);color:var(--ink);}
+
+/* HERO */
+#hero{text-align:center;padding:5rem 2rem 3rem;border-bottom:1px solid var(--border);}
+#hero .eyebrow{font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.4em;text-transform:uppercase;color:var(--gold);opacity:.8;margin-bottom:1.5rem;}
+#hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(3.5rem,10vw,7rem);font-weight:300;line-height:.95;color:var(--cream);margin-bottom:.5rem;}
+#hero h1 em{font-style:italic;color:var(--gold-l);}
+#hero .note{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(1rem,1.6vw,1.15rem);color:var(--cream);opacity:.8;max-width:560px;margin:1.5rem auto 0;line-height:1.7;}
+#hero .note strong{font-style:normal;opacity:.8;color:var(--gold);}
+
+/* ACT SECTIONS */
+.act-section{max-width:900px;margin:0 auto;padding:4rem 2rem;}
+.act-header{text-align:center;margin-bottom:3rem;padding-bottom:2rem;border-bottom:1px solid var(--border);}
+.act-label{font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.4em;text-transform:uppercase;color:var(--gold);opacity:.8;margin-bottom:.8rem;}
+.act-title{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:300;color:var(--cream);line-height:1.1;margin-bottom:.4rem;}
+.act-title em{font-style:italic;color:var(--gold-l);}
+.act-sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1rem;color:var(--cream);opacity:.8;}
+
+/* VIDEO */
+.video-wrap{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;margin-bottom:3rem;background:#000;border:1px solid var(--border);}
+.video-wrap iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none;}
+/* ── VISIBLE PLAYLIST TRACKLIST ── */
+.vj-tracklist{width:100%;margin:-1.6rem 0 2.6rem;border:1px solid rgba(156,138,106,.22);background:rgba(156,138,106,.03);max-height:440px;overflow-y:auto;scrollbar-width:thin;scrollbar-color:rgba(156,138,106,.4) transparent;}
+.vj-tracklist-head{position:sticky;top:0;z-index:2;background:#14100a;border-bottom:1px solid rgba(156,138,106,.25);padding:.55rem .8rem;font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);opacity:.85;}
+.vj-track{display:flex;align-items:center;gap:.8rem;padding:.55rem .8rem;cursor:pointer;border-bottom:1px solid rgba(156,138,106,.1);transition:background .2s;}
+.vj-track:last-child{border-bottom:none;}
+.vj-track:hover{background:rgba(156,138,106,.08);}
+.vj-track.playing{background:rgba(156,138,106,.13);}
+.vj-track img{width:86px;aspect-ratio:16/9;object-fit:cover;flex-shrink:0;display:block;border:1px solid rgba(156,138,106,.2);}
+.vj-track-num{font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.15em;color:var(--gold);opacity:.8;flex-shrink:0;width:1.6em;text-align:right;}
+.vj-track-title{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.98rem;color:var(--parchment);opacity:.8;line-height:1.35;overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;}
+.vj-track.playing .vj-track-title{color:var(--gold-l);opacity:1;}
+.vj-tracklist-note{font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--parchment);opacity:.8;padding:.8rem;text-align:center;}
+@media(max-width:680px){.vj-tracklist{max-height:340px;}}
+.video-placeholder{position:absolute;top:0;left:0;width:100%;height:100%;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:1rem;background:rgba(13,11,8,.9);}
+.video-placeholder p{font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);opacity:.8;}
+
+/* SONGS */
+.songs-intro{font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);opacity:.8;text-align:center;margin-bottom:1.5rem;}
+.song-title em{font-style:italic;}
+details[open] 
+/* LYRICS */
+.song-lyrics .song-lyrics .song-lyrics .song-lyrics 
+/* DIVIDER */
+.act-divider{border:none;border-top:1px solid var(--border);margin:0;}
+
+/* BOTTOM CTA */
+#bottom-cta{background:rgba(13,11,8,.97);border-top:1px solid var(--border);display:flex;align-items:center;justify-content:center;gap:2rem;padding:1rem 2rem;flex-wrap:wrap;}
+#bottom-cta p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.92rem;color:var(--cream);opacity:.8;}
+#bottom-cta a.btn{background:var(--gold);color:var(--ink);font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;padding:.55em 1.8em;display:inline-block;transition:background .2s;}
+#bottom-cta a.btn:hover{background:var(--gold-l);}
+
+@media(max-width:600px){
+  #hero{padding:3rem 1.5rem 2rem;}
+  .act-section{padding:3rem 1.2rem;}
+    #top-bar{justify-content:center;}
+  #bottom-cta p{display:none;}
+}
+
+.act-h{font-family:'Cinzel',serif;font-size:clamp(1.2rem,3vw,1.8rem);letter-spacing:.16em;text-transform:uppercase;color:var(--cream);text-align:center;margin:4.5rem 0 2rem;padding-top:2rem;border-top:1px solid rgba(156,138,106,.25);}
+.song-h{font-family:'Cinzel',serif;font-size:1.05rem;letter-spacing:.08em;color:var(--gold-l);margin:2.6rem 0 .8rem;}
+.role-p{font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.22em;color:var(--gold);opacity:.85;margin:.9rem 0 .2rem;}
+.dir-p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.95rem;color:var(--cream);opacity:.8;margin:.5rem 0;}
+.curtain-p{font-family:'DM Mono',monospace;font-size:.7rem;letter-spacing:.4em;text-transform:uppercase;color:var(--gold);text-align:center;margin:2.5rem 0;}
+.b-p{font-weight:600;color:var(--cream);opacity:.92;margin:.3rem 0;}
+.s-p{font-family:'Cormorant Garamond',serif;font-size:1.02rem;line-height:1.55;color:var(--cream);opacity:.86;margin:0;}
+.sp{height:.7rem;}
+.script-wrap{max-width:720px;margin:0 auto;padding:0 2rem;}
+.ctx-sec{font-family:'Cinzel',serif;font-size:1rem;letter-spacing:.12em;text-transform:uppercase;color:var(--cream);margin:3rem 0 1rem;padding-bottom:.5rem;border-bottom:1px solid rgba(156,138,106,.25);}
+.ctx-sub{font-family:'DM Mono',monospace;font-size:.66rem;letter-spacing:.16em;color:var(--gold-l);margin:1.8rem 0 .5rem;}
+
+.song-item{border-bottom:1px solid rgba(156,138,106,.12);}
+.song-item summary{list-style:none;cursor:pointer;display:flex;align-items:baseline;gap:.8rem;padding:.85rem 0;font-family:'Cormorant Garamond',serif;}
+.song-item summary::-webkit-details-marker{display:none;}
+.song-item summary:hover .song-title{color:var(--gold-l);}
+.song-num{font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.12em;color:var(--gold);opacity:.8;min-width:2.2em;}
+.song-title{font-size:clamp(1.02rem,2vw,1.2rem);color:var(--parchment);opacity:.92;}
+.song-sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.92rem;color:var(--gold);opacity:.8;margin-left:auto;padding-left:1rem;text-align:right;}
+.song-arrow{font-family:'DM Mono',monospace;color:var(--gold);opacity:.8;margin-left:.6rem;}
+.song-item[open] .song-arrow{transform:rotate(90deg);display:inline-block;}
+.song-lyrics{white-space:pre-wrap;font-family:'Cormorant Garamond',serif;font-size:1.02rem;line-height:1.6;color:var(--parchment);opacity:.85;padding:.4rem 0 1.8rem 3rem;}
+.stage-dir{font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);opacity:.8;}
+.lP{display:block;font-family:'Cormorant Garamond',serif;font-style:normal;color:var(--parchment);opacity:.95;margin-left:-1.4rem;padding-right:.4rem;}
+.stage-dir.rP{color:var(--gold-l,#b5a37e);opacity:1;margin-left:-1.4rem;}
+
+.act-pre{font-family:'Cormorant Garamond',serif;font-size:1rem;line-height:1.6;color:var(--parchment);opacity:.8;margin-bottom:2rem;}
+.ctx-sec{font-family:'Cinzel',serif;font-size:1rem;letter-spacing:.12em;text-transform:uppercase;color:var(--parchment);margin:2.6rem 0 1rem;padding-bottom:.5rem;border-bottom:1px solid rgba(156,138,106,.25);}
+@media(max-width:680px){.song-lyrics{padding-left:1rem;}.song-sub{display:none;}}
+.ctx-body{text-align:left;padding-left:1.6rem;padding-right:.4rem;}
+.ctx-body p{text-align:left;margin:0 0 .85rem;line-height:1.7;}
+@media(max-width:680px){.ctx-body{padding-left:.8rem;}}
+
+/* rehearsal page */
+#rh-top{background:rgba(13,11,8,.97);border-bottom:1px solid var(--border);padding:.7rem 2rem;
+        display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;}
+#rh-top .mark{font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.3em;
+        text-transform:uppercase;color:var(--gold);}
+#rh-top .priv{font-family:'DM Mono',monospace;font-size:.58rem;letter-spacing:.22em;
+        text-transform:uppercase;color:var(--cream);opacity:.45;}
+.caveat{max-width:720px;margin:0 auto;padding:2.4rem 0 0;}
+.caveat .lab{font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.34em;
+        text-transform:uppercase;color:var(--gold);margin-bottom:1rem;text-align:center;}
+.caveat p{font-size:1.06rem;line-height:1.8;color:var(--cream);opacity:.88;margin-bottom:1rem;}
+.caveat .box{border-top:1px solid var(--border);border-bottom:1px solid var(--border);
+        padding:1.8rem 0 1.6rem;}
+.vidslot{max-width:900px;margin:0 auto 2.6rem;}
+.vidslot .frame{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;background:#000;
+        border:1px solid var(--border);}
+.vidslot .frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0;}
+.vidslot .pending{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;
+        justify-content:center;gap:.8rem;text-align:center;
+        background:repeating-linear-gradient(135deg,#171412 0 14px,#141110 14px 28px);}
+.vidslot .pending p{font-family:'DM Mono',monospace;font-size:.64rem;letter-spacing:.26em;
+        text-transform:uppercase;color:var(--gold);opacity:.85;}
+.vidslot .cap{font-family:'DM Mono',monospace;font-size:.6rem;letter-spacing:.22em;
+        text-transform:uppercase;color:var(--gold);opacity:.75;margin-top:.7rem;text-align:center;}
+.rh-wrap{max-width:900px;margin:0 auto;padding:0 2rem;}
+.dl{max-width:720px;margin:4rem auto 0;text-align:center;border-top:1px solid var(--border);
+        padding-top:2.4rem;}
+.dl a.btn{display:inline-block;margin-top:1rem;background:var(--gold);color:var(--ink);
+        font-family:'DM Mono',monospace;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;
+        padding:.9em 2.2em;}
+.dl a.btn:hover{background:var(--gold-l);color:var(--ink);}
+.dl p{font-size:1.02rem;opacity:.85;}
+.provenance{font-family:'DM Mono',ui-monospace,monospace;font-size:.57rem;letter-spacing:.26em;
+        text-transform:uppercase;text-align:center;color:#9c8a6a;opacity:.6;line-height:2;
+        margin:0;padding:3rem 1.2rem 2rem;}
+</style>
+</head>
+<body>
+<div id="rh-top"><span class="mark">Paper Gun &middot; The Rehearsal</span><span class="priv">Private link &middot; please do not share</span></div>
+<section id="hero">
+  <p class="eyebrow">Three acts, recorded in rehearsal</p>
+  <h1>The <em>Rehearsal</em></h1>
+  <p class="note">The whole of <strong>Paper Gun</strong>, end to end, as a storyboard.</p>
+</section>
+<div class="rh-wrap"><div class="caveat">    <div class="box">
+      <p class="lab">A note before you watch</p>
+      <p>What follows is a storyboard. Three acts, recorded in rehearsal, to show the shape of the
+      piece &mdash; the order of the songs, the script that carries you between them, and the arc the
+      whole thing travels.</p>
+      <p>It is not the performance. The writing and the rehearsing are finished now, and what a room
+      does to this material is a different thing altogether &mdash; the energy of it, the way an
+      audience takes hold of a song and gives it back. To hear what I mean, the
+      <a href="#live">Live in the Making</a> playlist at the foot of this page has these songs done
+      live, in front of people.</p>
+      <p>Watch this for the architecture.</p>
+    </div></div></div>
+<div class="rh-wrap">
+  <h2 class="act-h">ACT I &nbsp;&middot;&nbsp; ACT ONE — The Trap — Paper Gun</h2>
+  <div class="vidslot">
+    <div class="frame"><div class="pending"><p>Link to follow</p></div></div>
+    <p class="cap">ACT I &mdash; full act, rehearsal recording</p>
+  </div>
+  <div class="act-pre"><span class="stage-dir">— Paper Gun</span>
+
+<span class="stage-dir">AN OPERA STAR IS WARMING UP IN THE MIRROR</span>
+
+<span class="stage-dir role">E or N</span>
+…Musing
+
+Moota    Chen Doh or Figaro … (warm up)
+
+⟨ quotation — Lucio Dalla ⟩
+
+<span class="stage-dir role">E</span>
+When I hear your voice, I change my mind</div>
+  <details class="song-item">
+  <summary><span class="song-num">1.</span><span class="song-title">PRESSURES</span><span class="song-sub">The nerves pre performance</span><span class="song-arrow">&rsaquo;</span></summary>
+    <div class="song-lyrics"><span class="stage-dir role">E</span>
+Don't let the tensions
+and the pressures overwhelm you.
+Your standards are bigger than this —
+fight for the right to determine the venue,
+a place where meaning exists.
+Kicking and screaming is fine if they drag you
+to a world that is just the abyss.
+Just remember:
+value is not defined by vocation,
+by season, but sometimes a kiss.
+
+Look for no more in yourself or others.
+No greater complexity chimes.
+No standard or bearer of words or tunes,
+however refined are the rhymes.
+Seek to be seeking — live to live.
+Reactions and actions combined.
+Remember: triumph is a game, love is the name.
+May the best man win
+
+<span class="stage-dir role rN">N</span>
+<span class="lN">or complain.</span>
+
+<span class="stage-dir rP">PAUL</span>
+<span class="lP">Every difficult relationship has two people in it. Tonight, they're both me. Say something true to someone you love and if the painter steps out of the painting, you are left in something beautiful, but holding both sides of whether you did the right thing… sometimes for a very long time…… Long enough, and you’re a visitor, like your brother Jacques the Opera Star</span>
+
+<span class="stage-dir">THE FINALE OF THE OPERA</span>
+﻿
+<span class="stage-dir role">E</span>
+Now I'm on the stage
+a Hollywood actor
+would never do this.
+…Tell us some more
+The reason we are here is never a factor.
+Just moving your lips.
+You learn the score
+
+We all know we all know
+beluga caviar we all know
+we all know Mesoud can play guitar
+Officially I'm at the bar.
+Provisionally with a Cuban cigar
+
+I am I am. I am an opera star.
+
+<span class="stage-dir role">E – breathing in the applause +</span>
+
+<span class="stage-dir">JUST BEFORE COMING OFF STAGE FROM THE OPERA PERFROMANCE ﻿</span></div>
+  </details>
+
+  <details class="song-item">
+  <summary><span class="song-num">2.</span><span class="song-title">THIS IS MINE</span><span class="song-sub">either  generosity from performance or as a complaint</span><span class="song-arrow">&rsaquo;</span></summary>
+    <div class="song-lyrics"><span class="stage-dir role">E</span>
+This is mine, but you can have it.
+This is mine, but you can have it.
+This is mime, but you can have it —
+'cause it's all I've got to give.
+
+“That’s the way it is, that’s the way it is,  you only have in life what you give away”
+
+<span class="stage-dir role">E</span>
+⟨ quotation ⟩
+
+<span class="stage-dir">ON HIS WAY BACK TO HIS APARTMENT ﻿</span>
+
+<span class="stage-dir role">E</span>
+A thousand of them tonight. Not one of them will phone.
+
+<span class="stage-dir role rN">N</span>
+<span class="lN">You call that lonely? Let me introduce you to people.</span>
+
+<span class="lN">⟨ quotation ⟩</span>
+
+<span class="stage-dir">Frère Jacques</span>
+
+<span class="lN">….wake up Brother Jack!</span>
+<span class="lN">—we all get to choose what we regret.</span>
+
+<span class="stage-dir">Bing bang bong…..</span>
+
+<span class="stage-dir">THE PHONE RINGS, IT’S HIS EX</span></div>
+  </details>
+
+  <details class="song-item">
+  <summary><span class="song-num">3.</span><span class="song-title">BEAUTIFUL SUNSHINE</span><span class="song-sub">From the high after performance</span><span class="song-arrow">&rsaquo;</span></summary>
+    <div class="song-lyrics"><span class="stage-dir role">E</span>
+At the end of the day of marked success
+I take out my cufflinks as I get undressed
+I remember you as I climb the stairs
+Acutely aware I was glad you were there
+And even though I was asleep and unaware,  (the tip off that the whole thing was a dream)
+I was happy to have someone who cares.
+
+And I’d wake up in the morning, beautiful sunshine,
+I’d wake up in the morning all I’d see is You
+all I’d see is You...
+
+<span class="stage-dir role">E</span>
+Hello
+<span class="stage-dir">repeating what he hears on the phone</span>
+Great performance tonight – thank you, I’m like a little brother to you now Brother Jacques, do I regret that we broke up, was my career so important to me”
+
+<span class="stage-dir role rN">=“N”</span>
+<span class="lN">Great performance tonight, You’re like a little brother to me now Brother Jacques, do you regret that we broke up, was your career so important to you?!</span></div>
+  </details>
+
+  <details class="song-item">
+  <summary><span class="song-num">4.</span><span class="song-title">YOU MAKE ME ROCK N ROLL</span><span class="song-sub">Reason or excuse / a phone conversation</span><span class="song-arrow">&rsaquo;</span></summary>
+    <div class="song-lyrics"><span class="stage-dir role">E</span>
+And I wake up in the morning, beautiful sunshine,
+I wake up in the morning all I see is You
+all I see is You...
+You made me rock n roll,
+you made me take the can,
+you made me roll.
+
+<span class="stage-dir role">E</span>
+I found my way to the edge of what’s real.
+I couldn't turn back without grabbing the wheel,
+but my hands are tied —
+because I try   to even out the deal.
+My circumstance is, as you say, it's in the song, the song is the play
+It’s where I am and where I'm found.
+To love and believe is in the sound.
+A combination somewhat rare —
+You know it's true. You know I care.
+And all us souls who take the reins,
+and pursue our goals...
+It's just the same.
+So I don't forget —
+Like you said: We all get to choose that which we regret.
+
+But you made me rock n roll,
+you made me take the can,
+you made me roll.
+
+<span class="stage-dir role rN">N</span>
+<span class="lN">And if I did complain, if I did abuse,</span>
+<span class="lN">the rights I have, the rights I lose.</span>
+<span class="lN">And you along with them it seems...</span>
+<span class="lN">So I'm stubborn and lucid, and wanton to burn</span>
+<span class="lN">including my wage, your prisoner's page.</span>
+<span class="lN">But I'm sick of what's savagery, I'm tired of what's old.</span>
+<span class="lN">Let me out of this savage, away from the bold.</span>
+
+<span class="stage-dir role">E</span>
+And I wake up in the morning, beautiful sunshine,
+I wake up in the morning all I see is You
+all I see is You...
+
+<span class="stage-dir role rN">N</span>
+<span class="lN">So me truly and simply, and all for the best.</span>
+<span class="lN">my life is amazing — I still have some left.</span>
+<span class="lN">No fear of referral, nor tears of advice.</span>
+<span class="lN">Let go of your senses instead of MY life.</span>
+
+<span class="stage-dir role">E</span>
+You make me rock n roll,
+you made me take the can,
+you make me roll.
+
+It took a little time to think it over to see it through,
+and you know I love’d you the way I do, even though I find it hard to say to you.
+
+<span class="stage-dir role">E</span>
+“hello, hello” (she is gone… hangs up)
+
+<span class="stage-dir role">E</span>
+⟨ quotation ⟩</div>
+  </details>
+
+  <details class="song-item">
+  <summary><span class="song-num">5.</span><span class="song-title">THE VISITOR</span><span class="song-sub">The shadow arrives</span><span class="song-arrow">&rsaquo;</span></summary>
+    <div class="song-lyrics"><span class="stage-dir role">E</span>
+In the summer, my lover comes south to visit —
+the visitor in the visitors' windows.
+
+But her voice has got the color,
+the sound of "I don't care,"
+and more like that than "this is fair,"
+or "what the heck — despair."
+I mean her pain, though not to belittle,
+is classic in that she's starting to sound brittle.
+But it's on par with all of our scars,
+and we all find ourselves in the middle.
+
+<span class="stage-dir">HE SEES HER AT THE WINDOW AND DIALS HER UP ON THE PHONE</span>
+
+So lets take a drink. Lets go for a walk and think,
+and rest your weary brow.
+I'm guessing here that just one beer
+might not be quite enough.
+Come on in through the window – I see you!
+
+In the summer, my lover comes south to visit —
+the visitor in the visitors' windows.
+
+So what the heck — I'll get some more on deck,
+and we'll sing a song with cheer.
+I'll buy the round, you make the sound,
+and together we'll shed a tear.
+
+<span class="stage-dir role">E</span>
+“I’ve been invited to this private party – ley’s go”
+
+<span class="stage-dir">THEY GO TO THE TAVERN, shei s watching him holding court and feeling ignored</span></div>
+  </details>
+
+  <details class="song-item">
+  <summary><span class="song-num">6.</span><span class="song-title">TAVERN SCENE</span><span class="song-sub">The star &amp; expert arrives</span><span class="song-arrow">&rsaquo;</span></summary>
+    <div class="song-lyrics"><span class="stage-dir">Grand entrance “hi everybody” “you were amazing tonight, et”c.</span>
+<span class="stage-dir">+</span>
+
+<span class="stage-dir role rN">N</span>
+<span class="lN">I watched my little brother Jack he was complaining at this private party to :Gal Gadot” about:</span>
+
+<span class="stage-dir role">E</span>
+“How come this terrible music gets made, .
+and why is that, and how come it got bought....”
+
+<span class="stage-dir role rN">N</span>
+<span class="lN">I said – it’s because there’s…. two market places out there!?”</span>
+<span class="lN">There’s a market for it because There’s people out there</span>
+<span class="lN">without a heart, and there’s people out there with a heart.</span>
+
+<span class="stage-dir role">E</span>
+“that’s not entirely true”, he said
+“more true is there’s a lot of people
+who keep their paper heart a secret.
+And sometimes it becomes
+......a secret from themselves…
+
+…the only way I know how to tell the truth is through the opera and “some” modern art
+but the new chemistry is marketing
+- Jacques said, and he didn’t like to be “sold entertainment”
+“you’d better not drink this or you might get too near a climax of reality” (holding a cigar)
+
+<span class="stage-dir role rN">N</span>
+<span class="lN">he said in an American accent, to the Israeli entertainer and friend of Stephen Spielberg, who happened to be sitting behind them, as he gave her a taste of his shot, just after he compared New York to Israel due to its finger snap style of living</span>
+
+<span class="stage-dir role">E</span>
+I’m sorry to say, it’s an age old fight
+But I don’t take no liberties because of my rights.
+
+<span class="sub-h">6.2 THE WORK</span>
+<span class="stage-dir">[ They are in agreement – and on a dime fall out when it comes to buying drinks]</span>
+
+<span class="stage-dir role">E</span>
+Nobody wants to lift a finger
+nobody wants to do the work
+everybody wants to point the finger
+everybody feels better if they call you a jerk
+
+<span class="stage-dir role rN">N</span>
+<span class="lN">And a genius without action</span>
+<span class="lN">is not half of a fraction</span>
+<span class="lN">of a man with a plan</span>
+<span class="lN">who at times suffers (even expensive) distraction</span>
+
+<span class="stage-dir role">E</span>
+ADHD joke
+
+<span class="stage-dir role rN">N</span>
+<span class="lN">It’s not funny</span>
+
+<span class="stage-dir role">E</span>
+….I’ll get the round
+
+<span class="stage-dir role rN">N</span>
+<span class="lN">Who me?</span>
+
+<span class="stage-dir role">E</span>
+Not you!
+
+<span class="stage-dir">the Narrator</span>
+<span class="stage-dir">I think every person, at one point in their lives, they had this strong feeling —</span>
+<span class="stage-dir">that they have to do something</span>
+
+<span class="stage-dir role">E</span>
+….about a situation
+
+<span class="sub-h">6.3. THE JOURNEY</span>
+<span class="stage-dir">[ Moving is the proof ]</span>
+
+<span class="stage-dir role">E’s framing</span>
+I, I’m on a journey,
+I, I’m on a journey,
+You, you should have loved me,
+And know that the truth had arrived (or: and know that the truth will have arrived)
+And know that you had arrived
+
+<span class="stage-dir role rN">N’s framing</span>
+<span class="lN">But when truth, it is argued, the silence feels safer, it feels safer than honesty</span>
+
+<span class="stage-dir role rN">N</span>
+<span class="lN">Do I love you, yes I love you, but if you’re not comfortable enjoy your journey</span></div>
+  </details>
+
+  <details class="song-item">
+  <summary><span class="song-num">7.</span><span class="song-title">YOU AND YOUR OWN  —soliloquy</span><span class="song-sub">Understanding the pattern</span><span class="song-arrow">&rsaquo;</span></summary>
+    <div class="song-lyrics"><span class="stage-dir role">E</span>
+It's such a shame when we re-frain
+our nearest, dearest —
+about the ones we need the most.
+Who could have given us all we are.
+And yes, I know you're not alone,
+it's not just you — I know it’s everyone.
+But we pass it off, in saying we always hurt the ones we love.
+
+You and your own
+— it just makes sense in the battle zone,
+not sitting on the fence.
+You and your own
+— it just makes sense in the battle zone,
+not sitting on the fence.
+
+<span class="stage-dir role rN">N</span>
+<span class="lN">But if you go, you'll be tested right away.</span>
+<span class="lN">You'll be tested right away if you go.</span>
+
+<span class="stage-dir role">E</span>
+You and your own
+— it just makes sense in the battle zone,
+not sitting on the fence.
+
+<span class="stage-dir role rN">N</span>
+<span class="lN">But if you go, you'll be tested right away.</span>
+<span class="lN">You'll be tested right away if you go.</span>
+
+<span class="lN">So I stay.</span>
+<span class="lN">Say what you like, do what you do —</span>
+<span class="lN">there’s nowhere else I’d rather be.</span>
+
+<span class="stage-dir role">E</span>
+I’ve got a good reason for taking the easy way out….. now.</div>
+  </details>
+
+  <details class="song-item">
+  <summary><span class="song-num">8.</span><span class="song-title">FROM A WATCHER'S POINT OF VIEW</span><span class="song-sub">N observed</span><span class="song-arrow">&rsaquo;</span></summary>
+    <div class="song-lyrics"><span class="stage-dir role rN">N</span>
+<span class="lN">For me?</span>
+
+<span class="stage-dir role">E</span>
+Not you! I'd agree with everything you do.
+
+<span class="stage-dir role rN">N</span>
+<span class="lN">Who me?</span>
+
+<span class="stage-dir role">E</span>
+Yes you! But you've got to admire me for being so shrewd.
+
+He's got two critics' eyes to tip if I extemporize,
+coz he's otherwise.
+He’ll calculate evaluate
+But the boom bada bing if you know what I mean
+he’ll just spectate
+he'll look around to qualify his:
+graduated, elevated,
+never made it, compensated,
+syncopated, un-dilated,
+stuck on auto-automated answer —
+Coz he’s watching you
+From a watchers point of view
+“Who me?!”
+
+<span class="stage-dir role rN">N</span>
+<span class="lN">Not you! he'd agree with everything you do.</span>
+
+<span class="stage-dir role">E</span>
+Who me?!
+
+<span class="stage-dir role rN">N</span>
+<span class="lN">Yes you! But you've got to admire him for being so shrewd.</span>
+<span class="lN">from a watcher's point of view.</span>
+
+<span class="stage-dir role">E</span>
+You’ve got two critics' eyes to tip if I extemporize,
+coz you’re otherwise.
+You’ll calculate evaluate
+But the boom bada bing if you know what I mean
+You’ll just spectate
+You’ll look around to qualify your:
+graduated, elevated,
+never made it, compensated,
+syncopated, un-dilated,
+stuck on auto-automated answer —
+Coz I’m watching you
+
+<span class="stage-dir role rN">N</span>
+<span class="lN">from a watcher's point of view!?</span>
+<span class="lN">Tell me what YOU’VE learned about love</span></div>
+  </details>
+
+  <details class="song-item">
+  <summary><span class="song-num">9.</span><span class="song-title">WHO KNOWS JUST WHY</span><span class="song-sub">The protagonist questions himself</span><span class="song-arrow">&rsaquo;</span></summary>
+    <div class="song-lyrics"><span class="stage-dir role">E</span>
+Who knows just why we turned around and hide
+when reminded of love —
+why did I try to pretend it's not there
+when I recognize real love?
+
+Inspiration leads to love.
+So I wait for you,
+everything that you do.
+I can afford to dream.
+If I know you know what I mean —
+exaggeration needs to hope.
+
+<span class="stage-dir role rN">N</span>
+<span class="lN">Against my ever persistent sound of intransigence</span>
+
+<span class="lN">⟨ quotation ⟩</span>
+
+<span class="stage-dir role">E</span>
+Tell me not brother Jacques
+Tell me not for whom the bell tolls —
+
+Brother Jacques
+Wake up you could Be somebody!
+the bell tolls for thee
+
+Brother Jacques
+Brother Jacques
+are you sleeping,
+are you sleeping
+Sonnez les matines
+Sonnez les matines
+toll the morning bells
+toll the morning bells
+Ding, dang, dong,
+Ding, dang, dong
+
+<span class="sub-h">9.2 To be</span>
+<span class="stage-dir role rN">N</span>
+<span class="lN">To be, or not to be — really, is that’s a question!?</span>
+<span class="lN">...Sometimes it is more noble</span>
+<span class="lN">to suffer the slings and arrows</span>
+<span class="lN">of outrageous fortune,</span>
+
+<span class="stage-dir role">E</span>
+but at others one should take up arms
+against a sea of troubles —
+and by opposing, end them.
+...To no longer die — to no longer sleep!
+...And to no longer sleep, is to say: live.
+… live with the heartache
+and the thousand natural shocks that flesh is heir to!
+But I see no consummation devoutly to be wished!
+...Live! Stay awake Jack
+There we can dream
+
+<span class="stage-dir role rN">N</span>
+<span class="lN">There is no rub:</span>
+<span class="lN">for in that sleep of death what dreams may come —</span>
+<span class="lN">when we have shuffled off this mortal coil,</span>
+
+<span class="stage-dir role">E</span>
+is that what gives you pause...
+That the dread of something after life,
+the undiscovered country,
+from whose bourn no traveler returns,
+puzzles the will...
+
+...should it also make us bear those ills we CAN SEE?
+Rather than fly to others we know not of?
+Let not the native hue of resolution
+be sicklied over with the pale cast of thought.
+Let not enterprises of great pith and moment
+their currents turn awry and lose the name of action.
+
+You need to culminate phenomenal heart
+To culminate: to bring together to the highest degree
+phenomenal phenomenal
+and a heart like a lion</div>
+  </details>
+
+  <details class="song-item">
+  <summary><span class="song-num">10.</span><span class="song-title">PAPER GUN</span><span class="song-sub">The weapon named</span><span class="song-arrow">&rsaquo;</span></summary>
+    <div class="song-lyrics"><span class="stage-dir role">E</span>
+Like a social misfit I play the scene —
+"there's good and bad in everyone,"
+So I think I’ll come out clean.
+Anyway you won't give me the pleasure;
+you won't give me a rise.
+So I’m blissfully unaware
+of why I should be despised.
+
+<span class="stage-dir role rN">N</span>
+<span class="lN">"Never rub another man's rhubarb" it’s always good advice.</span>
+<span class="lN">"An eye for an eye, a tooth for a tooth" — there's a price.</span>
+<span class="lN">But perhaps avert your gaze, and a little less self praise</span>
+<span class="lN">when temptation fires your ego.</span>
+<span class="lN">you'll notice in time you’re not paying the fine —</span>
+<span class="lN">"I'm all right Jacques" doesn’t cover the legal.</span>
+
+<span class="stage-dir role">E</span>
+But I am your enemy, my friend,
+and till the bitter end,
+You’re the reason for my mindful treason.
+it's broken — so what's to mend?
+
+<span class="stage-dir role rN">N</span>
+<span class="lN">In hot and bloody cool disdain,</span>
+<span class="lN">you've justified most every lie.</span>
+<span class="lN">Morality can feign.</span>
+<span class="lN">The end was over when the war begun.</span>
+<span class="lN">Is this battle for identity or a paper gun</span>
+
+<span class="stage-dir role">N</span>
+Gun paper gun paper gun,
+gun paper gun paper gun,
+<span class="stage-dir role rN">N</span>
+<span class="lN">gun paper gun paper gone</span>
+<span class="lN">soon he'll be seeing the light</span>
+<span class="lN">Bang bang bang bang bang</span></div>
+  </details>
+
+  <details class="song-item">
+  <summary><span class="song-num">11.</span><span class="song-title">FEAR HATE</span><span class="song-sub">The universal warning</span><span class="song-arrow">&rsaquo;</span></summary>
+    <div class="song-lyrics"><span class="stage-dir rP">PAUL</span>
+<span class="lP">one of life's greatest challenges</span>
+<span class="lP">one of life's hardest things</span>
+<span class="lP">is not to allow fear to turn to hate</span>
+
+<span class="lP">sounds kinda simple</span>
+<span class="lP">but I wonder if you can relate</span>
+
+<span class="lP">One of life's most difficult things to do</span>
+<span class="lP">Whether you're Protestant, Catholic or a Jew</span>
+<span class="lP">is not to allow fear to turn into hate</span>
+
+<span class="lP">I wonder if you'd agree</span>
+<span class="lP">you can nod profusely at me</span>
+<span class="lP">But if you don't really understand</span>
+<span class="lP">you can show me the back of your hand</span>
+
+<span class="lP">Yes one of life's most difficult things to do</span>
+<span class="lP">Whether you're Protestant, Catholic, Muslim or a Jew</span>
+<span class="lP">is not to allow fear to turn into hate</span>
+
+<span class="stage-dir role rN">N</span>
+<span class="lN">But can you be so disparaging and duplicitous and expect normalcy.</span></div>
+  </details>
+
+  <details class="song-item">
+  <summary><span class="song-num">12.</span><span class="song-title">DON'T SAY ANYTHING</span><span class="song-sub">The silence and isolation</span><span class="song-arrow">&rsaquo;</span></summary>
+    <div class="song-lyrics"><span class="stage-dir role">N</span>
+<span class="stage-dir">⟨ quotation ⟩</span>
+
+<span class="stage-dir role">E</span>
+You don't say... anything!
+
+<span class="stage-dir role rN">N</span>
+<span class="lN">You don't need me.</span>
+
+<span class="stage-dir role rB">E</span>
+At all
+<span class="stage-dir role rB">N</span>
+At all
+
+<span class="stage-dir role rN">N</span>
+<span class="lN">He was so generous on stage,</span>
+<span class="lN">but in private, he couldn’t give anything away</span>
+<span class="stage-dir role">E</span>
+And you were so generous at home (sarcastic)
+in public no-one knew I was alone!
+
+<span class="stage-dir role">E</span>
+I don't see you anymore.
+
+<span class="stage-dir role rN">N</span>
+<span class="lN">Don't say anything —</span>
+<span class="lN">is like it always was before.</span>
+<span class="lN">And I can see you time and time again</span>
+
+<span class="stage-dir role">E</span>
+Like never before I am five minutes you’ll forget me
+The truth will set me free.
+
+<span class="stage-dir role">E</span>
+You were always so cynical with words,
+<span class="stage-dir role rN">E</span>
+<span class="lN">Coz in private I couldn’t get a word in overheard</span>
+<span class="lN">We could have been so close</span>
+<span class="stage-dir role">E</span>
+…you were verbose
+
+<span class="stage-dir role rN">N</span>
+<span class="lN">You don't say!</span>
+
+<span class="stage-dir role">E</span>
+You don't need.
+
+<span class="stage-dir role rB">E</span>
+Anything
+<span class="stage-dir role rB">N</span>
+Anything</div>
+  </details>
+</div>
+<div class="rh-wrap">
+  <h2 class="act-h">ACT II &nbsp;&middot;&nbsp; ACT TWO — The Struggle — Paper Crown</h2>
+  <div class="vidslot">
+    <div class="frame"><div class="pending"><p>Link to follow</p></div></div>
+    <p class="cap">ACT II &mdash; full act, rehearsal recording</p>
+  </div>
+  <div class="act-pre">— Paper Crown
+
+E ﻿
+⟨ quotation ⟩
+
+<span class="stage-dir role">N</span>
+⟨ quotation ⟩
+
+moota
+maquando</div>
+  <details class="song-item">
+  <summary><span class="song-num">1.</span><span class="song-title">BULLY THE BULLY</span><span class="song-sub">self defense</span><span class="song-arrow">&rsaquo;</span></summary>
+    <div class="song-lyrics"><span class="stage-dir rP">PAUL</span>
+<span class="lP">Move on to the next subject, of course because the reason</span>
+<span class="lP">You’re trying to figure it out in the first place</span>
+<span class="lP">is to try and understand a bigger picture</span>
+<span class="lP">which you’ve forgotten because the first act I gave you</span>
+<span class="lP">made sense</span>
+<span class="lP">But only for 5mins</span>
+<span class="lP">And now Im going to give you something else</span>
+<span class="lP">…just call it de-fence</span>
+
+<span class="stage-dir role rN">N</span>
+<span class="lN">He does not feel,</span>
+<span class="lN">he does not chase,</span>
+<span class="lN">he does not learn from his own disgrace. x2</span>
+<span class="lN">Bully the bully.</span>
+<span class="lN">The bully knows the things he does.</span>
+
+<span class="stage-dir role">E</span>
+I don't believe you —
+you're too cruel for remorse.
+
+<span class="stage-dir role rN">N</span>
+<span class="lN">I don't believe you —</span>
+<span class="lN">you're too wild for tears.</span>
+<span class="lN">The bully knows the things he does.</span>
+
+<span class="stage-dir role">E</span>
+And when someone calls her out
+in a way that leaves no doubt —
+I don't believe you.
+Your tears are just another way for you to say:
+(N voice) “Rather than get out of my situation,
+<span class="lN">I'm gonna punish you today."</span>
+
+The bully feels no remorse.
+
+I know because this time the bully is me,
+And the bully feeling is free.
+
+<span class="stage-dir role rN">N</span>
+<span class="lN">AND I CALL IT DEFENSE</span>
+
+she does not feel,
+she does not chase,
+she does not learn from her own disgrace. x2
+
+<span class="stage-dir role rN">N</span>
+<span class="lN">Move on to the next subject, of course because the reason</span>
+<span class="lN">You’re trying to figure it out in the first place</span>
+<span class="lN">is to try and understand a bigger picture</span>
+<span class="lN">which you’ve forgotten because the first thing I gave you</span>
+<span class="lN">made sense</span>
+<span class="lN">But only for 5mins</span>
+<span class="lN">Before I said something else</span>
+<span class="lN">and I call it de-fence</span>
+
+<span class="stage-dir">NOW ON THEIR OWN AT A TABLE IN THE TAVERN</span>
+
+<span class="stage-dir role">E</span>
+don’t let fear turn into hate
+
+<span class="stage-dir role rN">N</span>
+<span class="lN">I don't believe you —</span>
+<span class="lN">you're too cruel for remorse</span>
+
+<span class="stage-dir role">E</span>
+I don't believe you —
+you're too wild for tears.
+
+<span class="stage-dir role rN">N</span>
+<span class="lN">The bully knows the things he does.</span>
+
+<span class="stage-dir role rN">N</span>
+<span class="lN">Bla bla bla      bla bla-bla bla-bla     bla bla    bla bla-bla bla-</span>
+E ﻿
+it’s do-do-do  dont call it-Dee-fence</div>
+  </details>
+
+  <details class="song-item">
+  <summary><span class="song-num">2.</span><span class="song-title">PHENOMENAL HEART</span><span class="song-arrow">&rsaquo;</span></summary>
+    <div class="song-lyrics"><span class="stage-dir role">E</span>
+to culminate phenomenal heart
+
+<span class="stage-dir role rN">N</span>
+<span class="lN">You move and struggle you double your trouble</span>
+<span class="lN">I’m bursting your bubble</span>
+<span class="lN">your stuck in a boat</span>
+<span class="lN">or the water your soaked</span>
+<span class="lN">how do you float in your life</span>
+
+<span class="stage-dir role">E</span>
+let it out and bring it to the surface
+to culminate phenomenal heart x2
+let it out and bring it to the surface x2
+to culminate a nominal heart
+I know it's in there, let it out x2
+let it out and bring it to the surface
+there it’s there yeh yeh
+dadaba b aba ba daa daa daaa (with trumpet)</div>
+  </details>
+
+  <details class="song-item">
+  <summary><span class="song-num">3.</span><span class="song-title">THE OPEN SECRET</span><span class="song-sub">The impossible ask - N is introspective for the first time</span><span class="song-arrow">&rsaquo;</span></summary>
+    <div class="song-lyrics"><span class="stage-dir role rN">N</span>
+<span class="lN">When I'm raw from something I saw,</span>
+
+<span class="stage-dir role">E</span>
+…..Or rather: apparently missing
+
+<span class="stage-dir role rN">N</span>
+<span class="lN">when I've lost that feeling,</span>
+<span class="lN">the ability to relate,</span>
+<span class="lN">I'm losing standing...</span>
+<span class="lN">...forgiving.</span>
+
+<span class="lN">To keep me alive I kill it inside,</span>
+<span class="lN">vainly numbing out any old wishing.</span>
+
+<span class="stage-dir role">E</span>
+So take the day off — why not!
+Say you have a cough? Pretend!
+
+<span class="stage-dir role rN">N</span>
+<span class="lN">No no. None of that —</span>
+<span class="lN">you don't know where it'll end.</span>
+
+<span class="stage-dir role">E</span>
+OK, so just be sincere.
+Say — in your own way —
+you don't want to be here.
+
+<span class="stage-dir role rN">N</span>
+<span class="lN">But here is fine.</span>
+<span class="lN">It's just a matter of time.</span>
+
+<span class="stage-dir">the Narrator</span>
+<span class="stage-dir">…between you and me: "you know that's a line."</span>
+
+<span class="stage-dir role">E</span>
+A bit faster than mountains,
+but slower than clouds.
+Contradiction's the terms —
+it's all that's allowed.
+
+<span class="stage-dir role rN">N</span>
+<span class="lN">And in that deafening silence,</span>
+<span class="lN">the open secret returns:</span>
+<span class="lN">what's too long…..</span>
+<span class="lN">…will we ever learn?</span>
+
+E the tipping off
+…. it's been a while.
+I see you've still got your style.
+All laughs,
+and in your eyes, no smile...</div>
+  </details>
+
+  <details class="song-item">
+  <summary><span class="song-num">4.</span><span class="song-title">LEMON ICE-CREAM</span><span class="song-sub">She refuses the word. He sweetens it.</span><span class="song-arrow">&rsaquo;</span></summary>
+    <div class="song-lyrics"><span class="stage-dir role rN">N</span>
+<span class="lN">"Tart to the taste,</span>
+<span class="lN">in your face!</span>
+<span class="lN">Give me some space."</span>
+
+<span class="stage-dir role">E</span>
+"I'm just trying to retrace."
+
+<span class="stage-dir role rN">N</span>
+<span class="lN">"It gets in your eye —</span>
+<span class="lN">you and I,</span>
+<span class="lN">how, when and why</span>
+<span class="lN">it always makes us both cry.</span>
+
+<span class="lN">And still are few the times,</span>
+<span class="lN">no matter the rhymes,</span>
+<span class="lN">in between the lines</span>
+
+<span class="stage-dir role">E</span>
+You’re ignoring the signs!
+"Caught up in all of this,
+I say: without a kiss,
+a taste of bliss —
+you're like my little sis?"
+
+<span class="stage-dir role rN">N</span>
+<span class="lN">I'm not a lemon.</span>
+
+<span class="stage-dir role">E</span>
+Lemon Ice-cream tears
+are bitter yet sweet
+Your heart may be broken
+But it's just until next time we meet
+Your soul may be crushed
+but it's just until the next rush
+Your faith may be lost
+But is it a cost you're prepared to pay!
+
+Lemon Ice-cream tears will come down and then
+just remember they’re sweet
+and stay on your feet
+and you’ll never know an ice cream kiss
+Oh little sis
+From an ice cream heart,
+a confusion of the art
+…from a broken paper heart
+
+<span class="stage-dir role rN">N</span>
+<span class="lN">I'm not a lemon.</span>
+
+<span class="stage-dir role">E</span>
+<span class="lN">⟨ quotation ⟩</span></div>
+  </details>
+
+  <details class="song-item">
+  <summary><span class="song-num">5.</span><span class="song-title">TWO FACED</span><span class="song-arrow">&rsaquo;</span></summary>
+    <div class="song-lyrics"><span class="stage-dir role">E</span>
+Just think of
+what could be......if
+you accept what is.......not
+what someone else said it should be
+or should taste like
+or should look like
+or should feel like
+
+<span class="stage-dir role rN">N</span>
+<span class="lN">You’ve got what is yours</span>
+<span class="lN">and what is yours</span>
+<span class="lN">is just not mine</span>
+<span class="lN">doesn’t mean to say that you won’t feel fine</span>
+
+<span class="stage-dir role">E</span>
+doesn’t mean to say that I’m out of my mind
+1 2 3 and I think it’s gonna be
+1 2 3 and I think it’s gonna be
+just in case you think I don’t care
+
+<span class="stage-dir role rN">N</span>
+<span class="lN">just in case I think I do</span>
+
+<span class="stage-dir role">E</span>
+I’ll try to write it all down
+put it in a song or a letter
+﻿but I’m not going to sing it to you
+to your face to face
+to face
+two faced
+“two faced”
+
+<span class="stage-dir role rN">N</span>
+<span class="lN">don’t call ME “two faced”</span>
+
+<span class="lN">it seems like only yester-day</span>
+<span class="lN">you were in love</span>
+
+<span class="lN">how can it be so, what do you need to know to let go</span>
+
+<span class="stage-dir role">E</span>
+how can it be true, what do you need from me to
+get to you
+
+<span class="stage-dir role rN">N</span>
+<span class="lN">to get to who?!</span>
+
+<span class="stage-dir role">E</span>
+to get to you.
+
+<span class="stage-dir role rB">E+N (N)</span>
+<span class="lB">to get through to me too!</span>
+
+"TORNA A SURRIENTO" (Come Back to Sorrento)
+Ernesto &amp; Giambattista De Curtis
+
+<span class="stage-dir role">E</span>
+What’s it going to take to get you to come back to me
+
+<span class="stage-dir role rN">N</span>
+<span class="lN">Maybe if you play for me “Return to Sorrento!?”</span>
+
+<span class="stage-dir role">E</span>
+FVEE DAY OH MARAY QUANTAY BELLOW
+SHPEE RA-TANTO ZENTEE BENTAH
+GA MEH TOO A’ CHEE TEE-ERRYA METHEH
+GA SHETAH FOF EYE EH SOONAAH
+
+A GUARD OH GWA
+KAY STOOCH A REDEE...OH
+A’SIENT SIEST EE SHOOR ARANJAY
+NO PROVOH MARGUSS SEE FEE...NO
+DEEN TOE KWA REH SHAY RAY RAH
+
+WEH TOO DEE SHIOPARA TUAG DEE OH
+PA LOONG TAH RANASS TOO DAWRAY
+DASS TA TAA RA DA LAMORAY
+KEEAY DAYOFAR AY LOO EH TOORENAH
+
+MA ROOM MAY LA STAAA
+DON DORR E’STOTO RED YERRO
+TOOR NA SOORRYE-EHRETAH
+TA MAY KAMPAH
+
+<span class="stage-dir role rN">N</span>
+<span class="lN">I don’t know if that’s going to paper over the gap—</span>
+
+<span class="lN">N      IMPERSONATING AN INDIAN ACCENT</span>
+<span class="lN">…it is what it is</span>
+<span class="lN">"hmm it is what it is!?, it is what it is, it is what it is</span>
+
+<span class="lN">but! what it isn't, what it isn't is what it is</span>
+<span class="lN">- coz if you don't know what it is, that's what it isn't</span>
+<span class="lN">-and that is what it is</span>
+<span class="lN">• so what it isn't is what it is.</span>
+
+<span class="lN">Well what it was is what it was - and what it was</span>
+<span class="lN">is what it is when it was</span>
+
+<span class="lN">What it's going to be, is what it is when you get there, but we're not there so it isn't what it is.</span>
+
+<span class="lN">What it might be is never what it is</span>
+<span class="lN">And it isn't going to be what it is:</span>
+<span class="lN">"it isn't what itis, it is what it is" you can't say about "might be"</span>
+<span class="lN">- it isn’t? ...</span>
+
+<span class="lN">and that doesn't qualify as:</span>
+<span class="lN">"it isn't is what it is, when what it is, is what it isn’t it doesn't, no!"</span>
+
+<span class="lN">That’s it!</span>
+
+<span class="stage-dir role">E</span>
+You’re always so funny about it. — Try living with it.</div>
+  </details>
+
+  <details class="song-item">
+  <summary><span class="song-num">6.</span><span class="song-title">THE SPACE BETWEEN</span><span class="song-sub">The prayer in the eye of the storm</span><span class="song-arrow">&rsaquo;</span></summary>
+    <div class="song-lyrics"><span class="stage-dir role">E</span>
+The space between
+where we've never been…
+...is what it is;
+when it's not,
+but what it's not is what it always was,
+what it could be
+I agree "that’s something else."
+
+I’m talking about the space between
+what things look like
+and what each of us have seen
+
+to the enemy:
+just leave a little doubt.
+
+The space above is filled with love,
+but the space between
+is what gets you there.
+
+Ah, the space below —
+too well we know —
+in the space between
+is what we won't show.
+And leave a little doubt
+
+<span class="stage-dir role rN">N</span>
+<span class="lN">Sorry sorry sorry</span>
+<span class="lN">Thank you thank you thank you</span>
+<span class="lN">I agree with you I agree with you I agree with you</span>
+<span class="lN">The all come from the same space</span>
+
+<span class="lN">That’s the space between</span>
+
+<span class="lN">The sorry is the deepest one, works on the ability to say sorry,</span>
+<span class="lN">And you are working on the ability to say thank you, or: I agree with you.</span>
+
+<span class="lN">Saying "I tried, and I failed, so I cheated" —</span>
+<span class="lN">need not be to say you are defeated.</span>
+<span class="lN">It may be the end,</span>
+<span class="lN">but let to each, an amend</span>
+<span class="lN">for that which is now completed.</span></div>
+  </details>
+
+  <details class="song-item">
+  <summary><span class="song-num">7.</span><span class="song-title">TRAUMA RESPONSE</span><span class="song-sub">At the most raw and honest</span><span class="song-arrow">&rsaquo;</span></summary>
+    <div class="song-lyrics"><span class="stage-dir role">E</span>
+I'm not surprised!
+
+Of course I know you're doing your best.
+Reaching for me — "it's not a test."
+You want to give some kind of hope, but please — it's a joke.
+The fact of the matter is:
+I could always forgive, I just can't forget
+when the past is in ever present —
+no chance to choose to regret.
+
+<span class="stage-dir role rN">N</span>
+<span class="lN">Ever need to</span>
+<span class="lN">"vilify to satisfy."</span>
+<span class="lN">So no belief in nature too.</span>
+<span class="lN">Same for G-d.</span>
+<span class="lN">That's the waste.</span>
+
+<span class="lN">When we both are gone,</span>
+<span class="lN">please G-d we'll get along.</span>
+
+<span class="stage-dir role">E</span>
+If I could only let it go permanently,
+but that means to be indeterminately free.
+so I’m just soothing the pain as best as I can
+to find a way forward to be the man
+
+<span class="stage-dir role">N</span>
+⟨ quotation ⟩
+
+<span class="stage-dir role rN">N</span>
+<span class="lN">Why not try a little amnesty</span></div>
+  </details>
+
+  <details class="song-item">
+  <summary><span class="song-num">8.</span><span class="song-title">A LITTLE AMNESTY</span><span class="song-sub">The plea</span><span class="song-arrow">&rsaquo;</span></summary>
+    <div class="song-lyrics"><span class="stage-dir role rN">N</span>
+<span class="lN">Ooo, when it goes wrong,</span>
+<span class="lN">and it seems for so long,</span>
+<span class="lN">you need both parties to be strong,</span>
+<span class="lN">no matter the song.</span>
+<span class="lN">If only one sings along,</span>
+<span class="lN">or bangs on a gong,</span>
+<span class="lN">there's nothing upon which to prolong.</span>
+<span class="lN">And eventually it all stops.</span>
+<span class="lN">Call the cops.</span>
+<span class="lN">Some whistle raindrops,</span>
+<span class="lN">others do the flip flop.</span>
+<span class="lN">......make real compromise!</span>
+
+<span class="lN">But whatever the scheme,</span>
+<span class="lN">in the lines or in between —</span>
+<span class="lN">ain't nobody seen</span>
+<span class="lN">all of the majesty,</span>
+<span class="lN">as much as the calamity.</span>
+<span class="lN">Well, if what you want is some sanity,</span>
+<span class="lN">try to broker a little amnesty.</span>
+
+<span class="stage-dir role">E</span>
+<span class="lN">⟨ quotation ⟩</span>
+
+<span class="sub-h">TRUTHFUL LOVE</span>
+
+<span class="stage-dir role rN">N</span>
+<span class="lN">Aren’t you in the mood to sacrifice truth for love?</span>
+<span class="lN">They say the road to truth...is through nothing but peace</span>
+
+<span class="stage-dir role">E</span>
+They say the road to peace...is through nothing but truth
+
+<span class="stage-dir role rN">N</span>
+<span class="lN">But the road to love</span>
+<span class="lN">That’s knowing which to chose from the above</span>
+
+<span class="stage-dir role">E</span>
+In the summer, my lover comes south
+to visit the visitor in the visitors windows     x
+
+<span class="stage-dir role rN">N</span>
+<span class="lN">But if you can't bring it through the front door,</span>
+<span class="lN">Coz you think if you bring it through the front then it can be said,</span>
+<span class="lN">And if it can be said it can be broken.</span>
+<span class="lN">You can not say to me generously</span>
+<span class="lN">A broken man you’ll forever be</span></div>
+  </details>
+
+  <details class="song-item">
+  <summary><span class="song-num">9.</span><span class="song-title">BROKEN MAN</span><span class="song-sub">The raw plea</span><span class="song-arrow">&rsaquo;</span></summary>
+    <div class="song-lyrics"><span class="stage-dir role">E</span>
+G-d help a broken man
+If that is what I am
+Help me to understand
+don't give me reprimand
+
+don't bet me or vet me
+but don't forget me, get me
+don't free me coz u wanna be me
+but don't deceive me
+see me
+
+don't astound or confound
+I'm ground to a pound
+
+muta d’accento
+e di pensier
+
+<span class="stage-dir role rN">N</span>
+<span class="lN">When I hear your voice</span>
+<span class="lN">I change my mind</span>
+
+<span class="lN">G-d help a broken man</span>
+<span class="lN">If that is what I am</span>
+<span class="lN">Help me to understand</span>
+<span class="lN">don't give me reprimand</span>
+
+<span class="lN">Don't test me or arrest me</span>
+<span class="lN">but don't second guess me</span>
+<span class="lN">bless me</span>
+<span class="lN">don't schmooze me</span>
+<span class="lN">or use me or lose me</span>
+<span class="lN">choose me, excuse me….excuse me!</span>
+<span class="lN">don't tug or shove</span>
+<span class="lN">come with love</span>
+
+muta d’accento
+e di pensier
+
+<span class="stage-dir role rN">N</span>
+<span class="lN">When I hear your voice</span>
+<span class="lN">I change my mind</span>
+
+<span class="stage-dir role">E</span>
+<span class="lN">⟨ quotation ⟩</span></div>
+  </details>
+
+  <details class="song-item">
+  <summary><span class="song-num">10.</span><span class="song-title">PAPER CROWN</span><span class="song-sub">The turning point — vulnerability as the key</span><span class="song-arrow">&rsaquo;</span></summary>
+    <div class="song-lyrics"><span class="stage-dir role">E</span>
+I once had a girl.
+She said to me:
+
+<span class="stage-dir role rN">N</span>
+<span class="lN">"Your problem is you're not available.</span>
+<span class="lN">The problem is you're not vulnerable,</span>
+<span class="lN">You’ll give anything to the ones who can’t ask you for it.”</span>
+
+<span class="stage-dir role">E</span>
+I said: "I can't be vulnerable with everyone."
+She said:
+
+<span class="stage-dir role rN">N</span>
+<span class="lN">"But with me you need to be,</span>
+<span class="lN">so as you can be what I'd like to say is authentic.</span>
+<span class="lN">Because after that,</span>
+<span class="lN">the only way that you can be intimate</span>
+<span class="lN">is if I feel that you were authentic."</span>
+
+<span class="stage-dir role">E</span>
+I said:
+"What's that got to do with being vulnerable?"
+She said:
+
+<span class="stage-dir role rN">N</span>
+<span class="lN">“Well if you can't be vulnerable,</span>
+<span class="lN">how can you be authentic?"</span>
+
+<span class="stage-dir role">E</span>
+I said: "What!?"
+She said:
+
+<span class="stage-dir role rN">N</span>
+<span class="lN">“If you can't be vulnerable”</span>
+
+E— selectively —
+
+<span class="stage-dir role rN">N</span>
+<span class="lN">“you can't be authentic”</span>
+
+E— ostensibly.
+I said:
+"But I need to be in control."
+She said:
+
+<span class="stage-dir role rN">N</span>
+<span class="lN">"That's your problem.</span>
+<span class="lN">If you have to be in control you can't be accountable,</span>
+<span class="lN">and if you can't be accountable you'll never be vulnerable."</span>
+
+<span class="stage-dir role">E</span>
+I said: "What!?"
+She said:
+
+<span class="stage-dir role rN">N</span>
+<span class="lN">"Your problem is you need to be in control,</span>
+<span class="lN">coz if you're not in control</span>
+<span class="lN">you'll have to be accountable,</span>
+<span class="lN">and if you can't be accountable</span>
+<span class="lN">well then you'll refuse to be vulnerable."</span>
+
+<span class="stage-dir role">E</span>
+"Ahhhh" I said. "You're driving me crazy."
+She said:
+
+<span class="stage-dir role rN">N</span>
+<span class="lN">"That's right."</span>
+
+<span class="stage-dir role">E</span>
+"Well let me tell you something, my dear —
+there's one reason I can't give up needing to be in control."
+She said:
+
+<span class="stage-dir role rN">N</span>
+<span class="lN">"Oh yeah, what's that?"</span>
+
+<span class="stage-dir role">E</span>
+"I'm insecure because of my that paper crown you gave me"
+
+<span class="stage-dir role rN">N</span>
+<span class="lN">"Ah!"</span>
+
+<span class="stage-dir role">E</span>
+she said.
+
+<span class="stage-dir role rN">N</span>
+<span class="lN">"Now we're getting somewhere."</span>
+
+<span class="stage-dir role">E</span>
+"Yeah, yeah, yeah — but the deeper reason I'm insecure..."
+
+<span class="stage-dir role rN">N</span>
+<span class="lN">"Oh"</span>
+
+<span class="stage-dir role">E</span>
+she said.
+
+<span class="stage-dir role rN">N</span>
+<span class="lN">"Why's that?"</span>
+
+<span class="stage-dir role">E</span>
+"I never had any faith in the first place"
+
+<span class="stage-dir role rN">N</span>
+<span class="lN">"Ah, so"</span>
+
+<span class="stage-dir role">E</span>
+she said.
+
+<span class="stage-dir role rN">N</span>
+<span class="lN">"What you're telling me is:</span>
+<span class="lN">if you had faith you would feel secure,</span>
+<span class="lN">you wouldn't need to be in control,</span>
+<span class="lN">then you could be accountable,</span>
+<span class="lN">then you could be vulnerable,</span>
+<span class="lN">then you could be authentic,</span>
+<span class="lN">then we could be intimate."</span>
+
+<span class="stage-dir role">E</span>
+"That's perfect" I said. "Well done.
+Couldn't have said it better myself.
+
+She says:
+
+<span class="stage-dir role rN">N</span>
+<span class="lN">"Oh but the opposite is true — you'd better be careful.</span>
+<span class="lN">I'll explain it to you:</span>
+<span class="lN">If you really have no faith, and you're insecure,</span>
+<span class="lN">and you need to control, and so you can't take accountability,</span>
+<span class="lN">what you'll do is you'll vilify —</span>
+<span class="lN">you'll vilify so that you can't be accountable —</span>
+<span class="lN">you'll vilify, it's not as simple as not being accountable,</span>
+<span class="lN">you'll actually vilify.</span>
+<span class="lN">And if you vilify you'll end up duplicitous,</span>
+<span class="lN">and if you're duplicitous no-one will want to be near you,</span>
+<span class="lN">and that will be isolation.</span>
+<span class="lN">So it stands you in good stead</span>
+<span class="lN">to develop a little faith."</span>
+
+<span class="stage-dir role">E</span>
+Vive la difference
+That’s the difference
+…. I don’t need this paper crown
+Crown paper crown paper crown.....
+
+<span class="stage-dir role">E</span>
+⟨ quotation ⟩
+
+Crown paper crown paper crown.....</div>
+  </details>
+
+  <details class="song-item">
+  <summary><span class="song-num">11.</span><span class="song-title">THE PAINTING (&amp; backdrop)</span><span class="song-sub">soliloquy</span><span class="song-arrow">&rsaquo;</span></summary>
+    <div class="song-lyrics"><span class="stage-dir">the Narrator</span>
+
+<span class="stage-dir">He pointed down the Italian river Street scene, where there's no one else there except for her and this situation. And he said to her with veracity as he pointed down the river Street with a scroll in his hand, he rolled up a piece of paper. he said</span>
+
+<span class="stage-dir role">E</span>
+“Vive la difference, I don’t need the paper crown….That’s the difference”
+
+<span class="stage-dir">the Narrator</span>
+<span class="stage-dir">-and she was gone.</span>
+
+<span class="stage-dir role">E</span>
+<span class="stage-dir">⟨ quotation ⟩</span>
+
+<span class="stage-dir">the Narrator</span>
+<span class="stage-dir">And he was alone. He was alone in this beautiful setting, to be alone, to be alone for the rest of time. Initially, it seemed like a most horrible thing, but...!</span>
+
+<span class="stage-dir">Leading up to that she'd come, visiting, in the visitors windows. This parting scene had started with her there. There was an emotional hug, she said can we take it down a notch? The shadow of someone else could be seen outside... was she going to chat with them to deflect and avoid him as usual. He said</span>
+
+<span class="stage-dir role">E</span>
+“We can close the window, and we’ll chat.”
+
+<span class="stage-dir">the Narrator</span>
+<span class="stage-dir">They entered some of the usual competitive arenas; where everything's polarity, everything's some criticism of the other in some form, it's unavoidable.</span>
+
+<span class="stage-dir">It eventually led to her saying</span>
+
+<span class="stage-dir role rN">N</span>
+<span class="lN">"so you'd rather hurt me"</span>
+
+<span class="stage-dir">the Narrator</span>
+<span class="stage-dir">he said... he had the presence of mind to be able to say it for the first time</span>
+
+<span class="stage-dir role">E</span>
+"I'm not trying to hurt you, I'm trying to prevent myself from being hurt.... and THAT’S the difference".
+
+<span class="stage-dir">the Narrator</span>
+<span class="stage-dir">Before that there was some interaction and dialogue - and he was trying to hug her as if to say;</span>
+
+<span class="stage-dir role">E</span>
+that's what I have to say,
+
+<span class="stage-dir">the Narrator</span>
+<span class="stage-dir">but it was also impossible. She was too stiff. It was impossible.</span>
+
+<span class="stage-dir">Before that he said,</span>
+
+<span class="stage-dir role">E</span>
+“maybe I can play some piano.
+I dream this amazing melody
+<span class="stage-dir role">OR</span>
+I'm doing some interesting stuff these days.
+
+<span class="stage-dir">the Narrator</span>
+<span class="stage-dir">He played a little bit….”</span>
+
+<span class="stage-dir role">E</span>
+In the summer, my lover comes south to visit the visitors in the visitors windows
+
+<span class="stage-dir">the Narrator</span>
+<span class="stage-dir">…but that didn't last. she'd come to visit him, yes, but it was to wonder what was going on, as if to wonder</span>
+
+<span class="stage-dir role rN">N</span>
+<span class="lN">"what's wrong",</span>
+
+<span class="stage-dir">the Narrator</span>
+<span class="stage-dir">of course he would be the one to venture to say</span>
+
+<span class="stage-dir role">E</span>
+“OK lets talk!!
+
+<span class="stage-dir">the Narrator</span>
+<span class="stage-dir">And he managed to prattle on about quite a few things, but it wasn’t landing.</span>
+
+<span class="stage-dir">Left alone in what looks like this Turner Venetian oil painting - beautiful sunshine -- with beautiful buildings lining into the distance - which are probably not really either but that's what had been painted around him, to then have the painter removed from the painting the second he hit her with that final line,</span>
+
+<span class="stage-dir role">E</span>
+“that's it, "that's the difference"
+
+⟨ quotation ⟩
+
+<span class="stage-dir role">E</span>
+⟨ quotation ⟩
+
+<span class="stage-dir role">N</span>
+⟨ quotation ⟩
+
+<span class="sub-h">11.2 THE DESTINATION</span>
+<span class="stage-dir">[ Arriving is the trap ]</span>
+
+<span class="stage-dir role">E</span>
+
+Sometimes the destination is a trap. The journey is where it’s at. I wonder if you can atestify to that.
+When faster than mountains, but slower than clouds.
+Contradiction's the terms —it's all that's allowed.
+And in that deafening silence, the open secret returns:
+what's too long…..…will we ever learn?
+
+⟨ quotation ⟩
+
+⟨ quotation ⟩</div>
+  </details>
+
+  <details class="song-item">
+  <summary><span class="song-num">12.</span><span class="song-title">UN ARTISTE</span><span class="song-sub">we sang alone</span><span class="song-arrow">&rsaquo;</span></summary>
+    <div class="song-lyrics">Jacques
+And so we sang together we sang together we sang alone
+
+In the middle of the noise on a crowded day,
+I can hear myself and you know I want to say something
+An artist has to make some room and everything he seems
+taking that the higher lines are free
+And so we sang together we sang together we sang alone.
+
+And how it feels to be seen and known
+for what you have and what you let go, and let show
+and how it feels to be dreaming, though
+everything's really quite sad, but I'm glad for what I have
+
+If an artist has to make some room and everything he seems,
+tell me really, are the higher lines ever free
+and so we sang together we sang together we sang alone
+
+Finally letting him go, finally sitting down finally what I know,
+laughing like a clown in town
+
+<span class="stage-dir role rN">N</span>
+<span class="lN">He doesn't care about the physical</span>
+<span class="lN">it's too political for his visible,</span>
+<span class="lN">lyrical, spiritual melody.</span>
+
+<span class="stage-dir role">E</span>
+He cares about the sense of it.
+He's into the defense of it,
+but not with violence or silence he is free.
+
+<span class="stage-dir role rN">N</span>
+<span class="lN">He doesn't care about the surreptitious</span>
+<span class="lN">he's into helping you get rid of</span>
+<span class="lN">the delicious and malicious monkey on your back</span>
+
+<span class="stage-dir role">E</span>
+Taking that the higher lines
+Taking that the higher lines
+
+<span class="stage-dir role rN">N</span>
+<span class="lN">Taking that the higher lies</span>
+<span class="lN">Come with a fee</span></div>
+  </details>
+</div>
+<div class="rh-wrap">
+  <h2 class="act-h">ACT III &nbsp;&middot;&nbsp; ACT THREE — The Emergence — Paper Heart</h2>
+  <div class="vidslot">
+    <div class="frame"><div class="pending"><p>Link to follow</p></div></div>
+    <p class="cap">ACT III &mdash; full act, rehearsal recording</p>
+  </div>
+  <div class="act-pre">— Paper Heart
+
+<span class="stage-dir">PAINTING BACKDROP without shadow figure</span>
+
+<span class="stage-dir role">E</span>
+<span class="stage-dir">⟨ quotation ⟩</span>
+
+<span class="stage-dir role">N</span>
+<span class="stage-dir">⟨ quotation ⟩</span>
+
+<span class="stage-dir role">E</span>
+<span class="stage-dir">⟨ quotation — Lucio Dalla ⟩</span></div>
+  <details class="song-item">
+  <summary><span class="song-num">1.</span><span class="song-title">FROM A LIVING GRAVE</span><span class="song-sub">The descent and the return</span><span class="song-arrow">&rsaquo;</span></summary>
+    <div class="song-lyrics"><span class="stage-dir role">E</span>
+The day is over
+The war is lost
+There's naught to do
+But count the cost
+Far beyond
+the twist of hope
+Past the point
+Of buying a rope
+
+Death of faith and spirit too
+Resignation all to do
+Lines of poetry, will they save...
+Except to sleep...from a living grave
+
+<span class="stage-dir role rN">N</span>
+<span class="lN">I realize I could have helped you</span>
+<span class="lN">Even though I could never help myself</span>
+<span class="lN">It doesn't do to tell me now why</span>
+<span class="lN">I’m left on the shelf</span>
+
+<span class="lN">Left alone in silence</span>
+<span class="lN">Far from any voice</span>
+<span class="lN">Still not believing &amp; self-deceiving</span>
+<span class="lN">As if I have a choice</span>
+
+<span class="lN">Far removed from my truly loved one</span>
+<span class="lN">All in the name of expectation</span>
+<span class="lN">yet caught in the fear of all things near</span>
+<span class="lN">due to past relation</span>
+
+<span class="lN">But you are imbued with beauty still</span>
+
+<span class="lN">You leave the others in the dark</span>
+<span class="lN">Cast by your shadow of endless light</span>
+<span class="lN">Eclipsed only by the water mark of this Noah's Ark</span></div>
+  </details>
+
+  <details class="song-item">
+  <summary><span class="song-num">2.</span><span class="song-title">PAINFUL BOTHER</span><span class="song-sub">Farewell to the dynamic</span><span class="song-arrow">&rsaquo;</span></summary>
+    <div class="song-lyrics"><span class="stage-dir role">E</span>
+but when hate consumes you inhale the fumes,
+and even more so come to anger,
+love is a reality —
+but not at the price of all sanity
+So fare thee well on the rest of your journey
+Life is short.
+I’ll see you in hell —
+just as sorry for what I'm not.
+
+Where your charm and humor
+
+<span class="stage-dir role rN">N</span>
+<span class="lN">unless of course G-d is a rumor</span>
+
+<span class="stage-dir role">E</span>
+and being made of ice
+
+<span class="stage-dir role rN">N</span>
+<span class="lN">just as you are so nice</span>
+
+<span class="stage-dir role">E</span>
+will catch no sympathy
+
+<span class="stage-dir role rN">N</span>
+<span class="lN">"perhaps it’s all serendipity”.</span>
+
+<span class="stage-dir role">E</span>
+to save you the heat,
+perhaps you'll suggest people are just pieces of meat
+
+⟨ quotation ⟩</div>
+  </details>
+
+  <details class="song-item">
+  <summary><span class="song-num">3.</span><span class="song-title">BY HERTZ</span><span class="song-sub">Reflection</span><span class="song-arrow">&rsaquo;</span></summary>
+    <div class="song-lyrics"><span class="stage-dir role rN">N</span>
+<span class="lN">You make me feel like I sold out a friendship</span>
+<span class="lN">I always feel you feel me a fraud</span>
+<span class="lN">I guess I can see the contention</span>
+<span class="lN">Simply laughing was hard to applaud</span>
+
+<span class="lN">Coz it’s true it is always as such</span>
+<span class="lN">For tHis worLd is set up to be so</span>
+<span class="lN">Things get to where they are going</span>
+<span class="lN">And those who will know, who will know?</span>
+<span class="lN">...those who will go</span>
+
+<span class="stage-dir role">E</span>
+…a genius without action
+is not half of a fraction
+of a man with a plan
+who at times suffers in distraction
+
+<span class="stage-dir role rN">N</span>
+<span class="lN">In other words what I concede is</span>
+<span class="lN">Perhaps I’m not so in need</span>
+<span class="lN">For if the road I have chosen is just</span>
+<span class="lN">One also travels in trust</span>
+
+<span class="stage-dir role">E</span>
+But oh how you hurt me
+without any questions
+It pinched at the heart of a home
+and I’m sorry I lost to invention
+buy you, you re-calibrate on your own
+
+just to get on the wavelength
+Apropos to avoid just deserts
+never turning to G-d for strength
+As seen, and as measured
+by hurts
+
+<span class="stage-dir role rN">N (whisper)</span>
+<span class="lN">… Wake up Jack</span>
+<span class="stage-dir">Frère Jacques</span>
+
+<span class="stage-dir role">E</span>
+In all this silence who can sleep!?</div>
+  </details>
+
+  <details class="song-item">
+  <summary><span class="song-num">4.</span><span class="song-title">FAITH</span><span class="song-sub">The resolution</span><span class="song-arrow">&rsaquo;</span></summary>
+    <div class="song-lyrics"><span class="stage-dir role">PV</span>
+<span class="stage-dir role">E</span>
+ED IL MIO BACIO SCIOGLIERÀ
+IL SILENZIO CHE TI FA MIA!
+MA IL MIO MISTERO È CHIUSO IN ME
+IL NOME MIO NESSUN SAPRÀ!
+NO, NO, SULLA TUA BOCCA LO DIRÒ
+QUANDO LA LUCE
+
+TRANSLATION OPTIONAL
+And my kiss will break the silence, that makes you mine!
+But my secret is hidden within me
+My name no one shall know
+But on your mouth I will tell it
+When the light shines
+Soon they’ll be seeing the light, bang bang bang bang bang
+
+<span class="stage-dir role rN">N</span>
+<span class="lN">When things don’t seem white or black,</span>
+<span class="lN">it's a time to stop — but not look back.</span>
+<span class="lN">It's time to rest and see what tomorrow will be.</span>
+
+<span class="lN">If you want, call it a test.</span>
+<span class="lN">But be assured that He knows best.</span>
+<span class="lN">His truth abounds without a sound,</span>
+<span class="lN">even in a mess.</span>
+<span class="lN">If you see the good,</span>
+<span class="lN">you'll see the best</span>
+
+<span class="lN">You're not naive to trust.</span>
+<span class="lN">In fact, it's the opposite for us —</span>
+<span class="lN">when things seem bad, try faith, a tad.</span>
+
+<span class="lN">I know, it's easier said than done,</span>
+<span class="lN">be it money, health, or love, or losing someone.</span>
+
+<span class="lN">His truth abounds without a sound,</span>
+<span class="lN">even in a mess.</span>
+<span class="lN">If you see the good you’ll see….</span>
+
+<span class="lN">HaKadosh Baruch Hu: “VINCERÒ” “VINCERÒ”…</span>
+
+<span class="lN">…And I wake up in the morning — beautiful sunshine —</span>
+<span class="lN">I wake up in the morning, all I see is You</span></div>
+  </details>
+
+  <details class="song-item">
+  <summary><span class="song-num">5.</span><span class="song-title">ROCK N ROLL / SUNSHINE</span><span class="song-sub">The fantasy return —rehearsed, and never had</span><span class="song-arrow">&rsaquo;</span></summary>
+    <div class="song-lyrics"><span class="stage-dir role rN">N</span>
+<span class="lN">You make me rock n roll,</span>
+<span class="lN">You make me take the can,</span>
+<span class="lN">You make me roll.</span>
+<span class="stage-dir role">E</span>
+And I wake up in the morning — beautiful sunshine —
+I wake up in the morning, all I see is You.
+
+<span class="stage-dir role rN">N</span>
+<span class="lN">So what do we do? We stick at it for what we knew.</span>
+<span class="lN">But the situation's always on the brink.</span>
+<span class="lN">How do we mend this painting?</span>
+<span class="lN">I tell you what — this is how I'm starting:</span>
+<span class="lN">telling you now that I'm in for keeps.</span>
+
+<span class="stage-dir role">E</span>
+What did I do to deserve someone like you?
+
+<span class="stage-dir role rN">N</span>
+<span class="lN">What did I say, you tell me the things I do make you go away?</span>
+
+<span class="stage-dir role">E</span>
+I really didn't mean to hurt you that way. Tell me you don't mean all the things you say.
+
+<span class="stage-dir role rN">N</span>
+<span class="lN">True  sometimes we say the things we don't want to do.</span>
+
+<span class="stage-dir role">E</span>
+You say that we can understand if we land a hand
+
+<span class="stage-dir role rN">N</span>
+<span class="lN">if we stay for the fight if we hang in there tonight</span>
+
+<span class="stage-dir role">E</span>
+And I wake up in the morning — beautiful sunshine —
+I wake up in the morning, all I see is You.
+<span class="stage-dir role rN">N</span>
+<span class="lN">You make me rock n roll,</span>
+<span class="lN">You make me take the can,</span>
+<span class="lN">You make me roll.</span>
+
+<span class="stage-dir role">E</span>
+Shall I compare thee to a summer's day?
+For thou art more beautiful than anything Shakespeare could say.
+
+<span class="stage-dir role rN">N</span>
+<span class="lN">Shall I compare thee to a starry starry night?</span>
+<span class="lN">Thou art more dazzling than anything Vincent tried to hold in sight.</span>
+
+<span class="stage-dir role">E</span>
+None of that was ever said. — I just know it by heart
+Best not to forget — We all get to choose what we regret.
+
+<span class="stage-dir role rN">N</span>
+<span class="lN">So you’re still not in the mood to sacrifice truth for love?</span>
+
+<span class="stage-dir">EVERYONE GATHERED AROUND N LAUGHING</span></div>
+  </details>
+
+  <details class="song-item">
+  <summary><span class="song-num">6.</span><span class="song-title">JUST A MOMENT AWAY</span><span class="song-sub">for what once was ].</span><span class="song-arrow">&rsaquo;</span></summary>
+    <div class="song-lyrics"><span class="stage-dir role">E</span>
+You know I love you
+I can’t let the truth get in the way
+you know I loved you
+“AM I IN THE MOOD TO SACRIFICE TRUTH FOR LOVE?!!!”
+regardless, that's what I want to say
+
+it always seems
+like just a moment away
+I hope you’re ok
+just a moment away
+I hope you’re ok
+that’s what I want to say
+
+What has love become
+﻿if it’s not being willing to die for someone
+That you want to kill anyway
+
+Usually for the things they don’t say.
+
+<span class="stage-dir role rN">N</span>
+<span class="lN">….you don’t say anything</span>
+
+<span class="stage-dir role">E</span>
+With everything so unspoken,
+It should not be thus.
+If I could just forgot what it's like to think,
+to think to think of us as us.
+
+Let me grieve
+what once was —
+that soothing,
+makes reminded of.
+
+Let me grieve
+what once was —
+that soothing,
+makes reminded of.
+
+But I miss you so much
+So much of the time.
+I know you miss someone.
+I wish it was mine ﻿
+
+When you speak everyone laughs
+
+and there are many tall giraffes
+who are leaning down
+to listen for that sound
+
+It’s just a moment away
+
+<span class="stage-dir role">E</span>
+<span class="stage-dir role rN">N</span>
+<span class="lN">they say grief is love that has nowhere to go,</span>
+
+<span class="stage-dir role">E</span>
+tell me something I don't already know.
+No one escapes it, and it seems to be so —
+
+<span class="stage-dir role rN">N</span>
+<span class="lN">I'm inclined also to "that's how it goes…</span>
+<span class="lN">And brother Jack</span>
+<span class="lN">“….I KNOW YOUR GETTING ANXIOUS TO CLOSE</span>
+
+<span class="stage-dir role">E</span>
+⟨ quotation ⟩
+Some traditions are wiser,
+and so it is thus:
+made in an acceptable way,
+and expected of us.
+
+Let me grieve
+what once was if it ever was
+That crying makes
+Not forgotten of…..
+But not resentful of
+
+Let me grieve
+what once was if it ever was
+That crying makes
+Reminded of
+Not forgotten of…..
+… not resentful of</div>
+  </details>
+
+  <details class="song-item">
+  <summary><span class="song-num">7.</span><span class="song-title">A LOVE LEFT BLEEDING</span><span class="song-sub">the ceasefire, both of them sorry ].</span><span class="song-arrow">&rsaquo;</span></summary>
+    <div class="song-lyrics"><span class="stage-dir role">E</span>
+Such a lovely day
+People are so nice
+And here am I
+The loser
+Who just lost a little more than twice
+
+The dreamer who kept an open door
+In the face of endless denial
+Unfazed by every trial
+Up until now
+
+When actual bliss
+In a simple kiss
+Is what’s to be denied
+For some reason, unspecified,
+unsupplied, mystified
+
+<span class="stage-dir role rN">N</span>
+<span class="lN">Perhaps detachment</span>
+<span class="lN">on a self-preserving slide</span>
+<span class="lN">Or instilled by such wanting</span>
+<span class="lN">a paradox of pride</span>
+
+<span class="stage-dir role">E</span>
+Critically framed as needing
+
+<span class="stage-dir role rB">E + N</span>
+<span class="lB">And there you have it</span>
+<span class="lB">Love</span>
+<span class="lB">left bleeding</span>
+
+<span class="stage-dir role">E</span>
+I love you
+
+<span class="stage-dir role rN">N</span>
+<span class="lN">So why don’t you call</span>
+
+<span class="stage-dir role">E</span>
+It’s too painful
+
+<span class="stage-dir role rN">N</span>
+<span class="lN">So that’s love!?</span>
+
+<span class="stage-dir role">E</span>
+It’s mixed with fear
+I just want to hear something true
+
+<span class="stage-dir role rN">N</span>
+<span class="lN">What can I do?</span>
+
+<span class="stage-dir role">E</span>
+Sadly by now it’s all a mess
+
+<span class="stage-dir role rN">N</span>
+<span class="lN">I miss you</span>
+
+<span class="stage-dir role">E</span>
+I think I understand, but I’m not sure you really do
+
+<span class="stage-dir role rN">N</span>
+<span class="lN">I’m sorry</span>
+
+<span class="stage-dir role">E</span>
+Me too
+
+<span class="stage-dir">PAGLIACCI</span>
+<span class="stage-dir role">E</span>
+﻿Dbm (but the note is B)
+RIDI, PAGLIACCIO,
+B/Ab
+SUL TUO AMORE INFRANTO!
+Dbm      B/Ab
+RIDI DEL DUOL,
+Eb           Ab
+CHE T'AVVELENA IL COR!  (cry treuuahh)
+
+⟨ quotation — Lucio Dalla ⟩
+
+<span class="stage-dir role rN">N</span>
+<span class="lN">LAUGHING CLOWN, AT YOUR BROKEN LOVE!</span>
+<span class="lN">LAUGH AT THE GRIEF THAT YOU’RE PRISONER OF</span>
+<span class="lN">IT POISONS YOUR HEART</span></div>
+  </details>
+
+  <details class="song-item">
+  <summary><span class="song-num">8.</span><span class="song-title">LET ME CRY</span><span class="song-sub">The release / the prayer</span><span class="song-arrow">&rsaquo;</span></summary>
+    <div class="song-lyrics"><span class="stage-dir role">E</span>
+When I think of the pain
+that we've been through
+and I think about how it's true
+That everything
+that we'd been through
+should have been another step closer too
+
+How could I say
+What did I know
+
+<span class="stage-dir role rN">N</span>
+<span class="lN">... you know a lot</span>
+
+At least to cry is something,
+that we knew how to do
+at least to cry is something,
+and how would I cry with you
+
+with our tears we found a way
+we recognized what we want to say
+
+Even though the pain held us inside
+we knew the tears were not pride
+
+<span class="stage-dir">the Narrator</span>
+<span class="stage-dir">Let me cry for those who need it most</span>
+<span class="stage-dir">Let me cry for those due to meet the unknown</span>
+<span class="stage-dir">and a heartfelt plea to revive my soul</span>
+<span class="stage-dir">To light a bright torch</span>
+<span class="stage-dir">a lover that really was only a habit</span>
+<span class="stage-dir">a parent that was warm but cruel</span>
+<span class="stage-dir">or the friend who always though of you as a fool</span>
+
+And we'd waste away these hours
+doing one thing right
+I'm not trying to say
+"I'm trying to say I know what's right"
+What I'm trying to say
+is please let me cry
+what I'm trying to say
+is please let me give,
+
+with our tears we'd find a way
+we'd recognize what we want to say
+
+What I'm trying to say
+is please let me cry
+what I'm trying to say
+is please...
+
+﻿
+<span class="stage-dir">the Narrator</span>
+<span class="stage-dir">"there's something needs to be done. It's like something in you that says I need to do this. And if I don't do anything else, I know that I know that I know that I have to do this.</span>
+
+<span class="stage-dir">I think every person, at one point in their lives, they had this strong feeling —</span>
+<span class="stage-dir">that they have to do something, about a situation. Maybe they were raised in a way that they shouldn't.... I'm saying something must be done.</span>
+
+<span class="stage-dir">It's like one of those people who need to climb Mt Everest: it requires years of training, and then facing the unknown up there.</span>
+
+<span class="stage-dir">So many have tried and they have failed, and some have even lost their lives —</span>
+<span class="stage-dir">lo aleinu. I don't have more words to cont..."</span>
+
+﻿Wind sound
+
+<span class="stage-dir role">E</span>
+Saying "I tried, and I failed, so I cheated" —
+need not be to say I’m defeated.
+It may be the end,
+but to each, an amend
+for that which now is completed.
+
+<span class="stage-dir role rN">N (whisper)</span>
+<span class="lN">“Wake up Brother Jacques!”</span>
+
+<span class="lN">... Frère Jacques</span>
+<span class="lN">Brother Jack</span>
+<span class="lN">Are you asleep</span>
+<span class="lN">Are you asleep</span>
+<span class="lN">Sonnez les matines.</span></div>
+  </details>
+
+  <details class="song-item">
+  <summary><span class="song-num">9.</span><span class="song-title">YOUR PAPER HEART</span><span class="song-sub">The only one who stayed</span><span class="song-arrow">&rsaquo;</span></summary>
+    <div class="song-lyrics"><span class="stage-dir role rN">N</span>
+<span class="lN">What else can I do</span>
+<span class="lN">you look so blue</span>
+<span class="lN">a shoulder to cry on</span>
+<span class="lN">or you can rely on</span>
+<span class="lN">but I can’t decide</span>
+<span class="lN">what to tell to those eyes</span>
+<span class="lN">to those eyes</span>
+
+<span class="lN">what if I wipe those tears</span>
+<span class="lN">even holding back the pain</span>
+<span class="lN">that I know you’ve been hiding</span>
+<span class="lN">you can put it in writing</span>
+<span class="lN">you don’t have to tell me why</span>
+<span class="lN">It’s the hardest thing to try</span>
+
+<span class="lN">There is nowhere else you’d rather be</span>
+<span class="lN">there is no one else you’d rather see.</span>
+<span class="lN">We know there’s no one else as close to me</span>
+<span class="lN">laughing at the sea.</span>
+
+<span class="lN">Oh there is nowhere else you’d rather be</span>
+<span class="lN">I know there is no one else you’d rather see</span>
+<span class="lN">I know there’s nowhere else in modern art</span>
+<span class="lN">With a broken paper Heart</span>
+
+<span class="lN">Look at these soaking eyes</span>
+<span class="lN">what need no-one tries</span></div>
+  </details>
+
+  <details class="song-item">
+  <summary><span class="song-num">10.</span><span class="song-title">PAPER GUN</span><span class="song-sub">reprise</span><span class="song-arrow">&rsaquo;</span></summary>
+    <div class="song-lyrics"><span class="stage-dir role">E</span>
+Gun paper gun paper gun,
+gun paper gun paper gone,
+gun paper gun paper gun
+soon they'll be seeing the light
+
+…..did I wait too long to turn the lights back on
+
+<span class="stage-dir role">E</span>
+“Please open the door the window is broken, we’ve been here before pacing these holes trying to talk over the silence. Pride sticks out, his tongue laughs at the portrait that we become stuck in a frame unable to change I was wrong. I’m late, but I’m here right now trying to find forgiveness what you show me how, time can make you blind. I can see you now that we’re laying in the darkness did I wait too long to turn the lights back on.”</div>
+  </details>
+
+  <details class="song-item">
+  <summary><span class="song-num">11.</span><span class="song-title">COMING HOME</span><span class="song-arrow">&rsaquo;</span></summary>
+    <div class="song-lyrics"><span class="stage-dir role rN">N</span>
+<span class="lN">The Christmas bells</span>
+<span class="lN">are ringing now</span>
+<span class="lN">I heard u say!</span>
+<span class="lN">You better get it right now,</span>
+<span class="lN">&amp; how you feel about coming home</span>
+
+<span class="lN">Just a little smile</span>
+<span class="lN">just a little feeling of what you've been</span>
+<span class="lN">missing for a while</span>
+<span class="lN">in every song you play.</span>
+<span class="lN">I'm coming home for Christmas</span>
+
+<span class="stage-dir role">E</span>
+<span class="lN">⟨ quotation — Lucio Dalla ⟩</span>
+
+<span class="stage-dir role rN">N</span>
+<span class="lN">The angels cry for what you know</span>
+<span class="lN">just close your eyes and just let go</span>
+
+<span class="lN">Now close the door,</span>
+<span class="lN">turn on the light</span>
+<span class="lN">I'll tell you more,</span>
+<span class="lN">when you arrive tonight</span>
+<span class="lN">and come on home for Christmas</span>
+
+<span class="stage-dir role">E</span>
+<span class="lN">⟨ quotation ⟩</span>
+
+<span class="stage-dir role rN">N</span>
+<span class="lN">Even with a paper heart, and your paper crown, and your paper gun.</span>
+
+<span class="stage-dir role">N</span>
+<span class="lN">⟨ quotation ⟩</span>
+
+<span class="lB">“that’s the way it is, you only have in life what you give away”</span>
+
+﻿</div>
+  </details>
+
+  <details class="song-item">
+  <summary><span class="song-num">12.</span><span class="song-title">THIS IS MINE</span><span class="song-sub">Reclamation / generosity</span><span class="song-arrow">&rsaquo;</span></summary>
+    <div class="song-lyrics"><span class="lN">This is mine, but you can have it.</span>
+<span class="lN">This is mine, but you can have it.</span>
+<span class="lN">This is mime, but you can have it —</span>
+<span class="lN">'cause it's all I've got to give.</span></div>
+  </details>
+
+  <details class="song-item">
+  <summary><span class="song-num">13.</span><span class="song-title">OPERA STAR</span><span class="song-arrow">&rsaquo;</span></summary>
+    <div class="song-lyrics"><span class="stage-dir role">E</span>
+
+viarno viarnon cop I am bayaa
+funiculi funicula x 2
+yam I am ayaa funiculi funicula  viarno
+
+I say la ra nee ne may-ess al yet ay
+tu sah ya doh
+I lost to corin drat of few dispyet ay
+fa may no mo
+
+A do... no fort o goshe masi koolyay
+e rasa sta
+e lo...n ta corpio yes eron tes true-yay
+su lan baga
+
+viarno viarnon cop I am bayaa
+funiculi funicula x 2
+yam I am ayaa funiculi funicula  viarno=i&amp;vox
+
+<span class="stage-dir role rB">N+E</span>
+<span class="lB">Some say, the world is made for joy giving.</span>
+<span class="lB">Well, so do I</span>
+<span class="lB">You mustn't change.</span>
+
+<span class="lB">Some say I'm far too busy making a living.</span>
+<span class="lB">So take a break.</span>
+<span class="lB">…They take. Break!!!</span>
+
+<span class="lB">But me, I'm on the stage</span>
+<span class="lB">a Hollywood actor</span>
+<span class="lB">would never do this.</span>
+<span class="lB">Tell us some more</span>
+<span class="lB">The reason we are here is never a factor.</span>
+<span class="lB">Just moving your lips.</span>
+<span class="lB">You learn the score</span>
+
+<span class="lB">We all know we all know</span>
+<span class="lB">beluga caviar we all know</span>
+<span class="lB">we all know the truth is never far. (Mesoud can play guitar)</span>
+<span class="lB">Officially I'm at the bar.</span>
+<span class="lB">Provisionally with a Cuban cigar  (holding a cigar)</span>
+<span class="lB">I am I am. I am an opera star.</span>
+
+<span class="sub-h">CURTAIN</span>
+
+ENCORE</div>
+  </details>
+
+  <details class="song-item">
+  <summary><span class="song-num">14.</span><span class="song-title">PAPER HEART ﻿ ﻿</span><span class="song-sub">so far away</span><span class="song-arrow">&rsaquo;</span></summary>
+    <div class="song-lyrics">ref: culm, rokn, sun, artist, yyo, gun - cry
+
+<span class="lG">ref: cry</span>
+
+<span class="stage-dir role">E</span>
+I believe in your pain, I believe in you
+it seems the same with no refrain
+And so a claim to sharing love
+
+<span class="stage-dir role rN">N</span>
+<span class="lG">ref: culm</span>
+
+what did I do
+to deserve someone like you
+Call it a gift
+You make me rock ‘n’ roll You make me take the can
+And I wake up in the morning, beautiful sunshine
+<span class="lG">ref: rokn</span>
+<span class="lG">ref: sun</span>
+
+in truth we drink
+and then we share
+Where others fear
+ought not to dare
+An artist has to make some room
+
+<span class="stage-dir role rN">N</span>
+<span class="lG">ref: artist</span>
+
+on common ground
+sadly sound
+from dealing with
+the weights we lift
+
+<span class="stage-dir role rN">N</span>
+<span class="lG">ref: yyo</span>
+
+I mean ourselves
+Well what the hell
+even if I’m mistaken
+As far as I’m concerned
+You’re taken
+
+<span class="stage-dir role rN">N</span>
+<span class="lG">ref: gun</span>
+
+<span class="stage-dir">﻿</span>
+WHISPER: “bang bang bang Wake up Brother Jacques!”
+
+And I wake up in the morning, all I see is You
+
+.... Shave and a haircut two bits.
+
+<span class="stage-dir rP">PAUL</span>
+<span class="lP">Move on to the next subject, of course because the reason</span>
+<span class="lP">You’re trying to figure it out in the first place</span>
+<span class="lP">is to try and understand a bigger picture</span>
+<span class="lP">which you’ve forgotten because the first three acts I gave you</span>
+<span class="lP">made sense</span>
+<span class="lP">But only for 5mins before I gave you something else</span>
+<span class="lP">…don’t called it de-fence</span>
+
+<span class="lP">The thank yous</span>
+
+<span class="lP">Do you want to hear one more?...</span>
+<span class="lP">This is the one I’ve never managed to say properly</span></div>
+  </details>
+
+  <details class="song-item">
+  <summary><span class="song-num">15.</span><span class="song-title">FOR THE NARRATOR</span><span class="song-sub">A friend</span><span class="song-arrow">&rsaquo;</span></summary>
+    <div class="song-lyrics"><span class="stage-dir role">E</span>
+I've never been able to really say how I thank.
+Is a tear coming down from my eye?
+A friend like that you could never imagine.
+I must've done something good, but why?
+
+There are things in my life
+at this time all alone.
+And even more dreadful
+than I can postpone.
+
+And there is not one nuance.
+One character of pain.
+That my friend doesn't know of
+And truly loves me the same
+
+In this amidst sadness.
+Is a marvelous joy
+
+It's almost worth it to savor
+to suffer, my boy
+Dear Lord, give me wisdom.
+Dear Lord, give me strength,
+Dear Lord, no more division
+You've taken more than a 10th
+
+But to him the world
+Let him breathe in Your light
+For whatever he lacks
+On my darkest of nights
+
+Made bearable and sweet
+no other could I meet
+in deference complete
+I bow at his feet
+
+<span class="stage-dir">the Narrator</span>
+<span class="stage-dir">And we saw into his eyes and realized that, just at the end of his actions, our dreams could come true, and when he left we were sad,  but we understood that he did it to allow us, for there to be more space between, for us. This is the artist!</span>
+
+<span class="stage-dir">THE TALKBACK</span>
+<span class="stage-dir">﻿TO RELEASE RESENTMENT IS TO GRIEVE</span>
+
+<span class="stage-dir rP">PAUL</span>
+<span class="stage-dir">Now we have the talk back section</span>
+
+PHASE 1
+<span class="stage-dir">If you grieve the loss of something from a source of a resentment</span>
+<span class="stage-dir">The resentment goes</span>
+<span class="stage-dir">From the good thing that the source of the resentment has</span>
+<span class="stage-dir">Again, if you’re really sad about the loss of the good thing that the source of the resentment also has</span>
+<span class="stage-dir">The resentment goes</span>
+<span class="stage-dir">To grieve it.</span>
+"To release resentment is to grieve. That means to cry about it."
+And if you cant cry when you pray, pray when you cry
+
+PHASE 2
+<span class="stage-dir">Then grieving can give way to giving, because you stop resenting, and it’s the resenting is in the way of giving.</span>
+
+Well it is what it is
+"hmm it is what it is!?, it is what it is, it is what it is
+
+but! what it isn't, what it isn't is what it is
+- coz if you don't know what it is, that's what it isn't
+-and that is what it is
+• so what it isn't is what it is.
+
+Well what it was is what it was - and what it was
+is what it is when it was
+
+What it's going to be is what it is when you get there, but we're not there so it isn't what it is.
+
+What it might be is never what it is
+And it isn't going to be what it is:
+"it isn't what itis, it is what it is" you can't say about "might be"
+- it isn’t? ...
+
+and that doesn't qualify as:
+"it isn't is what it is, when what it is, is what it isnt it doesn't, no!"
+
+That’s it!
+
+<span class="sub-h">P  A  P  E  R    G  U  N ﻿</span>
+<span class="stage-dir">tosh42.com  ·</span></div>
+  </details>
+</div>
+<div class="rh-wrap" id="live">
+  <h2 class="act-h">Live in the Making</h2>
+  <p class="act-pre" style="text-align:center;">The same songs, in front of an audience.</p>
+  <div class="vidslot"><div class="frame"><iframe src="https://www.youtube.com/embed/videoseries?list=PLXFHfnZjiDSo&rel=0" title="Live in the Making — Paul Tosh" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+  <p class="cap"><a href="https://youtube.com/playlist?list=PLXFHfnZjiDSo" target="_blank" rel="noopener">Open the playlist on YouTube</a></p></div>
+</div>
+<div class="rh-wrap"><div class="dl">
+  <p>The audience booklet &mdash; the full program, the voices, the notes and the protocol.</p>
+  <a class="btn" href="./PaperGun-booklet-mono.pdf" download>Download the program (PDF)</a>
+</div></div>
+<p class="provenance">Words &amp; music by Paul Tosh &middot; Written at a piano &middot; Not AI-generated</p>
+</body>
+</html>
