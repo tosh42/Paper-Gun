@@ -2458,9 +2458,7 @@ That’s it!
 <div class="rh-wrap" id="live">
   <h2 class="act-h">Live in the Making</h2>
   <p class="act-pre" style="text-align:center;">The same songs, in front of an audience.</p>
-  <div class="pl-wrap">
-    <div class="pl-frame"><div id="makingPlayer"></div></div>
-    <div class="pl-list" id="makingList"><p class="pl-note">Loading playlist&hellip;</p></div>
+  <div class="vidslot"><div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/videoseries?list=PLXFHfnZjiDSo&amp;rel=0" title="Live in the Making — Paul Tosh" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
     <p class="cap"><a href="https://youtube.com/playlist?list=PLXFHfnZjiDSo" target="_blank" rel="noopener">Open the playlist on YouTube</a></p>
   </div>
 </div>
@@ -2469,45 +2467,5 @@ That’s it!
   <a class="btn" href="./PaperGun-program.pdf" target="_blank" rel="noopener">Open the program (PDF)</a>
 </div></div>
 <p class="provenance">Words &amp; music by Paul Tosh &middot; Written at a piano &middot; Not AI-generated</p>
-
-<script>
-(function(){
-  var PL='PLXFHfnZjiDSo', P=null, built=false, tries=0;
-  var tag=document.createElement('script'); tag.src='https://www.youtube.com/iframe_api';
-  document.head.appendChild(tag);
-  window.onYouTubeIframeAPIReady=function(){
-    P=new YT.Player('makingPlayer',{width:'100%',height:'100%',
-      playerVars:{listType:'playlist',list:PL,rel:0},
-      events:{onReady:build,onStateChange:mark}});
-  };
-  function build(){
-    var ids=P&&P.getPlaylist?P.getPlaylist():null;
-    if(!ids||!ids.length){ if(++tries<20){setTimeout(build,600);}
-      else{document.getElementById('makingList').innerHTML='<p class="pl-note">Playlist could not be loaded &mdash; open it on YouTube below.</p>';} return; }
-    if(built)return; built=true;
-    var w=document.getElementById('makingList'); w.innerHTML='';
-    var head=document.createElement('p'); head.className='pl-head';
-    head.innerHTML=ids.length+' Videos &middot; Scroll &amp; Tap to Play'; w.appendChild(head);
-    ids.forEach(function(id,i){
-      var r=document.createElement('div'); r.className='pl-track'; r.setAttribute('data-i',i);
-      r.innerHTML='<span class="pl-num">'+(i+1)+'</span><img loading="lazy" src="https://i.ytimg.com/vi/'+id+'/mqdefault.jpg" alt=""/><span class="pl-tt" id="mtt'+i+'">Video '+(i+1)+'</span>';
-      r.addEventListener('click',function(){P.playVideoAt(i);});
-      w.appendChild(r);
-      fetch('https://noembed.com/embed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3D'+id)
-        .then(function(x){return x.json();})
-        .then(function(d){if(d&&d.title){document.getElementById('mtt'+i).textContent=d.title;}})
-        .catch(function(){});
-    });
-    mark();
-  }
-  function mark(){
-    if(!P||!P.getPlaylistIndex)return;
-    var idx=P.getPlaylistIndex();
-    document.querySelectorAll('#makingList .pl-track').forEach(function(r){
-      r.classList.toggle('playing',parseInt(r.getAttribute('data-i'),10)===idx);});
-  }
-})();
-</script>
-
 </body>
 </html>
