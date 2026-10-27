@@ -171,6 +171,12 @@ footer p{font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.26em;t
 .boards a:hover img{opacity:.85;}
 .boards span{display:block;font-family:'DM Mono',monospace;font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);text-align:center;margin-top:.5rem;line-height:1.5;}
 @media(max-width:600px){.boards{grid-template-columns:repeat(3,minmax(0,1fr));}}
+.scenes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.4rem;max-width:860px;margin:1.6rem auto 0;}
+.scenes a{display:block;text-decoration:none;cursor:zoom-in;}
+.scenes img{width:100%;height:auto;display:block;border:1px solid var(--border);transition:opacity .2s;}
+.scenes a:hover img{opacity:.85;}
+.scenes span{display:block;font-family:'DM Mono',monospace;font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);text-align:center;margin-top:.6rem;line-height:1.5;}
+@media(max-width:600px){.scenes{grid-template-columns:1fr;gap:1.8rem;}}
 </style>
 </head>
 <body>
@@ -479,6 +485,17 @@ footer p{font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.26em;t
   <div class="mn-vid">
     <div class="video-wrap"><iframe src="https://www.youtube.com/embed/XmWdw4hUUx4?rel=0" title="What people say &mdash; Paul Tosh" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
     <p class="vid-cap">What people say</p>
+  </div>
+</section>
+
+<!-- ── TWO PICTURES ── -->
+<div class="rule"></div>
+<section class="wrap">
+  <h2 class="sec-head">How Act One Begins</h2>
+  <p class="sec-sub">An opera star takes his encore, and then walks home.</p>
+  <div class="scenes">
+    <a href="operastage3.PNG" data-lightbox><img src="operastage3.PNG" alt="An opera singer in a half-white, half-black coat and hat, seen from behind, taking a bow before a full house" loading="lazy"/><span>The encore</span></a>
+    <a href="concerthallbus.PNG" data-lightbox><img src="concerthallbus.PNG" alt="The same figure walking away from a lit concert hall marquee on a wet night, a bus passing, steam rising from the street" loading="lazy"/><span>On the way back</span></a>
   </div>
 </section>
 
