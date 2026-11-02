@@ -60,6 +60,19 @@ a{color:var(--gold-l);}
 
 /* ── SECTIONS ── */
 .wrap{max-width:900px;margin:0 auto;padding:3.6rem 2rem;}
+.consult{border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:rgba(156,138,106,.05);}
+.consult .in{max-width:900px;margin:0 auto;padding:2.1rem 2rem;display:flex;gap:1.4rem;align-items:center;justify-content:center;flex-wrap:wrap;text-align:center;}
+.consult p{font-family:'Cormorant Garamond',serif;font-size:clamp(1.05rem,2vw,1.28rem);line-height:1.55;color:var(--cream);opacity:.9;margin:0;max-width:30em;}
+.memo{border-bottom:1px solid var(--border);}
+.memo .in{max-width:760px;margin:0 auto;padding:2.1rem 2rem;text-align:center;}
+.memo-h{font-family:'Cinzel',serif;font-size:1rem;letter-spacing:.2em;text-transform:uppercase;color:var(--red-l);margin-bottom:.6rem;}
+.memo p{font-size:1.1rem;line-height:1.65;color:var(--cream);opacity:.85;}
+.peeks{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.8rem;}
+.peek-cap{font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);opacity:.85;text-align:center;margin-top:.8rem;}
+.tb-pull{margin-top:2.8rem;border:1px solid rgba(156,138,106,.32);background:rgba(156,138,106,.05);padding:2rem 1.9rem;text-align:center;}
+.tb-h{font-family:'Cinzel',serif;font-size:1.05rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-l);margin-bottom:.7rem;}
+.tb-pull p{font-size:1.06rem;line-height:1.7;color:var(--cream);opacity:.85;max-width:34em;margin:0 auto 1.3rem;}
+.tb-sub{margin-top:1.1rem!important;margin-bottom:0!important;}
 .sec-head{font-family:'Cinzel',serif;font-weight:400;font-size:clamp(1.3rem,3vw,1.8rem);letter-spacing:.1em;color:var(--cream);text-align:center;margin-bottom:.6rem;}
 .sec-sub{font-style:italic;font-size:1.12rem;line-height:1.6;color:var(--cream);opacity:.8;text-align:center;max-width:34em;margin:0 auto 2rem;}
 .rule{max-width:600px;margin:0 auto;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:.25;}
@@ -288,10 +301,11 @@ footer p{font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.26em;t
     <h1>Paper Gun</h1>
     <p class="kind">A new original operetta &nbsp;&middot;&nbsp; One man &nbsp;&middot;&nbsp; One piano</p>
     <p class="kind" style="margin-top:.55rem;color:var(--gold-l);opacity:1;">Flawed, live, inimitable.</p>
+    <p class="kind" style="margin-top:.4rem;">Touring, performing his own composition</p>
 
     <p style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(1.05rem,2vw,1.28rem);line-height:1.6;color:var(--cream);opacity:.92;margin-top:1.4rem;max-width:30em;">An intimate, original musical-theatre work about resentment,<br/>identity and the struggle to let go.</p>
     <p class="guest">First performance. You are invited as my guest.</p>
-    <p class="pitch">A show in three acts, about resentment and how to put it down. Two hours — forty minutes an act, two intervals, about two and a half hours in the room. No tickets. No charge.</p>
+    <p class="pitch">A show in three acts, about resentment and how to put it down. Two hours — roughly forty minutes an act, two intervals of ten to fifteen minutes, plus a ten-minute talkback. About two and a half hours in the room. No tickets. No charge.</p>
 
     <!-- EVENT DETAILS 2 of 3: the stub -->
     <div class="stub"><div class="in">
@@ -305,6 +319,15 @@ footer p{font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.26em;t
       <a href="#reserve" class="cta-red">&#9670; Reserve a seat</a>
       <a href="./index2.html" class="quiet">See the full site</a>
     </div>
+  </div>
+</section>
+
+
+<!-- ── PRESENTERS: FREE CONSULT ── -->
+<section class="consult" aria-label="For presenters and bookers">
+  <div class="in">
+    <p>Are you a presenter or a booker &mdash; and want to know what booking this involves?</p>
+    <a class="cta-red" href="mailto:bookings@tosh42.com?subject=Free%2015-minute%20consult%20%E2%80%94%20Paper%20Gun&amp;body=Tell%20me%20a%20little%20about%20your%20room%20and%20a%20good%20time%20to%20speak%2C%20and%20I%27ll%20come%20back%20to%20you.">&#9670; A free 15-minute consult</a>
   </div>
 </section>
 
@@ -326,8 +349,17 @@ footer p{font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.26em;t
     </div>
     <div class="item">
       <h2>Talkback</h2>
-      <p>Please stay for twenty minutes afterwards, on two counts: the premise behind the show, and the show itself. Your reaction is the reason for the evening.</p>
+      <p>Please stay for ten minutes afterwards, on two counts: the premise behind the show, and the show itself. Your reaction is the reason for the evening.</p>
     </div>
+  </div>
+</section>
+
+
+<!-- ── THE MEMO ── -->
+<section class="memo" aria-label="The memo">
+  <div class="in">
+    <p class="memo-h">The Memo</p>
+    <p>Entirely optional: come dressed in black and white, any combination. A testimony against blurring.</p>
   </div>
 </section>
 
@@ -337,21 +369,22 @@ footer p{font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.26em;t
 <section class="wrap wide">
   <p class="vid-title">Live in the Making Clips</p>
   <div class="clips">
-    <div class="video-wrap"><iframe id="clipsFrame" src="https://www.youtube.com/embed/gTXfy1_8LXY?rel=0" title="Live in the Making Clips &mdash; Paul Tosh" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+    <div class="video-wrap"><iframe id="clipsFrame" src="https://www.youtube.com/embed/k--nseVdI4U?rel=0" title="Live in the Making Clips &mdash; Paul Tosh" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
     <nav class="chapters" aria-label="Chapters in this video">
       <p class="ch-head">In this video</p>
       <ol>
-        <li><button type="button" data-t="0"><span class="ch-t">0:00</span>Index</button></li>
-        <li><button type="button" data-t="2"><span class="ch-t">0:02</span>Paper Gun Excerpts I</button></li>
-        <li><button type="button" data-t="92"><span class="ch-t">1:32</span>About</button></li>
-        <li><button type="button" data-t="148"><span class="ch-t">2:28</span>And a few laughs</button></li>
-        <li><button type="button" data-t="191"><span class="ch-t">3:11</span>Paper Gun Excerpts II</button></li>
-        <li><button type="button" data-t="282"><span class="ch-t">4:42</span>Looping explained</button></li>
-        <li><button type="button" data-t="384"><span class="ch-t">6:24</span>Classic songs as theatre</button></li>
-        <li><button type="button" data-t="489"><span class="ch-t">8:09</span>Opera</button></li>
-        <li><button type="button" data-t="681"><span class="ch-t">11:21</span>The backdrops</button></li>
-        <li><button type="button" data-t="760"><span class="ch-t">12:40</span>Rehearsals</button></li>
-        <li><button type="button" data-t="891"><span class="ch-t">14:51</span>The truck</button></li>
+        <li><button type="button" data-t="56"><span class="ch-t">0:56</span>Index: Paper Gun Excerpts</button></li>
+        <li><button type="button" data-t="94"><span class="ch-t">1:34</span>The backdrops</button></li>
+        <li><button type="button" data-t="211"><span class="ch-t">3:31</span>The memo: come in B&amp;W</button></li>
+        <li><button type="button" data-t="246"><span class="ch-t">4:06</span>The outfit</button></li>
+        <li><button type="button" data-t="269"><span class="ch-t">4:29</span>Dialogue</button></li>
+        <li><button type="button" data-t="337"><span class="ch-t">5:37</span>Opera adaptations</button></li>
+        <li><button type="button" data-t="530"><span class="ch-t">8:50</span>About</button></li>
+        <li><button type="button" data-t="554"><span class="ch-t">9:14</span>A few laughs</button></li>
+        <li><button type="button" data-t="700"><span class="ch-t">11:40</span>Looping explained</button></li>
+        <li><button type="button" data-t="791"><span class="ch-t">13:11</span>Classic songs as theatre</button></li>
+        <li><button type="button" data-t="903"><span class="ch-t">15:03</span>Paper Gun: Rehearsals</button></li>
+        <li><button type="button" data-t="1031"><span class="ch-t">17:11</span>Paper Gun: Talk Back</button></li>
       </ol>
     </nav>
   </div>
@@ -397,6 +430,30 @@ footer p{font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.26em;t
   }
 })();
 </script>
+
+
+<div class="rule"></div>
+
+<!-- ── TWO PEEKS ── -->
+<section class="wrap wide">
+  <h2 class="sec-head">A Peek Behind It</h2>
+  <div class="peeks">
+    <div>
+      <div class="video-wrap"><iframe src="https://www.youtube.com/embed/EhKNPyDgfrg?rel=0" title="A peek at the outfit &mdash; Paul Tosh" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+      <p class="peek-cap">A peek at the outfit &mdash; testing the hat and the shirt</p>
+    </div>
+    <div>
+      <div class="video-wrap"><iframe src="https://www.youtube.com/embed/gVV5xtO21A4?rel=0" title="A peek at rehearsals and the talkback &mdash; Paul Tosh" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+      <p class="peek-cap">A peek at rehearsals &amp; the talkback</p>
+    </div>
+  </div>
+  <div class="tb-pull">
+    <p class="tb-h">What Comes After</p>
+    <p>Every performance closes with the same ten-minute spoken frame &mdash; what to do with what the evening stirs up. It is the part presenters and therapists ask about first.</p>
+    <a class="cta-red" href="./therapeutic.html#whatcomesafter">&#9670; Watch the full talkback explained</a>
+    <p class="tb-sub"><a class="quiet" href="./talkback.html">Or read it word for word &rarr;</a></p>
+  </div>
+</section>
 
 <div class="rule"></div>
 
@@ -456,7 +513,8 @@ footer p{font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.26em;t
     <a href="hatshaddow.jpg" data-lightbox><img src="hatshaddow.jpg" alt="The performer&rsquo;s hat, with the shadow of a man wearing it cast on the boards beside it" loading="lazy"/><span>The shadow</span></a>
   </div>
   <figure class="bookfig">
-    <a href="bkcover3.jpg" data-lightbox><img src="bkcover3.jpg" alt="The cover of the Paper Gun audience booklet" loading="lazy"/></a>
+    <a href="cover3Oct29.PNG" data-lightbox><img src="cover3Oct29.PNG" alt="The cover of the Paper Gun audience booklet" loading="lazy"/><span>The booklet</span></a>
+    <a href="coverE.png" data-lightbox><img src="coverE.png" alt="Paper Gun &mdash; cover artwork" loading="lazy"/><span>Cover artwork</span></a>
     <figcaption>Booklet cover<em>Everyone goes home with a signed script.</em></figcaption>
   </figure>
 </section>
