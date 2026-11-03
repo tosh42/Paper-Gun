@@ -7,7 +7,7 @@
 <meta name="description" content="How each performance of the operetta Paper Gun is framed, held, and closed — for presenters, clinicians, and group facilitators working with survivors of narcissistic abuse."/>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Cinzel:wght@400;600&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
 <style>
 :root{--ink:#121010;--cream:#eae3d3;--gold:#9c8a6a;--gold-l:#b5a37e;--red:#a3271d;--red-l:#c0392b;--border:rgba(156,138,106,.22);}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
@@ -125,25 +125,25 @@ h1,h2,h3,h4,h5,p,li,figcaption,blockquote,dd,dt,
 @media(max-width:600px){ a[title^="Home"]{ display:none !important; } }
 
 /* ── Phone legibility ──────────────────────────────────────────────────
-   Cormorant Garamond is a display face with light strokes and a small
-   x-height, and on a phone the body text sits at the bottom of its clamp
-   and is dimmed to .78. Below 600px it gets a little more size, a little
-   more weight and most of its contrast back. Nothing changes on desktop. */
+   Cormorant Garamond is a display face: fine strokes, small x-height. On a
+   phone the body text also sat at the bottom of its clamp and was dimmed to
+   .78. Below 600px it gets a real size increase, the 500 weight, and its
+   full contrast. Desktop is untouched. */
 @media(max-width:600px){
   .cf-section p.body,
   p.body,
   .cf-section li,
-  .cf-section p:not(.sec-label):not(.kicker):not(.cf-kicker) {
-    font-size: 1.12rem;
-    line-height: 1.78;
-    opacity: .93;
+  .cf-section p:not(.sec-label):not(.kicker):not(.cf-kicker),
+  .mlift,
+  #cf-cta p {
+    font-size: 1.2rem !important;
+    font-weight: 500 !important;
+    line-height: 1.7 !important;
+    opacity: 1 !important;
+    letter-spacing: .005em !important;
   }
-  .cf-sub { font-size: 1.14rem; opacity: .9; }
-  blockquote, blockquote p { opacity: .93; }
-  /* reading text that carries its own dimming or a smaller size inline */
-  .mlift { font-size: 1.1rem !important; opacity: .93 !important; line-height: 1.75 !important; }
-  /* the booking invitation was the dimmest reading text on the page */
-  #cf-cta p { font-size: 1.1rem; opacity: .9; }
+  .cf-sub { font-size: 1.22rem; font-weight: 500; opacity: .95; }
+  blockquote, blockquote p { opacity: 1; font-weight: 500; }
 }
 </style>
 </head>
