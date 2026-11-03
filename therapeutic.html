@@ -123,6 +123,28 @@ h1,h2,h3,h4,h5,p,li,figcaption,blockquote,dd,dt,
 /* The round tosh42 home button is fixed to the bottom-right corner and sat on top of
    centred copy on a narrow screen. On a phone the sticky top nav already does its job. */
 @media(max-width:600px){ a[title^="Home"]{ display:none !important; } }
+
+/* ── Phone legibility ──────────────────────────────────────────────────
+   Cormorant Garamond is a display face with light strokes and a small
+   x-height, and on a phone the body text sits at the bottom of its clamp
+   and is dimmed to .78. Below 600px it gets a little more size, a little
+   more weight and most of its contrast back. Nothing changes on desktop. */
+@media(max-width:600px){
+  .cf-section p.body,
+  p.body,
+  .cf-section li,
+  .cf-section p:not(.sec-label):not(.kicker):not(.cf-kicker) {
+    font-size: 1.12rem;
+    line-height: 1.78;
+    opacity: .93;
+  }
+  .cf-sub { font-size: 1.14rem; opacity: .9; }
+  blockquote, blockquote p { opacity: .93; }
+  /* reading text that carries its own dimming or a smaller size inline */
+  .mlift { font-size: 1.1rem !important; opacity: .93 !important; line-height: 1.75 !important; }
+  /* the booking invitation was the dimmest reading text on the page */
+  #cf-cta p { font-size: 1.1rem; opacity: .9; }
+}
 </style>
 </head>
 <body>
@@ -213,7 +235,7 @@ h1,h2,h3,h4,h5,p,li,figcaption,blockquote,dd,dt,
 
 <!-- ── PASSWORD REQUEST ── -->
 <div style="border-top:1px solid rgba(156,138,106,.22);border-bottom:1px solid rgba(156,138,106,.22);background:rgba(156,138,106,.05);padding:1.5rem 16px 1.6rem;text-align:center;">
-  <p style="font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:clamp(1.02rem,1.9vw,1.2rem);line-height:1.6;color:#eae3d3;opacity:.9;margin:0 auto 1rem;max-width:640px;">&#128274; The full version of this page, with the complete Grieving the Living protocol, opens with a password.</p>
+  <p class="mlift" style="font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:clamp(1.02rem,1.9vw,1.2rem);line-height:1.6;color:#eae3d3;opacity:.9;margin:0 auto 1rem;max-width:640px;">&#128274; The full version of this page, with the complete Grieving the Living protocol, opens with a password.</p>
   <a href="mailto:bookings@tosh42.com?subject=Password%20request%3A%20Grieving%20the%20Living%20full%20protocol" style="display:inline-block;background:#9c8a6a;color:#121010;font-family:'DM Mono',monospace;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;padding:.85em 1.6em;">Request the password for the full protocol &rarr;</a>
   <div style="margin-top:1rem;"><a href="./therapeutic-full.html" style="font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:#b5a37e;text-decoration:none;border-bottom:1px solid rgba(156,138,106,.4);padding-bottom:.2rem;">Have the password? Open the full version &rarr;</a></div>
 </div>
@@ -229,12 +251,12 @@ h1,h2,h3,h4,h5,p,li,figcaption,blockquote,dd,dt,
 
   <div style="max-width:620px;margin:0 auto;text-align:center;">
     <p class="cf-section-kicker" style="margin-bottom:.8rem;">Mission</p>
-    <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(1.02rem,1.9vw,1.22rem);line-height:1.75;color:var(--cream);opacity:.88;margin:0;">To make opera&rsquo;s scale of feeling small enough to travel and honest enough to matter &mdash; the old form, carrying what people are carrying now.</p>
+    <p class="mlift" style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(1.02rem,1.9vw,1.22rem);line-height:1.75;color:var(--cream);opacity:.88;margin:0;">To make opera&rsquo;s scale of feeling small enough to travel and honest enough to matter &mdash; the old form, carrying what people are carrying now.</p>
   </div>
 </section>
 
 <section style="max-width:760px;margin:0 auto;padding:2.6rem 2rem 0;">
-  <p style="font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(1.05rem,2vw,1.2rem);line-height:1.9;opacity:.85;">Paper Gun was built in senior communities — years of conversations and collected wisdom. It opens with a live recording: my microphone caught a Mr. Hay, <button type="button" class="mrhay-btn" onclick="toggleMrHay(this)" style="display:inline-flex;align-items:center;gap:.4em;background:none;border:1px solid rgba(181,163,126,.55);border-radius:999px;color:#b5a37e;font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;padding:.3em .85em;cursor:pointer;vertical-align:middle;margin:0 .25em;transition:background .2s;" onmouseover="this.style.background='rgba(156,138,106,.12)'" onmouseout="this.style.background='none'"><span class="mrhay-glyph">&#9654;</span> Hear him</button> and what he says is the show's greatest lesson. Some of the people I meet carry resentment; some carry none. The difference is the heart of the show: better than resenting anyone who hurt you is to grieve the loss of what they meant to you, at their best.</p>
+  <p class="mlift" style="font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(1.05rem,2vw,1.2rem);line-height:1.9;opacity:.85;">Paper Gun was built in senior communities — years of conversations and collected wisdom. It opens with a live recording: my microphone caught a Mr. Hay, <button type="button" class="mrhay-btn" onclick="toggleMrHay(this)" style="display:inline-flex;align-items:center;gap:.4em;background:none;border:1px solid rgba(181,163,126,.55);border-radius:999px;color:#b5a37e;font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;padding:.3em .85em;cursor:pointer;vertical-align:middle;margin:0 .25em;transition:background .2s;" onmouseover="this.style.background='rgba(156,138,106,.12)'" onmouseout="this.style.background='none'"><span class="mrhay-glyph">&#9654;</span> Hear him</button> and what he says is the show's greatest lesson. Some of the people I meet carry resentment; some carry none. The difference is the heart of the show: better than resenting anyone who hurt you is to grieve the loss of what they meant to you, at their best.</p>
 </section>
 
 <section class="cf-section" style="padding-top:3rem;">
@@ -317,8 +339,8 @@ h1,h2,h3,h4,h5,p,li,figcaption,blockquote,dd,dt,
     <li>A talkback follows the performance, so no one leaves at the rawest moment without a room to be in.</li>
     <li>No audience member is singled out, addressed individually, or asked to disclose anything.</li>
   </ul>
-  <p class="body" style="margin-top:1.1rem;font-style:italic;opacity:.85;">This is a description of how the work is made, not a clinical claim about what it achieves. Presenters working with vulnerable groups are warmly invited to read the full script in advance &mdash; <a href="./full-libretto.html" style="color:var(--gold-l);border-bottom:1px solid rgba(156,138,106,.35);text-decoration:none;">the full libretto is on this site</a>, by password &mdash; and to tell me anything about the room I should know.</p>
-  <p class="body" style="margin-top:1.1rem;padding-top:1rem;border-top:1px solid rgba(156,138,106,.25);font-size:.98rem;">If you or someone with you is struggling, in the United States and Canada the <strong style="color:var(--gold-l);">988 Suicide &amp; Crisis Lifeline</strong> can be called or texted at any hour.</p>
+  <p class="body mlift" style="margin-top:1.1rem;font-style:italic;opacity:.85;">This is a description of how the work is made, not a clinical claim about what it achieves. Presenters working with vulnerable groups are warmly invited to read the full script in advance &mdash; <a href="./full-libretto.html" style="color:var(--gold-l);border-bottom:1px solid rgba(156,138,106,.35);text-decoration:none;">the full libretto is on this site</a>, by password &mdash; and to tell me anything about the room I should know.</p>
+  <p class="body mlift" style="margin-top:1.1rem;padding-top:1rem;border-top:1px solid rgba(156,138,106,.25);font-size:.98rem;">If you or someone with you is struggling, in the United States and Canada the <strong style="color:var(--gold-l);">988 Suicide &amp; Crisis Lifeline</strong> can be called or texted at any hour.</p>
 </section>
 
 <div class="cf-rule"></div>
@@ -327,10 +349,10 @@ h1,h2,h3,h4,h5,p,li,figcaption,blockquote,dd,dt,
   <div style="border:1px solid rgba(156,138,106,.3);background:rgba(156,138,106,.04);padding:2.6rem 2.4rem;">
     <p class="cf-section-kicker" style="text-align:center;">The Protocol</p>
     <h2 style="text-align:center;">Grieving <em>the Living</em></h2>
-    <p style="font-family:'Cormorant Garamond',serif;font-style:italic;text-align:center;font-size:clamp(.95rem,1.7vw,1.08rem);color:var(--cream);opacity:.8;margin-bottom:.4rem;">A practitioner's protocol for mourning a relationship with someone still alive</p>
+    <p class="mlift" style="font-family:'Cormorant Garamond',serif;font-style:italic;text-align:center;font-size:clamp(.95rem,1.7vw,1.08rem);color:var(--cream);opacity:.8;margin-bottom:.4rem;">A practitioner's protocol for mourning a relationship with someone still alive</p>
     <p style="font-family:'DM Mono',monospace;text-align:center;font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);opacity:.8;margin-bottom:2rem;">by Paul Tosh &nbsp;·&nbsp; creator of the operetta Paper Gun &nbsp;·&nbsp; tosh42.com</p>
 
-    <p class="body" style="opacity:.65;">This protocol comes from lived practice: to be undertaken with guidance and alongside professional therapy — and from twenty years of performing for audiences carrying losses that have no closure. It is offered to fellow sufferers and to the clinicians who treat them. Nothing here replaces therapy; much here may make it work better.</p>
+    <p class="body mlift" style="opacity:.65;">This protocol comes from lived practice: to be undertaken with guidance and alongside professional therapy — and from twenty years of performing for audiences carrying losses that have no closure. It is offered to fellow sufferers and to the clinicians who treat them. Nothing here replaces therapy; much here may make it work better.</p>
 
     <p class="it-title" style="font-family:'DM Mono',monospace;font-size:.68rem;letter-spacing:.26em;text-transform:uppercase;color:var(--gold);margin:1.8rem 0 .5rem;">The premise: resentment is grief still litigating</p>
   <p class="body">Resentment and grief are the same loss in two states. Resentment keeps the case open; grief is the write-off of a debt accepted as uncollectible: not forgiven &mdash; surrendered. Chronic bitterness toward the living is usually mourning that was never permitted to start, because the person is still alive. Progress test: the grieving has succeeded on the day revenge becomes boring.</p>
@@ -342,7 +364,7 @@ h1,h2,h3,h4,h5,p,li,figcaption,blockquote,dd,dt,
   <p class="body">The complete protocol, with the full version of this page, is on this site for clinicians and presenters. It opens with a password.</p>
   <div style="text-align:center;margin-top:1.4rem;"><a href="mailto:bookings@tosh42.com?subject=Password%20request%3A%20Grieving%20the%20Living%20full%20protocol" class="cf-btn cf-btn-outline">Request the password for the full protocol &rarr;</a><br/><a href="./therapeutic-full.html#protocol" style="display:inline-block;font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-l);text-decoration:none;border-bottom:1px solid rgba(156,138,106,.4);padding-bottom:.2rem;margin-top:1.3rem;">Have the password? Open the full protocol &rarr;</a></div>
 
-  <p class="body" style="opacity:.65;margin-top:1.8rem;">None of this requires the other person to change, participate, or ever know. The love is not discarded — it is kept, resized to reality, and re-routed to where it can be received. Clinicians interested in developing this protocol into a formal case study are invited to write.</p>
+  <p class="body mlift" style="opacity:.65;margin-top:1.8rem;">None of this requires the other person to change, participate, or ever know. The love is not discarded — it is kept, resized to reality, and re-routed to where it can be received. Clinicians interested in developing this protocol into a formal case study are invited to write.</p>
 
     <p style="font-family:'DM Mono',monospace;text-align:center;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);opacity:.8;margin-top:2rem;">&copy; Paul Tosh, August 2026 (Av 5786) &nbsp;·&nbsp; tosh42.com &nbsp;·&nbsp; developed alongside guidance and professional therapy &nbsp;·&nbsp; Paper Gun: a show about shadow work</p>
   </div>
@@ -443,7 +465,7 @@ h1,h2,h3,h4,h5,p,li,figcaption,blockquote,dd,dt,
     <p>Which is where the show comes back in. The only way out of being resentful is to grieve, which is what the whole piece is about. There are phases to that, which is another discussion; I’ve got a printout of all that stuff, how that works, and a person can work with a therapist and go through the steps of how you get past it. And there are timelines, and there’s reasonable achievements, levels of achievement where you can reasonably say you can attack another stage.</p>
   </div>
   <p class="it-title" style="font-family:'DM Mono',monospace;font-size:.68rem;letter-spacing:.26em;text-transform:uppercase;color:var(--gold-l);margin:2.4rem 0 .4rem;">In Paul&rsquo;s own words &mdash; from the recording</p>
-  <p class="body" style="opacity:.75;font-size:.95rem;">The central passage, transcribed from the talkback of 25 October 2026. The whole of it runs about four minutes.</p>
+  <p class="body mlift" style="opacity:.75;font-size:.95rem;">The central passage, transcribed from the talkback of 25 October 2026. The whole of it runs about four minutes.</p>
   <div class="tscript">
     <p class="ts-head">The two precursors, and what has to come first</p>
       <p>There are two things that lead to one thing. Being able to build something is precursored by two things. You have to be believable — but believable to yourself, then you’ll be believable to others. It’s not to convince anybody of anything, it’s not to trick yourself, and not to make excuses for yourself. So hold that in your head for a second: eg being believable to yourself is not making excuses.</p>
@@ -452,7 +474,7 @@ h1,h2,h3,h4,h5,p,li,figcaption,blockquote,dd,dt,
       <p>What does that mean? The reason people blame is because they’re filling in for not being satisfied. It helps them to feel better because they’re not satisfied — they’ll blame. Because they’re not satisfied, they’ll blame themselves. Because they’re not satisfied, they’ll kid themselves on. And so they won’t be believable to themselves.</p>
       <p>So really, before you can look at the two B’s — don’t blame, and be believable to yourself — which will allow you to build, it’s impossible without satisfaction. Satisfaction is the first goal.</p>
   </div>
-  <p class="body" style="opacity:.78;font-size:.95rem;">Nothing about the close is a surprise: it is published before anyone books, so a clinical partner can be briefed from it and a presenter can decide whether it suits the room.</p>
+  <p class="body mlift" style="opacity:.78;font-size:.95rem;">Nothing about the close is a surprise: it is published before anyone books, so a clinical partner can be briefed from it and a presenter can decide whether it suits the room.</p>
   <p style="margin-top:1.1rem;">
     <a class="tb-btn" href="./talkback.html">The talkback in full &rarr;</a>
     <a class="tb-btn ghost" href="./therapeutic-full.html#protocol-two">The full protocols &mdash; locked &rarr;</a>
@@ -476,7 +498,7 @@ h1,h2,h3,h4,h5,p,li,figcaption,blockquote,dd,dt,
       <p><strong>Twenty to thirty minutes. Two people holding it.</strong> Paul and a licensed clinician known to your group &mdash; usually the facilitator who convened the room. It opens from the same frame, then becomes a conversation: <strong>reflective rather than confessional</strong>, with your clinician setting the depth and closing it. Nobody is asked to disclose anything; the room may speak, and is never required to. You supply the clinician and a quiet adjacent space; the format and the opening are Paul&rsquo;s.</p>
     </div>
   </div>
-  <p class="body" style="opacity:.78;font-size:.95rem;margin-top:1.6rem;">Either way, the words Paul opens with are published in advance &mdash; <a href="./talkback.html" style="color:var(--gold-l);">read them word for word &rarr;</a> &mdash; so a clinical partner can be briefed from the page before anyone commits.</p>
+  <p class="body mlift" style="opacity:.78;font-size:.95rem;margin-top:1.6rem;">Either way, the words Paul opens with are published in advance &mdash; <a href="./talkback.html" style="color:var(--gold-l);">read them word for word &rarr;</a> &mdash; so a clinical partner can be briefed from the page before anyone commits.</p>
 </section>
 
 <div class="cf-rule"></div>
