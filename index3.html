@@ -7,7 +7,7 @@
 <meta name="description" content="Paper Gun, a new original operetta by Paul Tosh. First performance, free, by invitation. Fifty seats. Reserve yours."/>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Cinzel:wght@400;600&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
 <style>
 :root{--ink:#121010;--cream:#eae3d3;--gold:#9c8a6a;--gold-l:#b5a37e;--red:#a3271d;--red-l:#c0392b;--border:rgba(156,138,106,.22);}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
@@ -243,6 +243,20 @@ h1,h2,h3,h4,h5,p,li,figcaption,blockquote,dd,dt,
             font-size:clamp(1.02rem,2vw,1.2rem);line-height:1.95;color:var(--cream);opacity:.88;margin:0;}
 .host-note{font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;
            color:var(--gold);opacity:.8;text-align:center;margin-top:1.1rem;}
+
+/* ── Phone legibility ──────────────────────────────────────────────────
+   Cormorant Garamond is a display face: fine strokes, small x-height. Body
+   text also sat at the bottom of its clamp on a phone and was dimmed. Below
+   600px the root size is scaled, so every proportion the page already sets
+   grows together, and reading text gets the 500 weight and its full
+   contrast. Nothing changes on a tablet or a desktop. */
+@media(max-width:600px){
+  html { font-size: 117%; }
+  p, li, blockquote, dd, figcaption, .body {
+    font-weight: 500;
+    opacity: 1 !important;
+  }
+}
 </style>
 </head>
 <body>

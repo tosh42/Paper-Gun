@@ -7,7 +7,7 @@
 <meta name="description" content="Tickets for upcoming Paul Tosh performances — Paper Gun and The Song Is The Play."/>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Cinzel:wght@400;600&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
 <style>
 :root{--ink:#121010;--cream:#eae3d3;--gold:#9c8a6a;--gold-l:#b5a37e;--red:#a3271d;--red-l:#c0392b;--border:rgba(156,138,106,.22);}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
@@ -88,6 +88,20 @@ h1,h2,h3,h4,h5,p,li,figcaption,blockquote,dd,dt,
 /* The round tosh42 home button is fixed to the bottom-right corner and sat on top of
    centred copy on a narrow screen. On a phone the sticky top nav already does its job. */
 @media(max-width:600px){ a[title^="Home"]{ display:none !important; } }
+
+/* ── Phone legibility ──────────────────────────────────────────────────
+   Cormorant Garamond is a display face: fine strokes, small x-height. Body
+   text also sat at the bottom of its clamp on a phone and was dimmed. Below
+   600px the root size is scaled, so every proportion the page already sets
+   grows together, and reading text gets the 500 weight and its full
+   contrast. Nothing changes on a tablet or a desktop. */
+@media(max-width:600px){
+  html { font-size: 117%; }
+  p, li, blockquote, dd, figcaption, .body {
+    font-weight: 500;
+    opacity: 1 !important;
+  }
+}
 </style>
 </head>
 
@@ -173,7 +187,7 @@ h1,h2,h3,h4,h5,p,li,figcaption,blockquote,dd,dt,
 <div class="page-hero">
   <p class="kicker">Tickets</p>
   <h1>Come to the <em>show</em></h1>
-  <p class="sub">One man, one piano, and every song built live in front of you. The first performance is free &mdash; fifty seats, by invitation.</p>
+  <p class="sub">One man, one piano, a microphone, and a looping pedal. The first performance is free &mdash; fifty seats, by invitation.</p>
 </div>
 
 <!-- ══ UPCOMING EVENT — edit the five fields below, and the BUY link ══ -->
@@ -193,7 +207,7 @@ h1,h2,h3,h4,h5,p,li,figcaption,blockquote,dd,dt,
       <div class="ev-row"><span class="ev-key">Date</span><span class="ev-val">To be announced</span></div>
       <div class="ev-row"><span class="ev-key">Venue</span><span class="ev-val">Lancaster County, Pennsylvania<br/>Venue to be confirmed</span></div>
       <div class="ev-row"><span class="ev-key">Seats</span><span class="ev-val">Fifty, free &mdash; as my guest</span></div>
-      <div class="ev-row"><span class="ev-key">Running</span><span class="ev-val">Just under two hours of performance &mdash; three acts of about thirty-five minutes, with two intervals of ten to fifteen minutes, plus a ten-minute talkback. About two and a half hours in the room.</span></div>
+      <div class="ev-row"><span class="ev-key">Running</span><span class="ev-val">Just under two hours of performance &mdash; three acts of about thirty-five minutes, with two intervals of ten to fifteen minutes, plus a ten-minute talkback.</span></div>
     </div>
 
     <div style="text-align:center;">
@@ -215,7 +229,7 @@ h1,h2,h3,h4,h5,p,li,figcaption,blockquote,dd,dt,
 
 <div class="wrap" style="text-align:center;">
   <p class="sec-label">Before You Come</p>
-  <p class="body" style="max-width:680px;margin:0 auto 1.6rem;">If you haven't seen the show, start here &mdash; a few minutes will tell you more than any description.</p>
+  <p class="body" style="max-width:680px;margin:0 auto 1.6rem;">If you want to know more, start here &mdash; a few minutes will tell you more than any description.</p>
   <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
     <a class="cta-red" style="background:none;border:1px solid rgba(156,138,106,.5);color:var(--gold-l);" href="./papergun.html">About Paper Gun &rarr;</a>
     <a class="cta-red" style="background:none;border:1px solid rgba(156,138,106,.5);color:var(--gold-l);" href="./sitp.html">The Song Is The Play &rarr;</a>
