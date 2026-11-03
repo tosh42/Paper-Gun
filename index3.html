@@ -330,6 +330,31 @@ footer p{font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.26em;t
 
 
 
+<!-- ── THE INTRODUCTION: lead video + its chapter index ── -->
+<section class="wrap wide" style="padding-top:1rem;">
+  <p class="vid-title">Live in the Making Clips</p>
+  <div class="clips">
+    <div class="video-wrap"><iframe id="clipsFrame" src="https://www.youtube.com/embed/k--nseVdI4U?rel=0" title="Live in the Making Clips &mdash; Paul Tosh" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+    <nav class="chapters" aria-label="Chapters in this video">
+      <p class="ch-head">In this video</p>
+      <ol>
+        <li><button type="button" data-t="56"><span class="ch-t">0:56</span>Index: Paper Gun Excerpts</button></li>
+        <li><button type="button" data-t="94"><span class="ch-t">1:34</span>The backdrops</button></li>
+        <li><button type="button" data-t="211"><span class="ch-t">3:31</span>The memo: come in B&amp;W</button></li>
+        <li><button type="button" data-t="246"><span class="ch-t">4:06</span>The outfit</button></li>
+        <li><button type="button" data-t="269"><span class="ch-t">4:29</span>Dialogue</button></li>
+        <li><button type="button" data-t="337"><span class="ch-t">5:37</span>Opera adaptations</button></li>
+        <li><button type="button" data-t="530"><span class="ch-t">8:50</span>About</button></li>
+        <li><button type="button" data-t="554"><span class="ch-t">9:14</span>A few laughs</button></li>
+        <li><button type="button" data-t="700"><span class="ch-t">11:40</span>Looping explained</button></li>
+        <li><button type="button" data-t="791"><span class="ch-t">13:11</span>Classic songs as theatre</button></li>
+        <li><button type="button" data-t="903"><span class="ch-t">15:03</span>Paper Gun: Rehearsals</button></li>
+        <li><button type="button" data-t="1031"><span class="ch-t">17:11</span>Paper Gun: Talk Back</button></li>
+      </ol>
+    </nav>
+  </div>
+</section>
+
 <!-- ── REGISTER IN ADVANCE (public waiting list) ── -->
 <section class="register" aria-label="Register in advance">
   <div class="in">
@@ -379,32 +404,10 @@ footer p{font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.26em;t
   </div>
 </section>
 
-<!-- ── LIVE IN THE MAKING: clips video + scrollable playlist (same pattern as tasters.html) ──
+<!-- ── LIVE IN THE MAKING: the scrollable playlist ──
      To change the playlist, replace the ID in two places: the PL= line in the script
      below and the "Open on YouTube" link. -->
 <section class="wrap wide">
-  <p class="vid-title">Live in the Making Clips</p>
-  <div class="clips">
-    <div class="video-wrap"><iframe id="clipsFrame" src="https://www.youtube.com/embed/k--nseVdI4U?rel=0" title="Live in the Making Clips &mdash; Paul Tosh" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-    <nav class="chapters" aria-label="Chapters in this video">
-      <p class="ch-head">In this video</p>
-      <ol>
-        <li><button type="button" data-t="56"><span class="ch-t">0:56</span>Index: Paper Gun Excerpts</button></li>
-        <li><button type="button" data-t="94"><span class="ch-t">1:34</span>The backdrops</button></li>
-        <li><button type="button" data-t="211"><span class="ch-t">3:31</span>The memo: come in B&amp;W</button></li>
-        <li><button type="button" data-t="246"><span class="ch-t">4:06</span>The outfit</button></li>
-        <li><button type="button" data-t="269"><span class="ch-t">4:29</span>Dialogue</button></li>
-        <li><button type="button" data-t="337"><span class="ch-t">5:37</span>Opera adaptations</button></li>
-        <li><button type="button" data-t="530"><span class="ch-t">8:50</span>About</button></li>
-        <li><button type="button" data-t="554"><span class="ch-t">9:14</span>A few laughs</button></li>
-        <li><button type="button" data-t="700"><span class="ch-t">11:40</span>Looping explained</button></li>
-        <li><button type="button" data-t="791"><span class="ch-t">13:11</span>Classic songs as theatre</button></li>
-        <li><button type="button" data-t="903"><span class="ch-t">15:03</span>Paper Gun: Rehearsals</button></li>
-        <li><button type="button" data-t="1031"><span class="ch-t">17:11</span>Paper Gun: Talk Back</button></li>
-      </ol>
-    </nav>
-  </div>
-
   <h2 class="sec-head" style="margin-top:3.4rem">Live in the Making</h2>
   <div class="pl-wrap">
     <div class="pl-frame"><div id="makingPlayer"></div></div>
@@ -632,7 +635,7 @@ footer p{font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.26em;t
   var f=document.getElementById('clipsFrame'); if(!f) return;
   document.querySelectorAll('.chapters button').forEach(function(b){
     b.addEventListener('click',function(){
-      f.src='https://www.youtube.com/embed/gTXfy1_8LXY?rel=0&autoplay=1&start='+b.getAttribute('data-t');
+      f.src='https://www.youtube.com/embed/k--nseVdI4U?rel=0&autoplay=1&start='+b.getAttribute('data-t');
       document.querySelectorAll('.chapters button.on').forEach(function(o){o.classList.remove('on');});
       b.classList.add('on');
       if(window.innerWidth<=820){f.scrollIntoView({behavior:'smooth',block:'center'});}
