@@ -106,6 +106,14 @@ footer{text-align:center;padding:2rem;border-top:1px solid rgba(156,138,106,.1);
 footer p{font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.28em;text-transform:uppercase;color:var(--cream);opacity:.8;}
 .mbr{display:none;}
 @media(max-width:680px){.mbr{display:block;}}
+
+/* ── Mobile line-breaking ──────────────────────────────────────────────
+   Short text is balanced across its lines instead of being left with a
+   stranded word on the last line. Only blocks of four lines or fewer are
+   balanced, so body prose is untouched. */
+h1,h2,h3,h4,h5,p,li,figcaption,blockquote,dd,dt
+ { text-wrap: balance; }
+@media(max-width:600px){ a[title^="Home"]{ display:none !important; } }
 </style>
 </head>
 <body>

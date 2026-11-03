@@ -90,6 +90,20 @@ ol li::before{content:counter(steps);font-family:'DM Mono',monospace;font-size:.
 .nav-book{background:var(--red);color:var(--cream);font-family:'DM Mono',monospace;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;padding:.55rem 1.2rem;text-decoration:none;border-bottom:none;margin-left:.6rem;transition:background .2s;}
 .nav-book:hover{background:var(--red-l);color:var(--cream);}
 @media(max-width:680px){.nav-menu{position:static;transform:none;min-width:0;}}
+
+/* ── Mobile line-breaking ──────────────────────────────────────────────
+   Short text is balanced across its lines instead of being left with a
+   stranded word or half-clause on the last line. Chromium and Safari only
+   balance blocks of four lines or fewer, so body prose is untouched;
+   browsers without support ignore it and wrap as before. */
+h1,h2,h3,h4,h5,p,li,figcaption,blockquote,dd,dt,
+.kind,.guest,.sl,.sec-head,.sec-sub,.cap,.vid-title,.dv-label,
+.act-h,.act-sub,.peek-cap,.tb-h,.poster-hint,.who,.label,.terms
+ { text-wrap: balance; }
+
+/* The round tosh42 home button is fixed to the bottom-right corner and sat on top of
+   centred copy on a narrow screen. On a phone the sticky top nav already does its job. */
+@media(max-width:600px){ a[title^="Home"]{ display:none !important; } }
 </style>
 </head>
 <body>
@@ -286,7 +300,7 @@ ol li::before{content:counter(steps);font-family:'DM Mono',monospace;font-size:.
     <span class="nonessential-tag">Non-Essential</span>
     <h3 class="section-title">Nice to Have</h3>
     <p>Doors open to the performance area at least thirty minutes before showtime.</p>
-    <p>Show duration of approximately two hours of performance — three acts of approximately forty minutes each — with two intervals of ten to fifteen minutes, plus a ten-minute talkback (What Comes After). Approximately two and a half hours in the room, with allowance for a fifteen-minute run-on.</p>
+    <p>Show duration of just under two hours of performance — three acts of approximately thirty-five minutes each — with two intervals of ten to fifteen minutes, plus a ten-minute talkback (What Comes After). Approximately two and a half hours in the room, with allowance for a fifteen-minute run-on.</p>
     <p>A piano that is in tune with all notes working — appreciated but not a requirement.</p>
     <p style="margin-top:1rem;">If any area of the room has no line of sight to the performance area, closing it off during the show is appreciated where possible.</p>
     <p>One public room available nearby.</p>

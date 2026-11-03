@@ -106,6 +106,14 @@ details[open]
 .ctx-body{text-align:left;padding-left:1.6rem;padding-right:.4rem;}
 .ctx-body p{text-align:left;margin:0 0 .85rem;line-height:1.7;}
 @media(max-width:680px){.ctx-body{padding-left:.8rem;}}
+
+/* ── Mobile line-breaking ──────────────────────────────────────────────
+   Short text is balanced across its lines instead of being left with a
+   stranded word on the last line. Only blocks of four lines or fewer are
+   balanced, so body prose is untouched. */
+h1,h2,h3,h4,h5,p,li,figcaption,blockquote,dd,dt
+ { text-wrap: balance; }
+@media(max-width:600px){ a[title^="Home"]{ display:none !important; } }
 </style>
 </head>
 <body>

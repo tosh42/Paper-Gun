@@ -74,6 +74,14 @@ footer p{font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.26em;t
   .agree-sec h3,.ad-sub,.sig-label{color:#555;}
 }
 
+
+/* ── Mobile line-breaking ──────────────────────────────────────────────
+   Short text is balanced across its lines instead of being left with a
+   stranded word on the last line. Only blocks of four lines or fewer are
+   balanced, so body prose is untouched. */
+h1,h2,h3,h4,h5,p,li,figcaption,blockquote,dd,dt
+ { text-wrap: balance; }
+@media(max-width:600px){ a[title^="Home"]{ display:none !important; } }
 </style>
 </head>
 <body>

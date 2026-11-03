@@ -552,6 +552,20 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
 .hero-quote .hq-cite a{color:#e3cf9f;text-decoration:none;border-bottom:1px solid rgba(227,207,159,.45);}
 .hero-quote .hq-note{font-family:'Cormorant Garamond',serif;font-size:.8rem;line-height:1.45;color:#e7dfd0;opacity:.8;margin:.45rem 0 0;}
 @media(max-width:680px){.hero-quote{position:static;max-width:none;text-align:center;margin:1.1rem auto 0;padding:0 1.2rem;text-shadow:none;}}
+
+/* ── Mobile line-breaking ──────────────────────────────────────────────
+   Short text is balanced across its lines instead of being left with a
+   stranded word or half-clause on the last line. Chromium and Safari only
+   balance blocks of four lines or fewer, so body prose is untouched;
+   browsers without support ignore it and wrap as before. */
+h1,h2,h3,h4,h5,p,li,figcaption,blockquote,dd,dt,
+.kind,.guest,.sl,.sec-head,.sec-sub,.cap,.vid-title,.dv-label,
+.act-h,.act-sub,.peek-cap,.tb-h,.poster-hint,.who,.label,.terms
+ { text-wrap: balance; }
+
+/* The round tosh42 home button is fixed to the bottom-right corner and sat on top of
+   centred copy on a narrow screen. On a phone the sticky top nav already does its job. */
+@media(max-width:600px){ a[title^="Home"]{ display:none !important; } }
 </style>
 </head>
 <body>

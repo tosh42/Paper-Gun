@@ -225,6 +225,20 @@ footer{text-align:center;padding:2rem;font-size:.7rem;letter-spacing:.2em;opacit
 .chapters button:focus-visible{outline:2px solid var(--gold-l);outline-offset:-2px;}
 .ch-t{font-family:'DM Mono',monospace;font-size:.7rem;letter-spacing:.06em;color:var(--gold);min-width:3.2em;}
 @media(max-width:820px){.clips{grid-template-columns:1fr;}}
+
+/* ── Mobile line-breaking ──────────────────────────────────────────────
+   Short text is balanced across its lines instead of being left with a
+   stranded word or half-clause on the last line. Chromium and Safari only
+   balance blocks of four lines or fewer, so body prose is untouched;
+   browsers without support ignore it and wrap as before. */
+h1,h2,h3,h4,h5,p,li,figcaption,blockquote,dd,dt,
+.kind,.guest,.sl,.sec-head,.sec-sub,.cap,.vid-title,.dv-label,
+.act-h,.act-sub,.peek-cap,.tb-h,.poster-hint,.who,.label,.terms
+ { text-wrap: balance; }
+
+/* The round tosh42 home button is fixed to the bottom-right corner and sat on top of
+   centred copy on a narrow screen. On a phone the sticky top nav already does its job. */
+@media(max-width:600px){ a[title^="Home"]{ display:none !important; } }
 </style>
 </head>
 <body>
@@ -505,7 +519,7 @@ footer{text-align:center;padding:2rem;font-size:.7rem;letter-spacing:.2em;opacit
     <strong style="font-family:'DM Mono',monospace;font-size:.68rem;letter-spacing:.26em;text-transform:uppercase;color:var(--gold-l);display:block;margin-bottom:1rem;">An Original Song Cycle / Operetta</strong>
     Paper Gun, about a conflicted Opera star, was built in senior communities &mdash; years of conversations and collected wisdom. Some of the people I met carry resentment, some carry none.<br/>The difference is the point of the show.
   </p>
-  <p class="body" style="max-width:680px;margin:1.2rem auto 0;text-align:center;">Three acts of roughly forty minutes &mdash; two hours of performance, with two intervals of ten to fifteen minutes, plus a ten-minute talkback. About two and a half hours in the room.<br/>A paper theme tied to the shadow and a parallel about sacrifice.<br/>One man plays both sides of himself.</p>
+  <p class="body" style="max-width:680px;margin:1.2rem auto 0;text-align:center;">Three acts of about thirty-five minutes &mdash; just under two hours of performance, with two intervals of ten to fifteen minutes, plus a ten-minute talkback. About two and a half hours in the room.<br/>A paper theme tied to the shadow and a parallel about sacrifice.<br/>One man plays both sides of himself.</p>
   <p class="body" style="max-width:680px;margin:1.2rem auto 0;text-align:center;">It's about survival over grievance. An original operetta / an actual mini opera &mdash; one man plays both sides of himself. A three-act paper theme tied to the shadow and sacrifice: a journey from disillusionment to authenticity. A niche, unconventional, therapeutic, theatrical one-man show.</p>
   <p class="body" style="max-width:680px;margin:1.2rem auto 0;text-align:center;">I have always had two shows. The Song Is The Play is built from the songs of others, performed as theatre. Paper Gun is entirely my own &mdash; every word and every note. What they share is the handling, not the material. There is always an unknown element to illuminate the terrain from a different angle.</p>
   <p class="body" style="max-width:680px;margin:1.4rem auto 0;text-align:center;opacity:.85;color:var(--gold-l);">What this work does in the rooms it reaches: for the elderly, for the isolated, for people carrying weight they can't name until a song names it for them — is real. I've been in an impoverished enough state myself to know what I'm giving.</p>

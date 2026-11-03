@@ -203,6 +203,29 @@ footer p{font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.26em;t
 .scenes a:hover img{opacity:.85;}
 .scenes span{display:block;font-family:'DM Mono',monospace;font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);text-align:center;margin-top:.6rem;line-height:1.5;}
 @media(max-width:600px){.scenes{grid-template-columns:1fr;gap:1.8rem;}}
+
+/* Phone-only line breaks: a sentence that wraps mid-clause on a narrow screen is
+   given its break deliberately, and the separator it replaces is hidden with it. */
+br.mobr{display:none;}
+@media(max-width:600px){
+  br.mobr{display:inline;}
+  .sep{display:none;}
+  #seat-bar{margin-top:1.1rem;}
+}
+
+/* ── Mobile line-breaking ──────────────────────────────────────────────
+   Short text is balanced across its lines instead of being left with a
+   stranded word or half-clause on the last line. Chromium and Safari only
+   balance blocks of four lines or fewer, so body prose is untouched;
+   browsers without support ignore it and wrap as before. */
+h1,h2,h3,h4,h5,p,li,figcaption,blockquote,dd,dt,
+.kind,.guest,.sl,.sec-head,.sec-sub,.cap,.vid-title,.dv-label,
+.act-h,.act-sub,.peek-cap,.tb-h,.poster-hint,.who,.label,.terms
+ { text-wrap: balance; }
+
+/* The round tosh42 home button is fixed to the bottom-right corner and sat on top of
+   centred copy on a narrow screen. On a phone the sticky top nav already does its job. */
+@media(max-width:600px){ a[title^="Home"]{ display:none !important; } }
 </style>
 </head>
 <body>
@@ -293,7 +316,7 @@ footer p{font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.26em;t
 <!-- EVENT DETAILS 1 of 3: red bar -->
 <div id="seat-bar">
   <div class="in">
-    <p>Paper Gun &nbsp;&middot;&nbsp; First performance &nbsp;&middot;&nbsp; Date to be announced &nbsp;&middot;&nbsp; Free &nbsp;&middot;&nbsp; 50 seats</p>
+    <p>Paper Gun &nbsp;&middot;&nbsp; First performance &nbsp;&middot;&nbsp; Date to be announced<span class="sep"> &nbsp;&middot;&nbsp; </span><br class="mobr">Free &nbsp;&middot;&nbsp; 50 seats</p>
     <a href="#reserve">Reserve a seat</a>
   </div>
 </div>
@@ -311,13 +334,13 @@ footer p{font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.26em;t
   <div class="invite-text">
     <p class="who">Paul Tosh</p>
     <h1>Paper Gun</h1>
-    <p class="kind">A new original operetta &nbsp;&middot;&nbsp; One man &nbsp;&middot;&nbsp; One piano</p>
+    <p class="kind">A new original operetta<span class="sep"> &nbsp;&middot;&nbsp; </span><br class="mobr">One man &nbsp;&middot;&nbsp; One piano</p>
     <p class="kind" style="margin-top:.55rem;color:var(--gold-l);opacity:1;">Flawed, live, inimitable.</p>
     <p class="kind" style="margin-top:.4rem;">Touring, performing his own composition</p>
 
     <p style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(1.05rem,2vw,1.28rem);line-height:1.6;color:var(--cream);opacity:.92;margin-top:1.4rem;max-width:30em;">An intimate, original musical-theatre work about resentment,<br/>identity and the struggle to let go.</p>
-    <p class="guest">First performance. You are invited as my guest.</p>
-    <p class="pitch">A show in three acts, about resentment and how to put it down. Two hours — roughly forty minutes an act, two intervals of ten to fifteen minutes, plus a ten-minute talkback. About two and a half hours in the room. No tickets. No charge.</p>
+    <p class="guest">First performance.<br class="mobr"> You are invited as my guest.</p>
+    <p class="pitch">A show in three acts. Just under two hours of performance &mdash; about thirty-five minutes an act &mdash; with two intervals of ten to fifteen minutes and a ten-minute talkback. About two and a half hours in the room. No tickets. No charge.</p>
 
     <!-- EVENT DETAILS 2 of 3: the stub -->
     <div class="stub"><div class="in">
