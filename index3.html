@@ -226,6 +226,13 @@ h1,h2,h3,h4,h5,p,li,figcaption,blockquote,dd,dt,
 /* The round tosh42 home button is fixed to the bottom-right corner and sat on top of
    centred copy on a narrow screen. On a phone the sticky top nav already does its job. */
 @media(max-width:600px){ a[title^="Home"]{ display:none !important; } }
+
+/* Mr Hay — the same play button the full site uses */
+.mrhay-btn{display:inline-flex;align-items:center;gap:.4em;background:none;
+  border:1px solid rgba(181,163,126,.55);border-radius:999px;color:var(--gold-l);
+  font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;
+  padding:.3em .85em;cursor:pointer;vertical-align:middle;margin:0 .25em;transition:background .2s;}
+.mrhay-btn:hover{background:rgba(156,138,106,.12);}
 </style>
 </head>
 <body>
@@ -340,7 +347,7 @@ h1,h2,h3,h4,h5,p,li,figcaption,blockquote,dd,dt,
 
     <p style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(1.05rem,2vw,1.28rem);line-height:1.6;color:var(--cream);opacity:.92;margin-top:1.4rem;max-width:30em;">An intimate, original musical-theatre work about resentment,<br/>identity and the struggle to let go.</p>
     <p class="guest">First performance.<br class="mobr"> You are invited as my guest.</p>
-    <p class="pitch">A show in three acts. Just under two hours of performance &mdash; about thirty-five minutes an act &mdash; with two intervals of ten to fifteen minutes and a ten-minute talkback. About two and a half hours in the room. No tickets. No charge.</p>
+    <p class="pitch">A show in three acts. Just under two hours of performance &mdash; about thirty-five minutes an act &mdash; with two intervals of ten to fifteen minutes and a ten-minute talkback. Complimentary tickets.</p>
 
     <!-- EVENT DETAILS 2 of 3: the stub -->
     <div class="stub"><div class="in">
@@ -437,7 +444,7 @@ h1,h2,h3,h4,h5,p,li,figcaption,blockquote,dd,dt,
      To change the playlist, replace the ID in two places: the PL= line in the script
      below and the "Open on YouTube" link. -->
 <section class="wrap wide">
-  <h2 class="sec-head" style="margin-top:3.4rem">Live in the Making</h2>
+  <h2 class="sec-head" style="margin-top:3.4rem">Live in the Making &mdash; full songs</h2>
   <div class="pl-wrap">
     <div class="pl-frame"><div id="makingPlayer"></div></div>
     <div class="pl-list" id="makingList"><p class="pl-note">Loading playlist&hellip;</p></div>
@@ -511,7 +518,7 @@ h1,h2,h3,h4,h5,p,li,figcaption,blockquote,dd,dt,
   <div class="teasers">
     <p>We all carry shadows. It&rsquo;s the human condition. The question is, what do we do with them?</p>
     <p>An original operetta in which one man plays both sides of himself.</p>
-    <p>It opens with a live recording of an elderly gentleman, Mr. Hay. What he says is the show&rsquo;s greatest lesson.</p>
+    <p>It opens with a live recording of an elderly gentleman, Mr. Hay. <button type="button" class="mrhay-btn" onclick="toggleMrHay(this)"><span class="mrhay-glyph">&#9654;</span> Hear him</button> What he says is the show&rsquo;s greatest lesson.</p>
   </div>
   <div class="center"><a href="./papergun.html" class="quiet">More about Paper Gun</a></div>
 </section>
@@ -673,5 +680,16 @@ h1,h2,h3,h4,h5,p,li,figcaption,blockquote,dd,dt,
 })();
 </script>
 <p class="provenance" style="font-family:'DM Mono',ui-monospace,monospace;font-size:.57rem;letter-spacing:.26em;text-transform:uppercase;text-align:center;color:#9c8a6a;opacity:.6;line-height:2;margin:0;padding:.2rem 1.2rem 2rem;">Words &amp; music by Paul Tosh &middot; Written at a piano &middot; Not AI-generated</p>
+<audio id="mrhay" src="MrHay.m4a" preload="none" aria-hidden="true"></audio>
+<script>
+function toggleMrHay(btn){
+  var a=document.getElementById('mrhay'); if(!a) return;
+  var glyphs=document.querySelectorAll('.mrhay-glyph');
+  if(a.paused){ a.play().catch(function(){});
+    glyphs.forEach(function(g){ g.innerHTML='&#10074;&#10074;'; });
+  } else { a.pause(); glyphs.forEach(function(g){ g.innerHTML='&#9654;'; }); }
+  a.onended=function(){ glyphs.forEach(function(g){ g.innerHTML='&#9654;'; }); };
+}
+</script>
 </body>
 </html>

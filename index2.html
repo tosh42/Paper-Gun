@@ -160,7 +160,8 @@ body{background:var(--ink);color:var(--cream);font-family:'Cormorant Garamond',G
 
 /* ── GUIDED VIDEO JOURNEY ── */
 #video-journey{background:var(--ink);display:flex;flex-direction:column;align-items:center;padding:3rem 2rem 4rem;border-bottom:1px solid var(--border);}
-.vj-kicker{display:flex;align-items:center;gap:.9rem;margin-bottom:2.4rem;}
+.vj-kicker{display:flex;align-items:center;gap:.9rem;margin-bottom:2.4rem;max-width:100%;flex-wrap:wrap;justify-content:center;}
+.vj-kicker-line{flex:0 1 36px;min-width:0;}
 .vj-kicker-text{font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.42em;text-transform:uppercase;color:var(--gold);opacity:.8;white-space:nowrap;text-align:center;}
 .vj-kicker-line{width:36px;height:1px;background:linear-gradient(90deg,transparent,rgba(184,151,58,.55));}
 .vj-kicker-line.right{background:linear-gradient(90deg,rgba(184,151,58,.55),transparent);}
@@ -566,6 +567,23 @@ h1,h2,h3,h4,h5,p,li,figcaption,blockquote,dd,dt,
 /* The round tosh42 home button is fixed to the bottom-right corner and sat on top of
    centred copy on a narrow screen. On a phone the sticky top nav already does its job. */
 @media(max-width:600px){ a[title^="Home"]{ display:none !important; } }
+
+/* Phone-only breaks: each appellation sits on its own line with its description beneath. */
+br.mobr{display:none;}
+@media(max-width:600px){ br.mobr{display:inline;} }
+
+/* Chapter index under the headline video — same list the landing page uses. */
+.chapters{border:1px solid var(--border);background:rgba(255,255,255,.02);margin-top:.9rem;
+          max-height:340px;overflow-y:auto;text-align:left;}
+.ch-head{font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;
+         color:var(--gold);padding:.7rem 1rem;border-bottom:1px solid rgba(156,138,106,.22);margin:0;}
+.chapters ol{list-style:none;margin:0;padding:.3rem 0;}
+.chapters button{display:flex;gap:.9rem;align-items:baseline;width:100%;text-align:left;background:none;
+  border:none;cursor:pointer;padding:.5rem 1rem;font-family:'Cormorant Garamond',Georgia,serif;
+  font-size:1.05rem;line-height:1.35;color:var(--cream);opacity:.9;transition:background .15s;}
+.chapters button:hover,.chapters button.on{background:rgba(156,138,106,.14);opacity:1;}
+.chapters button:focus-visible{outline:2px solid var(--gold-l);outline-offset:-2px;}
+.ch-t{font-family:'DM Mono',monospace;font-size:.7rem;letter-spacing:.06em;color:var(--gold);min-width:3.2em;}
 </style>
 </head>
 <body>
@@ -658,12 +676,11 @@ h1,h2,h3,h4,h5,p,li,figcaption,blockquote,dd,dt,
     <p class="hq-note">Host of the first performance of the operetta, at the home concert they put on in Charleston</p>
   </div>
   <div class="hero-badges">
-    <a href="./therapeutic.html" title="Therapeutic — for presenters &amp; clinicians"><img src="moperavector.png" alt="A Mopera Production — therapeutic page" class="hero-mopera"/></a>
     <a href="./truckhomage.html" title="The truck — an homage"><img src="trukcut3.png" alt="The CyberPhoenix truck — truck page" class="hero-truck"/></a>
   </div>
   <div class="hero-content">
     <img src="logo_gold_smlr.jpg" alt="Tosh42" class="hero-logo"/>
-    <div class="hero-tagline"><p>Singer / Pianist <em style="font-family:'Cormorant Garamond',serif;font-style:italic;text-transform:none;letter-spacing:.04em;opacity:.85;">theatrical · intimate</em><br/>Looping Artist <em style="font-family:'Cormorant Garamond',serif;font-style:italic;text-transform:none;letter-spacing:.04em;opacity:.85;">Ed Sheeran style — with a piano</em><br/>Songwriter<br/><span style="font-family:'DM Mono',monospace;font-size:.92rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);opacity:.95;line-height:1.25;display:block;">Modern Day </span> <span style="font-family:'DM Mono',monospace;font-size:.92rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);opacity:.95;line-height:1.25;display:block;">Nomadic </span> <span style="font-family:'DM Mono',monospace;font-size:.92rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);opacity:.95;line-height:1.25;display:block;">Troubadour</span></p></div>
+    <div class="hero-tagline"><p>Singer / Pianist<br class="mobr"/> <em style="font-family:'Cormorant Garamond',serif;font-style:italic;text-transform:none;letter-spacing:.04em;opacity:.85;">theatrical · intimate</em><br/>Looping Artist<br class="mobr"/> <em style="font-family:'Cormorant Garamond',serif;font-style:italic;text-transform:none;letter-spacing:.04em;opacity:.85;">Ed Sheeran style — with a piano</em><br/>Songwriter<br/><span style="font-family:'DM Mono',monospace;font-size:.92rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);opacity:.95;line-height:1.25;display:block;">Modern Day </span> <span style="font-family:'DM Mono',monospace;font-size:.92rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);opacity:.95;line-height:1.25;display:block;">Nomadic </span> <span style="font-family:'DM Mono',monospace;font-size:.92rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);opacity:.95;line-height:1.25;display:block;">Troubadour</span></p></div>
     <p class="hero-name">Paul Tosh</p>
     <p class="hero-tag">Unhurried, a little outlaw,<span class="hero-tag-break"> completely self-possessed.</span></p>
   </div>
@@ -710,9 +727,26 @@ h1,h2,h3,h4,h5,p,li,figcaption,blockquote,dd,dt,
     <div class="vj-row">
     <div class="vj-card">
       <p class="vj-title">Paper Gun — <em>a show about shadow work</em></p>
-      <div class="vj-frame">
+      <div class="vj-frame" id="pgFrame">
         <div class="lite-yt" data-id="k--nseVdI4U" data-title="Paper Gun — Paul Tosh" role="button" tabindex="0" aria-label="Play video: Paper Gun — Paul Tosh"><button class="lite-yt-play" type="button" aria-hidden="true" tabindex="-1"></button></div>
       </div>
+      <nav class="chapters" id="pgChapters" aria-label="Chapters in this video">
+        <p class="ch-head">In this video</p>
+        <ol>
+        <li><button type="button" data-t="56"><span class="ch-t">0:56</span>Index: Paper Gun Excerpts</button></li>
+        <li><button type="button" data-t="94"><span class="ch-t">1:34</span>The backdrops</button></li>
+        <li><button type="button" data-t="211"><span class="ch-t">3:31</span>The memo: come in B&amp;W</button></li>
+        <li><button type="button" data-t="246"><span class="ch-t">4:06</span>The outfit</button></li>
+        <li><button type="button" data-t="269"><span class="ch-t">4:29</span>Dialogue</button></li>
+        <li><button type="button" data-t="337"><span class="ch-t">5:37</span>Opera adaptations</button></li>
+        <li><button type="button" data-t="530"><span class="ch-t">8:50</span>About</button></li>
+        <li><button type="button" data-t="554"><span class="ch-t">9:14</span>A few laughs</button></li>
+        <li><button type="button" data-t="700"><span class="ch-t">11:40</span>Looping explained</button></li>
+        <li><button type="button" data-t="791"><span class="ch-t">13:11</span>Classic songs as theatre</button></li>
+        <li><button type="button" data-t="903"><span class="ch-t">15:03</span>Paper Gun: Rehearsals</button></li>
+        <li><button type="button" data-t="1031"><span class="ch-t">17:11</span>Paper Gun: Talk Back</button></li>
+        </ol>
+      </nav>
       <p style="margin-top:.6rem;text-align:center;"><a href="./papergun.html#acts-playlists" style="font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-l);text-decoration:none;border-bottom:1px solid rgba(156,138,106,.4);padding-bottom:.1rem;">Full songs &rarr;</a></p>
       <p class="vj-desc" style="margin-top:1rem;">Paper Gun was built in senior communities &mdash; years of conversations and collected wisdom. Some of the people I met carry resentment, some carry none. The difference is the heart of the show. It opens with a live recording: my microphone caught an elderly gentleman, Mr. Hay. <button type="button" class="mrhay-btn" onclick="toggleMrHay(this)" style="display:inline-flex;align-items:center;gap:.4em;background:none;border:1px solid rgba(181,163,126,.55);border-radius:999px;color:#b5a37e;font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;padding:.3em .85em;cursor:pointer;vertical-align:middle;margin:0 .25em;transition:background .2s;" onmouseover="this.style.background='rgba(156,138,106,.12)'" onmouseout="this.style.background='none'"><span class="mrhay-glyph">&#9654;</span> Hear him</button> and what he says is the show's greatest lesson.</p>
       <p class="vj-desc">It&rsquo;s about survival over grievance &mdash; an original operetta in which one man plays both sides of himself.</p>
@@ -1081,5 +1115,30 @@ function toggleMrHay(btn){
 })();
 </script>
 <p class="provenance" style="font-family:'DM Mono',ui-monospace,monospace;font-size:.57rem;letter-spacing:.26em;text-transform:uppercase;text-align:center;color:#9c8a6a;opacity:.6;line-height:2;margin:0;padding:.2rem 1.2rem 2rem;">Words &amp; music by Paul Tosh &middot; Written at a piano &middot; Not AI-generated</p>
+<script>
+/* Chapter jumps for the headline video. The frame may still hold the click-to-load
+   placeholder, so the first chapter click builds the iframe itself. */
+(function(){
+  var VID='k--nseVdI4U';
+  var wrap=document.getElementById('pgFrame'), nav=document.getElementById('pgChapters');
+  if(!wrap||!nav) return;
+  nav.querySelectorAll('button').forEach(function(b){
+    b.addEventListener('click',function(){
+      var src='https://www.youtube.com/embed/'+VID+'?rel=0&autoplay=1&start='+b.getAttribute('data-t');
+      var f=wrap.querySelector('iframe');
+      if(!f){ f=document.createElement('iframe');
+        f.title='Paper Gun \u2014 Paul Tosh';
+        f.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+        f.allowFullscreen=true;
+        f.style.width='100%'; f.style.height='100%'; f.style.border='0';
+        wrap.innerHTML=''; wrap.appendChild(f); }
+      f.src=src;
+      nav.querySelectorAll('button.on').forEach(function(o){o.classList.remove('on');});
+      b.classList.add('on');
+      if(window.innerWidth<=820){ wrap.scrollIntoView({behavior:'smooth',block:'center'}); }
+    });
+  });
+})();
+</script>
 </body>
 </html>
