@@ -211,6 +211,15 @@ footer{text-align:center;padding:2rem;font-size:.7rem;letter-spacing:.2em;opacit
 .pl-frame{position:relative;padding-bottom:56.25%;height:0;background:#000;border:1px solid rgba(156,138,106,.22);}
 .pl-frame iframe,.pl-frame > div{position:absolute;inset:0;width:100%;height:100%;border:none;}
 .pl-list{margin-top:.8rem;border:1px solid rgba(156,138,106,.22);background:rgba(156,138,106,.03);max-height:300px;overflow-y:auto;scrollbar-width:thin;scrollbar-color:rgba(156,138,106,.4) transparent;}
+/* The three act playlists: a generic section{max-width:860px} was squeezing the
+   grid to 796px, so each player sat at 194px tall. This section is given room,
+   and the blocks a larger floor. */
+#acts-playlists{max-width:1480px;}
+#acts-playlists .pl-grid{max-width:1420px;gap:1.8rem;}
+#acts-playlists .pl-block{flex:1 1 360px;max-width:none;padding:1rem;}
+#acts-playlists .pl-list{max-height:380px;}
+#acts-playlists .pl-title{font-size:.68rem;}
+@media(min-width:1000px){ #acts-playlists .pl-block{flex:1 1 calc(33.333% - 1.2rem);} }
 .pl-ytlink{display:block;text-align:center;font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);opacity:.8;margin-top:.7rem;}
 .pl-ytlink:hover{opacity:1;}
 .vj-tracklist-head{position:sticky;top:0;z-index:2;background:#171310;border-bottom:1px solid rgba(156,138,106,.25);padding:.55rem .8rem;font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);opacity:.85;}
