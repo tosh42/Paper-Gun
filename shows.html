@@ -385,6 +385,12 @@ h1,h2,h3,h4,h5,p,li,figcaption,blockquote,dd,dt,
     opacity: 1 !important;
   }
 }
+/* A generic nav{height:64px} rule survives from an older design on this page and
+   pins the site nav to one row while its links wrap to four. The bar spilled over
+   the hero even before the type was scaled. An id beats an element selector. */
+#site-nav { height: auto; min-height: 64px; }
+@media(max-width:600px){
+}
 </style>
 </head>
 
