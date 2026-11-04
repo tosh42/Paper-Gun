@@ -95,6 +95,13 @@ h1,h2,h3,h4,h5,p,li,figcaption,blockquote,dd,dt,
     opacity: 1 !important;
   }
 }
+
+.banner-card{display:block;text-decoration:none;border:1px solid var(--border);
+  background:rgba(255,255,255,.02);padding:.8rem;transition:transform .15s,border-color .2s;}
+.banner-card:hover{transform:translateY(-3px);border-color:rgba(156,138,106,.5);}
+.banner-card img{width:100%;height:auto;display:block;}
+.banner-card span{display:block;font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--gold);opacity:.8;margin-top:.7rem;text-align:center;}
 </style>
 </head>
 <body>
@@ -181,6 +188,13 @@ h1,h2,h3,h4,h5,p,li,figcaption,blockquote,dd,dt,
   <p class="kicker">On the Road</p>
   <h1>The <em>Posters</em></h1>
   <p class="sub">Tap any poster to enlarge it.</p>
+</div>
+
+<div class="wrap" style="padding-bottom:0;">
+  <a class="banner-card" href="PGbanner.jpg" data-lightbox>
+    <img src="PGbanner.jpg" alt="Paper Gun — Paul Tosh. New original operetta: three characters, one man, and one piano. Flawed, live, inimitable. tosh42.com" loading="lazy"/>
+    <span>Paper Gun &mdash; the banner</span>
+  </a>
 </div>
 
 <div class="wrap">
