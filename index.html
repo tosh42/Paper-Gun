@@ -4,7 +4,7 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Paper Gun · First Performance · You are invited · Paul Tosh</title>
-<meta name="description" content="Paper Gun, a new original operetta by Paul Tosh. First performance, free, by invitation. Fifty seats. Reserve yours."/>
+<meta name="description" content="Paper Gun, a new original operetta by Paul Tosh. First performance, free, by invitation. Fifty seats. Join the waiting list."/>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Cinzel:wght@400;600&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
@@ -233,6 +233,34 @@ h1,h2,h3,h4,h5,p,li,figcaption,blockquote,dd,dt,
   font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;
   padding:.3em .85em;cursor:pointer;vertical-align:middle;margin:0 .25em;transition:background .2s;}
 .mrhay-btn:hover{background:rgba(156,138,106,.12);}
+/* ── seat count, made prominent ── */
+.seatcount{display:block;font-family:'DM Mono',monospace;font-size:clamp(1.45rem,4vw,2.15rem);
+  letter-spacing:.14em;color:var(--gold-l);text-align:center;margin:.1rem 0 .15rem;line-height:1.1;}
+.seatcount-sub{display:block;text-align:center;font-family:'DM Mono',monospace;font-size:.58rem;
+  letter-spacing:.26em;text-transform:uppercase;color:var(--gold);opacity:.88;}
+/* ── Mr Hay feature band ── */
+.hayband{border-top:1px solid rgba(156,138,106,.25);border-bottom:1px solid rgba(156,138,106,.25);
+  padding:2.7rem 1.5rem;margin:2.4rem 0 .6rem;text-align:center;background:rgba(156,138,106,.05);}
+.hayband .in{max-width:40em;margin:0 auto;}
+.hay-kick{font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.26em;text-transform:uppercase;
+  color:var(--gold);opacity:.85;margin:0 0 .9rem;}
+.hay-line{font-family:'Cormorant Garamond',serif;font-size:clamp(1.15rem,2.2vw,1.5rem);line-height:1.5;
+  color:var(--cream);margin:0 0 1.25rem;}
+.hay-btn{display:inline-flex;align-items:center;gap:.5em;background:none;border:1px solid rgba(156,138,106,.55);
+  color:var(--gold-l);font-family:'DM Mono',monospace;font-size:.72rem;letter-spacing:.22em;
+  text-transform:uppercase;padding:.85em 2em;cursor:pointer;transition:background .2s;}
+.hay-btn:hover{background:rgba(156,138,106,.14);}
+.hay-sub{font-family:'Cormorant Garamond',serif;font-style:italic;
+  font-size:clamp(1rem,1.8vw,1.18rem);color:var(--cream);opacity:.88;margin:1.15rem 0 0;}
+/* ── presenter route ── */
+.pres-links{display:flex;flex-wrap:wrap;gap:.7rem 1.5rem;justify-content:center;margin-top:1.1rem;
+  width:100%;flex-basis:100%;}
+.pres-links a{font-family:'DM Mono',monospace;font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--gold-l);text-decoration:none;border-bottom:1px solid rgba(156,138,106,.4);padding-bottom:.22em;}
+.pres-links a:hover{color:var(--cream);}
+.pres-lead{font-family:'DM Mono',monospace;font-size:.6rem;letter-spacing:.24em;text-transform:uppercase;
+  color:var(--gold);opacity:.85;margin:1.9rem 0 0;text-align:center;width:100%;flex-basis:100%;}
+
 
 /* Host introduction — written out so a nervous host has nothing to invent */
 .host-kicker{font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.42em;text-transform:uppercase;
@@ -350,7 +378,7 @@ h1,h2,h3,h4,h5,p,li,figcaption,blockquote,dd,dt,
 <div id="seat-bar">
   <div class="in">
     <p>Paper Gun &nbsp;&middot;&nbsp; First performance &nbsp;&middot;&nbsp; Date to be announced<span class="sep"> &nbsp;&middot;&nbsp; </span><br class="mobr">Free &nbsp;&middot;&nbsp; 50 seats</p>
-    <a href="#reserve">Reserve a seat</a>
+    <a href="#reserve">Join waiting list</a>
   </div>
 </div>
 
@@ -380,17 +408,27 @@ h1,h2,h3,h4,h5,p,li,figcaption,blockquote,dd,dt,
       <p class="label">First Performance</p>
       <p class="when">Date to be announced</p>
       <p class="where">Lancaster County, Pennsylvania<br/>Venue to be confirmed</p>
-      <p class="terms">Fifty free seats &middot; Reserve now, I’ll write with the date</p>
+      <span class="seatcount">50 SEATS</span>
+      <span class="seatcount-sub">Free &middot; strictly limited</span>
     </div></div>
 
     <div class="actions">
-      <a href="#reserve" class="cta-red">&#9670; Reserve a seat</a>
+      <a href="#reserve" class="cta-red">&#9670; Join waiting list</a>
       <a href="./index2.html" class="quiet">See the full site</a>
     </div>
   </div>
 </section>
 
 
+<!-- ── MR HAY: how the show opens ── -->
+<section class="hayband" aria-label="How the show opens">
+  <div class="in">
+    <p class="hay-kick">How it opens</p>
+    <p class="hay-line">It opens with a live recording of an elderly gentleman, Mr.&nbsp;Hay.</p>
+    <button type="button" class="hay-btn" onclick="toggleMrHay(this)"><span class="mrhay-glyph">&#9654;</span> Hear him</button>
+    <p class="hay-sub">What he says is the show&rsquo;s greatest lesson.</p>
+  </div>
+</section>
 
 <!-- ── THE INTRODUCTION: lead video + its chapter index ── -->
 <section class="wrap wide" style="padding-top:1rem;">
@@ -417,12 +455,12 @@ h1,h2,h3,h4,h5,p,li,figcaption,blockquote,dd,dt,
   </div>
 </section>
 
-<!-- ── REGISTER IN ADVANCE (public waiting list) ── -->
-<section class="register" aria-label="Register in advance">
+<!-- ── JOIN WAITING LIST (public) ── -->
+<section class="register" aria-label="Join the waiting list">
   <div class="in">
     <p class="reg-q">Are you in the greater Lancaster area?</p>
-    <p class="reg-p">Dates are being set now, venue by venue. Register in advance and I&rsquo;ll write to you with the first ones &mdash; before they go anywhere else.</p>
-    <a class="reg-btn" href="https://www.tickettailor.com/events/tosh42/2418209" target="_blank" rel="noopener">&#9670; Register in advance</a>
+    <p class="reg-p">Register your interest now and I’ll personally contact you when the date and venue are confirmed.</p>
+    <a class="reg-btn" href="https://www.tickettailor.com/events/tosh42/2418209" target="_blank" rel="noopener">&#9670; Join waiting list</a>
   </div>
 </section>
 
@@ -431,6 +469,12 @@ h1,h2,h3,h4,h5,p,li,figcaption,blockquote,dd,dt,
   <div class="in">
     <p>Are you a presenter or a booker &mdash; and want to know what booking this involves?</p>
     <a class="cta-red" href="mailto:bookings@tosh42.com?subject=Free%2015-minute%20consult%20%E2%80%94%20Paper%20Gun&amp;body=Tell%20me%20a%20little%20about%20your%20room%20and%20a%20good%20time%20to%20speak%2C%20and%20I%27ll%20come%20back%20to%20you.">&#9670; A free 15-minute consult</a>
+    <p class="pres-lead">Everything a presenter needs</p>
+    <div class="pres-links">
+      <a href="./papergun.html">Full production information</a>
+      <a href="./rider.html">Technical rider</a>
+      <a href="./testimonials.html">Testimonials</a>
+    </div>
   </div>
 </section>
 
@@ -547,7 +591,6 @@ h1,h2,h3,h4,h5,p,li,figcaption,blockquote,dd,dt,
   <div class="teasers">
     <p>We all carry shadows. It&rsquo;s the human condition. The question is, what do we do with them?</p>
     <p>An original operetta in which one man plays both sides of himself.</p>
-    <p>It opens with a live recording of an elderly gentleman, Mr. Hay. <button type="button" class="mrhay-btn" onclick="toggleMrHay(this)"><span class="mrhay-glyph">&#9654;</span> Hear him</button> What he says is the show&rsquo;s greatest lesson.</p>
   </div>
   <div class="center"><a href="./papergun.html" class="quiet">More about Paper Gun</a></div>
 </section>
@@ -562,13 +605,14 @@ h1,h2,h3,h4,h5,p,li,figcaption,blockquote,dd,dt,
      ────────────────────────────────────────────────────────────────── -->
 <section id="reserve">
   <div class="wrap">
-    <h2 class="sec-head">Reserve a seat</h2>
-    <p class="sec-sub">Fifty seats, free, as my guest. The date is being set now &mdash; join the
-      waiting list and I&rsquo;ll write to you with it, and hold your place.</p>
+    <h2 class="sec-head">Join waiting list</h2>
+    <span class="seatcount">50 SEATS</span>
+    <span class="seatcount-sub">Free, as my guest &middot; strictly limited</span>
+    <p class="sec-sub" style="margin-top:1.3rem;">Register your interest now and I’ll personally contact you when the date and venue are confirmed.</p>
 
     <div style="text-align:center;">
       <a href="https://www.tickettailor.com/events/tosh42/2418209" target="_blank" rel="noopener"
-         class="cta-red">&#9670; Join the waiting list</a>
+         class="cta-red">&#9670; Join waiting list</a>
     </div>
 
     <!-- ===== TICKET TAILOR EMBED GOES HERE ===== -->
