@@ -436,23 +436,27 @@ h1,h2,h3,h4,h5,p,li,figcaption,blockquote,dd,dt,
 
 <!-- ── THE INTRODUCTION: lead video + its chapter index ── -->
 <section class="wrap wide" style="padding-top:1rem;">
-  <p class="vid-title">Introduction clips &mdash; shorter version</p>
+  <p class="vid-title">Live in the Making 1</p>
   <div class="clips">
-    <div class="video-wrap"><iframe id="clipsFrame" src="https://www.youtube.com/embed/mB5BdP3Z3Js?rel=0" title="Introduction clips &mdash; shorter version &mdash; Paul Tosh" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+    <div class="video-wrap"><iframe id="clipsFrame" src="https://www.youtube.com/embed/OInNPmZximw?rel=0" title="Live in the Making 1 &mdash; Paul Tosh" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
     <nav class="chapters" aria-label="Chapters in this video">
       <p class="ch-head">In this video</p>
       <ol>
-        <li><button type="button" data-t="0"><span class="ch-t">0:00</span>Introduction to material</button></li>
-        <li><button type="button" data-t="100"><span class="ch-t">1:40</span>Opera/Neapolitan lyric adaptations</button></li>
-        <li><button type="button" data-t="280"><span class="ch-t">4:40</span>Mr Hay</button></li>
-        <li><button type="button" data-t="323"><span class="ch-t">5:23</span>Live looping</button></li>
-        <li><button type="button" data-t="360"><span class="ch-t">6:00</span>About the talk back</button></li>
+        <li><button type="button" data-t="0"><span class="ch-t">0:00</span>Introduction to Paper Gun</button></li>
+        <li><button type="button" data-t="115"><span class="ch-t">1:55</span>Opera/Neapolitan lyric adaptations</button></li>
+        <li><button type="button" data-t="295"><span class="ch-t">4:55</span>Mr Hay</button></li>
+        <li><button type="button" data-t="336"><span class="ch-t">5:36</span>Live looping</button></li>
+        <li><button type="button" data-t="440"><span class="ch-t">7:20</span>A few laughs</button></li>
+        <li><button type="button" data-t="568"><span class="ch-t">9:28</span>Paper Gun: Talk Back</button></li>
+        <li><button type="button" data-t="650"><span class="ch-t">10:50</span>Paper Gun: The backdrops</button></li>
+        <li><button type="button" data-t="680"><span class="ch-t">11:20</span>Classic song as theatre</button></li>
+        <li><button type="button" data-t="784"><span class="ch-t">13:04</span>Paper Gun: About</button></li>
       </ol>
     </nav>
   </div>
 
   <div style="max-width:760px;margin:1.4rem auto 0;text-align:center;">
-    <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.02rem;line-height:1.6;color:var(--cream);opacity:.85;margin:0 0 .55rem;">For the extended clips video, which includes more clips, looping and a few laughs, go to the <a href="./papergun.html" style="color:var(--gold-l);text-decoration:none;border-bottom:1px solid rgba(156,138,106,.45);">main Paper Gun page &rarr;</a></p>
+    <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.02rem;line-height:1.6;color:var(--cream);opacity:.85;margin:0 0 .55rem;">For Live in the Making 2, which has more of all of it, go to the <a href="./papergun.html" style="color:var(--gold-l);text-decoration:none;border-bottom:1px solid rgba(156,138,106,.45);">main Paper Gun page &rarr;</a></p>
     <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.02rem;line-height:1.6;color:var(--cream);opacity:.85;margin:0;">All clips can be seen with the audience, throughout the website.</p>
   </div>
 </section>
@@ -764,7 +768,7 @@ h1,h2,h3,h4,h5,p,li,figcaption,blockquote,dd,dt,
   var f=document.getElementById('clipsFrame'); if(!f) return;
   document.querySelectorAll('.chapters button').forEach(function(b){
     b.addEventListener('click',function(){
-      f.src='https://www.youtube.com/embed/mB5BdP3Z3Js?rel=0&autoplay=1&start='+b.getAttribute('data-t');
+      f.src='https://www.youtube.com/embed/OInNPmZximw?rel=0&autoplay=1&start='+b.getAttribute('data-t');
       document.querySelectorAll('.chapters button.on').forEach(function(o){o.classList.remove('on');});
       b.classList.add('on');
       if(window.innerWidth<=820){f.scrollIntoView({behavior:'smooth',block:'center'});}

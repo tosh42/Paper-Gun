@@ -747,21 +747,25 @@ br.mobr{display:none;}
     <div class="vj-row">
     <div class="vj-card">
       <p class="vj-title">Paper Gun — <em>a show about shadow work</em></p>
-      <p style="font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);opacity:.85;margin:0 0 .7rem;">Introduction clips &mdash; shorter version</p>
+      <p style="font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);opacity:.85;margin:0 0 .7rem;">Live in the Making 1</p>
       <div class="vj-frame" id="pgFrame">
-        <div class="lite-yt" data-id="mB5BdP3Z3Js" data-title="Introduction clips — shorter version" role="button" tabindex="0" aria-label="Play video: Introduction clips, shorter version"><button class="lite-yt-play" type="button" aria-hidden="true" tabindex="-1"></button></div>
+        <div class="lite-yt" data-id="OInNPmZximw" data-title="Live in the Making 1" role="button" tabindex="0" aria-label="Play video: Live in the Making 1"><button class="lite-yt-play" type="button" aria-hidden="true" tabindex="-1"></button></div>
       </div>
       <nav class="chapters" id="pgChapters" aria-label="Chapters in this video">
         <p class="ch-head">In this video</p>
         <ol>
-        <li><button type="button" data-t="0"><span class="ch-t">0:00</span>Introduction to material</button></li>
-        <li><button type="button" data-t="100"><span class="ch-t">1:40</span>Opera/Neapolitan lyric adaptations</button></li>
-        <li><button type="button" data-t="280"><span class="ch-t">4:40</span>Mr Hay</button></li>
-        <li><button type="button" data-t="323"><span class="ch-t">5:23</span>Live looping</button></li>
-        <li><button type="button" data-t="360"><span class="ch-t">6:00</span>About the talk back</button></li>
+        <li><button type="button" data-t="0"><span class="ch-t">0:00</span>Introduction to Paper Gun</button></li>
+        <li><button type="button" data-t="115"><span class="ch-t">1:55</span>Opera/Neapolitan lyric adaptations</button></li>
+        <li><button type="button" data-t="295"><span class="ch-t">4:55</span>Mr Hay</button></li>
+        <li><button type="button" data-t="336"><span class="ch-t">5:36</span>Live looping</button></li>
+        <li><button type="button" data-t="440"><span class="ch-t">7:20</span>A few laughs</button></li>
+        <li><button type="button" data-t="568"><span class="ch-t">9:28</span>Paper Gun: Talk Back</button></li>
+        <li><button type="button" data-t="650"><span class="ch-t">10:50</span>Paper Gun: The backdrops</button></li>
+        <li><button type="button" data-t="680"><span class="ch-t">11:20</span>Classic song as theatre</button></li>
+        <li><button type="button" data-t="784"><span class="ch-t">13:04</span>Paper Gun: About</button></li>
         </ol>
       </nav>
-      <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.02rem;line-height:1.6;color:var(--cream);opacity:.85;margin:1rem 0 .5rem;text-align:center;">For the extended clips video, which includes more clips, looping and a few laughs, go to the <a href="./papergun.html" style="color:var(--gold-l);text-decoration:none;border-bottom:1px solid rgba(156,138,106,.45);">main Paper Gun page &rarr;</a></p>
+      <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.02rem;line-height:1.6;color:var(--cream);opacity:.85;margin:1rem 0 .5rem;text-align:center;">For Live in the Making 2, which has more of all of it, go to the <a href="./papergun.html" style="color:var(--gold-l);text-decoration:none;border-bottom:1px solid rgba(156,138,106,.45);">main Paper Gun page &rarr;</a></p>
       <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.02rem;line-height:1.6;color:var(--cream);opacity:.85;margin:0 0 .4rem;text-align:center;">All clips can be seen with the audience, throughout the website.</p>
       <p style="margin-top:.6rem;text-align:center;"><a href="./papergun.html#acts-playlists" style="font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-l);text-decoration:none;border-bottom:1px solid rgba(156,138,106,.4);padding-bottom:.1rem;">Full songs &rarr;</a></p>
       <p class="vj-desc" style="margin-top:1rem;">Paper Gun was built in senior communities &mdash; years of conversations and collected wisdom. Some of the people I met carry resentment, some carry none. The difference is the heart of the show. It opens with a live recording: my microphone caught an elderly gentleman, Mr. Hay. <button type="button" class="mrhay-btn" onclick="toggleMrHay(this)" style="display:inline-flex;align-items:center;gap:.4em;background:none;border:1px solid rgba(181,163,126,.55);border-radius:999px;color:#b5a37e;font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;padding:.3em .85em;cursor:pointer;vertical-align:middle;margin:0 .25em;transition:background .2s;" onmouseover="this.style.background='rgba(156,138,106,.12)'" onmouseout="this.style.background='none'"><span class="mrhay-glyph">&#9654;</span> Hear him</button> and what he says is the show's greatest lesson.</p>
@@ -1154,7 +1158,7 @@ function toggleMrHay(btn){
 /* Chapter jumps for the headline video. The frame may still hold the click-to-load
    placeholder, so the first chapter click builds the iframe itself. */
 (function(){
-  var VID='mB5BdP3Z3Js';
+  var VID='OInNPmZximw';
   var wrap=document.getElementById('pgFrame'), nav=document.getElementById('pgChapters');
   if(!wrap||!nav) return;
   nav.querySelectorAll('button').forEach(function(b){
@@ -1162,7 +1166,7 @@ function toggleMrHay(btn){
       var src='https://www.youtube.com/embed/'+VID+'?rel=0&autoplay=1&start='+b.getAttribute('data-t');
       var f=wrap.querySelector('iframe');
       if(!f){ f=document.createElement('iframe');
-        f.title='Introduction clips \u2014 shorter version';
+        f.title='Live in the Making 1';
         f.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
         f.allowFullscreen=true;
         f.style.width='100%'; f.style.height='100%'; f.style.border='0';
