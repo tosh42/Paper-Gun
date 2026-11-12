@@ -438,19 +438,19 @@ h1,h2,h3,h4,h5,p,li,figcaption,blockquote,dd,dt,
 <section class="wrap wide" style="padding-top:1rem;">
   <p class="vid-title">Live in the Making 1</p>
   <div class="clips">
-    <div class="video-wrap"><iframe id="clipsFrame" src="https://www.youtube.com/embed/RA-c2K-e3Uo?rel=0" title="Live in the Making 1 &mdash; Paul Tosh" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+    <div class="video-wrap"><iframe id="clipsFrame" src="https://www.youtube.com/embed/A8cD0ZVHKnk?rel=0" title="Live in the Making 1 &mdash; Paul Tosh" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
     <nav class="chapters" aria-label="Chapters in this video">
       <p class="ch-head">In this video</p>
       <ol>
-        <li><button type="button" data-t="0"><span class="ch-t">0:00</span>Introduction</button></li>
-        <li><button type="button" data-t="107"><span class="ch-t">1:47</span>Opera adaptations</button></li>
+        <li><button type="button" data-t="0"><span class="ch-t">0:00</span>Paper Gun Introduction</button></li>
+        <li><button type="button" data-t="107"><span class="ch-t">1:47</span>Opera lyric adaptations</button></li>
         <li><button type="button" data-t="287"><span class="ch-t">4:47</span>Mr Hay</button></li>
         <li><button type="button" data-t="328"><span class="ch-t">5:28</span>Live looping</button></li>
         <li><button type="button" data-t="430"><span class="ch-t">7:10</span>A few laughs</button></li>
         <li><button type="button" data-t="586"><span class="ch-t">9:46</span>Paper Gun: Talk Back</button></li>
         <li><button type="button" data-t="667"><span class="ch-t">11:07</span>Paper Gun: The backdrops</button></li>
-        <li><button type="button" data-t="698"><span class="ch-t">11:38</span>Classic song as theatre</button></li>
-        <li><button type="button" data-t="845"><span class="ch-t">14:05</span>Paper Gun: About</button></li>
+        <li><button type="button" data-t="682"><span class="ch-t">11:22</span>Classic song as theatre</button></li>
+        <li><button type="button" data-t="788"><span class="ch-t">13:08</span>Paper Gun: About</button></li>
       </ol>
     </nav>
   </div>
@@ -768,7 +768,7 @@ h1,h2,h3,h4,h5,p,li,figcaption,blockquote,dd,dt,
   var f=document.getElementById('clipsFrame'); if(!f) return;
   document.querySelectorAll('.chapters button').forEach(function(b){
     b.addEventListener('click',function(){
-      f.src='https://www.youtube.com/embed/RA-c2K-e3Uo?rel=0&autoplay=1&start='+b.getAttribute('data-t');
+      f.src='https://www.youtube.com/embed/A8cD0ZVHKnk?rel=0&autoplay=1&start='+b.getAttribute('data-t');
       document.querySelectorAll('.chapters button.on').forEach(function(o){o.classList.remove('on');});
       b.classList.add('on');
       if(window.innerWidth<=820){f.scrollIntoView({behavior:'smooth',block:'center'});}
