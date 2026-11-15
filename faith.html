@@ -391,10 +391,13 @@ h1,h2,h3,h4,h5,p,li,figcaption,blockquote,dd,dt,
 </div>
 
 <style>
-  .fs-img{max-width:520px;margin:2.2rem auto 0;padding:0;}
+  .fs-img{max-width:1180px;margin:1.6rem auto 0;padding:0;}
   .fs-img img{display:block;width:100%;height:auto;border:1px solid var(--border);}
-  @media(max-width:600px){ .fs-img{max-width:330px;} }
-  .fs-epi{max-width:520px;margin:1.1rem auto 0;font-family:'Cormorant Garamond',serif;
+  .halfvid{max-width:400px;margin:1.8rem auto 0;}
+  @media(max-width:600px){ .halfvid{max-width:100%;margin-top:1.4rem;} }
+  .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;
+    clip:rect(0,0,0,0);white-space:nowrap;border:0;}
+  .fs-epi{max-width:620px;margin:1.4rem auto 0;font-family:'Cormorant Garamond',serif;
     font-style:italic;font-size:1.05rem;line-height:1.7;color:var(--cream);opacity:.82;}
   .fs-epi-c{max-width:520px;margin:.45rem auto 0;font-family:'DM Mono',monospace;
     font-size:.58rem;letter-spacing:.26em;text-transform:uppercase;
@@ -506,14 +509,13 @@ h1,h2,h3,h4,h5,p,li,figcaption,blockquote,dd,dt,
 
 <!-- ── HERO ── -->
 <section class="fs-hero">
+  <h1 class="sr-only">The Space Between &mdash; the faith version of Paper Gun</h1>
   <p class="fs-kick">The second show</p>
-  <h1 class="fs-title">The Faith Set</h1>
   <p class="fs-sub">Fourteen numbers &middot; about an hour &middot; one man, one piano</p>
   <figure class="fs-img">
-    <img src="faithhero.jpg" alt="Paul Tosh at the piano, head bowed over the keys" loading="eager"/>
+    <img src="faithhero.jpg" alt="The Space Between &mdash; the faith version of Paper Gun. Paul Tosh at the piano, head bowed over the keys." loading="eager" onerror="if(!this.dataset.alt){this.dataset.alt=1;this.src='faithhero.PNG';}"/>
   </figure>
   <p class="fs-epi">&ldquo;The space above is filled with love, but the space between is what gets you there.&rdquo;</p>
-  <p class="fs-epi-c">The Space Between &middot; no. 8</p>
 </section>
 
 <!-- ── INTRODUCTION CLIPS ── -->
@@ -797,6 +799,17 @@ h1,h2,h3,h4,h5,p,li,figcaption,blockquote,dd,dt,
     </details>
   </div>
 </section>
+<div class="rule"></div>
+
+<!-- ── Opera lyric adaptations: half-width companion video ── -->
+<section class="wrap" style="padding-top:2.4rem;padding-bottom:.6rem;">
+  <h2 class="sec-head">Opera lyric adaptations</h2>
+  <p class="fs-note" style="max-width:620px;margin:0 auto;">Where some of this material came from &mdash; the great operatic and Neapolitan melodies, given English lyrics of my own.</p>
+  <div class="halfvid">
+    <div class="video-wrap"><iframe src="https://www.youtube.com/embed/4mgwo-pMFjc?rel=0" title="Opera lyric adaptations &mdash; Paul Tosh" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
+  </div>
+</section>
+
 <div class="rule"></div>
 <section class="fs-wrap" style="padding-top:2.4rem;padding-bottom:1rem;">
   <h2 class="sec-head">An optional talkback</h2>
