@@ -292,6 +292,18 @@ h1,h2,h3,h4,h5,p,li,figcaption,blockquote,dd,dt,
     opacity: 1 !important;
   }
 }
+.whofor{background:var(--ink);border-top:1px solid var(--border);padding:4rem 2rem;}
+.whofor .in{max-width:780px;margin:0 auto;}
+.whofor h2{font-family:'Cinzel',serif;font-size:clamp(1.05rem,2.2vw,1.35rem);letter-spacing:.16em;
+  text-transform:uppercase;color:var(--gold-l);text-align:center;margin:0 0 2.2rem;}
+.whofor dl{margin:0;}
+.whofor dt{font-family:'Cinzel',serif;font-size:.86rem;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--gold);margin:0 0 .45rem;}
+.whofor dd{font-family:'Cormorant Garamond',serif;font-size:1.12rem;line-height:1.75;
+  color:var(--cream);opacity:.88;margin:0 0 1.9rem;padding-bottom:1.9rem;
+  border-bottom:1px solid rgba(234,227,211,.08);}
+.whofor dd:last-of-type{margin-bottom:0;padding-bottom:0;border-bottom:none;}
+@media(max-width:600px){.whofor{padding:3rem 1.5rem;}.whofor dd{font-size:1.18rem;opacity:1;}}
 </style>
 </head>
 <body>
@@ -489,6 +501,26 @@ h1,h2,h3,h4,h5,p,li,figcaption,blockquote,dd,dt,
       <a href="./rider.html">Technical rider</a>
       <a href="./testimonials.html">Testimonials</a>
     </div>
+  </div>
+</section>
+
+<!-- ── WHO IS IT FOR ── -->
+<section class="whofor" id="who" aria-label="Who the show is for">
+  <div class="in">
+    <h2>Who is it for?</h2>
+    <dl>
+      <dt>Clinical and grief settings</dt>
+      <dd>Therapist evenings, bereavement and hospice programmes, pastoral-care training. The
+      evening comes with a written protocol for grieving the living, and a talkback afterwards.
+      It is a method, not a theme.</dd>
+
+      <dt>Senior residences and 55+ audiences</dt>
+      <dd>The show is about a decades-old estrangement from someone still living who will never
+      apologise. In these rooms, that is the burden nobody talks about.</dd>
+
+      <dt>Jewish communities</dt>
+      <dd>Where family estrangement is live, and rarely spoken of aloud.</dd>
+    </dl>
   </div>
 </section>
 
