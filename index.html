@@ -346,6 +346,12 @@ h1,h2,h3,h4,h5,p,li,figcaption,blockquote,dd,dt,
   .whofor .who-lead{font-family:'Cormorant Garamond',serif;font-style:italic;
     font-size:clamp(1.08rem,2.1vw,1.32rem);line-height:1.6;color:var(--cream);
     opacity:.9;max-width:34em;margin:0 0 2rem;}
+  .bow{margin:0;padding:0;background:var(--ink);line-height:0;}
+  .bow img{display:block;width:100%;height:auto;}
+  @media(max-width:620px){
+    .bow{overflow:hidden;}
+    .bow img{width:150%;max-width:none;margin-left:-25%;}
+  }
 </style>
 </head>
 <body>
@@ -454,6 +460,12 @@ h1,h2,h3,h4,h5,p,li,figcaption,blockquote,dd,dt,
   </div>
   <p class="bill-foot"><a href="./main-site.html">Everything &mdash; both shows, the songs, the road &nbsp;&rsaquo;</a></p>
 </section>
+
+<!-- ══ BOW ══ -->
+<figure class="bow">
+  <img src="openarmhero.jpg" alt="Paul Tosh taking a bow, arms open, before a full house"
+       loading="eager" onerror="if(!this.dataset.f){this.dataset.f=1;this.src='openarmhero.PNG';}"/>
+</figure>
 
 <!-- EVENT DETAILS 1 of 3: red bar -->
 <div id="seat-bar">
