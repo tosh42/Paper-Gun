@@ -352,6 +352,25 @@ h1,h2,h3,h4,h5,p,li,figcaption,blockquote,dd,dt,
     .bow{overflow:hidden;}
     .bow img{width:150%;max-width:none;margin-left:-25%;}
   }
+  .bow{position:relative;}
+  .palm{position:absolute;transform:translate(-50%,-100%);text-align:center;
+    text-decoration:none;line-height:1.12;width:19%;pointer-events:auto;
+    transition:transform .22s;}
+  .palm::before{content:"";position:absolute;left:50%;top:48%;width:150%;height:260%;
+    transform:translate(-50%,-50%);border-radius:50%;z-index:-1;
+    background:radial-gradient(ellipse at center,rgba(10,8,8,.78) 0%,rgba(10,8,8,.45) 45%,rgba(10,8,8,0) 72%);}
+  .palm-l{left:21.8%;top:57.5%;}
+  .palm-r{left:82.8%;top:60%;}
+  .palm:hover{transform:translate(-50%,-104%);}
+  .palm-kick{display:block;font-family:'DM Mono',monospace;font-size:clamp(6.5px,.62vw,14px);
+    letter-spacing:.3em;text-transform:uppercase;color:var(--gold-l);
+    margin-bottom:.45em;text-shadow:0 2px 12px rgba(0,0,0,.95);}
+  .palm-name{display:block;font-family:'Cinzel',serif;font-size:clamp(12px,1.55vw,34px);
+    letter-spacing:.1em;text-transform:uppercase;color:#f3ecdd;
+    text-shadow:0 2px 18px rgba(0,0,0,.95),0 0 40px rgba(0,0,0,.8);}
+  /* below this width the panorama crops and the hands move out of frame */
+  @media(max-width:600px){ .palm{display:none;} }
+  @media(min-width:601px){ .billing{display:none;} }
 </style>
 </head>
 <body>
@@ -465,6 +484,14 @@ h1,h2,h3,h4,h5,p,li,figcaption,blockquote,dd,dt,
 <figure class="bow">
   <img src="openarmhero.jpg" alt="Paul Tosh taking a bow, arms open, before a full house"
        loading="eager" onerror="if(!this.dataset.f){this.dataset.f=1;this.src='openarmhero.PNG';}"/>
+  <a class="palm palm-l" href="./index.html">
+    <span class="palm-kick">The operetta</span>
+    <span class="palm-name">Paper Gun</span>
+  </a>
+  <a class="palm palm-r" href="./sitp.html">
+    <span class="palm-kick">The concert</span>
+    <span class="palm-name">The Song<br/>Is The Play</span>
+  </a>
 </figure>
 
 <!-- EVENT DETAILS 1 of 3: red bar -->
