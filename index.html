@@ -378,6 +378,27 @@ h1,h2,h3,h4,h5,p,li,figcaption,blockquote,dd,dt,
   .billing .bill-kick, .billing .bill-grid{display:none;}
   .billing{padding-top:1.4rem;padding-bottom:1.4rem;border-bottom:0;}
   .bill-foot{margin-top:0;}
+  .combo{background:var(--ink);padding:3rem 2rem 3.2rem;text-align:center;
+    border-bottom:1px solid var(--border);}
+  .combo-kick{font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.32em;
+    text-transform:uppercase;color:var(--gold-l);opacity:.9;margin:0 0 .9rem;}
+  .combo-line{font-family:'Cinzel',serif;font-weight:400;
+    font-size:clamp(1.15rem,2.6vw,1.75rem);letter-spacing:.08em;color:var(--cream);
+    margin:0 auto .9rem;max-width:22em;line-height:1.35;}
+  .combo-sub{font-family:'Cormorant Garamond',serif;font-style:italic;
+    font-size:clamp(1rem,2vw,1.18rem);line-height:1.65;color:var(--cream);opacity:.82;
+    max-width:36em;margin:0 auto 2rem;}
+  .combo-fig{margin:0 auto;max-width:460px;}
+  .combo-fig img{display:block;width:100%;height:auto;border:1px solid var(--border);
+    box-shadow:0 18px 50px rgba(0,0,0,.5);}
+  .combo-fig figcaption{font-family:'DM Mono',monospace;font-size:.6rem;letter-spacing:.24em;
+    text-transform:uppercase;color:var(--gold-l);opacity:.8;margin-top:.9rem;}
+  .combo-cta{margin:1.8rem 0 0;}
+  .combo-cta a{font-family:'DM Mono',monospace;font-size:.66rem;letter-spacing:.24em;
+    text-transform:uppercase;color:var(--gold);text-decoration:none;
+    border-bottom:1px solid rgba(156,138,106,.45);padding-bottom:.18rem;}
+  .combo-cta a:hover{color:var(--cream);}
+  @media(max-width:600px){ .combo{padding:2.2rem 1.2rem 2.4rem;} .combo-fig{max-width:330px;} }
 </style>
 </head>
 <body>
@@ -500,6 +521,19 @@ h1,h2,h3,h4,h5,p,li,figcaption,blockquote,dd,dt,
     <span class="palm-name">The Song<br/>Is The Play</span>
   </a>
 </figure>
+
+<!-- ══ OR A COMBINATION ══ -->
+<section class="combo">
+  <p class="combo-kick">Or a third way</p>
+  <h2 class="combo-line">Or you can have a combination concert like this</h2>
+  <p class="combo-sub">Excerpts from the operetta, classic songs as theatrical prose, Neapolitan song with new words, stories from the road &mdash; and a talkback to close.</p>
+  <figure class="combo-fig">
+    <img src="turntable-flyer.jpg" alt="Paul Tosh live at The Turntable, Manheim, Pennsylvania &mdash; 7pm Wednesday 29 September 2027"
+         loading="lazy" onerror="if(!this.dataset.f){this.dataset.f=1;this.src='TTflyer2.PNG';}"/>
+    <figcaption>The Turntable, Manheim &middot; 29 September 2027</figcaption>
+  </figure>
+  <p class="combo-cta"><a href="./inquiry.html">Ask about a combination concert &nbsp;&rsaquo;</a></p>
+</section>
 
 <!-- EVENT DETAILS 1 of 3: red bar -->
 <div id="seat-bar">
