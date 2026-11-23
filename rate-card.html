@@ -244,6 +244,50 @@ h1,h2,h3,h4,h5,p,li,figcaption,blockquote,dd,dt,
 }
 </style>
 
+
+<style>
+.rc-tier{border:1px solid var(--border);padding:2rem 2rem 1.8rem;margin-bottom:1.6rem;position:relative;}
+.rc-tier .cnr{position:absolute;width:12px;height:12px;border:1px solid var(--gold);opacity:.45;}
+.rc-tier .cnr-tl{top:-1px;left:-1px;border-right:none;border-bottom:none;}
+.rc-tier .cnr-br{bottom:-1px;right:-1px;border-left:none;border-top:none;}
+.rc-name{font-family:'Cinzel',serif;font-size:clamp(1rem,2.1vw,1.25rem);letter-spacing:.14em;
+  text-transform:uppercase;color:var(--cream);text-align:center;line-height:1.4;margin-bottom:1.1rem;}
+.rc-desc{font-size:1.02rem;line-height:1.75;opacity:.78;text-align:center;max-width:470px;margin:1.3rem auto 0;}
+.rc-ask{list-style:none;margin:1.4rem auto 0;max-width:430px;}
+.rc-ask li{display:flex;align-items:baseline;gap:.9rem;font-size:1.02rem;line-height:1.7;opacity:.85;padding:.5rem 0;}
+.rc-ask li::before{content:'';flex:0 0 14px;height:1px;background:var(--gold);opacity:.6;transform:translateY(-.35em);}
+.rc-block{border:1px solid rgba(156,138,106,.18);padding:2rem;margin-bottom:1.6rem;}
+.rc-block p{font-size:1.02rem;line-height:1.78;opacity:.82;}
+.rc-block p + p{margin-top:.9rem;}
+.rc-alt{display:inline-block;font-family:'DM Mono',monospace;font-size:.64rem;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(156,138,106,.5);
+  padding-bottom:2px;margin-top:1rem;}
+.rc-alt:hover{color:var(--cream);}
+@media(max-width:600px){ .rc-tier,.rc-block{padding:1.6rem 1.2rem;} }
+</style>
+
+
+<style>
+.rc-tier{border:1px solid var(--border);padding:2rem 2rem 1.8rem;margin-bottom:1.6rem;position:relative;}
+.rc-tier .cnr{position:absolute;width:12px;height:12px;border:1px solid var(--gold);opacity:.45;}
+.rc-tier .cnr-tl{top:-1px;left:-1px;border-right:none;border-bottom:none;}
+.rc-tier .cnr-br{bottom:-1px;right:-1px;border-left:none;border-top:none;}
+.rc-name{font-family:'Cinzel',serif;font-size:clamp(1rem,2.1vw,1.25rem);letter-spacing:.14em;
+  text-transform:uppercase;color:var(--cream);text-align:center;line-height:1.4;margin-bottom:1.1rem;}
+.rc-desc{font-size:1.02rem;line-height:1.75;opacity:.78;text-align:center;max-width:470px;margin:1.3rem auto 0;}
+.rc-ask{list-style:none;margin:1.4rem auto 0;max-width:430px;}
+.rc-ask li{display:flex;align-items:baseline;gap:.9rem;font-size:1.02rem;line-height:1.7;opacity:.85;padding:.5rem 0;}
+.rc-ask li::before{content:'';flex:0 0 14px;height:1px;background:var(--gold);opacity:.6;transform:translateY(-.35em);}
+.rc-block{border:1px solid rgba(156,138,106,.18);padding:2rem;margin-bottom:1.6rem;}
+.rc-block p{font-size:1.02rem;line-height:1.78;opacity:.82;}
+.rc-block p + p{margin-top:.9rem;}
+.rc-alt{display:inline-block;font-family:'DM Mono',monospace;font-size:.64rem;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(156,138,106,.5);
+  padding-bottom:2px;margin-top:1rem;}
+.rc-alt:hover{color:var(--cream);}
+@media(max-width:600px){ .rc-tier,.rc-block{padding:1.6rem 1.2rem;} }
+</style>
+
 <div id="top-info">
   <p>Rate Card &middot; Paul Tosh</p>
 </div>
@@ -257,52 +301,98 @@ h1,h2,h3,h4,h5,p,li,figcaption,blockquote,dd,dt,
 
 <div class="rc">
 
-  <p class="rc-intro">Every figure below is all-inclusive &mdash; travel, accommodation and sound are
-  carried by me. I arrive in a self-contained performance camper, so there is no hotel rider and
-  no staging to arrange. All I ask of a venue is a real acoustic piano and a quiet place to park.</p>
+  <p class="rc-intro">Every figure below is all-inclusive &mdash; travel, accommodation and sound
+  are carried by me. I arrive in a self-contained performance camper, so there is no hotel rider
+  and no staging to arrange.</p>
 
-  <!-- THE HOUR-LONG SETS -->
-  <div class="rc-group">
+  <!-- 3 -->
+  <div class="rc-tier">
     <div class="cnr cnr-tl"></div><div class="cnr cnr-br"></div>
-    <p class="rc-label">The One-Hour Sets</p>
+    <p class="rc-name">A Night at the Theatre</p>
+    <div class="rc-fig"><span class="cur">$</span>2,452</div>
+    <p class="rc-desc">The full operetta in one night. Three acts of thirty-five minutes, two
+    ten-minute breaks and a ten-minute talkback &mdash; roughly two and a half hours in the room.</p>
+  </div>
+
+  <!-- 4 -->
+  <div class="rc-tier">
+    <div class="cnr cnr-tl"></div><div class="cnr cnr-br"></div>
+    <p class="rc-name">A Two-Part Show at the Theatre</p>
+    <div class="rc-fig"><span class="cur">$</span>3,065</div>
+    <p class="rc-desc">The same operetta, in its three acts, played across two evenings rather
+    than one.</p>
+  </div>
+
+  <!-- 2 -->
+  <div class="rc-tier">
+    <div class="cnr cnr-tl"></div><div class="cnr cnr-br"></div>
+    <p class="rc-name">An Evening With a Short Show</p>
+    <div class="rc-fig"><span class="cur">$</span>1,226</div>
+    <p class="rc-desc">The combo set &mdash; a broader introduction to material from the original
+    operetta, <em>Paper Gun</em>, plus Dylan, Diamond, The Beatles and Billy Joel performed as
+    theatrical prose, all with live looping piano. Neapolitan song with new words, stories from
+    the road, and a talkback.</p>
+  </div>
+
+  <!-- 1 -->
+  <div class="rc-tier">
+    <div class="cnr cnr-tl"></div><div class="cnr cnr-br"></div>
+    <p class="rc-label">Community Rate</p>
     <div class="rc-fig"><span class="cur">$</span>440</div>
-    <p class="rc-per">Per performance &middot; any one of the three</p>
-    <ul class="rc-list">
-      <li>The Song Is The Play</li>
-      <li>The Combo Set</li>
-      <li>The Combo Faith Set<span class="star">&#42;</span></li>
+    <p class="rc-per">Assisted living, seniors and 55+ community centers</p>
+    <ul class="rc-ask">
+      <li>The Song Is The Play, with a few songs from the original operetta</li>
+      <li>The Faith Set<span class="star" style="color:var(--gold);">&#42;</span></li>
     </ul>
   </div>
 
-  <!-- PAPER GUN -->
-  <div class="rc-group">
-    <div class="cnr cnr-tl"></div><div class="cnr cnr-br"></div>
-    <p class="rc-label">Paper Gun &mdash; the Operetta</p>
-    <div class="rc-split">
-      <div class="rc-opt">
-        <p class="rc-when">Run over one night</p>
-        <div class="rc-sum"><span style="font-size:.5em;vertical-align:.55em;opacity:.6;">$</span>1,839</div>
-        <p class="rc-each">Each act &mdash; $613</p>
-      </div>
-      <div class="rc-opt">
-        <p class="rc-when">Run over three nights</p>
-        <div class="rc-sum"><span style="font-size:.5em;vertical-align:.55em;opacity:.6;">$</span>2,220</div>
-        <p class="rc-each">Each act &mdash; $740</p>
-      </div>
-    </div>
+  <!-- footnote -->
+  <div class="rc-group" style="border-color:rgba(156,138,106,.14);">
+    <p class="rc-note"><span class="star" style="color:var(--gold);">&#42;</span>&nbsp; The Faith
+    Set includes faith-oriented cover songs by such artists as Bob Dylan, Leonard Cohen and Neil
+    Diamond, alongside all-time classics like <em>Danny Boy</em> and <em>Amazing Grace</em>.</p>
   </div>
 
-  <!-- FOOTNOTE -->
-  <div class="rc-group" style="border-color:rgba(156,138,106,.14);">
-    <p class="rc-note"><span class="star" style="color:var(--gold);">&#42;</span>&nbsp; The Combo Faith Set
-    includes faith-oriented cover songs by such artists as Bob Dylan, Leonard Cohen and Neil Diamond,
-    alongside all-time classics like <em>Danny Boy</em> and <em>Amazing Grace</em>.</p>
+  <!-- ticket split -->
+  <div class="rc-block" style="text-align:center;">
+    <p style="font-family:'Cinzel',serif;letter-spacing:.14em;text-transform:uppercase;
+       font-size:1.05rem;opacity:1;margin-bottom:.8rem;">Or share the ticket income instead</p>
+    <p>A fee is not the only way to do this. Where a room would rather not carry the cost up
+    front, the show can be run on a split of the ticket price &mdash; we fill the room together
+    and share what it takes.</p>
+    <a href="./venue-partnership.html" class="rc-alt">See the venue partnership &rarr;</a>
+  </div>
+
+  <!-- the piano -->
+  <div class="rc-block">
+    <p style="font-family:'Cinzel',serif;letter-spacing:.14em;text-transform:uppercase;
+       font-size:1.05rem;opacity:1;margin-bottom:.8rem;text-align:center;">The piano</p>
+    <p>If you can get a real piano into the room, it is a great deal better. It is not only far
+    more classy to look at &mdash; <strong>the music itself is exponentially better</strong>, and
+    if you do not already have one, it is genuinely worth making that choice.</p>
+    <p>I can bring a keyboard for an extra charge. But for a little more than that charge, the
+    money is better spent on getting a piano in. The difference in the performance is
+    disproportionate to the cost.</p>
+  </div>
+
+  <!-- the room -->
+  <div class="rc-block">
+    <p style="font-family:'Cinzel',serif;letter-spacing:.14em;text-transform:uppercase;
+       font-size:1.05rem;opacity:1;margin-bottom:.4rem;text-align:center;">What I ask of the room</p>
+    <ul class="rc-ask">
+      <li>A real acoustic piano, where it can be arranged</li>
+      <li>A quiet place to park the camper overnight</li>
+      <li>Hot water at the interval</li>
+    </ul>
+    <p style="text-align:center;font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.24em;
+       text-transform:uppercase;color:var(--gold);opacity:.85;margin:1.8rem 0 .2rem;">If possible</p>
+    <ul class="rc-ask">
+      <li>Somewhere to shower, at any hour</li>
+      <li>A shore-power hook-up &mdash; an ordinary outdoor 120V socket is enough</li>
+    </ul>
   </div>
 
   <div class="rc-foot">
-    <p style="font-size:1.02rem;line-height:1.8;opacity:.75;max-width:520px;margin:0 auto 1.4rem;">Paul works
-    across a wide range of venues and budgets. If a room matters and the figure is the only obstacle,
-    say so &mdash; it is worth a conversation.</p>
     <a href="./inquiry.html" class="rc-cta">&#9670; Make an Enquiry</a>
     <p style="margin-top:1.6rem;font-size:.95rem;opacity:.6;"><a href="mailto:bookings@tosh42.com">bookings@tosh42.com</a>
     &nbsp;&middot;&nbsp; <a href="./rider.html">Tech Rider</a>
